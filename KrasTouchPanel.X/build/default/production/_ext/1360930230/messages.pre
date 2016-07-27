@@ -1,0 +1,169 @@
+
+# 1 "../lib/messages.c"
+
+# 10 "..\MessagesConfig.h"
+typedef enum {
+
+MES_ADC_INIT_DONE,
+MES_ADC_INIT,
+MES_POINT,
+EXP_STOP_BY_TIME,
+EXP_STOP_BY_TEMP,
+USB_FLASH_SEND_CMD,
+USB_FLASH_ATTACH,
+USB_FLASH_DEATTACH
+} MESSAGES;
+
+
+typedef enum {
+SEM_IS_FLASH_COMMUNICATING,
+SEM_RX_DONE,
+SEM_WR_DONE,
+SEM_WR_ERR
+} SEM;
+
+# 9 "../lib/include\messages.h"
+typedef enum {
+MSG_PHASE_NONE,
+MSG_PHASE_PREPARE,
+MSG_PHASE_READY
+
+} MSG_PHASES;
+
+
+
+extern void InitMessages(void);
+
+
+extern char GetMessage(char Msg);
+
+extern char ReadyMessage(char Msg);
+
+extern char GetBroadcastMessage(char Msg);
+
+extern void SendMessage(char Msg);
+extern void SendBroadcastMessage(char Msg);
+
+# 40
+extern void BSemOn(char Sem);
+extern void BSemOff(char Sem);
+extern void BSemSw(char Sem);
+extern char BSemIs(char Sem);
+
+
+extern void ProcessMessages(void);
+
+# 5 "../lib/messages.c"
+volatile char Messages[10];
+
+# 12
+volatile char BroadcastMessages[1];
+
+
+
+volatile char BSem[4];
+
+
+
+void InitMessages(void) {
+char i;
+
+for(i = 0; i < (10); i++){
+Messages[i] = MSG_PHASE_NONE;
+
+# 28
+}
+
+
+for(i = 0; i < 1; i++)
+BroadcastMessages[i] = MSG_PHASE_NONE;
+
+
+
+for(i = 0; i < 4; i++)
+BSem[i] = 0;
+
+
+}
+
+
+void SendMessage(char Msg) {
+Messages[Msg] = MSG_PHASE_PREPARE;
+}
+
+
+char GetMessage(char Msg) {
+
+if(Messages[Msg] == MSG_PHASE_READY) {
+Messages[Msg] = MSG_PHASE_NONE;
+return 1;
+}
+return 0;
+}
+
+
+
+char ReadyMessage(char Msg) {
+
+if(Messages[Msg] == MSG_PHASE_READY) {
+return 1;
+}
+return 0;
+}
+
+# 94
+void SendBroadcastMessage(char Msg){
+BroadcastMessages[Msg] = MSG_PHASE_PREPARE;
+}
+
+
+char GetBroadcastMessage(char Msg) {
+
+if(BroadcastMessages[Msg] == MSG_PHASE_READY){
+return 1;
+}
+return 0;
+}
+
+
+
+
+void ProcessMessages(void){
+char i;
+for(i = 0; i < (10); i++){
+if(Messages[i] == MSG_PHASE_READY) Messages[i] = MSG_PHASE_NONE;
+if(Messages[i] == MSG_PHASE_PREPARE) Messages[i] = MSG_PHASE_READY;
+}
+
+
+for(i = 0; i < 1; i++) {
+if(BroadcastMessages[i] == MSG_PHASE_READY) BroadcastMessages[i] = MSG_PHASE_NONE;
+if(BroadcastMessages[i] == MSG_PHASE_PREPARE) BroadcastMessages[i] = MSG_PHASE_READY;
+}
+
+}
+
+# 133
+char BSemIs(char Sem) {
+if(BSem[Sem] == 0){
+return 0;
+} else {
+return 1;
+}
+}
+
+
+void BSemOn(char Sem){
+BSem[Sem] = 1;
+}
+
+
+void BSemOff(char Sem){
+BSem[Sem] = 0;
+}
+
+
+void BSemSw(char Sem){
+BSem[Sem] ^= 1;
+}
+

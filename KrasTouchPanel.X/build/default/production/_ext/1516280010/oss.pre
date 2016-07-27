@@ -1,0 +1,22 @@
+
+# 1 "../lib/oss/oss.c"
+
+# 2 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stddef.h"
+typedef int ptrdiff_t;
+typedef unsigned size_t;
+typedef unsigned short wchar_t;
+
+# 13
+extern int errno;
+
+# 107 "../lib/oss/oss.h"
+extern volatile int _sys_tick;
+
+# 134
+void OS_Shed(void);
+void OS_Task_Create(void (*Task)(void));
+
+# 4 "../lib/oss/oss.c"
+volatile unsigned char curr_task;
+volatile int _sys_tick;
+
