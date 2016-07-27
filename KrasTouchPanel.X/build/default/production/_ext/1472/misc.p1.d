@@ -14,11 +14,13 @@
 ../lib/mTouchCap/include/mTouchDebug.h  \
 ../lib/mTouchCap/include/mTouchButton.h  \
 ../mTouchConfig.h  \
+../lib/include/delay.h  \
 ../MessagesConfig.h  \
 ../HardwareProfile.h  \
 ../lib/mTouchCap/include/mTouch2ChSlider.h  \
 ../lib/include/macro.h  \
 ../lib/mTouchCap/include/mTouch4ChSlider.h  \
+../lib/include/ks0108.h  \
 ../lib/include/compil.h  \
 ../lib/oss/oss.h  \
 ../lib/include/GenericTypeDefs.h  \

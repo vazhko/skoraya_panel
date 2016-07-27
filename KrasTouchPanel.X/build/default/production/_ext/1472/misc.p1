@@ -165,8 +165,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "107 ../lib/mTouchCap/include\mTouchButton.h
 [v _MTouchSetButton `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 "119 ../misc.c
-[c E9370 0 1 2 3 4 5 6 7 8 9 .. ]
-[n E9370 . KEY_MENU KEY_START KEY_M KEY_P KEY_T1 KEY_T2 KEY_MM KEY_PP KEY_TT1 KEY_TT2  ]
+[c E9460 0 1 2 3 4 5 6 7 8 9 .. ]
+[n E9460 . KEY_MENU KEY_START KEY_M KEY_P KEY_T1 KEY_T2 KEY_MM KEY_PP KEY_TT1 KEY_TT2  ]
 [c E9191 1 2 4 8 16 .. ]
 [n E9191 _MTOUCHCONTROLDECODE_ DECODE_TOGGLE DECODE_PRESS_RELEASE DECODE_MOST_PRESSED DECODE_PRESS_REPEAT DECODE_ONE_EVENT  ]
 "146 ../lib/include\usart.h
@@ -186,10 +186,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCIP `Vb ~T0 @X0 0 e@31997 ]
 "19528
 [v _RCIE `Vb ~T0 @X0 0 e@31981 ]
-"14977
-[v _SSPSTAT `Vuc ~T0 @X0 0 e@4039 ]
-"14698
-[v _SSPCON1 `Vuc ~T0 @X0 0 e@4038 ]
+"8044
+[s S489 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S489 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"8054
+[s S490 :1 `uc 1 ]
+[n S490 . LC0 ]
+"8057
+[s S491 :1 `uc 1 :1 `uc 1 ]
+[n S491 . . LC1 ]
+"8061
+[s S492 :2 `uc 1 :1 `uc 1 ]
+[n S492 . . LC2 ]
+"8065
+[s S493 :3 `uc 1 :1 `uc 1 ]
+[n S493 . . LC3 ]
+"8069
+[s S494 :4 `uc 1 :1 `uc 1 ]
+[n S494 . . LC4 ]
+"8073
+[s S495 :5 `uc 1 :1 `uc 1 ]
+[n S495 . . LC5 ]
+"8077
+[s S496 :6 `uc 1 :1 `uc 1 ]
+[n S496 . . LC6 ]
+"8081
+[s S497 :7 `uc 1 :1 `uc 1 ]
+[n S497 . . LC7 ]
+"8043
+[u S488 `S489 1 `S490 1 `S491 1 `S492 1 `S493 1 `S494 1 `S495 1 `S496 1 `S497 1 ]
+[n S488 . . . . . . . . . . ]
+"8086
+[v _LATCbits `VS488 ~T0 @X0 0 e@3979 ]
 "17640
 [s S1113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1113 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
@@ -8678,32 +8706,73 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\sub18.h: 27: void pwm2_load(WORD load);
 [; ;include\sub18.h: 29: void T9000_set_channel(BYTE ch);
 [; ;include\macro.h: 42: extern char ___gie;
-[; ;Main.h: 45: typedef enum {
-[; ;Main.h: 46: ST_INIT = 0,
-[; ;Main.h: 47: ST_EXPERIMENT_READY,
-[; ;Main.h: 48: ST_EXPERIMENT_WAITING,
-[; ;Main.h: 49: ST_EXPERIMENT_DOING,
-[; ;Main.h: 50: ST_EXPERIMENT_DONE,
-[; ;Main.h: 51: ST_MENU,
-[; ;Main.h: 53: ST_VIEW_RESULTS,
-[; ;Main.h: 54: ST_VIEW_RESULTS_ASK_DEL,
-[; ;Main.h: 55: ST_DEBUG
-[; ;Main.h: 57: } LAB_STATES;
-[; ;Main.h: 59: typedef enum {
-[; ;Main.h: 60: KEY_MENU = 0,
-[; ;Main.h: 61: KEY_START,
-[; ;Main.h: 62: KEY_M,
-[; ;Main.h: 63: KEY_P,
-[; ;Main.h: 64: KEY_T1,
-[; ;Main.h: 65: KEY_T2,
-[; ;Main.h: 66: KEY_MM,
-[; ;Main.h: 67: KEY_PP,
-[; ;Main.h: 68: KEY_TT1,
-[; ;Main.h: 69: KEY_TT2,
-[; ;Main.h: 71: } KEYS;
-[; ;Main.h: 78: extern void InitializeSystem(void);
-[; ;Main.h: 79: extern void Beep(BYTE );
-[; ;Main.h: 80: extern void pwm4_load(WORD );
+[; ;include\stdlib.h: 103: extern char * itoa(char * buf, int val, int base);
+[; ;include\stdlib.h: 104: extern char * utoa(char * buf, unsigned val, int base);
+[; ;include\stdlib.h: 106: extern char * ltoa(long val, char * buf);
+[; ;include\stdlib.h: 107: extern char * ultoa(unsigned long val, char * buf);
+[; ;include\stdlib.h: 112: extern char * ftoa(float f, int * status);
+[; ;include\delay.h: 3: extern unsigned char delayus_variable;
+[; ;include\delay.h: 59: void DelayBigUs(unsigned int cnt);
+[; ;include\delay.h: 60: void DelayMs(unsigned char cnt);
+[; ;include\delay.h: 61: void DelayMs_ISR(unsigned char cnt);
+[; ;include\delay.h: 62: void DelayBigMs(unsigned int cnt);
+[; ;include\delay.h: 63: void DelayS(unsigned char cnt);
+[; ;include\delay.h: 64: void DelayS_ISR(unsigned char cnt);
+[; ;include\ks0108.h: 56: typedef unsigned char uint8_t;
+[; ;include\ks0108.h: 57: typedef unsigned int uint16_t;
+[; ;include\ks0108.h: 59: typedef struct {
+[; ;include\ks0108.h: 60: uint8_t x;
+[; ;include\ks0108.h: 61: uint8_t y;
+[; ;include\ks0108.h: 62: uint8_t page;
+[; ;include\ks0108.h: 63: } displayPos;
+[; ;include\ks0108.h: 68: typedef struct {
+[; ;include\ks0108.h: 69: BYTE x;
+[; ;include\ks0108.h: 70: BYTE y;
+[; ;include\ks0108.h: 71: BYTE size;
+[; ;include\ks0108.h: 72: const char *p_font;
+[; ;include\ks0108.h: 73: char str[22];
+[; ;include\ks0108.h: 75: } Label;
+[; ;include\ks0108.h: 82: void ks0108Enable(void);
+[; ;include\ks0108.h: 83: void ks0108Fill(uint8_t mode);
+[; ;include\ks0108.h: 84: void ks0108GotoXY(uint8_t, uint8_t);
+[; ;include\ks0108.h: 85: void ks0108Init(void);
+[; ;include\ks0108.h: 87: BYTE ks0108PutChar(char s, const char *p_font, char mode);
+[; ;include\ks0108.h: 88: void ks0108PutString(char *string, const char *p_font, char mode);
+[; ;include\ks0108.h: 89: char ks0108ReadData(uint8_t incXAdd);
+[; ;include\ks0108.h: 90: void ks0108WriteCommand(uint8_t cmd, uint8_t chip);
+[; ;include\ks0108.h: 91: void ks0108WriteData(uint8_t data);
+[; ;include\ks0108.h: 94: void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
+[; ;include\ks0108.h: 95: void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk);
+[; ;include\ks0108.h: 96: void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy);
+[; ;include\ks0108.h: 98: void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
+[; ;include\ks0108.h: 99: void LabelSetTxt(Label *lb, char *str);
+[; ;include\ks0108.h: 100: void LabelClrTxt(Label *lb);
+[; ;Main.h: 46: typedef enum {
+[; ;Main.h: 47: ST_INIT = 0,
+[; ;Main.h: 48: ST_EXPERIMENT_READY,
+[; ;Main.h: 49: ST_EXPERIMENT_WAITING,
+[; ;Main.h: 50: ST_EXPERIMENT_DOING,
+[; ;Main.h: 51: ST_EXPERIMENT_DONE,
+[; ;Main.h: 52: ST_MENU,
+[; ;Main.h: 54: ST_VIEW_RESULTS,
+[; ;Main.h: 55: ST_VIEW_RESULTS_ASK_DEL,
+[; ;Main.h: 56: ST_DEBUG
+[; ;Main.h: 58: } LAB_STATES;
+[; ;Main.h: 60: typedef enum {
+[; ;Main.h: 61: KEY_MENU = 0,
+[; ;Main.h: 62: KEY_START,
+[; ;Main.h: 63: KEY_M,
+[; ;Main.h: 64: KEY_P,
+[; ;Main.h: 65: KEY_T1,
+[; ;Main.h: 66: KEY_T2,
+[; ;Main.h: 67: KEY_MM,
+[; ;Main.h: 68: KEY_PP,
+[; ;Main.h: 69: KEY_TT1,
+[; ;Main.h: 70: KEY_TT2,
+[; ;Main.h: 72: } KEYS;
+[; ;Main.h: 79: extern void InitializeSystem(void);
+[; ;Main.h: 80: extern void Beep(BYTE );
+[; ;Main.h: 81: extern void pwm4_load(WORD );
 [; ;include\math.h: 3: extern double fabs(double);
 [; ;include\math.h: 4: extern double floor(double);
 [; ;include\math.h: 5: extern double ceil(double);
@@ -8741,30 +8810,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;misc.c: 12: if(load & 1) CCP4CONbits.DC4B0 = 1;
 "12
-[e $ ! != & -> _load `ui -> -> 1 `i `ui -> -> 0 `i `ui 1191  ]
+[e $ ! != & -> _load `ui -> -> 1 `i `ui -> -> 0 `i `ui 1193  ]
 [e = . . _CCP4CONbits 1 4 -> -> 1 `i `uc ]
-[e $U 1192  ]
+[e $U 1194  ]
 "13
-[e :U 1191 ]
+[e :U 1193 ]
 [; ;misc.c: 13: else CCP4CONbits.DC4B0 = 0;
 [e = . . _CCP4CONbits 1 4 -> -> 0 `i `uc ]
-[e :U 1192 ]
+[e :U 1194 ]
 [; ;misc.c: 14: if(load & 2) CCP4CONbits.DC4B1 = 1;
 "14
-[e $ ! != & -> _load `ui -> -> 2 `i `ui -> -> 0 `i `ui 1193  ]
+[e $ ! != & -> _load `ui -> -> 2 `i `ui -> -> 0 `i `ui 1195  ]
 [e = . . _CCP4CONbits 1 5 -> -> 1 `i `uc ]
-[e $U 1194  ]
+[e $U 1196  ]
 "15
-[e :U 1193 ]
+[e :U 1195 ]
 [; ;misc.c: 15: else CCP4CONbits.DC4B1 = 0;
 [e = . . _CCP4CONbits 1 5 -> -> 0 `i `uc ]
-[e :U 1194 ]
+[e :U 1196 ]
 [; ;misc.c: 17: CCPR4L = load >> 2;
 "17
 [e = _CCPR4L -> >> -> _load `ui -> 2 `i `uc ]
 [; ;misc.c: 18: }
 "18
-[e :UE 1190 ]
+[e :UE 1192 ]
 }
 "24
 [v _InitializeSystem `(v ~T0 @X0 1 ef ]
@@ -8784,11 +8853,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _OSCTUNEbits 0 1 -> -> 1 `i `uc ]
 [; ;misc.c: 40: while(pll_startup_counter--);
 "40
-[e $U 1196  ]
-[e :U 1197 ]
-[e :U 1196 ]
-[e $ != -- _pll_startup_counter -> -> 1 `i `ui -> -> 0 `i `ui 1197  ]
+[e $U 1198  ]
+[e :U 1199 ]
 [e :U 1198 ]
+[e $ != -- _pll_startup_counter -> -> 1 `i `ui -> -> 0 `i `ui 1199  ]
+[e :U 1200 ]
 [; ;misc.c: 44: RCONbits.IPEN = 1;
 "44
 [e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
@@ -8816,9 +8885,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;misc.c: 56: T4CONbits.T4CKPS = 3;
 "56
 [e = . . _T4CONbits 0 0 -> -> 3 `i `uc ]
-[; ;misc.c: 57: PR4 = 200;
+[; ;misc.c: 57: PR4 = 100;
 "57
-[e = _PR4 -> -> 200 `i `uc ]
+[e = _PR4 -> -> 100 `i `uc ]
 [; ;misc.c: 58: T4CONbits.T4OUTPS = 0;
 "58
 [e = . . _T4CONbits 0 2 -> -> 0 `i `uc ]
@@ -8837,9 +8906,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;misc.c: 70: MTouchInit();
 "70
 [e ( _MTouchInit ..  ]
-[; ;misc.c: 72: ANSELA = 0b00101111;
+[; ;misc.c: 72: ANSELA = 0b00000000;
 "72
-[e = _ANSELA -> -> 47 `i `uc ]
+[e = _ANSELA -> -> 0 `i `uc ]
 [; ;misc.c: 73: ANSELB = 0b00000000;
 "73
 [e = _ANSELB -> -> 0 `i `uc ]
@@ -8849,9 +8918,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;misc.c: 75: ANSELD = 0b00000000;
 "75
 [e = _ANSELD -> -> 0 `i `uc ]
-[; ;misc.c: 76: ANSELE = 0b00000001;
+[; ;misc.c: 76: ANSELE = 0b00000000;
 "76
-[e = _ANSELE -> -> 1 `i `uc ]
+[e = _ANSELE -> -> 0 `i `uc ]
 [; ;misc.c: 80: MTouchSetSensor(0, &TRISA, &LATA, 0, 0, -1, -1, -1);
 "80
 [e ( _MTouchSetSensor (4 , , , , , , , -> -> 0 `i `uc &U _TRISA &U _LATA -> -> 0 `i `uc -> -> 0 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
@@ -8872,34 +8941,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MTouchSetSensor (4 , , , , , , , -> -> 5 `i `uc &U _TRISE &U _LATE -> -> 0 `i `uc -> -> 5 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
 [; ;misc.c: 119: MTouchSetButton(KEY_M, 0, DECODE_ONE_EVENT);
 "119
-[e ( _MTouchSetButton (3 , , -> . `E9370 2 `uc -> -> 0 `i `uc -> . `E9191 4 `uc ]
+[e ( _MTouchSetButton (3 , , -> . `E9460 2 `uc -> -> 0 `i `uc -> . `E9191 4 `uc ]
 [; ;misc.c: 120: MTouchSetButton(KEY_T1, 1, DECODE_ONE_EVENT);
 "120
-[e ( _MTouchSetButton (3 , , -> . `E9370 4 `uc -> -> 1 `i `uc -> . `E9191 4 `uc ]
+[e ( _MTouchSetButton (3 , , -> . `E9460 4 `uc -> -> 1 `i `uc -> . `E9191 4 `uc ]
 [; ;misc.c: 121: MTouchSetButton(KEY_MENU, 2, DECODE_ONE_EVENT);
 "121
-[e ( _MTouchSetButton (3 , , -> . `E9370 0 `uc -> -> 2 `i `uc -> . `E9191 4 `uc ]
+[e ( _MTouchSetButton (3 , , -> . `E9460 0 `uc -> -> 2 `i `uc -> . `E9191 4 `uc ]
 [; ;misc.c: 122: MTouchSetButton(KEY_T2, 3, DECODE_ONE_EVENT);
 "122
-[e ( _MTouchSetButton (3 , , -> . `E9370 5 `uc -> -> 3 `i `uc -> . `E9191 4 `uc ]
+[e ( _MTouchSetButton (3 , , -> . `E9460 5 `uc -> -> 3 `i `uc -> . `E9191 4 `uc ]
 [; ;misc.c: 123: MTouchSetButton(KEY_START, 4, DECODE_ONE_EVENT);
 "123
-[e ( _MTouchSetButton (3 , , -> . `E9370 1 `uc -> -> 4 `i `uc -> . `E9191 4 `uc ]
+[e ( _MTouchSetButton (3 , , -> . `E9460 1 `uc -> -> 4 `i `uc -> . `E9191 4 `uc ]
 [; ;misc.c: 124: MTouchSetButton(KEY_P, 5, DECODE_ONE_EVENT);
 "124
-[e ( _MTouchSetButton (3 , , -> . `E9370 3 `uc -> -> 5 `i `uc -> . `E9191 4 `uc ]
+[e ( _MTouchSetButton (3 , , -> . `E9460 3 `uc -> -> 5 `i `uc -> . `E9191 4 `uc ]
 [; ;misc.c: 126: MTouchSetButton(KEY_MM, 0, DECODE_PRESS_REPEAT | DECODE_ONE_EVENT);
 "126
-[e ( _MTouchSetButton (3 , , -> . `E9370 6 `uc -> -> 0 `i `uc -> | -> . `E9191 3 `i -> . `E9191 4 `i `uc ]
+[e ( _MTouchSetButton (3 , , -> . `E9460 6 `uc -> -> 0 `i `uc -> | -> . `E9191 3 `i -> . `E9191 4 `i `uc ]
 [; ;misc.c: 127: MTouchSetButton(KEY_PP, 5, DECODE_PRESS_REPEAT | DECODE_ONE_EVENT);
 "127
-[e ( _MTouchSetButton (3 , , -> . `E9370 7 `uc -> -> 5 `i `uc -> | -> . `E9191 3 `i -> . `E9191 4 `i `uc ]
+[e ( _MTouchSetButton (3 , , -> . `E9460 7 `uc -> -> 5 `i `uc -> | -> . `E9191 3 `i -> . `E9191 4 `i `uc ]
 [; ;misc.c: 129: MTouchSetButton(KEY_TT1, 1, DECODE_PRESS_REPEAT);
 "129
-[e ( _MTouchSetButton (3 , , -> . `E9370 8 `uc -> -> 1 `i `uc -> . `E9191 3 `uc ]
+[e ( _MTouchSetButton (3 , , -> . `E9460 8 `uc -> -> 1 `i `uc -> . `E9191 3 `uc ]
 [; ;misc.c: 130: MTouchSetButton(KEY_TT2, 3, DECODE_PRESS_REPEAT);
 "130
-[e ( _MTouchSetButton (3 , , -> . `E9370 9 `uc -> -> 3 `i `uc -> . `E9191 3 `uc ]
+[e ( _MTouchSetButton (3 , , -> . `E9460 9 `uc -> -> 3 `i `uc -> . `E9191 3 `uc ]
 [; ;misc.c: 132: uart16_init();
 "132
 [e ( _uart16_init ..  ]
@@ -8915,18 +8984,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;misc.c: 136: RCIE = 1;
 "136
 [e = _RCIE -> -> 1 `i `b ]
-[; ;misc.c: 140: SSPSTAT = 0;
+[; ;misc.c: 139: TRISCbits.TRISC4 = 0;
+"139
+[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
+[; ;misc.c: 140: LATCbits.LATC4 = 1;
 "140
-[e = _SSPSTAT -> -> 0 `i `uc ]
-[; ;misc.c: 141: SSPCON1 = 0x32;
-"141
-[e = _SSPCON1 -> -> 50 `i `uc ]
-[; ;misc.c: 144: INTCONbits.PEIE = 1;
-"144
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+[; ;misc.c: 143: INTCONbits.PEIE = 1;
+"143
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 [; ;misc.c: 149: }
 "149
-[e :UE 1195 ]
+[e :UE 1197 ]
 }
 "173
 [v _SysDelayMs `(v ~T0 @X0 1 ef1`us ]
@@ -8937,31 +9006,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;misc.c: 174: while(delay--) {
 "174
-[e $U 1200  ]
-[e :U 1201 ]
+[e $U 1202  ]
+[e :U 1203 ]
 {
 [; ;misc.c: 175: { UINT16 d=1067; while(d--){__nop();} };
 "175
 {
 [v _d `us ~T0 @X0 1 a ]
 [e = _d -> -> 1067 `i `us ]
-[e $U 1203  ]
-[e :U 1204 ]
+[e $U 1205  ]
+[e :U 1206 ]
 {
 [e ( ___nop ..  ]
 }
-[e :U 1203 ]
-[e $ != -> -- _d -> -> 1 `i `us `ui -> -> -> 0 `i `us `ui 1204  ]
 [e :U 1205 ]
+[e $ != -> -- _d -> -> 1 `i `us `ui -> -> -> 0 `i `us `ui 1206  ]
+[e :U 1207 ]
 }
 "176
 }
-[e :U 1200 ]
-"174
-[e $ != -> -- _delay -> -> 1 `i `us `ui -> -> -> 0 `i `us `ui 1201  ]
 [e :U 1202 ]
+"174
+[e $ != -> -- _delay -> -> 1 `i `us `ui -> -> -> 0 `i `us `ui 1203  ]
+[e :U 1204 ]
 [; ;misc.c: 176: }
 [; ;misc.c: 177: }
 "177
-[e :UE 1199 ]
+[e :UE 1201 ]
 }

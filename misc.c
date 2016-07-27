@@ -133,14 +133,15 @@ void InitializeSystem(void) {
     TRISCbits.TRISC6 = 0;
     TRISCbits.TRISC7 = 1;
     RCIP = 0;
-    RCIE = 1;    
+    RCIE = 1;  
     
-    
+      
     BK_ON_TRIS = 0;
     BK_ON = 1;
 
 
     INTCONbits.PEIE = 1;
+    
     // после инициал всего
     //	INTCONbits.GIE = 1;
 

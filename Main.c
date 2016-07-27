@@ -2,8 +2,11 @@
 $Id: Main.c 201 2012-08-09 14:15:36Z Vlad $
  */
 
-#include "Main.h"
+#include    "Main.h"
 
+#include	"font13.h"
+#include	"font23.h"
+#include	"cour13.h"
 
 
 /***GLOBAL VAR*****************************************************************/
@@ -30,11 +33,30 @@ volatile int c, d;
 volatile DWORD e, f;
 volatile double k, l;
 
+char str[20];
+
+//Надписи
+Label lb_napr; // напруга
+
 void main(void) {
 
     Nop();
     InitMessages();
     InitializeSystem();
+
+
+    ks0108Init();
+    LabelCreate(&lb_napr, 0, 30, font13, 10); // напряжение
+    sprintf(str, "URA!!!!");
+    LabelSetTxt(&lb_napr, str);
+    
+    
+
+	ks0108GotoXY(40, 50);
+	ks0108PutChar(0x89, &font13, 1);
+    
+    ks0108GotoXY(34, 50);
+	ks0108PutChar(0x8a, &font13, 1);
 
 
     Nop();
@@ -43,13 +65,18 @@ void main(void) {
 
     INTCONbits.GIE = 1;
 
+    Beep(10);
+
     while(1) {
+
+
 
         tsk_display();
         tsk_process();
-        //tsk_ds18b20();
+        //tsk_ds18b20();       
 
-        Beep(10);
+
+        //Beep(10);
         Nop();
         Nop();
 

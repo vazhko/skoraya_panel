@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../lib/mTouchCap/mTouchAcquistion.c ../lib/mTouchCap/mTouchButton.c ../lib/mTouchCap/mTouchControl.c ../lib/mTouchCap/mTouchDebug.c ../lib/mTouchCap/mTouchSensor.c ../conf_bits.c ../lib/eeprom.c ../lib/usart.c ../lib/ow.c ../isr.c ../Main.c ../misc.c ../lib/sub18.c ../lib/TimeDelay.c ../lib/modbus_RTU.c ../lib/messages.c ../lib/oss/oss.c
+SOURCEFILES_QUOTED_IF_SPACED=../lib/mTouchCap/mTouchAcquistion.c ../lib/mTouchCap/mTouchButton.c ../lib/mTouchCap/mTouchControl.c ../lib/mTouchCap/mTouchDebug.c ../lib/mTouchCap/mTouchSensor.c ../conf_bits.c ../lib/eeprom.c ../lib/usart.c ../lib/ow.c ../isr.c ../Main.c ../misc.c ../lib/sub18.c ../lib/TimeDelay.c ../lib/modbus_RTU.c ../lib/messages.c ../lib/oss/oss.c ../lib/ks0108.c ../lib/delay.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1179987321/mTouchAcquistion.p1 ${OBJECTDIR}/_ext/1179987321/mTouchButton.p1 ${OBJECTDIR}/_ext/1179987321/mTouchControl.p1 ${OBJECTDIR}/_ext/1179987321/mTouchDebug.p1 ${OBJECTDIR}/_ext/1179987321/mTouchSensor.p1 ${OBJECTDIR}/_ext/1472/conf_bits.p1 ${OBJECTDIR}/_ext/1360930230/eeprom.p1 ${OBJECTDIR}/_ext/1360930230/usart.p1 ${OBJECTDIR}/_ext/1360930230/ow.p1 ${OBJECTDIR}/_ext/1472/isr.p1 ${OBJECTDIR}/_ext/1472/Main.p1 ${OBJECTDIR}/_ext/1472/misc.p1 ${OBJECTDIR}/_ext/1360930230/sub18.p1 ${OBJECTDIR}/_ext/1360930230/TimeDelay.p1 ${OBJECTDIR}/_ext/1360930230/modbus_RTU.p1 ${OBJECTDIR}/_ext/1360930230/messages.p1 ${OBJECTDIR}/_ext/1516280010/oss.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1179987321/mTouchAcquistion.p1.d ${OBJECTDIR}/_ext/1179987321/mTouchButton.p1.d ${OBJECTDIR}/_ext/1179987321/mTouchControl.p1.d ${OBJECTDIR}/_ext/1179987321/mTouchDebug.p1.d ${OBJECTDIR}/_ext/1179987321/mTouchSensor.p1.d ${OBJECTDIR}/_ext/1472/conf_bits.p1.d ${OBJECTDIR}/_ext/1360930230/eeprom.p1.d ${OBJECTDIR}/_ext/1360930230/usart.p1.d ${OBJECTDIR}/_ext/1360930230/ow.p1.d ${OBJECTDIR}/_ext/1472/isr.p1.d ${OBJECTDIR}/_ext/1472/Main.p1.d ${OBJECTDIR}/_ext/1472/misc.p1.d ${OBJECTDIR}/_ext/1360930230/sub18.p1.d ${OBJECTDIR}/_ext/1360930230/TimeDelay.p1.d ${OBJECTDIR}/_ext/1360930230/modbus_RTU.p1.d ${OBJECTDIR}/_ext/1360930230/messages.p1.d ${OBJECTDIR}/_ext/1516280010/oss.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1179987321/mTouchAcquistion.p1 ${OBJECTDIR}/_ext/1179987321/mTouchButton.p1 ${OBJECTDIR}/_ext/1179987321/mTouchControl.p1 ${OBJECTDIR}/_ext/1179987321/mTouchDebug.p1 ${OBJECTDIR}/_ext/1179987321/mTouchSensor.p1 ${OBJECTDIR}/_ext/1472/conf_bits.p1 ${OBJECTDIR}/_ext/1360930230/eeprom.p1 ${OBJECTDIR}/_ext/1360930230/usart.p1 ${OBJECTDIR}/_ext/1360930230/ow.p1 ${OBJECTDIR}/_ext/1472/isr.p1 ${OBJECTDIR}/_ext/1472/Main.p1 ${OBJECTDIR}/_ext/1472/misc.p1 ${OBJECTDIR}/_ext/1360930230/sub18.p1 ${OBJECTDIR}/_ext/1360930230/TimeDelay.p1 ${OBJECTDIR}/_ext/1360930230/modbus_RTU.p1 ${OBJECTDIR}/_ext/1360930230/messages.p1 ${OBJECTDIR}/_ext/1516280010/oss.p1 ${OBJECTDIR}/_ext/1360930230/ks0108.p1 ${OBJECTDIR}/_ext/1360930230/delay.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1179987321/mTouchAcquistion.p1.d ${OBJECTDIR}/_ext/1179987321/mTouchButton.p1.d ${OBJECTDIR}/_ext/1179987321/mTouchControl.p1.d ${OBJECTDIR}/_ext/1179987321/mTouchDebug.p1.d ${OBJECTDIR}/_ext/1179987321/mTouchSensor.p1.d ${OBJECTDIR}/_ext/1472/conf_bits.p1.d ${OBJECTDIR}/_ext/1360930230/eeprom.p1.d ${OBJECTDIR}/_ext/1360930230/usart.p1.d ${OBJECTDIR}/_ext/1360930230/ow.p1.d ${OBJECTDIR}/_ext/1472/isr.p1.d ${OBJECTDIR}/_ext/1472/Main.p1.d ${OBJECTDIR}/_ext/1472/misc.p1.d ${OBJECTDIR}/_ext/1360930230/sub18.p1.d ${OBJECTDIR}/_ext/1360930230/TimeDelay.p1.d ${OBJECTDIR}/_ext/1360930230/modbus_RTU.p1.d ${OBJECTDIR}/_ext/1360930230/messages.p1.d ${OBJECTDIR}/_ext/1516280010/oss.p1.d ${OBJECTDIR}/_ext/1360930230/ks0108.p1.d ${OBJECTDIR}/_ext/1360930230/delay.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1179987321/mTouchAcquistion.p1 ${OBJECTDIR}/_ext/1179987321/mTouchButton.p1 ${OBJECTDIR}/_ext/1179987321/mTouchControl.p1 ${OBJECTDIR}/_ext/1179987321/mTouchDebug.p1 ${OBJECTDIR}/_ext/1179987321/mTouchSensor.p1 ${OBJECTDIR}/_ext/1472/conf_bits.p1 ${OBJECTDIR}/_ext/1360930230/eeprom.p1 ${OBJECTDIR}/_ext/1360930230/usart.p1 ${OBJECTDIR}/_ext/1360930230/ow.p1 ${OBJECTDIR}/_ext/1472/isr.p1 ${OBJECTDIR}/_ext/1472/Main.p1 ${OBJECTDIR}/_ext/1472/misc.p1 ${OBJECTDIR}/_ext/1360930230/sub18.p1 ${OBJECTDIR}/_ext/1360930230/TimeDelay.p1 ${OBJECTDIR}/_ext/1360930230/modbus_RTU.p1 ${OBJECTDIR}/_ext/1360930230/messages.p1 ${OBJECTDIR}/_ext/1516280010/oss.p1
+OBJECTFILES=${OBJECTDIR}/_ext/1179987321/mTouchAcquistion.p1 ${OBJECTDIR}/_ext/1179987321/mTouchButton.p1 ${OBJECTDIR}/_ext/1179987321/mTouchControl.p1 ${OBJECTDIR}/_ext/1179987321/mTouchDebug.p1 ${OBJECTDIR}/_ext/1179987321/mTouchSensor.p1 ${OBJECTDIR}/_ext/1472/conf_bits.p1 ${OBJECTDIR}/_ext/1360930230/eeprom.p1 ${OBJECTDIR}/_ext/1360930230/usart.p1 ${OBJECTDIR}/_ext/1360930230/ow.p1 ${OBJECTDIR}/_ext/1472/isr.p1 ${OBJECTDIR}/_ext/1472/Main.p1 ${OBJECTDIR}/_ext/1472/misc.p1 ${OBJECTDIR}/_ext/1360930230/sub18.p1 ${OBJECTDIR}/_ext/1360930230/TimeDelay.p1 ${OBJECTDIR}/_ext/1360930230/modbus_RTU.p1 ${OBJECTDIR}/_ext/1360930230/messages.p1 ${OBJECTDIR}/_ext/1516280010/oss.p1 ${OBJECTDIR}/_ext/1360930230/ks0108.p1 ${OBJECTDIR}/_ext/1360930230/delay.p1
 
 # Source Files
-SOURCEFILES=../lib/mTouchCap/mTouchAcquistion.c ../lib/mTouchCap/mTouchButton.c ../lib/mTouchCap/mTouchControl.c ../lib/mTouchCap/mTouchDebug.c ../lib/mTouchCap/mTouchSensor.c ../conf_bits.c ../lib/eeprom.c ../lib/usart.c ../lib/ow.c ../isr.c ../Main.c ../misc.c ../lib/sub18.c ../lib/TimeDelay.c ../lib/modbus_RTU.c ../lib/messages.c ../lib/oss/oss.c
+SOURCEFILES=../lib/mTouchCap/mTouchAcquistion.c ../lib/mTouchCap/mTouchButton.c ../lib/mTouchCap/mTouchControl.c ../lib/mTouchCap/mTouchDebug.c ../lib/mTouchCap/mTouchSensor.c ../conf_bits.c ../lib/eeprom.c ../lib/usart.c ../lib/ow.c ../isr.c ../Main.c ../misc.c ../lib/sub18.c ../lib/TimeDelay.c ../lib/modbus_RTU.c ../lib/messages.c ../lib/oss/oss.c ../lib/ks0108.c ../lib/delay.c
 
 
 CFLAGS=
@@ -223,6 +223,22 @@ ${OBJECTDIR}/_ext/1516280010/oss.p1: ../lib/oss/oss.c  nbproject/Makefile-${CND_
 	@-${MV} ${OBJECTDIR}/_ext/1516280010/oss.d ${OBJECTDIR}/_ext/1516280010/oss.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1516280010/oss.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/_ext/1360930230/ks0108.p1: ../lib/ks0108.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1360930230" 
+	@${RM} ${OBJECTDIR}/_ext/1360930230/ks0108.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1360930230/ks0108.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=32 --float=32 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=pro -DOW_USE_CHANGING_BIT -DUSE_EE_DATA -P -N255 -I".." -I"../.." -I"../../lib/include" -I"../../lib/mTouchCap/include" -I"../../lib/oss" -I"../lib/include" -I"../lib/mTouchCap/include" -I"../lib/oss" -I"C:/Program Files (x86)/Microchip/xc8/v1.33/include" -I"." --warn=0 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,+download,-config,+clib,+plib $(COMPARISON_BUILD)  --output=-mcof,+elf --stack=compiled "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1360930230/ks0108.p1  ../lib/ks0108.c 
+	@-${MV} ${OBJECTDIR}/_ext/1360930230/ks0108.d ${OBJECTDIR}/_ext/1360930230/ks0108.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1360930230/ks0108.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1360930230/delay.p1: ../lib/delay.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1360930230" 
+	@${RM} ${OBJECTDIR}/_ext/1360930230/delay.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1360930230/delay.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=32 --float=32 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=pro -DOW_USE_CHANGING_BIT -DUSE_EE_DATA -P -N255 -I".." -I"../.." -I"../../lib/include" -I"../../lib/mTouchCap/include" -I"../../lib/oss" -I"../lib/include" -I"../lib/mTouchCap/include" -I"../lib/oss" -I"C:/Program Files (x86)/Microchip/xc8/v1.33/include" -I"." --warn=0 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,+download,-config,+clib,+plib $(COMPARISON_BUILD)  --output=-mcof,+elf --stack=compiled "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1360930230/delay.p1  ../lib/delay.c 
+	@-${MV} ${OBJECTDIR}/_ext/1360930230/delay.d ${OBJECTDIR}/_ext/1360930230/delay.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1360930230/delay.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/_ext/1179987321/mTouchAcquistion.p1: ../lib/mTouchCap/mTouchAcquistion.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1179987321" 
@@ -359,6 +375,22 @@ ${OBJECTDIR}/_ext/1516280010/oss.p1: ../lib/oss/oss.c  nbproject/Makefile-${CND_
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=32 --float=32 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=pro -DOW_USE_CHANGING_BIT -DUSE_EE_DATA -P -N255 -I".." -I"../.." -I"../../lib/include" -I"../../lib/mTouchCap/include" -I"../../lib/oss" -I"../lib/include" -I"../lib/mTouchCap/include" -I"../lib/oss" -I"C:/Program Files (x86)/Microchip/xc8/v1.33/include" -I"." --warn=0 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,+download,-config,+clib,+plib $(COMPARISON_BUILD)  --output=-mcof,+elf --stack=compiled "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1516280010/oss.p1  ../lib/oss/oss.c 
 	@-${MV} ${OBJECTDIR}/_ext/1516280010/oss.d ${OBJECTDIR}/_ext/1516280010/oss.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1516280010/oss.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1360930230/ks0108.p1: ../lib/ks0108.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1360930230" 
+	@${RM} ${OBJECTDIR}/_ext/1360930230/ks0108.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1360930230/ks0108.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=32 --float=32 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=pro -DOW_USE_CHANGING_BIT -DUSE_EE_DATA -P -N255 -I".." -I"../.." -I"../../lib/include" -I"../../lib/mTouchCap/include" -I"../../lib/oss" -I"../lib/include" -I"../lib/mTouchCap/include" -I"../lib/oss" -I"C:/Program Files (x86)/Microchip/xc8/v1.33/include" -I"." --warn=0 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,+download,-config,+clib,+plib $(COMPARISON_BUILD)  --output=-mcof,+elf --stack=compiled "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1360930230/ks0108.p1  ../lib/ks0108.c 
+	@-${MV} ${OBJECTDIR}/_ext/1360930230/ks0108.d ${OBJECTDIR}/_ext/1360930230/ks0108.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1360930230/ks0108.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1360930230/delay.p1: ../lib/delay.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1360930230" 
+	@${RM} ${OBJECTDIR}/_ext/1360930230/delay.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1360930230/delay.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=32 --float=32 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=pro -DOW_USE_CHANGING_BIT -DUSE_EE_DATA -P -N255 -I".." -I"../.." -I"../../lib/include" -I"../../lib/mTouchCap/include" -I"../../lib/oss" -I"../lib/include" -I"../lib/mTouchCap/include" -I"../lib/oss" -I"C:/Program Files (x86)/Microchip/xc8/v1.33/include" -I"." --warn=0 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,+download,-config,+clib,+plib $(COMPARISON_BUILD)  --output=-mcof,+elf --stack=compiled "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1360930230/delay.p1  ../lib/delay.c 
+	@-${MV} ${OBJECTDIR}/_ext/1360930230/delay.d ${OBJECTDIR}/_ext/1360930230/delay.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1360930230/delay.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

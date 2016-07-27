@@ -10842,7 +10842,71 @@ void T9000_set_channel(BYTE ch);
 # 42 "../lib/include\macro.h"
 extern char ___gie;
 
-# 45 "../Main.h"
+# 103 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdlib.h"
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+extern char * ltoa(long val, char * buf);
+extern char * ultoa(unsigned long val, char * buf);
+
+# 112
+extern char * ftoa(float f, int * status);
+
+# 3 "../lib/include\delay.h"
+extern unsigned char delayus_variable;
+
+# 59
+void DelayBigUs(unsigned int cnt);
+void DelayMs(unsigned char cnt);
+void DelayMs_ISR(unsigned char cnt);
+void DelayBigMs(unsigned int cnt);
+void DelayS(unsigned char cnt);
+void DelayS_ISR(unsigned char cnt);
+
+# 56 "../lib/include\ks0108.h"
+typedef unsigned char uint8_t;
+typedef unsigned int uint16_t;
+
+typedef struct {
+uint8_t x;
+uint8_t y;
+uint8_t page;
+} displayPos;
+
+
+
+
+typedef struct {
+BYTE x;
+BYTE y;
+BYTE size;
+const char *p_font;
+char str[22];
+
+} Label;
+
+# 82
+void ks0108Enable(void);
+void ks0108Fill(uint8_t mode);
+void ks0108GotoXY(uint8_t, uint8_t);
+void ks0108Init(void);
+
+BYTE ks0108PutChar(char s, const char *p_font, char mode);
+void ks0108PutString(char *string, const char *p_font, char mode);
+char ks0108ReadData(uint8_t incXAdd);
+void ks0108WriteCommand(uint8_t cmd, uint8_t chip);
+void ks0108WriteData(uint8_t data);
+
+
+void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
+void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk);
+void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy);
+
+void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
+void LabelSetTxt(Label *lb, char *str);
+void LabelClrTxt(Label *lb);
+
+# 46 "../Main.h"
 typedef enum {
 ST_INIT = 0,
 ST_EXPERIMENT_READY,
@@ -10871,7 +10935,7 @@ KEY_TT2,
 
 } KEYS;
 
-# 78
+# 79
 extern void InitializeSystem(void);
 extern void Beep(BYTE );
 extern void pwm4_load(WORD );
@@ -10922,6 +10986,8 @@ LATAbits.LATA4 = 0;
 } else {
 LATAbits.LATA4 = 1;
 }
+__nop();
+__nop();
 } else {
 LATAbits.LATA4 = 0;
 }
@@ -10934,7 +11000,7 @@ PIR5bits.TMR4IF = 0;
 
 }
 
-# 87
+# 89
 void interrupt low_priority LO_ISR(void) {
 
 char i;
@@ -11059,29 +11125,6 @@ TRISAbits.TRISA4 = 0;
 beep_timer = ms10 * 40;
 beep_count = 1;
 
-# 215
-}
-
-
-BYTE recieve_from_usb(BYTE count) {
-BYTE i;
-WORD timeout;
-
-for(i = 0; i < count; i++) {
-do __nop(); while(!RCIF && (++timeout < 10000));
-if(RCIF) {
-RxBuff[i] = getbyte();
-} else {
-return (0);
-}
-}
-
-return (1);
-}
-
-
-char wr_confirm(void) {
-if(RxBuff[0] == 0x55) return 1;
-else return 0;
+# 217
 }
 

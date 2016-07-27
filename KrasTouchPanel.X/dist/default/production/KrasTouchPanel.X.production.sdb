@@ -31,7 +31,7 @@ SENSOR_RELEASED 1
 SENSOR_PRESSED 2
 SENSOR_DISCONNECTED 128
 ]
-"153 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
+"155 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
 [e E9200 . `uc
 MES_ADC_INIT_DONE 0
 MES_ADC_INIT 1
@@ -42,15 +42,15 @@ USB_FLASH_SEND_CMD 5
 USB_FLASH_ATTACH 6
 USB_FLASH_DEATTACH 7
 ]
-"172
+"174
 [e E9210 . `uc
 SEM_IS_FLASH_COMMUNICATING 0
 SEM_RX_DONE 1
 SEM_WR_DONE 2
 SEM_WR_ERR 3
 ]
-"11 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
-[e E9359 . `uc
+"14 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
+[e E9449 . `uc
 ST_INIT 0
 ST_EXPERIMENT_READY 1
 ST_EXPERIMENT_WAITING 2
@@ -62,7 +62,7 @@ ST_VIEW_RESULTS_ASK_DEL 7
 ST_DEBUG 8
 ]
 "119 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/misc.c
-[e E9370 . `uc
+[e E9460 . `uc
 KEY_MENU 0
 KEY_START 1
 KEY_M 2
@@ -91,14 +91,22 @@ MSG_PHASE_READY 2
 [v _write_buff write_buff `(v  1 e 0 0 ]
 "33
 [v _HI_ISR HI_ISR `IIH(v  1 e 0 0 ]
-"87
+"89
 [v _LO_ISR LO_ISR `IIL(v  1 e 0 0 ]
-"202
+"204
 [v _Beep Beep `(v  1 e 0 0 ]
-"218
-[v _recieve_from_usb recieve_from_usb `(uc  1 e 1 0 ]
-"235
-[v _wr_confirm wr_confirm `(uc  1 e 1 0 ]
+"28 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/delay.c
+[v _DelayBigUs DelayBigUs `(v  1 e 0 0 ]
+"41
+[v _DelayMs DelayMs `(v  1 e 0 0 ]
+"54
+[v _DelayMs_ISR DelayMs_ISR `(v  1 e 0 0 ]
+"65
+[v _DelayBigMs DelayBigMs `(v  1 e 0 0 ]
+"77
+[v _DelayS DelayS `(v  1 e 0 0 ]
+"89
+[v _DelayS_ISR DelayS_ISR `(v  1 e 0 0 ]
 "11 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/eeprom.c
 [v _write___ee write___ee `(v  1 e 0 0 ]
 "18
@@ -107,6 +115,40 @@ MSG_PHASE_READY 2
 [v _set_ee_default set_ee_default `(v  1 e 0 0 ]
 "45
 [v _is_ee_wr is_ee_wr `(uc  1 e 1 0 ]
+"19 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ks0108.c
+[v _ks0108Enable ks0108Enable `(v  1 e 0 0 ]
+"28
+[v _ks0108Fill ks0108Fill `(v  1 e 0 0 ]
+"39
+[v _ks0108Fill_xy ks0108Fill_xy `(v  1 e 0 0 ]
+"50
+[v _ks0108GotoXY ks0108GotoXY `(v  1 e 0 0 ]
+"83
+[v _ks0108SetDot ks0108SetDot `(v  1 e 0 0 ]
+"100
+[v _ks0108ClearDot ks0108ClearDot `(v  1 e 0 0 ]
+"118
+[v _ks0108Init ks0108Init `(v  1 e 0 0 ]
+"158
+[v _ks0108ReadData ks0108ReadData `(uc  1 e 1 0 ]
+"215
+[v _ks0108WriteCommand ks0108WriteCommand `(v  1 e 0 0 ]
+"235
+[v _ks0108WriteData ks0108WriteData `(v  1 e 0 0 ]
+"281
+[v _ks0108PutChar ks0108PutChar `(uc  1 e 1 0 ]
+"339
+[v _ks0108PutString ks0108PutString `(v  1 e 0 0 ]
+"350
+[v _ks0108Line ks0108Line `(v  1 e 0 0 ]
+"395
+[v _ks0108Rect ks0108Rect `(v  1 e 0 0 ]
+"407
+[v _LabelCreate LabelCreate `(v  1 e 0 0 ]
+"424
+[v _LabelSetTxt LabelSetTxt `(v  1 e 0 0 ]
+"449
+[v _LabelClrTxt LabelClrTxt `(v  1 e 0 0 ]
 "20 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/messages.c
 [v _InitMessages InitMessages `(v  1 e 0 0 ]
 "43
@@ -219,11 +261,11 @@ MSG_PHASE_READY 2
 [v _putstr putstr `(v  1 e 0 0 ]
 "119
 [v _putstrc putstrc `(v  1 e 0 0 ]
-"33 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
+"41 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
 [v _main main `(v  1 e 0 0 ]
-"75
+"102
 [v _tsk_process tsk_process `(v  1 e 0 0 ]
-"82
+"108
 [v _tsk_display tsk_display `(v  1 e 0 0 ]
 "10 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/misc.c
 [v _pwm4_load pwm4_load `(v  1 e 0 0 ]
@@ -263,6 +305,8 @@ MSG_PHASE_READY 2
 [v ___awtofl __awtofl `(d  1 e 4 0 ]
 "32 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awtoft.c
 [v ___awtoft __awtoft `(f  1 e 4 0 ]
+"492 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
 "63 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\double.c
 [v ___flpack __flpack `(d  1 e 4 0 ]
 "88 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fladd.c
@@ -359,6 +403,8 @@ MSG_PHASE_READY 2
 [v _Read_b_eep Read_b_eep `(uc  1 e 1 0 ]
 "49 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\plib\EEP\write_B.c
 [v _Write_b_eep Write_b_eep `(v  1 e 0 0 ]
+"1 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/font13.h
+[v _font13 font13 `C[2892]uc  1 e 2892 0 ]
 "12 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
 [v _beep_timer beep_timer `VEus  1 e 2 0 ]
 "13
@@ -371,8 +417,13 @@ MSG_PHASE_READY 2
 [v _RxBuff RxBuff `VE[256]uc  1 e 256 0 ]
 "17
 [v _j_rx j_rx `VEus  1 e 2 0 ]
+"26 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/delay.c
+[v _delayus_variable delayus_variable `uc  1 e 1 0 ]
 "27 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/eeprom.c
 [v _eedata eedata `C[256]uc  1 e 256 0 ]
+[s S1748 . 3 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 page 1 2 ]
+"9 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ks0108.c
+[v _pos pos `S1748  1 e 3 0 ]
 "5 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/messages.c
 [v _Messages Messages `VE[10]uc  1 e 10 0 ]
 "12
@@ -391,20 +442,25 @@ MSG_PHASE_READY 2
 [v __sys_tick _sys_tick `VEi  1 e 2 0 ]
 "9 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/usart.c
 [v _timeout_error timeout_error `VEuc  1 e 1 0 ]
-"12 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
+"15 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
 [v _sys_tick sys_tick `VEi  1 e 2 0 ]
-"28
+"31
 [v _a a `VEuc  1 e 1 0 ]
 [v _b b `VEuc  1 e 1 0 ]
-"29
+"32
 [v _c c `VEi  1 e 2 0 ]
 [v _d d `VEi  1 e 2 0 ]
-"30
+"33
 [v _e e `VEul  1 e 4 0 ]
 [v _f f `VEul  1 e 4 0 ]
-"31
+"34
 [v _k k `VEd  1 e 4 0 ]
 [v _l l `VEd  1 e 4 0 ]
+"36
+[v _str str `[20]uc  1 e 20 0 ]
+[s S911 . 27 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 size 1 2 `*.25Cuc 1 p_font 2 3 `[22]uc 1 str 22 5 ]
+"39
+[v _lb_napr lb_napr `S911  1 e 27 0 ]
 "47 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
 "91
@@ -415,12 +471,12 @@ MSG_PHASE_READY 2
 [v _ANSELD ANSELD `VEuc  1 e 1 @3899 ]
 "251
 [v _ANSELE ANSELE `VEuc  1 e 1 @3900 ]
-[s S1163 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S1212 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
 "1820
-[s S1167 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S1216 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -428,25 +484,25 @@ MSG_PHASE_READY 2
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[u S1175 . 1 `S1163 1 . 1 0 `S1167 1 . 1 0 ]
-[v _T4CONbits T4CONbits `VES1175  1 e 1 @3921 ]
+[u S1224 . 1 `S1212 1 . 1 0 `S1216 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES1224  1 e 1 @3921 ]
 "1869
 [v _PR4 PR4 `VEuc  1 e 1 @3922 ]
 "1888
 [v _TMR4 TMR4 `VEuc  1 e 1 @3923 ]
-[s S1044 . 1 `uc 1 CCP4M 1 0 :4:0 
+[s S1093 . 1 `uc 1 CCP4M 1 0 :4:0 
 `uc 1 DC4B 1 0 :2:4 
 ]
 "2033
-[s S1047 . 1 `uc 1 CCP4M0 1 0 :1:0 
+[s S1096 . 1 `uc 1 CCP4M0 1 0 :1:0 
 `uc 1 CCP4M1 1 0 :1:1 
 `uc 1 CCP4M2 1 0 :1:2 
 `uc 1 CCP4M3 1 0 :1:3 
 `uc 1 DC4B0 1 0 :1:4 
 `uc 1 DC4B1 1 0 :1:5 
 ]
-[u S1054 . 1 `S1044 1 . 1 0 `S1047 1 . 1 0 ]
-[v _CCP4CONbits CCP4CONbits `VES1054  1 e 1 @3927 ]
+[u S1103 . 1 `S1093 1 . 1 0 `S1096 1 . 1 0 ]
+[v _CCP4CONbits CCP4CONbits `VES1103  1 e 1 @3927 ]
 "2083
 [v _CCPR4L CCPR4L `VEuc  1 e 1 @3928 ]
 "3357
@@ -460,20 +516,22 @@ MSG_PHASE_READY 2
 [v _PIE5bits PIE5bits `VES657  1 e 1 @3965 ]
 "6301
 [v _PIR5bits PIR5bits `VES657  1 e 1 @3966 ]
-[s S1285 . 1 `uc 1 TMR4IP 1 0 :1:0 
+[s S1334 . 1 `uc 1 TMR4IP 1 0 :1:0 
 `uc 1 TMR5IP 1 0 :1:1 
 `uc 1 TMR6IP 1 0 :1:2 
 ]
 "6339
-[s S1289 . 1 `uc 1 CCH05 1 0 :1:0 
+[s S1338 . 1 `uc 1 CCH05 1 0 :1:0 
 ]
-[s S1291 . 1 `uc 1 . 1 0 :1:0 
+[s S1340 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCH15 1 0 :1:1 
 ]
-[u S1294 . 1 `S1285 1 . 1 0 `S1289 1 . 1 0 `S1291 1 . 1 0 ]
-[v _IPR5bits IPR5bits `VES1294  1 e 1 @3967 ]
+[u S1343 . 1 `S1334 1 . 1 0 `S1338 1 . 1 0 `S1340 1 . 1 0 ]
+[v _IPR5bits IPR5bits `VES1343  1 e 1 @3967 ]
 "6654
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"7232
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
 "7774
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 [s S675 . 1 `uc 1 LATA0 1 0 :1:0 
@@ -513,6 +571,10 @@ MSG_PHASE_READY 2
 [v _LATAbits LATAbits `VES707  1 e 1 @3977 ]
 "7906
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
+"8086
+[v _LATCbits LATCbits `VES707  1 e 1 @3979 ]
+"8170
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
 "8302
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
 "8404
@@ -542,22 +604,37 @@ MSG_PHASE_READY 2
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "8878
 [v _TRISCbits TRISCbits `VES819  1 e 1 @3988 ]
+"9067
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "9288
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
-[s S1070 . 1 `uc 1 TUN 1 0 :6:0 
+[s S1793 . 1 `uc 1 TRISE0 1 0 :1:0 
+`uc 1 TRISE1 1 0 :1:1 
+`uc 1 TRISE2 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 WPUE3 1 0 :1:7 
+]
+"9312
+[s S1799 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+]
+[u S1803 . 1 `S1793 1 . 1 0 `S1799 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES1803  1 e 1 @3990 ]
+[s S1119 . 1 `uc 1 TUN 1 0 :6:0 
 `uc 1 PLLEN 1 0 :1:6 
 `uc 1 INTSRC 1 0 :1:7 
 ]
 "9423
-[s S1074 . 1 `uc 1 TUN0 1 0 :1:0 
+[s S1123 . 1 `uc 1 TUN0 1 0 :1:0 
 `uc 1 TUN1 1 0 :1:1 
 `uc 1 TUN2 1 0 :1:2 
 `uc 1 TUN3 1 0 :1:3 
 `uc 1 TUN4 1 0 :1:4 
 `uc 1 TUN5 1 0 :1:5 
 ]
-[u S1081 . 1 `S1070 1 . 1 0 `S1074 1 . 1 0 ]
-[v _OSCTUNEbits OSCTUNEbits `VES1081  1 e 1 @3995 ]
+[u S1130 . 1 `S1119 1 . 1 0 `S1123 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES1130  1 e 1 @3995 ]
 [s S589 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
@@ -585,7 +662,7 @@ MSG_PHASE_READY 2
 "11720
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "13733
-[v _T2CONbits T2CONbits `VES1175  1 e 1 @4026 ]
+[v _T2CONbits T2CONbits `VES1224  1 e 1 @4026 ]
 "13782
 [v _PR2 PR2 `VEuc  1 e 1 @4027 ]
 "13801
@@ -650,26 +727,22 @@ MSG_PHASE_READY 2
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "14231
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-"14698
-[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
-"14977
-[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
-[s S1096 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S1145 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "16608
-[s S1098 . 1 `uc 1 . 1 0 :1:0 
+[s S1147 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S1101 . 1 `uc 1 . 1 0 :2:0 
+[s S1150 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S1104 . 1 `uc 1 . 1 0 :3:0 
+[s S1153 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S1107 . 1 `uc 1 . 1 0 :4:0 
+[s S1156 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S1110 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S1159 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -678,17 +751,17 @@ MSG_PHASE_READY 2
 `uc 1 SBOREN 1 0 :1:6 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S1119 . 1 `uc 1 BOR 1 0 :1:0 
+[s S1168 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
 `uc 1 RI 1 0 :1:4 
 ]
-[u S1125 . 1 `S1096 1 . 1 0 `S1098 1 . 1 0 `S1101 1 . 1 0 `S1104 1 . 1 0 `S1107 1 . 1 0 `S1110 1 . 1 0 `S1119 1 . 1 0 ]
-[v _RCONbits RCONbits `VES1125  1 e 1 @4048 ]
+[u S1174 . 1 `S1145 1 . 1 0 `S1147 1 . 1 0 `S1150 1 . 1 0 `S1153 1 . 1 0 `S1156 1 . 1 0 `S1159 1 . 1 0 `S1168 1 . 1 0 ]
+[v _RCONbits RCONbits `VES1174  1 e 1 @4048 ]
 "16780
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-[s S926 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S964 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -698,7 +771,7 @@ MSG_PHASE_READY 2
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "17681
-[s S935 . 1 `uc 1 . 1 0 :1:0 
+[s S973 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -707,12 +780,12 @@ MSG_PHASE_READY 2
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S944 . 1 `uc 1 . 1 0 :6:0 
+[s S982 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S961 . 1 `S926 1 . 1 0 `S935 1 . 1 0 `S944 1 . 1 0 `S935 1 . 1 0 `S944 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES961  1 e 1 @4082 ]
+[u S999 . 1 `S964 1 . 1 0 `S973 1 . 1 0 `S982 1 . 1 0 `S973 1 . 1 0 `S982 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES999  1 e 1 @4082 ]
 "18342
 [v _BRG161 BRG161 `VEb  1 e 0 @32195 ]
 "18346
@@ -731,6 +804,18 @@ MSG_PHASE_READY 2
 [v _FERR1 FERR1 `VEb  1 e 0 @32090 ]
 "18844
 [v _GIE GIE `VEb  1 e 0 @32663 ]
+"19042
+[v _LATC0 LATC0 `VEb  1 e 0 @31832 ]
+"19046
+[v _LATC2 LATC2 `VEb  1 e 0 @31834 ]
+"19048
+[v _LATC3 LATC3 `VEb  1 e 0 @31835 ]
+"19074
+[v _LATE0 LATE0 `VEb  1 e 0 @31848 ]
+"19076
+[v _LATE1 LATE1 `VEb  1 e 0 @31849 ]
+"19078
+[v _LATE2 LATE2 `VEb  1 e 0 @31850 ]
 "19256
 [v _OERR1 OERR1 `VEb  1 e 0 @32089 ]
 "19528
@@ -757,7 +842,7 @@ MSG_PHASE_READY 2
 [v _TXEN1 TXEN1 `VEb  1 e 0 @32101 ]
 "20306
 [v _TXIE TXIE `VEb  1 e 0 @31980 ]
-[s S1618 . 1 `uc 1 RD 1 0 :1:0 
+[s S2000 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -767,11 +852,11 @@ MSG_PHASE_READY 2
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "10536 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic18f46k22.h
-[s S1627 . 1 `uc 1 . 1 0 :6:0 
+[s S2009 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S1630 . 1 `S1618 1 . 1 0 `S1627 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES1630  1 e 1 @4006 ]
+[u S2012 . 1 `S2000 1 . 1 0 `S2009 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES2012  1 e 1 @4006 ]
 "10580
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "10599
@@ -780,33 +865,228 @@ MSG_PHASE_READY 2
 [v _EEADR EEADR `VEuc  1 e 1 @4009 ]
 "10687
 [v _EEADRH EEADRH `VEuc  1 e 1 @4010 ]
-"33 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
+"41 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
 [v _main main `(v  1 e 0 0 ]
 {
-"72
+"99
 } 0
-"75
+"102
 [v _tsk_process tsk_process `(v  1 e 0 0 ]
 {
-"79
+"105
 } 0
-"82
+"108
 [v _tsk_display tsk_display `(v  1 e 0 0 ]
 {
-"85
+"111
+} 0
+"492 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.30uc  1 a 1 wreg ]
+"499
+[v sprintf@c c `c  1 a 1 41 ]
+"492
+[v sprintf@sp sp `*.30uc  1 a 1 wreg ]
+[v sprintf@f f `*.25Cuc  1 p 2 39 ]
+[v sprintf@sp sp `*.30uc  1 a 1 42 ]
+"1550
+} 0
+"118 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ks0108.c
+[v _ks0108Init ks0108Init `(v  1 e 0 0 ]
+{
+"155
+} 0
+"28
+[v _ks0108Fill ks0108Fill `(v  1 e 0 0 ]
+{
+[v ks0108Fill@mode mode `uc  1 a 1 wreg ]
+"29
+[v ks0108Fill@i i `uc  1 a 1 2 ]
+[v ks0108Fill@j j `uc  1 a 1 1 ]
+"28
+[v ks0108Fill@mode mode `uc  1 a 1 wreg ]
+"31
+[v ks0108Fill@mode mode `uc  1 a 1 0 ]
+"36
+} 0
+"41 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/delay.c
+[v _DelayMs DelayMs `(v  1 e 0 0 ]
+{
+[v DelayMs@cnt cnt `uc  1 a 1 wreg ]
+"43
+[v DelayMs@i i `uc  1 a 1 40 ]
+"41
+[v DelayMs@cnt cnt `uc  1 a 1 wreg ]
+[v DelayMs@cnt cnt `uc  1 a 1 39 ]
+"51
 } 0
 "110 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/messages.c
 [v _ProcessMessages ProcessMessages `(v  1 e 0 0 ]
 {
 "111
-[v ProcessMessages@i i `uc  1 a 1 0 ]
+[v ProcessMessages@i i `uc  1 a 1 39 ]
 "123
+} 0
+"407 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ks0108.c
+[v _LabelCreate LabelCreate `(v  1 e 0 0 ]
+{
+[s S911 . 27 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 size 1 2 `*.25Cuc 1 p_font 2 3 `[22]uc 1 str 22 5 ]
+[v LabelCreate@lb lb `*.30S911  1 a 1 wreg ]
+"409
+[v LabelCreate@i i `uc  1 a 1 36 ]
+"407
+[v LabelCreate@lb lb `*.30S911  1 a 1 wreg ]
+[v LabelCreate@x x `uc  1 p 1 31 ]
+[v LabelCreate@y y `uc  1 p 1 32 ]
+[v LabelCreate@font font `*.25Cuc  1 p 2 33 ]
+[v LabelCreate@ln ln `uc  1 p 1 35 ]
+"410
+"407
+[v LabelCreate@lb lb `*.30S911  1 a 1 37 ]
+"421
+} 0
+"424
+[v _LabelSetTxt LabelSetTxt `(v  1 e 0 0 ]
+{
+[s S911 . 27 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 size 1 2 `*.25Cuc 1 p_font 2 3 `[22]uc 1 str 22 5 ]
+[v LabelSetTxt@lb lb `*.30S911  1 a 1 wreg ]
+"426
+[v LabelSetTxt@i i `uc  1 a 1 29 ]
+[v LabelSetTxt@temp temp `uc  1 a 1 28 ]
+"424
+[v LabelSetTxt@lb lb `*.30S911  1 a 1 wreg ]
+[v LabelSetTxt@str str `*.30uc  1 p 1 46 ]
+"426
+"424
+[v LabelSetTxt@lb lb `*.30S911  1 a 1 30 ]
+"446
+} 0
+"281
+[v _ks0108PutChar ks0108PutChar `(uc  1 e 1 0 ]
+{
+[v ks0108PutChar@s s `uc  1 a 1 wreg ]
+"283
+[v ks0108PutChar@base base `us  1 a 2 26 ]
+"287
+[v ks0108PutChar@pChImage pChImage `*.25Cuc  1 a 2 15 ]
+"286
+[v ks0108PutChar@mask mask `uc  1 a 1 25 ]
+"285
+[v ks0108PutChar@x x `uc  1 a 1 24 ]
+[v ks0108PutChar@y y `uc  1 a 1 23 ]
+[v ks0108PutChar@chWidth chWidth `uc  1 a 1 22 ]
+"284
+[v ks0108PutChar@y_ y_ `uc  1 a 1 21 ]
+[v ks0108PutChar@x_ x_ `uc  1 a 1 20 ]
+"286
+[v ks0108PutChar@temp temp `uc  1 a 1 19 ]
+"285
+[v ks0108PutChar@yCnt yCnt `uc  1 a 1 18 ]
+[v ks0108PutChar@xCnt xCnt `uc  1 a 1 17 ]
+"286
+[v ks0108PutChar@_fontWidth _fontWidth `uc  1 a 1 14 ]
+[v ks0108PutChar@_fontHeight _fontHeight `uc  1 a 1 13 ]
+"281
+[v ks0108PutChar@s s `uc  1 a 1 wreg ]
+[v ks0108PutChar@p_font p_font `*.25Cuc  1 p 2 7 ]
+[v ks0108PutChar@mode mode `uc  1 p 1 9 ]
+"286
+[v ks0108PutChar@s s `uc  1 a 1 12 ]
+"336
+} 0
+"83
+[v _ks0108SetDot ks0108SetDot `(v  1 e 0 0 ]
+{
+[v ks0108SetDot@x x `uc  1 a 1 wreg ]
+"84
+[v ks0108SetDot@data data `uc  1 a 1 6 ]
+"83
+[v ks0108SetDot@x x `uc  1 a 1 wreg ]
+[v ks0108SetDot@y y `uc  1 p 1 45 ]
+"86
+[v ks0108SetDot@x x `uc  1 a 1 5 ]
+"97
+} 0
+"100
+[v _ks0108ClearDot ks0108ClearDot `(v  1 e 0 0 ]
+{
+[v ks0108ClearDot@x x `uc  1 a 1 wreg ]
+"101
+[v ks0108ClearDot@data data `uc  1 a 1 6 ]
+"100
+[v ks0108ClearDot@x x `uc  1 a 1 wreg ]
+[v ks0108ClearDot@y y `uc  1 p 1 45 ]
+"103
+[v ks0108ClearDot@x x `uc  1 a 1 5 ]
+"113
+} 0
+"235
+[v _ks0108WriteData ks0108WriteData `(v  1 e 0 0 ]
+{
+[v ks0108WriteData@data data `uc  1 a 1 wreg ]
+[v ks0108WriteData@data data `uc  1 a 1 wreg ]
+"237
+[v ks0108WriteData@data data `uc  1 a 1 41 ]
+"278
+} 0
+"158
+[v _ks0108ReadData ks0108ReadData `(uc  1 e 1 0 ]
+{
+[v ks0108ReadData@incXAdd incXAdd `uc  1 a 1 wreg ]
+"160
+[v ks0108ReadData@i i `VEuc  1 a 1 2 ]
+"159
+[v ks0108ReadData@data data `uc  1 a 1 1 ]
+"158
+[v ks0108ReadData@incXAdd incXAdd `uc  1 a 1 wreg ]
+"166
+[v ks0108ReadData@incXAdd incXAdd `uc  1 a 1 0 ]
+"212
+} 0
+"50
+[v _ks0108GotoXY ks0108GotoXY `(v  1 e 0 0 ]
+{
+[v ks0108GotoXY@x x `uc  1 a 1 wreg ]
+"51
+[v ks0108GotoXY@cmd cmd `uc  1 a 1 43 ]
+[v ks0108GotoXY@chip chip `uc  1 a 1 42 ]
+"50
+[v ks0108GotoXY@x x `uc  1 a 1 wreg ]
+[v ks0108GotoXY@y y `uc  1 p 1 41 ]
+[v ks0108GotoXY@x x `uc  1 a 1 44 ]
+"80
+} 0
+"215
+[v _ks0108WriteCommand ks0108WriteCommand `(v  1 e 0 0 ]
+{
+[v ks0108WriteCommand@cmd cmd `uc  1 a 1 wreg ]
+[v ks0108WriteCommand@cmd cmd `uc  1 a 1 wreg ]
+[v ks0108WriteCommand@chip chip `uc  1 p 1 39 ]
+"217
+[v ks0108WriteCommand@cmd cmd `uc  1 a 1 40 ]
+"232
+} 0
+"19
+[v _ks0108Enable ks0108Enable `(v  1 e 0 0 ]
+{
+"25
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 43 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 39 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 41 ]
+"53
 } 0
 "24 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/misc.c
 [v _InitializeSystem InitializeSystem `(v  1 e 0 0 ]
 {
 "36
-[v InitializeSystem@pll_startup_counter pll_startup_counter `ui  1 a 2 16 ]
+[v InitializeSystem@pll_startup_counter pll_startup_counter `ui  1 a 2 11 ]
 "149
 } 0
 "27 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/usart.c
@@ -820,7 +1100,7 @@ MSG_PHASE_READY 2
 [v MTouchSetSensor@sensorNumber sensorNumber `uc  1 a 1 wreg ]
 [s S21 tag_SENSOR 32 `l 1 average 4 0 `l 1 oversampleFilterData 4 4 `*.39VEuc 1 trisReg 2 8 `*.39VEuc 1 latReg 2 10 `s 1 decimateFilterData 2 12 `us 1 sampleCounter 2 14 `us 1 samplesNumber 2 16 `us 1 pressThreshold 2 18 `us 1 releaseThreshold 2 20 `us 1 averageCount 2 22 `us 1 delta 2 24 `us 1 debounceCount 2 26 `uc 1 state 1 28 `uc 1 ioMask 1 29 `uc 1 channelNumber 1 30 `c 1 chargeDelay 1 31 ]
 "81
-[v MTouchSetSensor@pSensor pSensor `*.39S21  1 a 2 14 ]
+[v MTouchSetSensor@pSensor pSensor `*.39S21  1 a 2 42 ]
 "78
 [v MTouchSetSensor@sensorNumber sensorNumber `uc  1 a 1 wreg ]
 [v MTouchSetSensor@tris tris `*.39VEuc  1 p 2 0 ]
@@ -832,7 +1112,7 @@ MSG_PHASE_READY 2
 [v MTouchSetSensor@oversampling oversampling `s  1 p 2 8 ]
 [v MTouchSetSensor@chargeDelay chargeDelay `c  1 p 1 10 ]
 "83
-[v MTouchSetSensor@sensorNumber sensorNumber `uc  1 a 1 13 ]
+[v MTouchSetSensor@sensorNumber sensorNumber `uc  1 a 1 41 ]
 "122
 } 0
 "68 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchButton.c
@@ -842,13 +1122,13 @@ MSG_PHASE_READY 2
 [s S21 tag_SENSOR 32 `l 1 average 4 0 `l 1 oversampleFilterData 4 4 `*.39VEuc 1 trisReg 2 8 `*.39VEuc 1 latReg 2 10 `s 1 decimateFilterData 2 12 `us 1 sampleCounter 2 14 `us 1 samplesNumber 2 16 `us 1 pressThreshold 2 18 `us 1 releaseThreshold 2 20 `us 1 averageCount 2 22 `us 1 delta 2 24 `us 1 debounceCount 2 26 `uc 1 state 1 28 `uc 1 ioMask 1 29 `uc 1 channelNumber 1 30 `c 1 chargeDelay 1 31 ]
 "69
 [s S180 tag_MTOUCHBUTTON 8 `uc 1 state 1 0 `uc 1 curState 1 1 `uc 1 decode 1 2 `uc 1 prevSensorState 1 3 `*.39S21 1 pSensor 2 4 `s 1 pressCounter 2 6 ]
-[v MTouchSetButton@pButton pButton `*.30S180  1 a 1 5 ]
+[v MTouchSetButton@pButton pButton `*.39S180  1 a 2 44 ]
 "68
 [v MTouchSetButton@buttonNumber buttonNumber `uc  1 a 1 wreg ]
-[v MTouchSetButton@sensorNumber sensorNumber `uc  1 p 1 0 ]
-[v MTouchSetButton@decode decode `uc  1 p 1 1 ]
+[v MTouchSetButton@sensorNumber sensorNumber `uc  1 p 1 39 ]
+[v MTouchSetButton@decode decode `uc  1 p 1 40 ]
 "71
-[v MTouchSetButton@buttonNumber buttonNumber `uc  1 a 1 4 ]
+[v MTouchSetButton@buttonNumber buttonNumber `uc  1 a 1 43 ]
 "79
 } 0
 "125 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchSensor.c
@@ -860,27 +1140,27 @@ MSG_PHASE_READY 2
 [v _InitMessages InitMessages `(v  1 e 0 0 ]
 {
 "21
-[v InitMessages@i i `uc  1 a 1 0 ]
+[v InitMessages@i i `uc  1 a 1 39 ]
 "40
 } 0
-"202 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
+"204 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
 [v _Beep Beep `(v  1 e 0 0 ]
 {
 [v Beep@ms10 ms10 `uc  1 a 1 wreg ]
 [v Beep@ms10 ms10 `uc  1 a 1 wreg ]
-"204
-[v Beep@ms10 ms10 `uc  1 a 1 0 ]
-"215
+"206
+[v Beep@ms10 ms10 `uc  1 a 1 39 ]
+"217
 } 0
-"87
+"89
 [v _LO_ISR LO_ISR `IIL(v  1 e 0 0 ]
 {
-"89
+"91
 [v LO_ISR@i i `uc  1 a 1 34 ]
-"90
+"92
 [v LO_ISR@lcData lcData `uc  1 a 1 33 ]
 [v LO_ISR@lcAdr lcAdr `uc  1 a 1 32 ]
-"199
+"201
 } 0
 "97 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/usart.c
 [v _timed_getc timed_getc `(uc  1 e 1 0 ]
@@ -1017,7 +1297,7 @@ MSG_PHASE_READY 2
 {
 "35
 [v HI_ISR@beep beep `uc  1 s 1 beep ]
-"68
+"70
 } 0
 "249 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchSensor.c
 [v _MTouchAcquisition MTouchAcquisition `(v  1 e 0 0 ]

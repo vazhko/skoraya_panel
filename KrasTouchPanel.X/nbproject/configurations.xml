@@ -56,6 +56,8 @@
       <itemPath>../lib/modbus_RTU.c</itemPath>
       <itemPath>../lib/messages.c</itemPath>
       <itemPath>../lib/oss/oss.c</itemPath>
+      <itemPath>../lib/ks0108.c</itemPath>
+      <itemPath>../lib/delay.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -177,6 +179,7 @@
         <property key="program-the-device-with-default-config-words" value="false"/>
       </HI-TECH-LINK>
       <PICkit3PlatformTool>
+        <property key="firmware.download.all" value="false"/>
         <property key="tracecontrol.medium" value="1"/>
         <property key="tracecontrol.portselect" value="0"/>
         <property key="tracecontrol.select" value="0"/>

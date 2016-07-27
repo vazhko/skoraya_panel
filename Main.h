@@ -29,6 +29,7 @@ $Id: Main.h 202 2012-08-09 14:17:18Z Vlad $
 #include "modbus_RTU.h"
 #include "sub18.h"
 #include "macro.h"
+#include "ks0108.h"
 
 
 /***************************************************************************/
