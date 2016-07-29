@@ -15,10 +15,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _DC2B1 `Vb ~T0 @X0 0 e@31541 ]
 "18720
 [v _DC2B0 `Vb ~T0 @X0 0 e@31540 ]
-"8625
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"7906
-[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
 [; ;include\math.h: 3: extern double fabs(double);
 [; ;include\math.h: 4: extern double floor(double);
 [; ;include\math.h: 5: extern double ceil(double);
@@ -8633,48 +8629,4 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;sub18.c: 134: }
 "134
 [e :UE 1227 ]
-}
-"138
-[v _T9000_set_channel `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;sub18.c: 138: void T9000_set_channel(BYTE ch) {
-[e :U _T9000_set_channel ]
-[v _ch `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;sub18.c: 140: TRISB &= 0b11000111;
-"140
-[e =& _TRISB -> -> 199 `i `uc ]
-[; ;sub18.c: 142: if ((ch) & (1 <<(0))) ((LATB) |= (1 << (3)));
-"142
-[e $ ! != & -> _ch `i << -> 1 `i -> 0 `i -> 0 `i 1229  ]
-[e =| _LATB -> << -> 1 `i -> 3 `i `uc ]
-[e $U 1230  ]
-"143
-[e :U 1229 ]
-[; ;sub18.c: 143: else ((LATB) &= ~(1 << (3)));
-[e =& _LATB -> ~ << -> 1 `i -> 3 `i `uc ]
-[e :U 1230 ]
-[; ;sub18.c: 144: if ((ch) & (1 <<(1))) ((LATB) |= (1 << (4)));
-"144
-[e $ ! != & -> _ch `i << -> 1 `i -> 1 `i -> 0 `i 1231  ]
-[e =| _LATB -> << -> 1 `i -> 4 `i `uc ]
-[e $U 1232  ]
-"145
-[e :U 1231 ]
-[; ;sub18.c: 145: else ((LATB) &= ~(1 << (4)));
-[e =& _LATB -> ~ << -> 1 `i -> 4 `i `uc ]
-[e :U 1232 ]
-[; ;sub18.c: 146: if ((ch) & (1 <<(2))) ((LATB) |= (1 << (5)));
-"146
-[e $ ! != & -> _ch `i << -> 1 `i -> 2 `i -> 0 `i 1233  ]
-[e =| _LATB -> << -> 1 `i -> 5 `i `uc ]
-[e $U 1234  ]
-"147
-[e :U 1233 ]
-[; ;sub18.c: 147: else ((LATB) &= ~(1 << (5)));
-[e =& _LATB -> ~ << -> 1 `i -> 5 `i `uc ]
-[e :U 1234 ]
-[; ;sub18.c: 148: }
-"148
-[e :UE 1228 ]
 }

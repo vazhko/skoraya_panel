@@ -74,6 +74,8 @@ void InitializeSystem(void) {
     ANSELC = 0b00000000;
     ANSELD = 0b00000000;
     ANSELE = 0b00000000;
+    
+    CCP5CON = 0;
 
     // STEP 2
     // Sensors initialization. All sensors must be initialized (see MTOUCH_SENSORS_NUMBER in mTouchConfig.h).
@@ -128,12 +130,12 @@ void InitializeSystem(void) {
     MTouchSetButton(KEY_6_ROZ_ON, 6, DECODE_ONE_EVENT);
     MTouchSetButton(KEY_7_LT_OUT_BACK, 7, DECODE_ONE_EVENT);
     MTouchSetButton(KEY_8_LT_OUT_SIDE, 8, DECODE_ONE_EVENT);
-    MTouchSetButton(KEY_9_LT_SHELF_M, 9, DECODE_ONE_EVENT);
-    MTouchSetButton(KEY_10_LT_SHELF_P, 10, DECODE_ONE_EVENT);
+    MTouchSetButton(KEY_9_LT_KOND_M, 9, DECODE_ONE_EVENT);
+    MTouchSetButton(KEY_10_LT_KOND_P, 10, DECODE_ONE_EVENT);
     
 
-    MTouchSetButton(KEY_2_LT_SALON_MM, 2, DECODE_PRESS_REPEAT | DECODE_ONE_EVENT);
-    MTouchSetButton(KEY_3_LT_SALON_PP, 3, DECODE_PRESS_REPEAT | DECODE_ONE_EVENT);   
+    MTouchSetButton(KEY_2_LT_SALON_MM, 2, DECODE_PRESS_REPEAT /*| DECODE_ONE_EVENT*/);
+    MTouchSetButton(KEY_3_LT_SALON_PP, 3, DECODE_PRESS_REPEAT /*| DECODE_ONE_EVENT*/);   
 
     uart16_init();
     TRISCbits.TRISC6 = 0;

@@ -152,6 +152,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ANSELD `Vuc ~T0 @X0 0 e@3899 ]
 "251
 [v _ANSELE `Vuc ~T0 @X0 0 e@3900 ]
+"1907
+[v _CCP5CON `Vuc ~T0 @X0 0 e@3924 ]
 "268 ../lib/mTouchCap/include\mTouchSensor.h
 [v _MTouchSetSensor `(v ~T0 @X0 0 ef8`uc`*Vuc`*Vuc`uc`uc`s`s`c ]
 "8625 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
@@ -164,9 +166,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATA `Vuc ~T0 @X0 0 e@3977 ]
 "107 ../lib/mTouchCap/include\mTouchButton.h
 [v _MTouchSetButton `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"122 ../misc.c
+"124 ../misc.c
 [c E9449 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
-[n E9449 . KEY_0_AVT_PWR_220 KEY_1_LT_NOSHY KEY_2_LT_SALON_M KEY_3_LT_SALON_P KEY_4_VENT_OUT KEY_5_VENT_IN KEY_6_ROZ_ON KEY_7_LT_OUT_BACK KEY_8_LT_OUT_SIDE KEY_9_LT_SHELF_M KEY_10_LT_SHELF_P KEY_2_LT_SALON_MM KEY_3_LT_SALON_PP  ]
+[n E9449 . KEY_0_AVT_PWR_220 KEY_1_LT_NOSHY KEY_2_LT_SALON_M KEY_3_LT_SALON_P KEY_4_VENT_OUT KEY_5_VENT_IN KEY_6_ROZ_ON KEY_7_LT_OUT_BACK KEY_8_LT_OUT_SIDE KEY_9_LT_KOND_M KEY_10_LT_KOND_P KEY_2_LT_SALON_MM KEY_3_LT_SALON_PP  ]
 [c E9191 1 2 4 8 16 .. ]
 [n E9191 _MTOUCHCONTROLDECODE_ DECODE_TOGGLE DECODE_PRESS_RELEASE DECODE_MOST_PRESSED DECODE_PRESS_REPEAT DECODE_ONE_EVENT  ]
 "146 ../lib/include\usart.h
@@ -8741,10 +8743,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\messages.h: 46: extern void ProcessMessages(void);
 [; ;include\TimeDelay.h: 60: void _Delay10us(UINT32 tenMicroSecondCounter);
 [; ;include\TimeDelay.h: 81: void _DelayMs(UINT16 ms);
-[; ;eeprom.h: 119: void write___ee(unsigned int adr, unsigned char *var, unsigned char byte);
-[; ;eeprom.h: 120: void read___ee(unsigned int adr, unsigned char *var, unsigned char byte);
-[; ;eeprom.h: 121: void set_ee_default(void);
-[; ;eeprom.h: 131: unsigned char is_ee_wr(unsigned int adr);
+[; ;eeprom.h: 85: void write___ee(unsigned int adr, unsigned char *var, unsigned char byte);
+[; ;eeprom.h: 86: void read___ee(unsigned int adr, unsigned char *var, unsigned char byte);
+[; ;eeprom.h: 87: void set_ee_default(void);
+[; ;eeprom.h: 97: unsigned char is_ee_wr(unsigned int adr);
 [; ;include\ow.h: 96: void ow_delay(unsigned int del);
 [; ;include\ow.h: 99: double ds18b20_read(void);
 [; ;include\ow.h: 100: void ds18b20_start(void);
@@ -8816,23 +8818,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\ks0108.h: 70: BYTE y;
 [; ;include\ks0108.h: 71: BYTE size;
 [; ;include\ks0108.h: 72: const char *p_font;
-[; ;include\ks0108.h: 73: char str[22];
+[; ;include\ks0108.h: 73: char str[31];
 [; ;include\ks0108.h: 75: } Label;
-[; ;include\ks0108.h: 82: void ks0108Enable(void);
-[; ;include\ks0108.h: 83: void ks0108Fill(uint8_t mode);
-[; ;include\ks0108.h: 84: void ks0108GotoXY(uint8_t, uint8_t);
-[; ;include\ks0108.h: 85: void ks0108Init(void);
-[; ;include\ks0108.h: 87: BYTE ks0108PutChar(char s, const char *p_font, char mode);
-[; ;include\ks0108.h: 88: void ks0108PutString(char *string, const char *p_font, char mode);
-[; ;include\ks0108.h: 89: char ks0108ReadData(uint8_t incXAdd);
-[; ;include\ks0108.h: 90: void ks0108WriteCommand(uint8_t cmd, uint8_t chip);
-[; ;include\ks0108.h: 91: void ks0108WriteData(uint8_t data);
-[; ;include\ks0108.h: 94: void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
-[; ;include\ks0108.h: 95: void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk);
-[; ;include\ks0108.h: 96: void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy);
-[; ;include\ks0108.h: 98: void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
-[; ;include\ks0108.h: 99: void LabelSetTxt(Label *lb, char *str);
-[; ;include\ks0108.h: 100: void LabelClrTxt(Label *lb);
+[; ;include\ks0108.h: 80: void ks0108Enable(void);
+[; ;include\ks0108.h: 81: void ks0108Fill(uint8_t mode);
+[; ;include\ks0108.h: 82: void ks0108GotoXY(uint8_t, uint8_t);
+[; ;include\ks0108.h: 83: void ks0108Init(void);
+[; ;include\ks0108.h: 85: BYTE ks0108PutChar(char s, const char *p_font, char mode);
+[; ;include\ks0108.h: 86: void ks0108PutString(char *string, const char *p_font, char mode);
+[; ;include\ks0108.h: 87: char ks0108ReadData(uint8_t incXAdd);
+[; ;include\ks0108.h: 88: void ks0108WriteCommand(uint8_t cmd, uint8_t chip);
+[; ;include\ks0108.h: 89: void ks0108WriteData(uint8_t data);
+[; ;include\ks0108.h: 92: void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
+[; ;include\ks0108.h: 93: void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk);
+[; ;include\ks0108.h: 94: void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy);
+[; ;include\ks0108.h: 96: void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
+[; ;include\ks0108.h: 97: void LabelSetTxt(Label *lb, char *str);
+[; ;include\ks0108.h: 98: void LabelClrTxt(Label *lb);
 [; ;Main.h: 62: typedef enum {
 [; ;Main.h: 63: KEY_0_AVT_PWR_220 = 0,
 [; ;Main.h: 64: KEY_1_LT_NOSHY,
@@ -8843,14 +8845,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.h: 69: KEY_6_ROZ_ON,
 [; ;Main.h: 70: KEY_7_LT_OUT_BACK,
 [; ;Main.h: 71: KEY_8_LT_OUT_SIDE,
-[; ;Main.h: 72: KEY_9_LT_SHELF_M,
-[; ;Main.h: 73: KEY_10_LT_SHELF_P,
+[; ;Main.h: 72: KEY_9_LT_KOND_M,
+[; ;Main.h: 73: KEY_10_LT_KOND_P,
 [; ;Main.h: 75: KEY_2_LT_SALON_MM,
 [; ;Main.h: 76: KEY_3_LT_SALON_PP,
 [; ;Main.h: 77: } KEYS;
-[; ;Main.h: 84: extern void InitializeSystem(void);
-[; ;Main.h: 85: extern void Beep(BYTE );
-[; ;Main.h: 86: extern void pwm4_load(WORD );
+[; ;Main.h: 79: typedef struct {
+[; ;Main.h: 80: BYTE st_12V;
+[; ;Main.h: 81: BYTE st_220V;
+[; ;Main.h: 82: BYTE st_lt_back;
+[; ;Main.h: 83: BYTE st_lt_side;
+[; ;Main.h: 84: BYTE st_lt_noshy;
+[; ;Main.h: 85: BYTE st_lt_salon;
+[; ;Main.h: 86: BYTE st_lt_blue;
+[; ;Main.h: 87: BYTE st_fan;
+[; ;Main.h: 88: BYTE st_kond;
+[; ;Main.h: 89: }status_t;
+[; ;Main.h: 96: extern void InitializeSystem(void);
+[; ;Main.h: 97: extern void Beep(BYTE );
+[; ;Main.h: 98: extern void pwm4_load(WORD );
 [; ;include\math.h: 3: extern double fabs(double);
 [; ;include\math.h: 4: extern double floor(double);
 [; ;include\math.h: 5: extern double ceil(double);
@@ -8888,30 +8901,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;misc.c: 12: if(load & 1) CCP4CONbits.DC4B0 = 1;
 "12
-[e $ ! != & -> _load `ui -> -> 1 `i `ui -> -> 0 `i `ui 1193  ]
+[e $ ! != & -> _load `ui -> -> 1 `i `ui -> -> 0 `i `ui 1194  ]
 [e = . . _CCP4CONbits 1 4 -> -> 1 `i `uc ]
-[e $U 1194  ]
+[e $U 1195  ]
 "13
-[e :U 1193 ]
+[e :U 1194 ]
 [; ;misc.c: 13: else CCP4CONbits.DC4B0 = 0;
 [e = . . _CCP4CONbits 1 4 -> -> 0 `i `uc ]
-[e :U 1194 ]
+[e :U 1195 ]
 [; ;misc.c: 14: if(load & 2) CCP4CONbits.DC4B1 = 1;
 "14
-[e $ ! != & -> _load `ui -> -> 2 `i `ui -> -> 0 `i `ui 1195  ]
+[e $ ! != & -> _load `ui -> -> 2 `i `ui -> -> 0 `i `ui 1196  ]
 [e = . . _CCP4CONbits 1 5 -> -> 1 `i `uc ]
-[e $U 1196  ]
+[e $U 1197  ]
 "15
-[e :U 1195 ]
+[e :U 1196 ]
 [; ;misc.c: 15: else CCP4CONbits.DC4B1 = 0;
 [e = . . _CCP4CONbits 1 5 -> -> 0 `i `uc ]
-[e :U 1196 ]
+[e :U 1197 ]
 [; ;misc.c: 17: CCPR4L = load >> 2;
 "17
 [e = _CCPR4L -> >> -> _load `ui -> 2 `i `uc ]
 [; ;misc.c: 18: }
 "18
-[e :UE 1192 ]
+[e :UE 1193 ]
 }
 "24
 [v _InitializeSystem `(v ~T0 @X0 1 ef ]
@@ -8931,11 +8944,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _OSCTUNEbits 0 1 -> -> 1 `i `uc ]
 [; ;misc.c: 40: while(pll_startup_counter--);
 "40
-[e $U 1198  ]
-[e :U 1199 ]
-[e :U 1198 ]
-[e $ != -- _pll_startup_counter -> -> 1 `i `ui -> -> 0 `i `ui 1199  ]
+[e $U 1199  ]
 [e :U 1200 ]
+[e :U 1199 ]
+[e $ != -- _pll_startup_counter -> -> 1 `i `ui -> -> 0 `i `ui 1200  ]
+[e :U 1201 ]
 [; ;misc.c: 44: RCONbits.IPEN = 1;
 "44
 [e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
@@ -8999,164 +9012,167 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;misc.c: 76: ANSELE = 0b00000000;
 "76
 [e = _ANSELE -> -> 0 `i `uc ]
-[; ;misc.c: 80: MTouchSetSensor(0, &TRISB, &LATB, 0, 12, -1, -1, -1);
-"80
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 0 `i `uc &U _TRISB &U _LATB -> -> 0 `i `uc -> -> 12 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 81: MTouchSetSensor(1, &TRISB, &LATB, 1, 10, -1, -1, -1);
-"81
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 1 `i `uc &U _TRISB &U _LATB -> -> 1 `i `uc -> -> 10 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 82: MTouchSetSensor(2, &TRISB, &LATB, 2, 8, -1, -1, -1);
+[; ;misc.c: 78: CCP5CON = 0;
+"78
+[e = _CCP5CON -> -> 0 `i `uc ]
+[; ;misc.c: 82: MTouchSetSensor(0, &TRISB, &LATB, 0, 12, -1, -1, -1);
 "82
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 2 `i `uc &U _TRISB &U _LATB -> -> 2 `i `uc -> -> 8 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 83: MTouchSetSensor(3, &TRISB, &LATB, 5, 13, -1, -1, -1);
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 0 `i `uc &U _TRISB &U _LATB -> -> 0 `i `uc -> -> 12 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 83: MTouchSetSensor(1, &TRISB, &LATB, 1, 10, -1, -1, -1);
 "83
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 3 `i `uc &U _TRISB &U _LATB -> -> 5 `i `uc -> -> 13 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 84: MTouchSetSensor(4, &TRISA, &LATA, 0, 0, -1, -1, -1);
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 1 `i `uc &U _TRISB &U _LATB -> -> 1 `i `uc -> -> 10 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 84: MTouchSetSensor(2, &TRISB, &LATB, 2, 8, -1, -1, -1);
 "84
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 4 `i `uc &U _TRISA &U _LATA -> -> 0 `i `uc -> -> 0 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 85: MTouchSetSensor(5, &TRISA, &LATA, 1, 1, -1, -1, -1);
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 2 `i `uc &U _TRISB &U _LATB -> -> 2 `i `uc -> -> 8 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 85: MTouchSetSensor(3, &TRISB, &LATB, 5, 13, -1, -1, -1);
 "85
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 5 `i `uc &U _TRISA &U _LATA -> -> 1 `i `uc -> -> 1 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 86: MTouchSetSensor(6, &TRISB, &LATB, 4, 11, -1, -1, -1);
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 3 `i `uc &U _TRISB &U _LATB -> -> 5 `i `uc -> -> 13 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 86: MTouchSetSensor(4, &TRISA, &LATA, 0, 0, -1, -1, -1);
 "86
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 6 `i `uc &U _TRISB &U _LATB -> -> 4 `i `uc -> -> 11 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 87: MTouchSetSensor(7, &TRISB, &LATB, 3, 9, -1, -1, -1);
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 4 `i `uc &U _TRISA &U _LATA -> -> 0 `i `uc -> -> 0 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 87: MTouchSetSensor(5, &TRISA, &LATA, 1, 1, -1, -1, -1);
 "87
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 7 `i `uc &U _TRISB &U _LATB -> -> 3 `i `uc -> -> 9 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 88: MTouchSetSensor(8, &TRISA, &LATA, 2, 2, -1, -1, -1);
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 5 `i `uc &U _TRISA &U _LATA -> -> 1 `i `uc -> -> 1 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 88: MTouchSetSensor(6, &TRISB, &LATB, 4, 11, -1, -1, -1);
 "88
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 8 `i `uc &U _TRISA &U _LATA -> -> 2 `i `uc -> -> 2 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 89: MTouchSetSensor(9, &TRISA, &LATA, 3, 3, -1, -1, -1);
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 6 `i `uc &U _TRISB &U _LATB -> -> 4 `i `uc -> -> 11 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 89: MTouchSetSensor(7, &TRISB, &LATB, 3, 9, -1, -1, -1);
 "89
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 9 `i `uc &U _TRISA &U _LATA -> -> 3 `i `uc -> -> 3 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 90: MTouchSetSensor(10, &TRISA, &LATA, 4, 4, -1, -1, -1);
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 7 `i `uc &U _TRISB &U _LATB -> -> 3 `i `uc -> -> 9 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 90: MTouchSetSensor(8, &TRISA, &LATA, 2, 2, -1, -1, -1);
 "90
-[e ( _MTouchSetSensor (4 , , , , , , , -> -> 10 `i `uc &U _TRISA &U _LATA -> -> 4 `i `uc -> -> 4 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
-[; ;misc.c: 122: MTouchSetButton(KEY_0_AVT_PWR_220, 0, DECODE_ONE_EVENT);
-"122
-[e ( _MTouchSetButton (3 , , -> . `E9449 0 `uc -> -> 0 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 123: MTouchSetButton(KEY_1_LT_NOSHY, 1, DECODE_ONE_EVENT);
-"123
-[e ( _MTouchSetButton (3 , , -> . `E9449 1 `uc -> -> 1 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 124: MTouchSetButton(KEY_2_LT_SALON_M, 2, DECODE_ONE_EVENT);
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 8 `i `uc &U _TRISA &U _LATA -> -> 2 `i `uc -> -> 2 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 91: MTouchSetSensor(9, &TRISA, &LATA, 3, 3, -1, -1, -1);
+"91
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 9 `i `uc &U _TRISA &U _LATA -> -> 3 `i `uc -> -> 3 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 92: MTouchSetSensor(10, &TRISA, &LATA, 5, 4, -1, -1, -1);
+"92
+[e ( _MTouchSetSensor (4 , , , , , , , -> -> 10 `i `uc &U _TRISA &U _LATA -> -> 5 `i `uc -> -> 4 `i `uc -> -U -> 1 `i `s -> -U -> 1 `i `s -> -U -> 1 `i `c ]
+[; ;misc.c: 124: MTouchSetButton(KEY_0_AVT_PWR_220, 0, DECODE_ONE_EVENT);
 "124
-[e ( _MTouchSetButton (3 , , -> . `E9449 2 `uc -> -> 2 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 125: MTouchSetButton(KEY_3_LT_SALON_P, 3, DECODE_ONE_EVENT);
+[e ( _MTouchSetButton (3 , , -> . `E9449 0 `uc -> -> 0 `i `uc -> . `E9191 4 `uc ]
+[; ;misc.c: 125: MTouchSetButton(KEY_1_LT_NOSHY, 1, DECODE_ONE_EVENT);
 "125
-[e ( _MTouchSetButton (3 , , -> . `E9449 3 `uc -> -> 3 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 126: MTouchSetButton(KEY_4_VENT_OUT, 4, DECODE_ONE_EVENT);
+[e ( _MTouchSetButton (3 , , -> . `E9449 1 `uc -> -> 1 `i `uc -> . `E9191 4 `uc ]
+[; ;misc.c: 126: MTouchSetButton(KEY_2_LT_SALON_M, 2, DECODE_ONE_EVENT);
 "126
-[e ( _MTouchSetButton (3 , , -> . `E9449 4 `uc -> -> 4 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 127: MTouchSetButton(KEY_5_VENT_IN, 5, DECODE_ONE_EVENT);
+[e ( _MTouchSetButton (3 , , -> . `E9449 2 `uc -> -> 2 `i `uc -> . `E9191 4 `uc ]
+[; ;misc.c: 127: MTouchSetButton(KEY_3_LT_SALON_P, 3, DECODE_ONE_EVENT);
 "127
-[e ( _MTouchSetButton (3 , , -> . `E9449 5 `uc -> -> 5 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 128: MTouchSetButton(KEY_6_ROZ_ON, 6, DECODE_ONE_EVENT);
+[e ( _MTouchSetButton (3 , , -> . `E9449 3 `uc -> -> 3 `i `uc -> . `E9191 4 `uc ]
+[; ;misc.c: 128: MTouchSetButton(KEY_4_VENT_OUT, 4, DECODE_ONE_EVENT);
 "128
-[e ( _MTouchSetButton (3 , , -> . `E9449 6 `uc -> -> 6 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 129: MTouchSetButton(KEY_7_LT_OUT_BACK, 7, DECODE_ONE_EVENT);
+[e ( _MTouchSetButton (3 , , -> . `E9449 4 `uc -> -> 4 `i `uc -> . `E9191 4 `uc ]
+[; ;misc.c: 129: MTouchSetButton(KEY_5_VENT_IN, 5, DECODE_ONE_EVENT);
 "129
-[e ( _MTouchSetButton (3 , , -> . `E9449 7 `uc -> -> 7 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 130: MTouchSetButton(KEY_8_LT_OUT_SIDE, 8, DECODE_ONE_EVENT);
+[e ( _MTouchSetButton (3 , , -> . `E9449 5 `uc -> -> 5 `i `uc -> . `E9191 4 `uc ]
+[; ;misc.c: 130: MTouchSetButton(KEY_6_ROZ_ON, 6, DECODE_ONE_EVENT);
 "130
-[e ( _MTouchSetButton (3 , , -> . `E9449 8 `uc -> -> 8 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 131: MTouchSetButton(KEY_9_LT_SHELF_M, 9, DECODE_ONE_EVENT);
+[e ( _MTouchSetButton (3 , , -> . `E9449 6 `uc -> -> 6 `i `uc -> . `E9191 4 `uc ]
+[; ;misc.c: 131: MTouchSetButton(KEY_7_LT_OUT_BACK, 7, DECODE_ONE_EVENT);
 "131
-[e ( _MTouchSetButton (3 , , -> . `E9449 9 `uc -> -> 9 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 132: MTouchSetButton(KEY_10_LT_SHELF_P, 10, DECODE_ONE_EVENT);
+[e ( _MTouchSetButton (3 , , -> . `E9449 7 `uc -> -> 7 `i `uc -> . `E9191 4 `uc ]
+[; ;misc.c: 132: MTouchSetButton(KEY_8_LT_OUT_SIDE, 8, DECODE_ONE_EVENT);
 "132
+[e ( _MTouchSetButton (3 , , -> . `E9449 8 `uc -> -> 8 `i `uc -> . `E9191 4 `uc ]
+[; ;misc.c: 133: MTouchSetButton(KEY_9_LT_KOND_M, 9, DECODE_ONE_EVENT);
+"133
+[e ( _MTouchSetButton (3 , , -> . `E9449 9 `uc -> -> 9 `i `uc -> . `E9191 4 `uc ]
+[; ;misc.c: 134: MTouchSetButton(KEY_10_LT_KOND_P, 10, DECODE_ONE_EVENT);
+"134
 [e ( _MTouchSetButton (3 , , -> . `E9449 10 `uc -> -> 10 `i `uc -> . `E9191 4 `uc ]
-[; ;misc.c: 135: MTouchSetButton(KEY_2_LT_SALON_MM, 2, DECODE_PRESS_REPEAT | DECODE_ONE_EVENT);
-"135
-[e ( _MTouchSetButton (3 , , -> . `E9449 11 `uc -> -> 2 `i `uc -> | -> . `E9191 3 `i -> . `E9191 4 `i `uc ]
-[; ;misc.c: 136: MTouchSetButton(KEY_3_LT_SALON_PP, 3, DECODE_PRESS_REPEAT | DECODE_ONE_EVENT);
-"136
-[e ( _MTouchSetButton (3 , , -> . `E9449 12 `uc -> -> 3 `i `uc -> | -> . `E9191 3 `i -> . `E9191 4 `i `uc ]
-[; ;misc.c: 138: uart16_init();
+[; ;misc.c: 137: MTouchSetButton(KEY_2_LT_SALON_MM, 2, DECODE_PRESS_REPEAT );
+"137
+[e ( _MTouchSetButton (3 , , -> . `E9449 11 `uc -> -> 2 `i `uc -> . `E9191 3 `uc ]
+[; ;misc.c: 138: MTouchSetButton(KEY_3_LT_SALON_PP, 3, DECODE_PRESS_REPEAT );
 "138
-[e ( _uart16_init ..  ]
-[; ;misc.c: 139: TRISCbits.TRISC6 = 0;
-"139
-[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
-[; ;misc.c: 140: TRISCbits.TRISC7 = 1;
+[e ( _MTouchSetButton (3 , , -> . `E9449 12 `uc -> -> 3 `i `uc -> . `E9191 3 `uc ]
+[; ;misc.c: 140: uart16_init();
 "140
-[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
-[; ;misc.c: 141: RCIP = 0;
+[e ( _uart16_init ..  ]
+[; ;misc.c: 141: TRISCbits.TRISC6 = 0;
 "141
-[e = _RCIP -> -> 0 `i `b ]
-[; ;misc.c: 142: RCIE = 1;
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+[; ;misc.c: 142: TRISCbits.TRISC7 = 1;
 "142
-[e = _RCIE -> -> 1 `i `b ]
-[; ;misc.c: 144: TRISBbits.TRISB6 = 0;
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+[; ;misc.c: 143: RCIP = 0;
+"143
+[e = _RCIP -> -> 0 `i `b ]
+[; ;misc.c: 144: RCIE = 1;
 "144
-[e = . . _TRISBbits 0 6 -> -> 0 `i `uc ]
-[; ;misc.c: 145: TRISBbits.TRISB7 = 0;
-"145
-[e = . . _TRISBbits 0 7 -> -> 0 `i `uc ]
-[; ;misc.c: 146: TRISAbits.TRISA6 = 0;
+[e = _RCIE -> -> 1 `i `b ]
+[; ;misc.c: 146: TRISBbits.TRISB6 = 0;
 "146
-[e = . . _TRISAbits 0 6 -> -> 0 `i `uc ]
-[; ;misc.c: 147: TRISAbits.TRISA7 = 0;
+[e = . . _TRISBbits 0 6 -> -> 0 `i `uc ]
+[; ;misc.c: 147: TRISBbits.TRISB7 = 0;
 "147
-[e = . . _TRISAbits 0 7 -> -> 0 `i `uc ]
-[; ;misc.c: 149: LATBbits.LATB6 = 0;
+[e = . . _TRISBbits 0 7 -> -> 0 `i `uc ]
+[; ;misc.c: 148: TRISAbits.TRISA6 = 0;
+"148
+[e = . . _TRISAbits 0 6 -> -> 0 `i `uc ]
+[; ;misc.c: 149: TRISAbits.TRISA7 = 0;
 "149
-[e = . . _LATBbits 0 6 -> -> 0 `i `uc ]
-[; ;misc.c: 150: LATBbits.LATB7 = 0;
-"150
-[e = . . _LATBbits 0 7 -> -> 0 `i `uc ]
-[; ;misc.c: 151: LATAbits.LATA6 = 0;
+[e = . . _TRISAbits 0 7 -> -> 0 `i `uc ]
+[; ;misc.c: 151: LATBbits.LATB6 = 0;
 "151
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;misc.c: 152: LATAbits.LATA7 = 0;
+[e = . . _LATBbits 0 6 -> -> 0 `i `uc ]
+[; ;misc.c: 152: LATBbits.LATB7 = 0;
 "152
+[e = . . _LATBbits 0 7 -> -> 0 `i `uc ]
+[; ;misc.c: 153: LATAbits.LATA6 = 0;
+"153
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[; ;misc.c: 154: LATAbits.LATA7 = 0;
+"154
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-[; ;misc.c: 155: TRISCbits.TRISC4 = 0;
-"155
+[; ;misc.c: 157: TRISCbits.TRISC4 = 0;
+"157
 [e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
-[; ;misc.c: 156: LATCbits.LATC4 = 1;
-"156
+[; ;misc.c: 158: LATCbits.LATC4 = 1;
+"158
 [e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
-[; ;misc.c: 159: INTCONbits.PEIE = 1;
-"159
+[; ;misc.c: 161: INTCONbits.PEIE = 1;
+"161
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;misc.c: 165: }
-"165
-[e :UE 1197 ]
+[; ;misc.c: 167: }
+"167
+[e :UE 1198 ]
 }
-"189
+"191
 [v _SysDelayMs `(v ~T0 @X0 1 ef1`us ]
 {
-[; ;misc.c: 189: void SysDelayMs(UINT16 delay) {
+[; ;misc.c: 191: void SysDelayMs(UINT16 delay) {
 [e :U _SysDelayMs ]
 [v _delay `us ~T0 @X0 1 r1 ]
 [f ]
-[; ;misc.c: 190: while(delay--) {
-"190
-[e $U 1202  ]
-[e :U 1203 ]
+[; ;misc.c: 192: while(delay--) {
+"192
+[e $U 1203  ]
+[e :U 1204 ]
 {
-[; ;misc.c: 191: { UINT16 d=1067; while(d--){__nop();} };
-"191
+[; ;misc.c: 193: { UINT16 d=1067; while(d--){__nop();} };
+"193
 {
 [v _d `us ~T0 @X0 1 a ]
 [e = _d -> -> 1067 `i `us ]
-[e $U 1205  ]
-[e :U 1206 ]
+[e $U 1206  ]
+[e :U 1207 ]
 {
 [e ( ___nop ..  ]
 }
-[e :U 1205 ]
-[e $ != -> -- _d -> -> 1 `i `us `ui -> -> -> 0 `i `us `ui 1206  ]
-[e :U 1207 ]
+[e :U 1206 ]
+[e $ != -> -- _d -> -> 1 `i `us `ui -> -> -> 0 `i `us `ui 1207  ]
+[e :U 1208 ]
 }
+"194
+}
+[e :U 1203 ]
 "192
-}
-[e :U 1202 ]
-"190
-[e $ != -> -- _delay -> -> 1 `i `us `ui -> -> -> 0 `i `us `ui 1203  ]
-[e :U 1204 ]
-[; ;misc.c: 192: }
-[; ;misc.c: 193: }
-"193
-[e :UE 1201 ]
+[e $ != -> -- _delay -> -> 1 `i `us `ui -> -> -> 0 `i `us `ui 1204  ]
+[e :U 1205 ]
+[; ;misc.c: 194: }
+[; ;misc.c: 195: }
+"195
+[e :UE 1202 ]
 }

@@ -1,6 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"79 ../Main.h
+[s S1192 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1192 . st_12V st_220V st_lt_back st_lt_side st_lt_noshy st_lt_salon st_lt_blue st_fan st_kond ]
 "68 ../lib/include\ks0108.h
-[s S1191 `uc 1 `uc 1 `uc 1 `*Cuc 1 `uc -> 22 `i ]
+[s S1191 `uc 1 `uc 1 `uc 1 `*Cuc 1 `uc -> 31 `i ]
 [n S1191 . x y size p_font str ]
 [p mainexit ]
 "42 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18.h
@@ -8,16 +11,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p i ___nop ]
 "18 ../lib/include\messages.h
 [v _InitMessages `(v ~T0 @X0 0 ef ]
-"84 ../Main.h
+"96 ../Main.h
 [v _InitializeSystem `(v ~T0 @X0 0 ef ]
-"85 ../lib/include\ks0108.h
+"83 ../lib/include\ks0108.h
 [v _ks0108Init `(v ~T0 @X0 0 ef ]
-"98
+"96
 [v _LabelCreate `(v ~T0 @X0 0 ef5`*S1191`uc`uc`*Cuc`uc ]
-"84
+"205 C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"97 ../lib/include\ks0108.h
+[v _LabelSetTxt `(v ~T0 @X0 0 ef2`*S1191`*uc ]
+"82
 [v _ks0108GotoXY `(v ~T0 @X0 0 ef2`uc`uc ]
-"87
+"85
 [v _ks0108PutChar `(uc ~T0 @X0 0 ef3`uc`*Cuc`uc ]
+"93
+[v _ks0108Line `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
+"94
+[v _ks0108Rect `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
 "17640 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
 [s S1113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1113 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
@@ -38,12 +49,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1112 . . . . . . ]
 "17681
 [v _INTCONbits `VS1112 ~T0 @X0 0 e@4082 ]
-"85 ../Main.h
+"97 ../Main.h
 [v _Beep `(v ~T0 @X0 0 ef1`uc ]
 "19 ../Main.c
 [v _tsk_display `(v ~T0 @X0 0 ef ]
 "18
-[v _tsk_process `(v ~T0 @X0 0 ef ]
+[v _tsk_process_btn `(v ~T0 @X0 0 ef ]
 "20
 [v _tsk_ds18b20 `(v ~T0 @X0 0 ef ]
 "18824 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
@@ -66,9 +77,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1185 tag_MTOUCHBUTTON state curState decode prevSensorState pSensor pressCounter ]
 "79
 [v _buttons `S1185 ~T0 @X0 -> 0 `x e ]
-"116 ../Main.c
+"128 ../Main.c
 [c E9449 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
-[n E9449 . KEY_0_AVT_PWR_220 KEY_1_LT_NOSHY KEY_2_LT_SALON_M KEY_3_LT_SALON_P KEY_4_VENT_OUT KEY_5_VENT_IN KEY_6_ROZ_ON KEY_7_LT_OUT_BACK KEY_8_LT_OUT_SIDE KEY_9_LT_SHELF_M KEY_10_LT_SHELF_P KEY_2_LT_SALON_MM KEY_3_LT_SALON_PP  ]
+[n E9449 . KEY_0_AVT_PWR_220 KEY_1_LT_NOSHY KEY_2_LT_SALON_M KEY_3_LT_SALON_P KEY_4_VENT_OUT KEY_5_VENT_IN KEY_6_ROZ_ON KEY_7_LT_OUT_BACK KEY_8_LT_OUT_SIDE KEY_9_LT_KOND_M KEY_10_LT_KOND_P KEY_2_LT_SALON_MM KEY_3_LT_SALON_PP  ]
 [c E9186 128 1 2 .. ]
 [n E9186 _MTOUCHCONTROLSTATE_ CONTROL_IDLE CONTROL_PRESSED CONTROL_RELEASED  ]
 "7780 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
@@ -135,17 +146,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S478 . . . . . . . . . . ]
 "7954
 [v _LATBbits `VS478 ~T0 @X0 0 e@3978 ]
-"205 C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"99 ../lib/include\ks0108.h
-[v _LabelSetTxt `(v ~T0 @X0 0 ef2`*S1191`*uc ]
+"107 ../lib/oss\oss.h
+[v __sys_tick `Vi ~T0 @X0 0 e ]
 "15 ../Main.c
 [v _ow_bit `uc ~T0 @X0 0 e ]
 "100 ../lib/include\ow.h
 [v _ds18b20_start `(v ~T0 @X0 0 ef ]
-"107 ../lib/oss\oss.h
-[v __sys_tick `Vi ~T0 @X0 0 e ]
-"99 ../lib/include\ow.h
+"99
 [v _ds18b20_read `(d ~T0 @X0 0 ef ]
 [; ;include\htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;include\htc.h: 24: extern void __builtin_software_breakpoint(void);
@@ -8561,10 +8568,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\messages.h: 46: extern void ProcessMessages(void);
 [; ;include\TimeDelay.h: 60: void _Delay10us(UINT32 tenMicroSecondCounter);
 [; ;include\TimeDelay.h: 81: void _DelayMs(UINT16 ms);
-[; ;eeprom.h: 119: void write___ee(unsigned int adr, unsigned char *var, unsigned char byte);
-[; ;eeprom.h: 120: void read___ee(unsigned int adr, unsigned char *var, unsigned char byte);
-[; ;eeprom.h: 121: void set_ee_default(void);
-[; ;eeprom.h: 131: unsigned char is_ee_wr(unsigned int adr);
+[; ;eeprom.h: 85: void write___ee(unsigned int adr, unsigned char *var, unsigned char byte);
+[; ;eeprom.h: 86: void read___ee(unsigned int adr, unsigned char *var, unsigned char byte);
+[; ;eeprom.h: 87: void set_ee_default(void);
+[; ;eeprom.h: 97: unsigned char is_ee_wr(unsigned int adr);
 [; ;include\ow.h: 96: void ow_delay(unsigned int del);
 [; ;include\ow.h: 99: double ds18b20_read(void);
 [; ;include\ow.h: 100: void ds18b20_start(void);
@@ -8636,23 +8643,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\ks0108.h: 70: BYTE y;
 [; ;include\ks0108.h: 71: BYTE size;
 [; ;include\ks0108.h: 72: const char *p_font;
-[; ;include\ks0108.h: 73: char str[22];
+[; ;include\ks0108.h: 73: char str[31];
 [; ;include\ks0108.h: 75: } Label;
-[; ;include\ks0108.h: 82: void ks0108Enable(void);
-[; ;include\ks0108.h: 83: void ks0108Fill(uint8_t mode);
-[; ;include\ks0108.h: 84: void ks0108GotoXY(uint8_t, uint8_t);
-[; ;include\ks0108.h: 85: void ks0108Init(void);
-[; ;include\ks0108.h: 87: BYTE ks0108PutChar(char s, const char *p_font, char mode);
-[; ;include\ks0108.h: 88: void ks0108PutString(char *string, const char *p_font, char mode);
-[; ;include\ks0108.h: 89: char ks0108ReadData(uint8_t incXAdd);
-[; ;include\ks0108.h: 90: void ks0108WriteCommand(uint8_t cmd, uint8_t chip);
-[; ;include\ks0108.h: 91: void ks0108WriteData(uint8_t data);
-[; ;include\ks0108.h: 94: void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
-[; ;include\ks0108.h: 95: void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk);
-[; ;include\ks0108.h: 96: void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy);
-[; ;include\ks0108.h: 98: void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
-[; ;include\ks0108.h: 99: void LabelSetTxt(Label *lb, char *str);
-[; ;include\ks0108.h: 100: void LabelClrTxt(Label *lb);
+[; ;include\ks0108.h: 80: void ks0108Enable(void);
+[; ;include\ks0108.h: 81: void ks0108Fill(uint8_t mode);
+[; ;include\ks0108.h: 82: void ks0108GotoXY(uint8_t, uint8_t);
+[; ;include\ks0108.h: 83: void ks0108Init(void);
+[; ;include\ks0108.h: 85: BYTE ks0108PutChar(char s, const char *p_font, char mode);
+[; ;include\ks0108.h: 86: void ks0108PutString(char *string, const char *p_font, char mode);
+[; ;include\ks0108.h: 87: char ks0108ReadData(uint8_t incXAdd);
+[; ;include\ks0108.h: 88: void ks0108WriteCommand(uint8_t cmd, uint8_t chip);
+[; ;include\ks0108.h: 89: void ks0108WriteData(uint8_t data);
+[; ;include\ks0108.h: 92: void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
+[; ;include\ks0108.h: 93: void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk);
+[; ;include\ks0108.h: 94: void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy);
+[; ;include\ks0108.h: 96: void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
+[; ;include\ks0108.h: 97: void LabelSetTxt(Label *lb, char *str);
+[; ;include\ks0108.h: 98: void LabelClrTxt(Label *lb);
 [; ;Main.h: 62: typedef enum {
 [; ;Main.h: 63: KEY_0_AVT_PWR_220 = 0,
 [; ;Main.h: 64: KEY_1_LT_NOSHY,
@@ -8663,14 +8670,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.h: 69: KEY_6_ROZ_ON,
 [; ;Main.h: 70: KEY_7_LT_OUT_BACK,
 [; ;Main.h: 71: KEY_8_LT_OUT_SIDE,
-[; ;Main.h: 72: KEY_9_LT_SHELF_M,
-[; ;Main.h: 73: KEY_10_LT_SHELF_P,
+[; ;Main.h: 72: KEY_9_LT_KOND_M,
+[; ;Main.h: 73: KEY_10_LT_KOND_P,
 [; ;Main.h: 75: KEY_2_LT_SALON_MM,
 [; ;Main.h: 76: KEY_3_LT_SALON_PP,
 [; ;Main.h: 77: } KEYS;
-[; ;Main.h: 84: extern void InitializeSystem(void);
-[; ;Main.h: 85: extern void Beep(BYTE );
-[; ;Main.h: 86: extern void pwm4_load(WORD );
+[; ;Main.h: 79: typedef struct {
+[; ;Main.h: 80: BYTE st_12V;
+[; ;Main.h: 81: BYTE st_220V;
+[; ;Main.h: 82: BYTE st_lt_back;
+[; ;Main.h: 83: BYTE st_lt_side;
+[; ;Main.h: 84: BYTE st_lt_noshy;
+[; ;Main.h: 85: BYTE st_lt_salon;
+[; ;Main.h: 86: BYTE st_lt_blue;
+[; ;Main.h: 87: BYTE st_fan;
+[; ;Main.h: 88: BYTE st_kond;
+[; ;Main.h: 89: }status_t;
+[; ;Main.h: 96: extern void InitializeSystem(void);
+[; ;Main.h: 97: extern void Beep(BYTE );
+[; ;Main.h: 98: extern void pwm4_load(WORD );
 "1 ../font13.h
 [v _font13 `Cuc ~T0 @X0 -> 0 `x e ]
 [i _font13
@@ -26148,41 +26166,41 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;Main.c: 14: volatile int sys_tick = 0;
 [; ;Main.c: 15: extern unsigned char ow_bit;
-[; ;Main.c: 18: void tsk_process(void);
+[; ;Main.c: 18: void tsk_process_btn(void);
 [; ;Main.c: 19: void tsk_display(void);
 [; ;Main.c: 20: void tsk_ds18b20(void);
 "23
-[; ;Main.c: 23: asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x01" "," "0x00" "," "0x01" "," "0x00" "," "0x02" "," "0x00" "," "0x16" "," "0x06");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x25" "," "0x0B" "," "0x16" "," "0x0F" ","
+[; ;Main.c: 23: asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x01" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" ","
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x01,0x00,0x01,0x00,0x02,0x00,0x16,0x06 ;# ">
+[; <" 	db	0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x25,0x0B,0x16,0x0F,0x16,0x06,0x25,0x0A ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x14,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x80,0x3F,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x80,0x3F,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x80,0x3F,0x16,0x06,0x25,0x00,0x00,0x00 ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x80,0x3F ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x08,0x07,0xB8,0x0B,0x00,0x00,0x40,0x06 ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0xF0,0x0A,0x00,0x00,0x66,0x66,0x26,0x3F ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x1B,0x2F,0x5D,0x3D,0x33,0x33,0xF3,0x3F ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x66,0x66,0x26,0x3F,0x42,0x60,0x65,0x3C ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x00,0x00,0x80,0x40,0x00,0x80,0xBB,0x45 ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x00,0x00,0x00,0x41,0x00,0x00,0x00,0x42 ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0xF0,0x0A,0x02,0xA4,0x70,0x7D,0x3F,0xA4 ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
-[; <" 	db	0x70,0x7D,0x3F,0x00,0x00,0x00,0x00,0x00 ;# ">
+[; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
 [; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
@@ -26233,431 +26251,762 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _k `Vd ~T0 @X0 1 e ]
 [v _l `Vd ~T0 @X0 1 e ]
 [; ;Main.c: 29: volatile double k, l;
-"31
-[v _f_T_salona `d ~T0 @X0 1 e ]
-[; ;Main.c: 31: double f_T_salona;
 "33
-[v _str `uc ~T0 @X0 -> 20 `i e ]
-[; ;Main.c: 33: char str[20];
-"36
-[v _lb_temp `S1191 ~T0 @X0 1 e ]
-[; ;Main.c: 36: Label lb_temp;
+[v _stat `S1192 ~T0 @X0 1 e ]
+[; ;Main.c: 33: status_t stat;
+"35
+[v _f_T_salona `d ~T0 @X0 1 e ]
+[i _f_T_salona
+.20.0
+]
+[; ;Main.c: 35: double f_T_salona = 20.0;
 "37
-[v _lb_temp2 `S1191 ~T0 @X0 1 e ]
-[; ;Main.c: 37: Label lb_temp2;
-"39
+[v _str `uc ~T0 @X0 -> 40 `i e ]
+[; ;Main.c: 37: char str[40];
+"40
+[v _lb_temp `S1191 ~T0 @X0 1 e ]
+[; ;Main.c: 40: Label lb_temp;
+"41
+[v _lb_paket `S1191 ~T0 @X0 1 e ]
+[; ;Main.c: 41: Label lb_paket;
+"43
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;Main.c: 39: void main(void) {
+[; ;Main.c: 43: void main(void){
 [e :U _main ]
 [f ]
-[; ;Main.c: 41: __nop();
-"41
-[e ( ___nop ..  ]
-[; ;Main.c: 42: InitMessages();
-"42
-[e ( _InitMessages ..  ]
-[; ;Main.c: 43: InitializeSystem();
-"43
-[e ( _InitializeSystem ..  ]
-[; ;Main.c: 45: ks0108Init();
+[; ;Main.c: 45: __nop();
 "45
-[e ( _ks0108Init ..  ]
-[; ;Main.c: 49: LabelCreate(&lb_temp, 60, 22, font13, 10);
+[e ( ___nop ..  ]
+[; ;Main.c: 46: InitMessages();
+"46
+[e ( _InitMessages ..  ]
+[; ;Main.c: 47: InitializeSystem();
+"47
+[e ( _InitializeSystem ..  ]
+[; ;Main.c: 49: ks0108Init();
 "49
-[e ( _LabelCreate (4 , , , , &U _lb_temp -> -> 60 `i `uc -> -> 22 `i `uc &U _font13 -> -> 10 `i `uc ]
-[; ;Main.c: 55: ks0108GotoXY(40, 50);
+[e ( _ks0108Init ..  ]
+[; ;Main.c: 52: LabelCreate(&lb_temp, 0, 0, font13, 6);
+"52
+[e ( _LabelCreate (4 , , , , &U _lb_temp -> -> 0 `i `uc -> -> 0 `i `uc &U _font13 -> -> 6 `i `uc ]
+[; ;Main.c: 53: LabelCreate(&lb_paket, 0, 10, font13, 22);
+"53
+[e ( _LabelCreate (4 , , , , &U _lb_paket -> -> 0 `i `uc -> -> 10 `i `uc &U _font13 -> -> 22 `i `uc ]
+[; ;Main.c: 55: sprintf(str, "AB");
 "55
-[e ( _ks0108GotoXY (2 , -> -> 40 `i `uc -> -> 50 `i `uc ]
-[; ;Main.c: 56: ks0108PutChar('A', &font13, 1);
+[e ( _sprintf (1 , &U _str :s 1C ]
+[; ;Main.c: 56: LabelSetTxt(&lb_temp, str);
 "56
-[e ( _ks0108PutChar (3 , , -> -> 65 `ui `uc &U _font13 -> -> 1 `i `uc ]
-[; ;Main.c: 57: ks0108GotoXY(50, 50);
-"57
-[e ( _ks0108GotoXY (2 , -> -> 50 `i `uc -> -> 50 `i `uc ]
-[; ;Main.c: 58: ks0108PutChar('B', &font13, 1);
+[e ( _LabelSetTxt (2 , &U _lb_temp &U _str ]
+[; ;Main.c: 58: ks0108GotoXY(20, 50);
 "58
-[e ( _ks0108PutChar (3 , , -> -> 66 `ui `uc &U _font13 -> -> 1 `i `uc ]
-[; ;Main.c: 66: __nop();
-"66
-[e ( ___nop ..  ]
-[; ;Main.c: 67: __nop();
+[e ( _ks0108GotoXY (2 , -> -> 20 `i `uc -> -> 50 `i `uc ]
+[; ;Main.c: 59: ks0108PutChar('A', &font13, 1);
+"59
+[e ( _ks0108PutChar (3 , , -> -> 65 `ui `uc &U _font13 -> -> 1 `i `uc ]
+[; ;Main.c: 61: ks0108GotoXY(1, 40);
+"61
+[e ( _ks0108GotoXY (2 , -> -> 1 `i `uc -> -> 40 `i `uc ]
+[; ;Main.c: 62: ks0108PutChar('B', &font23, 1);
+"62
+[e ( _ks0108PutChar (3 , , -> -> 66 `ui `uc &U _font23 -> -> 1 `i `uc ]
+[; ;Main.c: 64: ks0108GotoXY(100,30);
+"64
+[e ( _ks0108GotoXY (2 , -> -> 100 `i `uc -> -> 30 `i `uc ]
+[; ;Main.c: 65: ks0108PutChar(0x5e, &font23, 1);
+"65
+[e ( _ks0108PutChar (3 , , -> -> 94 `i `uc &U _font23 -> -> 1 `i `uc ]
+[; ;Main.c: 67: ks0108GotoXY(100, 0);
 "67
-[e ( ___nop ..  ]
-[; ;Main.c: 70: INTCONbits.GIE = 1;
-"70
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;Main.c: 72: Beep(10);
-"72
-[e ( _Beep (1 -> -> 10 `i `uc ]
-[; ;Main.c: 77: while(1) {
+[e ( _ks0108GotoXY (2 , -> -> 100 `i `uc -> -> 0 `i `uc ]
+[; ;Main.c: 68: ks0108PutChar(0x89, &font13, 1);
+"68
+[e ( _ks0108PutChar (3 , , -> -> 137 `i `uc &U _font13 -> -> 1 `i `uc ]
+[; ;Main.c: 71: ks0108Line(5,30, 60, 60);
+"71
+[e ( _ks0108Line (4 , , , -> -> 5 `i `uc -> -> 30 `i `uc -> -> 60 `i `uc -> -> 60 `i `uc ]
+[; ;Main.c: 73: ks0108Rect(60, 35, 15, 15);
+"73
+[e ( _ks0108Rect (4 , , , -> -> 60 `i `uc -> -> 35 `i `uc -> -> 15 `i `uc -> -> 15 `i `uc ]
+[; ;Main.c: 77: __nop();
 "77
-[e :U 1194 ]
-{
-[; ;Main.c: 80: tsk_display();
-"80
-[e ( _tsk_display ..  ]
-[; ;Main.c: 81: tsk_process();
+[e ( ___nop ..  ]
+[; ;Main.c: 78: __nop();
+"78
+[e ( ___nop ..  ]
+[; ;Main.c: 81: INTCONbits.GIE = 1;
 "81
-[e ( _tsk_process ..  ]
-[; ;Main.c: 82: tsk_ds18b20();
-"82
-[e ( _tsk_ds18b20 ..  ]
-[; ;Main.c: 86: __nop();
-"86
-[e ( ___nop ..  ]
-[; ;Main.c: 87: __nop();
-"87
-[e ( ___nop ..  ]
-[; ;Main.c: 90: if((FERR1) || (OERR1)) {
-"90
-[e $ ! || _FERR1 _OERR1 1196  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;Main.c: 83: Beep(10);
+"83
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 88: while(1){
+"88
+[e :U 1195 ]
 {
-[; ;Main.c: 91: CREN1 = 0;
+[; ;Main.c: 91: tsk_display();
 "91
-[e = _CREN1 -> -> 0 `i `b ]
-[; ;Main.c: 92: __nop();
+[e ( _tsk_display ..  ]
+[; ;Main.c: 92: tsk_process_btn();
 "92
-[e ( ___nop ..  ]
-[; ;Main.c: 93: CREN1 = 1;
+[e ( _tsk_process_btn ..  ]
+[; ;Main.c: 93: tsk_ds18b20();
 "93
-[e = _CREN1 -> -> 1 `i `b ]
-"94
-}
-[e :U 1196 ]
-[; ;Main.c: 94: }
-[; ;Main.c: 96: if(SWDTEN == 0) {
+[e ( _tsk_ds18b20 ..  ]
+[; ;Main.c: 95: __nop();
+"95
+[e ( ___nop ..  ]
+[; ;Main.c: 96: __nop();
 "96
-[e $ ! == -> _SWDTEN `i -> 0 `i 1197  ]
+[e ( ___nop ..  ]
+[; ;Main.c: 99: if((FERR1) || (OERR1)){
+"99
+[e $ ! || _FERR1 _OERR1 1197  ]
 {
-"98
+[; ;Main.c: 100: CREN1 = 0;
+"100
+[e = _CREN1 -> -> 0 `i `b ]
+[; ;Main.c: 101: __nop();
+"101
+[e ( ___nop ..  ]
+[; ;Main.c: 102: CREN1 = 1;
+"102
+[e = _CREN1 -> -> 1 `i `b ]
+"103
 }
 [e :U 1197 ]
-[; ;Main.c: 98: }
-[; ;Main.c: 99: asm(" clrwdt");
-"99
-[; <"  clrwdt ;# ">
-[; ;Main.c: 102: ProcessMessages();
-"102
-[e ( _ProcessMessages ..  ]
-"104
-}
-[e :U 1193 ]
-"77
-[e $U 1194  ]
-[e :U 1195 ]
-[; ;Main.c: 104: }
-[; ;Main.c: 105: }
+[; ;Main.c: 103: }
+[; ;Main.c: 105: if(SWDTEN == 0){
 "105
-[e :UE 1192 ]
+[e $ ! == -> _SWDTEN `i -> 0 `i 1198  ]
+{
+"107
 }
+[e :U 1198 ]
+[; ;Main.c: 107: }
+[; ;Main.c: 108: asm(" clrwdt");
 "108
-[v _tsk_process `(v ~T0 @X0 1 ef ]
-{
-[; ;Main.c: 108: void tsk_process(void) {
-[e :U _tsk_process ]
-[f ]
-"109
-[v F9496 `i ~T0 @X0 1 s prev_tick ]
-[v F9497 `i ~T0 @X0 1 s i ]
-[; ;Main.c: 109: static int prev_tick, i;
-[; ;Main.c: 113: MTouchDecode();
+[; <"  clrwdt ;# ">
+[; ;Main.c: 111: ProcessMessages();
+"111
+[e ( _ProcessMessages ..  ]
 "113
-[e ( _MTouchDecode ..  ]
-[; ;Main.c: 116: if(((buttons[KEY_7_LT_OUT_BACK].state) == CONTROL_PRESSED)) {
-"116
-[e $ ! == -> . *U + &U _buttons * -> . `E9449 7 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1199  ]
-{
-[; ;Main.c: 117: Beep(10);
-"117
-[e ( _Beep (1 -> -> 10 `i `uc ]
-[; ;Main.c: 118: LATAbits.LATA6 ^= 1;
-"118
-[e =^ . . _LATAbits 0 6 -> -> 1 `i `uc ]
-"119
 }
-[e :U 1199 ]
-[; ;Main.c: 119: }
-[; ;Main.c: 121: if(((buttons[KEY_8_LT_OUT_SIDE].state) == CONTROL_PRESSED)) {
-"121
-[e $ ! == -> . *U + &U _buttons * -> . `E9449 8 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1200  ]
+[e :U 1194 ]
+"88
+[e $U 1195  ]
+[e :U 1196 ]
+[; ;Main.c: 113: }
+[; ;Main.c: 114: }
+"114
+[e :UE 1193 ]
+}
+"119
+[v _tsk_process_btn `(v ~T0 @X0 1 ef ]
 {
-[; ;Main.c: 122: Beep(10);
-"122
-[e ( _Beep (1 -> -> 10 `i `uc ]
-[; ;Main.c: 123: LATAbits.LATA7 ^= 1;
-"123
-[e =^ . . _LATAbits 0 7 -> -> 1 `i `uc ]
+[; ;Main.c: 119: void tsk_process_btn(void){
+[e :U _tsk_process_btn ]
+[f ]
+"120
+[v F9508 `i ~T0 @X0 1 s prev_tick ]
+[v F9509 `i ~T0 @X0 1 s i ]
+[; ;Main.c: 120: static int prev_tick, i;
+[; ;Main.c: 124: MTouchDecode();
 "124
+[e ( _MTouchDecode ..  ]
+[; ;Main.c: 128: if(((buttons[KEY_7_LT_OUT_BACK].state) == CONTROL_PRESSED)){
+"128
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 7 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1200  ]
+{
+[; ;Main.c: 129: Beep(10);
+"129
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 130: stat.st_lt_back ^= 1;
+"130
+[e =^ . _stat 2 -> -> 1 `i `uc ]
+[; ;Main.c: 131: LATAbits.LATA6 = stat.st_lt_back;
+"131
+[e = . . _LATAbits 0 6 . _stat 2 ]
+"132
 }
 [e :U 1200 ]
-[; ;Main.c: 124: }
-[; ;Main.c: 126: if(((buttons[KEY_6_ROZ_ON].state) == CONTROL_PRESSED)) {
-"126
-[e $ ! == -> . *U + &U _buttons * -> . `E9449 6 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1201  ]
+[; ;Main.c: 132: }
+[; ;Main.c: 135: if(((buttons[KEY_8_LT_OUT_SIDE].state) == CONTROL_PRESSED)){
+"135
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 8 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1201  ]
 {
-[; ;Main.c: 127: Beep(10);
-"127
+[; ;Main.c: 136: Beep(10);
+"136
 [e ( _Beep (1 -> -> 10 `i `uc ]
-[; ;Main.c: 128: LATBbits.LATB7 ^= 1;
-"128
-[e =^ . . _LATBbits 0 7 -> -> 1 `i `uc ]
-"129
+[; ;Main.c: 137: stat.st_lt_side ^= 1;
+"137
+[e =^ . _stat 3 -> -> 1 `i `uc ]
+[; ;Main.c: 138: LATAbits.LATA7 = stat.st_lt_side;
+"138
+[e = . . _LATAbits 0 7 . _stat 3 ]
+"139
 }
 [e :U 1201 ]
-[; ;Main.c: 129: }
-[; ;Main.c: 131: if(((buttons[KEY_0_AVT_PWR_220].state) == CONTROL_PRESSED)) {
-"131
-[e $ ! == -> . *U + &U _buttons * -> . `E9449 0 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1202  ]
+[; ;Main.c: 139: }
+[; ;Main.c: 142: if(((buttons[KEY_6_ROZ_ON].state) == CONTROL_PRESSED)){
+"142
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 6 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1202  ]
 {
-[; ;Main.c: 132: Beep(10);
-"132
+[; ;Main.c: 143: Beep(10);
+"143
 [e ( _Beep (1 -> -> 10 `i `uc ]
-[; ;Main.c: 133: LATBbits.LATB6 ^= 1;
-"133
-[e =^ . . _LATBbits 0 6 -> -> 1 `i `uc ]
-"134
+[; ;Main.c: 144: stat.st_12V ^= 1;
+"144
+[e =^ . _stat 0 -> -> 1 `i `uc ]
+[; ;Main.c: 145: LATBbits.LATB7 = stat.st_12V;
+"145
+[e = . . _LATBbits 0 7 . _stat 0 ]
+"146
 }
 [e :U 1202 ]
-[; ;Main.c: 134: }
-[; ;Main.c: 138: }
-"138
-[e :UE 1198 ]
-}
-"141
-[v _tsk_display `(v ~T0 @X0 1 ef ]
-{
-[; ;Main.c: 141: void tsk_display(void) {
-[e :U _tsk_display ]
-[f ]
-"142
-[v F9499 `d ~T0 @X0 1 s f_prev_T ]
-[i F9499
--U .100.0
-]
-[; ;Main.c: 142: static double f_prev_T = -100.0;
-[; ;Main.c: 145: if(f_prev_T != f_T_salona) {
-"145
-[e $ ! != F9499 _f_T_salona 1204  ]
-{
-[; ;Main.c: 146: f_prev_T = f_T_salona;
-"146
-[e = F9499 _f_T_salona ]
-[; ;Main.c: 147: sprintf(str, "T=%2.1f", f_T_salona);
-"147
-[e ( _sprintf (1 , (. , &U _str :s 1C _f_T_salona ]
-[; ;Main.c: 148: LabelSetTxt(&lb_temp, str);
-"148
-[e ( _LabelSetTxt (2 , &U _lb_temp &U _str ]
+[; ;Main.c: 146: }
+[; ;Main.c: 149: if(((buttons[KEY_0_AVT_PWR_220].state) == CONTROL_PRESSED)){
 "149
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 0 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1203  ]
+{
+[; ;Main.c: 150: Beep(10);
+"150
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 151: stat.st_220V ^= 1;
+"151
+[e =^ . _stat 1 -> -> 1 `i `uc ]
+[; ;Main.c: 152: LATBbits.LATB6 = stat.st_220V;
+"152
+[e = . . _LATBbits 0 6 . _stat 1 ]
+"153
+}
+[e :U 1203 ]
+[; ;Main.c: 153: }
+[; ;Main.c: 156: if(((buttons[KEY_2_LT_SALON_M].state) == CONTROL_PRESSED)){
+"156
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 2 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1204  ]
+{
+[; ;Main.c: 157: if(stat.st_lt_salon == 0){
+"157
+[e $ ! == -> . _stat 5 `i -> 0 `i 1205  ]
+{
+[; ;Main.c: 158: Beep(10);
+"158
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 159: stat.st_lt_blue ^= 1;
+"159
+[e =^ . _stat 6 -> -> 1 `i `uc ]
+"161
+}
+[; ;Main.c: 161: } else {
+[e $U 1206  ]
+[e :U 1205 ]
+{
+[; ;Main.c: 162: stat.st_lt_salon = 0;
+"162
+[e = . _stat 5 -> -> 0 `i `uc ]
+[; ;Main.c: 163: stat.st_lt_blue = 0;
+"163
+[e = . _stat 6 -> -> 0 `i `uc ]
+"164
+}
+[e :U 1206 ]
+"165
 }
 [e :U 1204 ]
-[; ;Main.c: 149: }
-[; ;Main.c: 152: }
-"152
-[e :UE 1203 ]
+[; ;Main.c: 164: }
+[; ;Main.c: 165: }
+[; ;Main.c: 167: if(((buttons[KEY_3_LT_SALON_P].state) == CONTROL_PRESSED)){
+"167
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 3 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1207  ]
+{
+[; ;Main.c: 169: Beep(10);
+"169
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 172: stat.st_lt_salon = 31;
+"172
+[e = . _stat 5 -> -> 31 `i `uc ]
+[; ;Main.c: 174: if(stat.st_lt_salon > 0){
+"174
+[e $ ! > -> . _stat 5 `i -> 0 `i 1208  ]
+{
+[; ;Main.c: 175: stat.st_lt_blue = 0;
+"175
+[e = . _stat 6 -> -> 0 `i `uc ]
+"176
 }
-"155
-[v _tsk_ds18b20 `(v ~T0 @X0 1 ef ]
-{
-[; ;Main.c: 155: void tsk_ds18b20(void) {
-[e :U _tsk_ds18b20 ]
-[f ]
-"156
-[v F9501 `d ~T0 @X0 1 s f_temp ]
-"157
-[v F9502 `uc ~T0 @X0 -> -> 1 `i `ux s ow_err ]
-"159
-[v F9503 `i ~T0 @X0 1 s _prev_tick ]
-[v F9504 `i ~T0 @X0 1 s chk_count ]
-[v F9505 `uc ~T0 @X0 1 s _yield_flag ]
-[v F9506 `ui ~T0 @X0 1 s _state ]
-[i F9506
--> -> 0 `i `ui
-]
-[v F9507 `uc ~T0 @X0 1 s _running_msg ]
-[i F9507
--> -> 0 `i `uc
-]
-[v F9508 `uc ~T0 @X0 1 s _interrupt_state ]
-[; ;Main.c: 156: static double f_temp;
-[; ;Main.c: 157: static BYTE ow_err[1];
-[; ;Main.c: 159: static int _prev_tick; static int chk_count; static char _yield_flag; static unsigned int _state = 0; static char _running_msg = (0); static char _interrupt_state; _yield_flag = 1; switch(_state){ default: case 0: for(;;){ __nop();
-[e = F9505 -> -> 1 `i `uc ]
-[e $U 1207  ]
-{
 [e :U 1208 ]
-[e :U 1209 ]
+"177
+}
+[e :U 1207 ]
+[; ;Main.c: 176: }
+[; ;Main.c: 177: }
+[; ;Main.c: 180: if(((buttons[KEY_2_LT_SALON_MM].state) == CONTROL_PRESSED)){
+"180
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 11 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1209  ]
 {
+[; ;Main.c: 181: if(stat.st_lt_salon > 0){
+"181
+[e $ ! > -> . _stat 5 `i -> 0 `i 1210  ]
+{
+[; ;Main.c: 182: Beep(10);
+"182
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 183: stat.st_lt_salon --;
+"183
+[e -- . _stat 5 -> -> 1 `i `uc ]
+[; ;Main.c: 184: stat.st_lt_blue = 0;
+"184
+[e = . _stat 6 -> -> 0 `i `uc ]
+"185
+}
 [e :U 1210 ]
-{
-[e ( ___nop ..  ]
-[; ;Main.c: 161: ow_bit = 1;
-"161
-[e = _ow_bit -> -> 1 `i `uc ]
-[; ;Main.c: 162: ds18b20_start();
-"162
-[e ( _ds18b20_start ..  ]
-[; ;Main.c: 164: do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 164; case 164: if(((_sys_tick - _prev_tick) < 750)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick
-"164
-[e :U 1215 ]
-{
-[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1216  ]
-[e = F9508 -> -> 1 `i `uc ]
-[e $U 1217  ]
-[e :U 1216 ]
-[e = F9508 -> -> 0 `i `uc ]
-[e :U 1217 ]
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[e = F9503 __sys_tick ]
-[e = F9506 -> -> 164 `i `ui ]
-[e :U 1218 ]
-[e $ ! < - __sys_tick F9503 -> 750 `i 1219  ]
-{
-[e $ ! == -> F9508 `i -> 1 `i 1220  ]
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[e :U 1220 ]
-[e $UE 1205  ]
+"186
 }
-[e $U 1221  ]
-[e :U 1219 ]
+[e :U 1209 ]
+[; ;Main.c: 185: }
+[; ;Main.c: 186: }
+[; ;Main.c: 188: if(((buttons[KEY_3_LT_SALON_PP].state) == CONTROL_PRESSED)){
+"188
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 12 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1211  ]
 {
-[e = F9503 __sys_tick ]
-[e $ ! == -> F9508 `i -> 1 `i 1222  ]
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[e :U 1222 ]
+[; ;Main.c: 189: if(stat.st_lt_salon < 31){
+"189
+[e $ ! < -> . _stat 5 `i -> 31 `i 1212  ]
+{
+[; ;Main.c: 190: Beep(10);
+"190
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 191: stat.st_lt_salon ++;
+"191
+[e ++ . _stat 5 -> -> 1 `i `uc ]
+"192
 }
-[e :U 1221 ]
+[e :U 1212 ]
+[; ;Main.c: 192: }
+[; ;Main.c: 193: if(stat.st_lt_salon > 0){
+"193
+[e $ ! > -> . _stat 5 `i -> 0 `i 1213  ]
+{
+[; ;Main.c: 194: stat.st_lt_blue = 0;
+"194
+[e = . _stat 6 -> -> 0 `i `uc ]
+"195
+}
+[e :U 1213 ]
+"196
+}
+[e :U 1211 ]
+[; ;Main.c: 195: }
+[; ;Main.c: 196: }
+[; ;Main.c: 199: if(((buttons[KEY_1_LT_NOSHY].state) == CONTROL_PRESSED)){
+"199
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 1 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1214  ]
+{
+[; ;Main.c: 200: Beep(10);
+"200
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 201: stat.st_lt_noshy ^= 1;
+"201
+[e =^ . _stat 4 -> -> 1 `i `uc ]
+"202
 }
 [e :U 1214 ]
-[e ( ___nop ..  ]
-[; ;Main.c: 168: f_temp = ds18b20_read();
-"168
-[e = F9501 ( _ds18b20_read ..  ]
-[; ;Main.c: 170: __nop();
-"170
-[e ( ___nop ..  ]
-[; ;Main.c: 171: __nop();
-"171
-[e ( ___nop ..  ]
-[; ;Main.c: 173: if((f_temp != -60.0) && (f_temp != 85.0)) {
-"173
-[e $ ! && != F9501 -U .60.0 != F9501 .85.0 1223  ]
+[; ;Main.c: 202: }
+[; ;Main.c: 205: if(((buttons[KEY_9_LT_KOND_M].state) == CONTROL_PRESSED)){
+"205
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 9 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1215  ]
 {
-[; ;Main.c: 175: if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0;
-"175
-[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1224  ]
-[e = F9508 -> -> 1 `i `uc ]
-[e $U 1225  ]
-[e :U 1224 ]
-[e = F9508 -> -> 0 `i `uc ]
+[; ;Main.c: 206: if(stat.st_kond > 0){
+"206
+[e $ ! > -> . _stat 8 `i -> 0 `i 1216  ]
+{
+[; ;Main.c: 207: Beep(10);
+"207
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 208: stat.st_kond --;
+"208
+[e -- . _stat 8 -> -> 1 `i `uc ]
+"209
+}
+[e :U 1216 ]
+"210
+}
+[e :U 1215 ]
+[; ;Main.c: 209: }
+[; ;Main.c: 210: }
+[; ;Main.c: 212: if(((buttons[KEY_10_LT_KOND_P].state) == CONTROL_PRESSED)){
+"212
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 10 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1217  ]
+{
+[; ;Main.c: 213: if(stat.st_kond < 2){
+"213
+[e $ ! < -> . _stat 8 `i -> 2 `i 1218  ]
+{
+[; ;Main.c: 214: Beep(10);
+"214
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 215: stat.st_kond ++;
+"215
+[e ++ . _stat 8 -> -> 1 `i `uc ]
+"216
+}
+[e :U 1218 ]
+"217
+}
+[e :U 1217 ]
+[; ;Main.c: 216: }
+[; ;Main.c: 217: }
+[; ;Main.c: 220: if(((buttons[KEY_4_VENT_OUT].state) == CONTROL_PRESSED)){
+"220
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 4 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1219  ]
+{
+[; ;Main.c: 221: Beep(10);
+"221
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 222: stat.st_fan = (stat.st_fan == 0)? 1: 0;
+"222
+[e = . _stat 7 -> ? == -> . _stat 7 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"223
+}
+[e :U 1219 ]
+[; ;Main.c: 223: }
+[; ;Main.c: 225: if(((buttons[KEY_5_VENT_IN].state) == CONTROL_PRESSED)){
+"225
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 5 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1220  ]
+{
+[; ;Main.c: 226: Beep(10);
+"226
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 227: stat.st_fan = (stat.st_fan == 0)? 2: 0;
+"227
+[e = . _stat 7 -> ? == -> . _stat 7 `i -> 0 `i : -> 2 `i -> 0 `i `uc ]
+"228
+}
+[e :U 1220 ]
+[; ;Main.c: 228: }
+[; ;Main.c: 231: }
+"231
+[e :UE 1199 ]
+}
+"234
+[v _tsk_display `(v ~T0 @X0 1 ef ]
+{
+[; ;Main.c: 234: void tsk_display(void){
+[e :U _tsk_display ]
+[f ]
+"235
+[v F9511 `d ~T0 @X0 1 s f_prev_T ]
+[i F9511
+-U .100.0
+]
+"237
+[v F9512 `i ~T0 @X0 1 s _prev_tick ]
+[v F9513 `i ~T0 @X0 1 s chk_count ]
+[v F9514 `uc ~T0 @X0 1 s _yield_flag ]
+[v F9515 `ui ~T0 @X0 1 s _state ]
+[i F9515
+-> -> 0 `i `ui
+]
+[v F9516 `uc ~T0 @X0 1 s _running_msg ]
+[i F9516
+-> -> 0 `i `uc
+]
+[v F9517 `uc ~T0 @X0 1 s _interrupt_state ]
+[; ;Main.c: 235: static double f_prev_T = - 100.0;
+[; ;Main.c: 237: static int _prev_tick; static int chk_count; static char _yield_flag; static unsigned int _state = 0; static char _running_msg = (0); static char _interrupt_state; __nop();
+[e ( ___nop ..  ]
+[; ;Main.c: 239: if(f_prev_T != f_T_salona){
+"239
+[e $ ! != F9511 _f_T_salona 1222  ]
+{
+[; ;Main.c: 240: f_prev_T = f_T_salona;
+"240
+[e = F9511 _f_T_salona ]
+[; ;Main.c: 241: sprintf(str, "T=%2.1f", f_T_salona);
+"241
+[e ( _sprintf (1 , (. , &U _str :s 2C _f_T_salona ]
+[; ;Main.c: 242: LabelSetTxt(&lb_temp, str);
+"242
+[e ( _LabelSetTxt (2 , &U _lb_temp &U _str ]
+"243
+}
+[e :U 1222 ]
+[; ;Main.c: 243: }
+[; ;Main.c: 245: _yield_flag = 1; switch(_state){ default: case 0: for(;;){ __nop();
+"245
+[e = F9514 -> -> 1 `i `uc ]
+[e $U 1224  ]
+{
 [e :U 1225 ]
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;Main.c: 176: f_T_salona = f_temp;
-"176
-[e = _f_T_salona F9501 ]
-[; ;Main.c: 177: if(_interrupt_state==1) INTCONbits.GIE=1;
-"177
-[e $ ! == -> F9508 `i -> 1 `i 1226  ]
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 [e :U 1226 ]
-[; ;Main.c: 179: ow_err[0] = 0;
-"179
-[e = *U + &U F9502 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9502 `ui `ux -> -> 0 `i `uc ]
-"180
-}
-[; ;Main.c: 180: } else {
-[e $U 1227  ]
-[e :U 1223 ]
 {
-[; ;Main.c: 181: ow_err[0]++;
-"181
-[e ++ *U + &U F9502 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9502 `ui `ux -> -> 1 `i `uc ]
-[; ;Main.c: 182: if(ow_err[0] > 4) {
-"182
-[e $ ! > -> *U + &U F9502 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9502 `ui `ux `i -> 4 `i 1228  ]
-{
-[; ;Main.c: 183: ow_err[0] = 0;
-"183
-[e = *U + &U F9502 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9502 `ui `ux -> -> 0 `i `uc ]
-[; ;Main.c: 184: if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0;
-"184
-[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1229  ]
-[e = F9508 -> -> 1 `i `uc ]
-[e $U 1230  ]
-[e :U 1229 ]
-[e = F9508 -> -> 0 `i `uc ]
-[e :U 1230 ]
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;Main.c: 185: f_T_salona = 0.0;
-"185
-[e = _f_T_salona .0.0 ]
-[; ;Main.c: 186: if(_interrupt_state==1) INTCONbits.GIE=1;
-"186
-[e $ ! == -> F9508 `i -> 1 `i 1231  ]
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[e :U 1231 ]
-"187
-}
-[e :U 1228 ]
-"188
-}
 [e :U 1227 ]
-[; ;Main.c: 187: }
-[; ;Main.c: 188: }
-[; ;Main.c: 192: do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 192; case 192: if(((_sys_tick - _prev_tick) < 100)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick
-"192
+{
+[e ( ___nop ..  ]
+[; ;Main.c: 247: do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 247; case 247: if(((_sys_tick - _prev_tick) < 500)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick
+"247
+[e :U 1232 ]
+{
+[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1233  ]
+[e = F9517 -> -> 1 `i `uc ]
+[e $U 1234  ]
+[e :U 1233 ]
+[e = F9517 -> -> 0 `i `uc ]
 [e :U 1234 ]
-{
-[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1235  ]
-[e = F9508 -> -> 1 `i `uc ]
-[e $U 1236  ]
-[e :U 1235 ]
-[e = F9508 -> -> 0 `i `uc ]
-[e :U 1236 ]
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[e = F9503 __sys_tick ]
-[e = F9506 -> -> 192 `i `ui ]
-[e :U 1237 ]
-[e $ ! < - __sys_tick F9503 -> 100 `i 1238  ]
+[e = F9512 __sys_tick ]
+[e = F9515 -> -> 247 `i `ui ]
+[e :U 1235 ]
+[e $ ! < - __sys_tick F9512 -> 500 `i 1236  ]
 {
-[e $ ! == -> F9508 `i -> 1 `i 1239  ]
+[e $ ! == -> F9517 `i -> 1 `i 1237  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1237 ]
+[e $UE 1221  ]
+}
+[e $U 1238  ]
+[e :U 1236 ]
+{
+[e = F9512 __sys_tick ]
+[e $ ! == -> F9517 `i -> 1 `i 1239  ]
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 [e :U 1239 ]
-[e $UE 1205  ]
 }
-[e $U 1240  ]
 [e :U 1238 ]
-{
-[e = F9503 __sys_tick ]
-[e $ ! == -> F9508 `i -> 1 `i 1241  ]
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[e :U 1241 ]
 }
-[e :U 1240 ]
-}
-[e :U 1233 ]
+[e :U 1231 ]
 [e ( ___nop ..  ]
-"193
+[; ;Main.c: 249: sprintf(str, "%01u %01u %01u %01u %01u %02u %01u %01u %01u",
+[; ;Main.c: 250: stat.st_12V, stat.st_220V, stat.st_lt_back, stat.st_lt_side, stat.st_lt_noshy,
+[; ;Main.c: 251: stat.st_lt_salon, stat.st_lt_blue, stat.st_fan, stat.st_kond);
+"251
+[e ( _sprintf (1 , , , , , , , , , (. , &U _str :s 3C -> . _stat 0 `i -> . _stat 1 `i -> . _stat 2 `i -> . _stat 3 `i -> . _stat 4 `i -> . _stat 5 `i -> . _stat 6 `i -> . _stat 7 `i -> . _stat 8 `i ]
+[; ;Main.c: 253: LabelSetTxt(&lb_paket, str);
+"253
+[e ( _LabelSetTxt (2 , &U _lb_paket &U _str ]
+"256
 }
-[; ;Main.c: 193: }};
-[e $U 1210  ]
-[e :U 1211 ]
+[; ;Main.c: 256: }};
+[e $U 1227  ]
+[e :U 1228 ]
 }
 }
-[e $U 1206  ]
-"159
-[e :U 1207 ]
-[e [\ F9506 , $ -> -> 0 `i `ui 1209
- , $ -> -> 164 `i `ui 1218
- , $ -> -> 192 `i `ui 1237
- 1208 ]
-"193
-[e :U 1206 ]
-[; ;Main.c: 194: }
-"194
-[e :UE 1205 ]
+[e $U 1223  ]
+"245
+[e :U 1224 ]
+[e [\ F9515 , $ -> -> 0 `i `ui 1226
+ , $ -> -> 247 `i `ui 1235
+ 1225 ]
+"256
+[e :U 1223 ]
+[; ;Main.c: 260: }
+"260
+[e :UE 1221 ]
 }
-[p f _sprintf 8495104 ]
-[a 1C 84 61 37 50 46 49 102 0 ]
-
+"263
+[v _tsk_ds18b20 `(v ~T0 @X0 1 ef ]
+{
+[; ;Main.c: 263: void tsk_ds18b20(void){
+[e :U _tsk_ds18b20 ]
+[f ]
+"264
+[v F9519 `d ~T0 @X0 1 s f_temp ]
+"265
+[v F9520 `uc ~T0 @X0 -> -> 1 `i `ux s ow_err ]
+"267
+[v F9521 `i ~T0 @X0 1 s _prev_tick ]
+[v F9522 `i ~T0 @X0 1 s chk_count ]
+[v F9523 `uc ~T0 @X0 1 s _yield_flag ]
+[v F9524 `ui ~T0 @X0 1 s _state ]
+[i F9524
+-> -> 0 `i `ui
+]
+[v F9525 `uc ~T0 @X0 1 s _running_msg ]
+[i F9525
+-> -> 0 `i `uc
+]
+[v F9526 `uc ~T0 @X0 1 s _interrupt_state ]
+[; ;Main.c: 264: static double f_temp;
+[; ;Main.c: 265: static BYTE ow_err[1];
+[; ;Main.c: 267: static int _prev_tick; static int chk_count; static char _yield_flag; static unsigned int _state = 0; static char _running_msg = (0); static char _interrupt_state; _yield_flag = 1; switch(_state){ default: case 0: for(;;){ __nop();
+[e = F9523 -> -> 1 `i `uc ]
+[e $U 1242  ]
+{
+[e :U 1243 ]
+[e :U 1244 ]
+{
+[e :U 1245 ]
+{
+[e ( ___nop ..  ]
+[; ;Main.c: 269: ow_bit = 1;
+"269
+[e = _ow_bit -> -> 1 `i `uc ]
+[; ;Main.c: 270: ds18b20_start();
+"270
+[e ( _ds18b20_start ..  ]
+[; ;Main.c: 272: do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 272; case 272: if(((_sys_tick - _prev_tick) < 750)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick
+"272
+[e :U 1250 ]
+{
+[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1251  ]
+[e = F9526 -> -> 1 `i `uc ]
+[e $U 1252  ]
+[e :U 1251 ]
+[e = F9526 -> -> 0 `i `uc ]
+[e :U 1252 ]
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[e = F9521 __sys_tick ]
+[e = F9524 -> -> 272 `i `ui ]
+[e :U 1253 ]
+[e $ ! < - __sys_tick F9521 -> 750 `i 1254  ]
+{
+[e $ ! == -> F9526 `i -> 1 `i 1255  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1255 ]
+[e $UE 1240  ]
+}
+[e $U 1256  ]
+[e :U 1254 ]
+{
+[e = F9521 __sys_tick ]
+[e $ ! == -> F9526 `i -> 1 `i 1257  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1257 ]
+}
+[e :U 1256 ]
+}
+[e :U 1249 ]
+[e ( ___nop ..  ]
+[; ;Main.c: 274: f_temp = ds18b20_read();
+"274
+[e = F9519 ( _ds18b20_read ..  ]
+[; ;Main.c: 276: __nop();
+"276
+[e ( ___nop ..  ]
+[; ;Main.c: 277: __nop();
+"277
+[e ( ___nop ..  ]
+[; ;Main.c: 279: if((f_temp != -60.0) && (f_temp != 85.0)){
+"279
+[e $ ! && != F9519 -U .60.0 != F9519 .85.0 1258  ]
+{
+[; ;Main.c: 281: if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0;
+"281
+[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1259  ]
+[e = F9526 -> -> 1 `i `uc ]
+[e $U 1260  ]
+[e :U 1259 ]
+[e = F9526 -> -> 0 `i `uc ]
+[e :U 1260 ]
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;Main.c: 282: f_T_salona = f_temp;
+"282
+[e = _f_T_salona F9519 ]
+[; ;Main.c: 283: if(_interrupt_state==1) INTCONbits.GIE=1;
+"283
+[e $ ! == -> F9526 `i -> 1 `i 1261  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1261 ]
+[; ;Main.c: 285: ow_err[0] = 0;
+"285
+[e = *U + &U F9520 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9520 `ui `ux -> -> 0 `i `uc ]
+"286
+}
+[; ;Main.c: 286: } else {
+[e $U 1262  ]
+[e :U 1258 ]
+{
+[; ;Main.c: 287: ow_err[0] ++;
+"287
+[e ++ *U + &U F9520 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9520 `ui `ux -> -> 1 `i `uc ]
+[; ;Main.c: 288: if(ow_err[0] > 4){
+"288
+[e $ ! > -> *U + &U F9520 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9520 `ui `ux `i -> 4 `i 1263  ]
+{
+[; ;Main.c: 289: ow_err[0] = 0;
+"289
+[e = *U + &U F9520 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9520 `ui `ux -> -> 0 `i `uc ]
+[; ;Main.c: 290: if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0;
+"290
+[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1264  ]
+[e = F9526 -> -> 1 `i `uc ]
+[e $U 1265  ]
+[e :U 1264 ]
+[e = F9526 -> -> 0 `i `uc ]
+[e :U 1265 ]
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;Main.c: 291: f_T_salona = 0.0;
+"291
+[e = _f_T_salona .0.0 ]
+[; ;Main.c: 292: if(_interrupt_state==1) INTCONbits.GIE=1;
+"292
+[e $ ! == -> F9526 `i -> 1 `i 1266  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1266 ]
+"293
+}
+[e :U 1263 ]
+"294
+}
+[e :U 1262 ]
+[; ;Main.c: 293: }
+[; ;Main.c: 294: }
+[; ;Main.c: 296: do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 296; case 296: if(((_sys_tick - _prev_tick) < 100)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick
+"296
+[e :U 1269 ]
+{
+[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1270  ]
+[e = F9526 -> -> 1 `i `uc ]
+[e $U 1271  ]
+[e :U 1270 ]
+[e = F9526 -> -> 0 `i `uc ]
+[e :U 1271 ]
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[e = F9521 __sys_tick ]
+[e = F9524 -> -> 296 `i `ui ]
+[e :U 1272 ]
+[e $ ! < - __sys_tick F9521 -> 100 `i 1273  ]
+{
+[e $ ! == -> F9526 `i -> 1 `i 1274  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1274 ]
+[e $UE 1240  ]
+}
+[e $U 1275  ]
+[e :U 1273 ]
+{
+[e = F9521 __sys_tick ]
+[e $ ! == -> F9526 `i -> 1 `i 1276  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1276 ]
+}
+[e :U 1275 ]
+}
+[e :U 1268 ]
+[e ( ___nop ..  ]
+"297
+}
+[; ;Main.c: 297: }};
+[e $U 1245  ]
+[e :U 1246 ]
+}
+}
+[e $U 1241  ]
+"267
+[e :U 1242 ]
+[e [\ F9524 , $ -> -> 0 `i `ui 1244
+ , $ -> -> 272 `i `ui 1253
+ , $ -> -> 296 `i `ui 1272
+ 1243 ]
+"297
+[e :U 1241 ]
+[; ;Main.c: 298: }
+"298
+[e :UE 1240 ]
+}
+[p f _sprintf 8496132 ]
+[a 3C 37 48 49 117 32 37 48 49 117 32 37 48 49 117 32 37 48 49 117 32 37 48 49 117 32 37 48 50 117 32 37 48 49 117 32 37 48 49 117 32 37 48 49 117 0 ]
+[a 2C 84 61 37 50 46 49 102 0 ]
+[a 1C 65 66 0 ]

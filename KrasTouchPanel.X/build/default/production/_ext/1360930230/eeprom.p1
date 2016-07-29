@@ -8173,10 +8173,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\pic18.h: 147: extern __nonreentrant void _delay(unsigned long);
 [; ;include\pic18.h: 149: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;include\pic18.h: 151: extern __nonreentrant void _delay3(unsigned char);
-[; ;eeprom.h: 119: void write___ee(unsigned int adr, unsigned char *var, unsigned char byte);
-[; ;eeprom.h: 120: void read___ee(unsigned int adr, unsigned char *var, unsigned char byte);
-[; ;eeprom.h: 121: void set_ee_default(void);
-[; ;eeprom.h: 131: unsigned char is_ee_wr(unsigned int adr);
+[; ;eeprom.h: 85: void write___ee(unsigned int adr, unsigned char *var, unsigned char byte);
+[; ;eeprom.h: 86: void read___ee(unsigned int adr, unsigned char *var, unsigned char byte);
+[; ;eeprom.h: 87: void set_ee_default(void);
+[; ;eeprom.h: 97: unsigned char is_ee_wr(unsigned int adr);
 "11 ../lib/eeprom.c
 [v _write___ee `(v ~T0 @X0 1 ef3`ui`*uc`uc ]
 {
@@ -8239,49 +8239,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 :U ..
 -> -> 1 `i `uc
 -> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 0 `i `uc
--> -> 2 `i `uc
--> -> 0 `i `uc
--> -> 22 `i `uc
--> -> 6 `i `uc
--> -> 37 `i `uc
--> -> 11 `i `uc
--> -> 22 `i `uc
--> -> 15 `i `uc
--> -> 22 `i `uc
--> -> 6 `i `uc
--> -> 37 `i `uc
--> -> 10 `i `uc
--> -> 20 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 128 `i `uc
--> -> 63 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 128 `i `uc
--> -> 63 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 128 `i `uc
--> -> 63 `i `uc
--> -> 22 `i `uc
--> -> 6 `i `uc
--> -> 37 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -8291,67 +8248,110 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
--> -> 128 `i `uc
--> -> 63 `i `uc
--> -> 8 `i `uc
--> -> 7 `i `uc
--> -> 184 `i `uc
--> -> 11 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 64 `i `uc
--> -> 6 `i `uc
--> -> 240 `i `uc
--> -> 10 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 102 `i `uc
--> -> 102 `i `uc
--> -> 38 `i `uc
--> -> 63 `i `uc
--> -> 27 `i `uc
--> -> 47 `i `uc
--> -> 93 `i `uc
--> -> 61 `i `uc
--> -> 51 `i `uc
--> -> 51 `i `uc
--> -> 243 `i `uc
--> -> 63 `i `uc
--> -> 102 `i `uc
--> -> 102 `i `uc
--> -> 38 `i `uc
--> -> 63 `i `uc
--> -> 66 `i `uc
--> -> 96 `i `uc
--> -> 101 `i `uc
--> -> 60 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 128 `i `uc
--> -> 64 `i `uc
--> -> 0 `i `uc
--> -> 128 `i `uc
--> -> 187 `i `uc
--> -> 69 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
--> -> 65 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
--> -> 66 `i `uc
--> -> 240 `i `uc
--> -> 10 `i `uc
--> -> 2 `i `uc
--> -> 164 `i `uc
--> -> 112 `i `uc
--> -> 125 `i `uc
--> -> 63 `i `uc
--> -> 164 `i `uc
--> -> 112 `i `uc
--> -> 125 `i `uc
--> -> 63 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -8495,7 +8495,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-[; ;eeprom.c: 27: const char eedata[]= {0x01,0x00,0x01,0x00,0x02,0x00,0x16,0x06, 0x25,0x0B,0x16,0x0F,0x16,0x06,0x25,0x0A, 0x14,0x00,0x00,0x00,0x00,0x00,0x00,0x00, 0x80,0x3F,0x00,0x00,0x00,0x00,0x00,0x00, 0x80,0x3F,0x00,0x00,0x00,0x00,0x00,0x00, 0x80,0x3F,0x16,0x06,0x2
+[; ;eeprom.c: 27: const char eedata[]= {0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00, 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, 0x00,0x00,0x00,0x00,0x0
 "28
 [v _set_ee_default `(v ~T0 @X0 1 ef ]
 {

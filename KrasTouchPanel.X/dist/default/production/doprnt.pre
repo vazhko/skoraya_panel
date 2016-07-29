@@ -377,6 +377,19 @@ width = 0;
 
 flag = 0;
 
+for(;;) {
+switch(*f) {
+
+# 588
+case '0':
+flag |= 0x04;
+f++;
+continue;
+
+}
+break;
+}
+
 # 606
 if(isdigit((unsigned)*f)) {
 width = 0;
@@ -423,7 +436,13 @@ default:
 # 822
 continue;
 
-# 831
+
+
+case 'u':
+flag |= 0xC0;
+break;
+
+
 }
 
 
@@ -496,7 +515,23 @@ width--;
 if(flag & 0x03)
 width--;
 
-# 1184
+
+if(flag & 0x04) {
+
+
+
+if(flag & 0x03)
+
+((*sp++ = ('-')));
+
+# 1177
+while(width > 0) {
+((*sp++ = ('0')));
+width--;
+}
+
+} else
+
 {
 
 # 1189
@@ -559,9 +594,21 @@ prec--;
 continue;
 }
 
-# 1299
+# 1282
+{
+
+# 1295
+_val._val = (*(unsigned *)__va_arg((*(unsigned **)ap), (unsigned)0));
+}
+
+
 if(prec == 0 && _val._val == 0)
 prec++;
+
+# 1314
+for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
+if(_val._val < dpowers[c])
+break;
 
 # 1348
 if(c < prec)
@@ -586,7 +633,23 @@ width -= c;
 else
 width = 0;
 
-# 1431
+
+if(flag & 0x04) {
+
+
+
+
+if(flag & 0x03)
+((*sp++ = ('-')));
+
+# 1424
+if(width)
+do
+((*sp++ = ('0')));
+while(--width);
+
+} else
+
 {
 
 if(width
@@ -602,6 +665,20 @@ if(flag & 0x03)
 ((*sp++ = ('-')));
 
 # 1478
+}
+
+# 1483
+while(prec--) {
+
+# 1487
+{
+
+# 1498
+c = (_val._val / dpowers[prec]) % 10 + '0';
+
+# 1532
+}
+((*sp++ = (c)));
 }
 
 # 1542

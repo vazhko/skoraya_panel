@@ -328,7 +328,7 @@ BYTE ks0108PutChar(char s, const char *p_font, char mode){
     }
 
     // move cursor
-    
+
     pos.x = x_ + chWidth; // сдвигаем х на ширину
     pos.y = y_;
 
@@ -412,38 +412,28 @@ void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln){
     lb -> x = x;
     lb -> y = y;
 
-
-    ///lb -> str = (char*)malloc(ln);
-    for(i = 0; i < lb -> size; i ++) lb -> str[i] = ' ';
-
+    //for(i = 0; i < lb -> size; i ++) lb -> str[i] = ' ';
+    lb -> str[0] = 0;
     LabelSetTxt(lb, lb -> str);
 
 }
 
 /******************************************************************************************/
 void LabelSetTxt(Label *lb, char *str){
+    BYTE i, w, end = 0;
 
-    BYTE i, w, temp = 0;
-
-
-    //ks0108GotoXY(lb -> x, lb -> y);
-    //for(i = 0; i < lb -> size; i++) {
-    //   ks0108PutChar(lb -> str[i], lb -> p_font, 0);
-    //}
 
     ks0108GotoXY(lb -> x, lb -> y);
     for(i = 0; i < lb -> size; i ++){
 
-        if(str[i] == 0) {
-            temp = 1;
+        if(str[i] == 0){
+            end = 1;
         }
-        if(temp == 1){            
+        if(end == 1){
             str[i] = ' ';
         }
-        
 
-        //if(lb -> str[i] != str[i]){
-        //    lb -> str[i] = str[i];
+        if(lb -> str[i] != str[i]){
             // стираем предыдущий символ
             w = ks0108PutChar(lb -> str[i], lb -> p_font, 0);
             // возврящаем курсор
@@ -451,11 +441,10 @@ void LabelSetTxt(Label *lb, char *str){
             // печатаем новый
             lb -> str[i] = str[i];
             ks0108PutChar(lb -> str[i], lb -> p_font, 1);
-        //} else {
+        } else {
             // просто перемещаем курсор
-        //    ks0108PutChar(str[i], lb -> p_font, 2);
-        //}
-
+            ks0108PutChar(str[i], lb -> p_font, 2);
+        }
 
     }
 

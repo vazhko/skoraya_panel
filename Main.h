@@ -69,12 +69,24 @@ typedef enum {
     KEY_6_ROZ_ON,
     KEY_7_LT_OUT_BACK,           
     KEY_8_LT_OUT_SIDE,
-    KEY_9_LT_SHELF_M,
-    KEY_10_LT_SHELF_P,
+    KEY_9_LT_KOND_M,
+    KEY_10_LT_KOND_P,
             
     KEY_2_LT_SALON_MM,
     KEY_3_LT_SALON_PP,    
 } KEYS;
+
+typedef struct {
+    BYTE st_12V;
+    BYTE st_220V;
+    BYTE st_lt_back;
+    BYTE st_lt_side;
+    BYTE st_lt_noshy;
+    BYTE st_lt_salon;
+    BYTE st_lt_blue;
+    BYTE st_fan;
+    BYTE st_kond;
+}status_t;
 
 
 #define BTN_PRESSED(x) (MTouchGetButtonState(x) == CONTROL_PRESSED)

@@ -134,15 +134,3 @@ void pwm2_load(WORD load) {
 }
 
 
-/***************************************************************************************/
-void T9000_set_channel(BYTE ch) {
-
-    TRISB &= 0b11000111;
-
-    if TESTBIT(ch, 0) SETBIT(LATB, 3);
-    else CLRBIT(LATB, 3);
-    if TESTBIT(ch, 1) SETBIT(LATB, 4);
-    else CLRBIT(LATB, 4);
-    if TESTBIT(ch, 2) SETBIT(LATB, 5);
-    else CLRBIT(LATB, 5);
-}

@@ -10528,16 +10528,3 @@ DC2B1 = (bit)((load) >> 1);
 DC2B0 = (bit)(load);
 }
 
-
-
-void T9000_set_channel(BYTE ch) {
-
-TRISB &= 0b11000111;
-
-if ((ch) & (1 <<(0))) ((LATB) |= (1 << (3)));
-else ((LATB) &= ~(1 << (3)));
-if ((ch) & (1 <<(1))) ((LATB) |= (1 << (4)));
-else ((LATB) &= ~(1 << (4)));
-if ((ch) & (1 <<(2))) ((LATB) |= (1 << (5)));
-else ((LATB) &= ~(1 << (5)));
-}

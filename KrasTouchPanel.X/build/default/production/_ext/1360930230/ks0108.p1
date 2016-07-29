@@ -6,13 +6,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _delayus_variable `uc ~T0 @X0 0 e ]
 "19074 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
 [v _LATE0 `Vb ~T0 @X0 0 e@31848 ]
-"84 ../lib/include\ks0108.h
+"82 ../lib/include\ks0108.h
 [v _ks0108GotoXY `(v ~T0 @X0 0 ef2`uc`uc ]
-"91
-[v _ks0108WriteData `(v ~T0 @X0 0 ef1`uc ]
-"90
-[v _ks0108WriteCommand `(v ~T0 @X0 0 ef2`uc`uc ]
 "89
+[v _ks0108WriteData `(v ~T0 @X0 0 ef1`uc ]
+"88
+[v _ks0108WriteCommand `(v ~T0 @X0 0 ef2`uc`uc ]
+"87
 [v _ks0108ReadData `(uc ~T0 @X0 0 ef1`uc ]
 "8857 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
 [s S531 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -55,9 +55,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "7232
 [v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
 "68 ../lib/include\ks0108.h
-[s S1182 `uc 1 `uc 1 `uc 1 `*Cuc 1 `uc -> 22 `i ]
+[s S1182 `uc 1 `uc 1 `uc 1 `*Cuc 1 `uc -> 31 `i ]
 [n S1182 . x y size p_font str ]
-"99
+"97
 [v _LabelSetTxt `(v ~T0 @X0 0 ef2`*S1182`*uc ]
 [; ;include\htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;include\htc.h: 24: extern void __builtin_software_breakpoint(void);
@@ -8297,23 +8297,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\ks0108.h: 70: BYTE y;
 [; ;include\ks0108.h: 71: BYTE size;
 [; ;include\ks0108.h: 72: const char *p_font;
-[; ;include\ks0108.h: 73: char str[22];
+[; ;include\ks0108.h: 73: char str[31];
 [; ;include\ks0108.h: 75: } Label;
-[; ;include\ks0108.h: 82: void ks0108Enable(void);
-[; ;include\ks0108.h: 83: void ks0108Fill(uint8_t mode);
-[; ;include\ks0108.h: 84: void ks0108GotoXY(uint8_t, uint8_t);
-[; ;include\ks0108.h: 85: void ks0108Init(void);
-[; ;include\ks0108.h: 87: BYTE ks0108PutChar(char s, const char *p_font, char mode);
-[; ;include\ks0108.h: 88: void ks0108PutString(char *string, const char *p_font, char mode);
-[; ;include\ks0108.h: 89: char ks0108ReadData(uint8_t incXAdd);
-[; ;include\ks0108.h: 90: void ks0108WriteCommand(uint8_t cmd, uint8_t chip);
-[; ;include\ks0108.h: 91: void ks0108WriteData(uint8_t data);
-[; ;include\ks0108.h: 94: void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
-[; ;include\ks0108.h: 95: void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk);
-[; ;include\ks0108.h: 96: void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy);
-[; ;include\ks0108.h: 98: void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
-[; ;include\ks0108.h: 99: void LabelSetTxt(Label *lb, char *str);
-[; ;include\ks0108.h: 100: void LabelClrTxt(Label *lb);
+[; ;include\ks0108.h: 80: void ks0108Enable(void);
+[; ;include\ks0108.h: 81: void ks0108Fill(uint8_t mode);
+[; ;include\ks0108.h: 82: void ks0108GotoXY(uint8_t, uint8_t);
+[; ;include\ks0108.h: 83: void ks0108Init(void);
+[; ;include\ks0108.h: 85: BYTE ks0108PutChar(char s, const char *p_font, char mode);
+[; ;include\ks0108.h: 86: void ks0108PutString(char *string, const char *p_font, char mode);
+[; ;include\ks0108.h: 87: char ks0108ReadData(uint8_t incXAdd);
+[; ;include\ks0108.h: 88: void ks0108WriteCommand(uint8_t cmd, uint8_t chip);
+[; ;include\ks0108.h: 89: void ks0108WriteData(uint8_t data);
+[; ;include\ks0108.h: 92: void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
+[; ;include\ks0108.h: 93: void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk);
+[; ;include\ks0108.h: 94: void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy);
+[; ;include\ks0108.h: 96: void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
+[; ;include\ks0108.h: 97: void LabelSetTxt(Label *lb, char *str);
+[; ;include\ks0108.h: 98: void LabelClrTxt(Label *lb);
 [; ;ks0108.c: 5: void ks0108SetDot(uint8_t, uint8_t);
 [; ;ks0108.c: 6: void ks0108ClearDot(uint8_t, uint8_t);
 "9 ../lib/ks0108.c
@@ -8322,13 +8322,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 "19
 [v _ks0108Enable `(v ~T0 @X0 1 ef ]
 {
-[; ;ks0108.c: 19: void ks0108Enable(void) {
+[; ;ks0108.c: 19: void ks0108Enable(void){
 [e :U _ks0108Enable ]
 [f ]
-[; ;ks0108.c: 20: { delayus_variable=(unsigned char)(5/1); asm("movlb (_delayus_variable) >> 8"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); } asm("decfsz (_delayus_variable)&0ffh,f"); asm("goto $ - 12");;
+[; ;ks0108.c: 20: { delayus_variable=(unsigned char)(1/1); asm("movlb (_delayus_variable) >> 8"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); } asm("decfsz (_delayus_variable)&0ffh,f"); asm("goto $ - 12");;
 "20
 {
-[e = _delayus_variable -> / -> 5 `i -> 1 `i `uc ]
+[e = _delayus_variable -> / -> 1 `i -> 1 `i `uc ]
 [; <" movlb (_delayus_variable) >> 8 ;# ">
 [; <" nop ;# ">
 [; <" nop ;# ">
@@ -8341,10 +8341,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 21: LATE0 = 1;
 "21
 [e = _LATE0 -> -> 1 `i `b ]
-[; ;ks0108.c: 22: { delayus_variable=(unsigned char)(5/1); asm("movlb (_delayus_variable) >> 8"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); } asm("decfsz (_delayus_variable)&0ffh,f"); asm("goto $ - 12");;
+[; ;ks0108.c: 22: { delayus_variable=(unsigned char)(1/1); asm("movlb (_delayus_variable) >> 8"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); } asm("decfsz (_delayus_variable)&0ffh,f"); asm("goto $ - 12");;
 "22
 {
-[e = _delayus_variable -> / -> 5 `i -> 1 `i `uc ]
+[e = _delayus_variable -> / -> 1 `i -> 1 `i `uc ]
 [; <" movlb (_delayus_variable) >> 8 ;# ">
 [; <" nop ;# ">
 [; <" nop ;# ">
@@ -8364,7 +8364,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "28
 [v _ks0108Fill `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;ks0108.c: 28: void ks0108Fill(uint8_t mode) {
+[; ;ks0108.c: 28: void ks0108Fill(uint8_t mode){
 [e :U _ks0108Fill ]
 [v _mode `uc ~T0 @X0 1 r1 ]
 [f ]
@@ -8372,7 +8372,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _i `uc ~T0 @X0 1 a ]
 [v _j `uc ~T0 @X0 1 a ]
 [; ;ks0108.c: 29: uint8_t i, j;
-[; ;ks0108.c: 31: for(i = 0; i < 8; i++) {
+[; ;ks0108.c: 31: for(i = 0; i < 8; i ++){
 "31
 {
 [e = _i -> -> 0 `i `uc ]
@@ -8383,7 +8383,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 32: ks0108GotoXY(0, i * 8);
 "32
 [e ( _ks0108GotoXY (2 , -> -> 0 `i `uc -> * -> _i `i -> 8 `i `uc ]
-[; ;ks0108.c: 33: for(j = 0; j < 128; j++)
+[; ;ks0108.c: 33: for(j = 0; j < 128; j ++)
 "33
 {
 [e = _j -> -> 0 `i `uc ]
@@ -8415,7 +8415,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "39
 [v _ks0108Fill_xy `(v ~T0 @X0 1 ef5`uc`uc`uc`uc`uc ]
 {
-[; ;ks0108.c: 39: void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2) {
+[; ;ks0108.c: 39: void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2){
 [e :U _ks0108Fill_xy ]
 [v _mode `uc ~T0 @X0 1 r1 ]
 [v _x1 `uc ~T0 @X0 1 r2 ]
@@ -8427,7 +8427,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _i `uc ~T0 @X0 1 a ]
 [v _j `uc ~T0 @X0 1 a ]
 [; ;ks0108.c: 40: uint8_t i, j;
-[; ;ks0108.c: 42: for(i = y1; i < y2; i++) {
+[; ;ks0108.c: 42: for(i = y1; i < y2; i ++){
 "42
 {
 [e = _i _y1 ]
@@ -8437,7 +8437,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 43: ks0108GotoXY(x1, i * 8);
 "43
 [e ( _ks0108GotoXY (2 , _x1 -> * -> _i `i -> 8 `i `uc ]
-[; ;ks0108.c: 44: for(j = x1; j < x2; j++)
+[; ;ks0108.c: 44: for(j = x1; j < x2; j ++)
 "44
 {
 [e = _j _x1 ]
@@ -8470,7 +8470,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "50
 [v _ks0108GotoXY `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;ks0108.c: 50: void ks0108GotoXY(uint8_t x, uint8_t y) {
+[; ;ks0108.c: 50: void ks0108GotoXY(uint8_t x, uint8_t y){
 [e :U _ks0108GotoXY ]
 [v _x `uc ~T0 @X0 1 r1 ]
 [v _y `uc ~T0 @X0 1 r2 ]
@@ -8499,7 +8499,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 58: pos.page = y >> 3;
 "58
 [e = . _pos 2 -> >> -> _y `i -> 3 `i `uc ]
-[; ;ks0108.c: 60: if(x >= 64) {
+[; ;ks0108.c: 60: if(x >= 64){
 "60
 [e $ ! >= -> _x `i -> 64 `i 1203  ]
 {
@@ -8535,7 +8535,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "83
 [v _ks0108SetDot `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;ks0108.c: 83: void ks0108SetDot(uint8_t x, uint8_t y) {
+[; ;ks0108.c: 83: void ks0108SetDot(uint8_t x, uint8_t y){
 [e :U _ks0108SetDot ]
 [v _x `uc ~T0 @X0 1 r1 ]
 [v _y `uc ~T0 @X0 1 r2 ]
@@ -8552,7 +8552,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 88: data = ks0108ReadData(1);
 "88
 [e = _data ( _ks0108ReadData (1 -> -> 1 `i `uc ]
-[; ;ks0108.c: 90: if(!(data & (0x01 << (y % 8)))) {
+[; ;ks0108.c: 90: if(! (data & (0x01 << (y % 8)))){
 "90
 [e $ ! ! != & -> _data `i << -> 1 `i % -> _y `i -> 8 `i -> 0 `i 1205  ]
 {
@@ -8573,7 +8573,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "100
 [v _ks0108ClearDot `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;ks0108.c: 100: void ks0108ClearDot(uint8_t x, uint8_t y) {
+[; ;ks0108.c: 100: void ks0108ClearDot(uint8_t x, uint8_t y){
 [e :U _ks0108ClearDot ]
 [v _x `uc ~T0 @X0 1 r1 ]
 [v _y `uc ~T0 @X0 1 r2 ]
@@ -8590,11 +8590,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 105: data = ks0108ReadData(1);
 "105
 [e = _data ( _ks0108ReadData (1 -> -> 1 `i `uc ]
-[; ;ks0108.c: 107: if((data & (0x01 << (y % 8)))) {
+[; ;ks0108.c: 107: if((data & (0x01 << (y % 8)))){
 "107
 [e $ ! != & -> _data `i << -> 1 `i % -> _y `i -> 8 `i -> 0 `i 1207  ]
 {
-[; ;ks0108.c: 109: data &= ~(0x01 << (y % 8));
+[; ;ks0108.c: 109: data &= ~ (0x01 << (y % 8));
 "109
 [e =& _data -> ~ << -> 1 `i % -> _y `i -> 8 `i `uc ]
 [; ;ks0108.c: 111: ks0108WriteData(data);
@@ -8611,7 +8611,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "118
 [v _ks0108Init `(v ~T0 @X0 1 ef ]
 {
-[; ;ks0108.c: 118: void ks0108Init(void) {
+[; ;ks0108.c: 118: void ks0108Init(void){
 [e :U _ks0108Init ]
 [f ]
 [; ;ks0108.c: 123: TRISCbits.TRISC3 = 0;
@@ -8669,7 +8669,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "159
 [v _ks0108ReadData `(uc ~T0 @X0 1 ef1`uc ]
 {
-[; ;ks0108.c: 159: char ks0108ReadData(uint8_t incXAdd) {
+[; ;ks0108.c: 159: char ks0108ReadData(uint8_t incXAdd){
 [e :U _ks0108ReadData ]
 [v _incXAdd `uc ~T0 @X0 1 r1 ]
 [f ]
@@ -8685,7 +8685,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 168: TRISD = 0xff;
 "168
 [e = _TRISD -> -> 255 `i `uc ]
-[; ;ks0108.c: 170: if(pos.x < 64) {
+[; ;ks0108.c: 170: if(pos.x < 64){
 "170
 [e $ ! < -> . _pos 0 `i -> 64 `i 1210  ]
 {
@@ -8697,7 +8697,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _LATC2 -> -> 0 `i `b ]
 "173
 }
-[; ;ks0108.c: 173: } else if(pos.x >= 64) {
+[; ;ks0108.c: 173: } else if(pos.x >= 64){
 [e $U 1211  ]
 [e :U 1210 ]
 [e $ ! >= -> . _pos 0 `i -> 64 `i 1212  ]
@@ -8719,7 +8719,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 179: LATE2 = 1;
 "179
 [e = _LATE2 -> -> 1 `i `b ]
-[; ;ks0108.c: 181: for(i = 0; i < 8; i++);
+[; ;ks0108.c: 181: for(i = 0; i < 8; i ++);
 "181
 {
 [e = _i -> -> 0 `i `uc ]
@@ -8733,7 +8733,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 183: LATE0 = 1;
 "183
 [e = _LATE0 -> -> 1 `i `b ]
-[; ;ks0108.c: 185: for(i = 0; i < 8; i++);
+[; ;ks0108.c: 185: for(i = 0; i < 8; i ++);
 "185
 {
 [e = _i -> -> 0 `i `uc ]
@@ -8750,7 +8750,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 192: LATE0 = 0;
 "192
 [e = _LATE0 -> -> 0 `i `b ]
-[; ;ks0108.c: 194: for(i = 0; i < 8; i++);
+[; ;ks0108.c: 194: for(i = 0; i < 8; i ++);
 "194
 {
 [e = _i -> -> 0 `i `uc ]
@@ -8767,7 +8767,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 206: if(incXAdd == 0)
 "206
 [e $ ! == -> _incXAdd `i -> 0 `i 1222  ]
-[; ;ks0108.c: 207: pos.x++;
+[; ;ks0108.c: 207: pos.x ++;
 "207
 [e ++ . _pos 0 -> -> 1 `i `uc ]
 [e $U 1223  ]
@@ -8789,12 +8789,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "216
 [v _ks0108WriteCommand `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;ks0108.c: 216: void ks0108WriteCommand(uint8_t cmd, uint8_t chip) {
+[; ;ks0108.c: 216: void ks0108WriteCommand(uint8_t cmd, uint8_t chip){
 [e :U _ks0108WriteCommand ]
 [v _cmd `uc ~T0 @X0 1 r1 ]
 [v _chip `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;ks0108.c: 218: if(chip == 0x00) {
+[; ;ks0108.c: 218: if(chip == 0x00){
 "218
 [e $ ! == -> _chip `i -> 0 `i 1225  ]
 {
@@ -8806,7 +8806,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _LATC2 -> -> 0 `i `b ]
 "221
 }
-[; ;ks0108.c: 221: } else if(chip == 0x01) {
+[; ;ks0108.c: 221: } else if(chip == 0x01){
 [e $U 1226  ]
 [e :U 1225 ]
 [e $ ! == -> _chip `i -> 1 `i 1227  ]
@@ -8847,7 +8847,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "236
 [v _ks0108WriteData `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;ks0108.c: 236: void ks0108WriteData(uint8_t data) {
+[; ;ks0108.c: 236: void ks0108WriteData(uint8_t data){
 [e :U _ks0108WriteData ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
@@ -8858,7 +8858,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "239
 [e $UE 1228  ]
 [e :U 1229 ]
-[; ;ks0108.c: 241: if(pos.x < 64) {
+[; ;ks0108.c: 241: if(pos.x < 64){
 "241
 [e $ ! < -> . _pos 0 `i -> 64 `i 1230  ]
 {
@@ -8870,7 +8870,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _LATC2 -> -> 0 `i `b ]
 "244
 }
-[; ;ks0108.c: 244: } else if(pos.x >= 64) {
+[; ;ks0108.c: 244: } else if(pos.x >= 64){
 [e $U 1231  ]
 [e :U 1230 ]
 [e $ ! >= -> . _pos 0 `i -> 64 `i 1232  ]
@@ -8887,7 +8887,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "249
 [e :U 1231 ]
 [; ;ks0108.c: 247: }
-[; ;ks0108.c: 249: if(pos.x == 64) {
+[; ;ks0108.c: 249: if(pos.x == 64){
 [e $ ! == -> . _pos 0 `i -> 64 `i 1233  ]
 {
 [; ;ks0108.c: 250: ks0108WriteCommand(0x40, 0x01);
@@ -8912,7 +8912,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 269: ks0108Enable();
 "269
 [e ( _ks0108Enable ..  ]
-[; ;ks0108.c: 276: pos.x++;
+[; ;ks0108.c: 276: pos.x ++;
 "276
 [e ++ . _pos 0 -> -> 1 `i `uc ]
 [; ;ks0108.c: 278: LATD = 0;
@@ -8925,7 +8925,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "282
 [v _ks0108PutChar `(uc ~T0 @X0 1 ef3`uc`*Cuc`uc ]
 {
-[; ;ks0108.c: 282: BYTE ks0108PutChar(char s, const char *p_font, char mode) {
+[; ;ks0108.c: 282: BYTE ks0108PutChar(char s, const char *p_font, char mode){
 [e :U _ks0108PutChar ]
 [v _s `uc ~T0 @X0 1 r1 ]
 [v _p_font `*Cuc ~T0 @X0 1 r2 ]
@@ -8971,372 +8971,374 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ks0108.c: 295: base += 3;
 "295
 [e =+ _base -> -> 3 `i `us ]
-[; ;ks0108.c: 300: chWidth = p_font[base];
-"300
+[; ;ks0108.c: 298: chWidth = p_font[base];
+"298
 [e = _chWidth *U + _p_font * -> _base `ux -> -> # *U _p_font `ui `ux ]
-[; ;ks0108.c: 301: pChImage = &p_font[base + 1];
-"301
+[; ;ks0108.c: 299: pChImage = & p_font[base + 1];
+"299
 [e = _pChImage &U *U + _p_font * -> + -> _base `ui -> -> 1 `i `ui `ux -> -> # *U _p_font `ui `ux ]
-[; ;ks0108.c: 303: y_ = pos.y;
-"303
+[; ;ks0108.c: 301: y_ = pos.y;
+"301
 [e = _y_ . _pos 1 ]
-[; ;ks0108.c: 304: x_ = pos.x;
-"304
+[; ;ks0108.c: 302: x_ = pos.x;
+"302
 [e = _x_ . _pos 0 ]
-[; ;ks0108.c: 306: y = y_;
-"306
+[; ;ks0108.c: 304: y = y_;
+"304
 [e = _y _y_ ]
-[; ;ks0108.c: 308: for(yCnt = 0; yCnt < _fontHeight; yCnt++) {
-"308
+[; ;ks0108.c: 306: for(yCnt = 0; yCnt < _fontHeight; yCnt ++){
+"306
 {
 [e = _yCnt -> -> 0 `i `uc ]
 [e $U 1238  ]
 [e :U 1235 ]
 {
-[; ;ks0108.c: 309: x = x_;
-"309
+[; ;ks0108.c: 307: x = x_;
+"307
 [e = _x _x_ ]
-[; ;ks0108.c: 310: mask = 0;
-"310
+[; ;ks0108.c: 308: mask = 0;
+"308
 [e = _mask -> -> 0 `i `uc ]
-[; ;ks0108.c: 311: for(xCnt = 0; xCnt < _fontWidth; xCnt++) {
-"311
+[; ;ks0108.c: 309: for(xCnt = 0; xCnt < _fontWidth; xCnt ++){
+"309
 {
 [e = _xCnt -> -> 0 `i `uc ]
 [e $U 1242  ]
 [e :U 1239 ]
 {
-[; ;ks0108.c: 312: if(mask == 0) {
-"312
+[; ;ks0108.c: 310: if(mask == 0){
+"310
 [e $ ! == -> _mask `i -> 0 `i 1243  ]
 {
-[; ;ks0108.c: 313: temp = *pChImage++;
-"313
+[; ;ks0108.c: 311: temp = * pChImage ++;
+"311
 [e = _temp *U ++ _pChImage * -> -> 1 `i `x -> -> # *U _pChImage `i `x ]
-[; ;ks0108.c: 314: mask = 0x80;
-"314
+[; ;ks0108.c: 312: mask = 0x80;
+"312
 [e = _mask -> -> 128 `i `uc ]
-"315
+"313
 }
 [e :U 1243 ]
-[; ;ks0108.c: 315: }
-[; ;ks0108.c: 317: if(temp & mask) {
-"317
+[; ;ks0108.c: 313: }
+[; ;ks0108.c: 315: if(temp & mask){
+"315
 [e $ ! != & -> _temp `i -> _mask `i -> 0 `i 1244  ]
 {
-[; ;ks0108.c: 318: if(mode)
-"318
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 1245  ]
-[; ;ks0108.c: 319: ks0108SetDot(x, y);
-"319
+[; ;ks0108.c: 316: if(mode == 1)
+"316
+[e $ ! == -> _mode `i -> 1 `i 1245  ]
+[; ;ks0108.c: 317: ks0108SetDot(x, y);
+"317
 [e ( _ks0108SetDot (2 , _x _y ]
 [e $U 1246  ]
-"320
+"318
 [e :U 1245 ]
-[; ;ks0108.c: 320: else
-[; ;ks0108.c: 321: ks0108ClearDot(x, y);
-"321
+[; ;ks0108.c: 318: else if(mode == 0)
+[e $ ! == -> _mode `i -> 0 `i 1247  ]
+[; ;ks0108.c: 319: ks0108ClearDot(x, y);
+"319
 [e ( _ks0108ClearDot (2 , _x _y ]
+[e :U 1247 ]
+"320
 [e :U 1246 ]
-"322
 }
-[; ;ks0108.c: 322: } else {
-[e $U 1247  ]
+[; ;ks0108.c: 320: } else {
+[e $U 1248  ]
 [e :U 1244 ]
 {
+"322
+}
+[e :U 1248 ]
+[; ;ks0108.c: 322: }
+[; ;ks0108.c: 324: x ++;
 "324
-}
-[e :U 1247 ]
-[; ;ks0108.c: 324: }
-[; ;ks0108.c: 326: x++;
-"326
 [e ++ _x -> -> 1 `i `uc ]
-[; ;ks0108.c: 327: mask >>= 1;
-"327
+[; ;ks0108.c: 325: mask >>= 1;
+"325
 [e =>> _mask -> 1 `i ]
-"328
+"326
 }
-"311
+"309
 [e ++ _xCnt -> -> 1 `i `uc ]
 [e :U 1242 ]
 [e $ < -> _xCnt `i -> __fontWidth `i 1239  ]
 [e :U 1240 ]
+"326
+}
+[; ;ks0108.c: 326: }
+[; ;ks0108.c: 327: y ++;
+"327
+[e ++ _y -> -> 1 `i `uc ]
 "328
 }
-[; ;ks0108.c: 328: }
-[; ;ks0108.c: 329: y++;
-"329
-[e ++ _y -> -> 1 `i `uc ]
-"330
-}
-"308
+"306
 [e ++ _yCnt -> -> 1 `i `uc ]
 [e :U 1238 ]
 [e $ < -> _yCnt `i -> __fontHeight `i 1235  ]
 [e :U 1236 ]
-"330
+"328
 }
-[; ;ks0108.c: 330: }
-[; ;ks0108.c: 333: pos.x = x_ + chWidth;
-"333
+[; ;ks0108.c: 328: }
+[; ;ks0108.c: 332: pos.x = x_ + chWidth;
+"332
 [e = . _pos 0 -> + -> _x_ `i -> _chWidth `i `uc ]
-[; ;ks0108.c: 334: pos.y = y_;
-"334
+[; ;ks0108.c: 333: pos.y = y_;
+"333
 [e = . _pos 1 _y_ ]
-[; ;ks0108.c: 336: return chWidth;
-"336
+[; ;ks0108.c: 335: return chWidth;
+"335
 [e ) _chWidth ]
 [e $UE 1234  ]
-[; ;ks0108.c: 337: }
-"337
+[; ;ks0108.c: 336: }
+"336
 [e :UE 1234 ]
 }
-"340
+"339
 [v _ks0108PutString `(v ~T0 @X0 1 ef3`*uc`*Cuc`uc ]
 {
-[; ;ks0108.c: 340: void ks0108PutString(char *string, const char *p_font, char mode) {
+[; ;ks0108.c: 339: void ks0108PutString(char *string, const char *p_font, char mode){
 [e :U _ks0108PutString ]
 [v _string `*uc ~T0 @X0 1 r1 ]
 [v _p_font `*Cuc ~T0 @X0 1 r2 ]
 [v _mode `uc ~T0 @X0 1 r3 ]
 [f ]
-"341
+"340
 [v _i `uc ~T0 @X0 1 a ]
-[; ;ks0108.c: 341: uint8_t i = 0;
+[; ;ks0108.c: 340: uint8_t i = 0;
 [e = _i -> -> 0 `i `uc ]
-"342
+"341
 [v _c `uc ~T0 @X0 1 a ]
-[; ;ks0108.c: 342: char c = string[0];
+[; ;ks0108.c: 341: char c = string[0];
 [e = _c *U + _string * -> -> 0 `i `x -> -> # *U _string `i `x ]
-[; ;ks0108.c: 344: while(c != 0) {
-"344
-[e $U 1249  ]
-[e :U 1250 ]
-{
-[; ;ks0108.c: 345: ks0108PutChar(c, p_font, mode);
-"345
-[e ( _ks0108PutChar (3 , , _c _p_font _mode ]
-[; ;ks0108.c: 346: c = string[++i];
-"346
-[e = _c *U + _string * -> =+ _i -> -> 1 `i `uc `ux -> -> # *U _string `ui `ux ]
-"347
-}
-[e :U 1249 ]
-"344
-[e $ != -> _c `i -> 0 `i 1250  ]
+[; ;ks0108.c: 343: while(c != 0){
+"343
+[e $U 1250  ]
 [e :U 1251 ]
-[; ;ks0108.c: 347: }
-[; ;ks0108.c: 348: }
-"348
-[e :UE 1248 ]
+{
+[; ;ks0108.c: 344: ks0108PutChar(c, p_font, mode);
+"344
+[e ( _ks0108PutChar (3 , , _c _p_font _mode ]
+[; ;ks0108.c: 345: c = string[++ i];
+"345
+[e = _c *U + _string * -> =+ _i -> -> 1 `i `uc `ux -> -> # *U _string `ui `ux ]
+"346
 }
-"351
+[e :U 1250 ]
+"343
+[e $ != -> _c `i -> 0 `i 1251  ]
+[e :U 1252 ]
+[; ;ks0108.c: 346: }
+[; ;ks0108.c: 347: }
+"347
+[e :UE 1249 ]
+}
+"350
 [v _ks0108Line `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
-[; ;ks0108.c: 351: void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk) {
+[; ;ks0108.c: 350: void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk){
 [e :U _ks0108Line ]
 [v _xn `uc ~T0 @X0 1 r1 ]
 [v _yn `uc ~T0 @X0 1 r2 ]
 [v _xk `uc ~T0 @X0 1 r3 ]
 [v _yk `uc ~T0 @X0 1 r4 ]
 [f ]
-"352
+"351
 [v _dx `uc ~T0 @X0 1 a ]
 [v _dy `uc ~T0 @X0 1 a ]
 [v _s `uc ~T0 @X0 1 a ]
-[; ;ks0108.c: 352: BYTE dx, dy, s;
-[; ;ks0108.c: 355: if(xn > xk) {
+[; ;ks0108.c: 351: BYTE dx, dy, s;
+[; ;ks0108.c: 354: if(xn > xk){
+"354
+[e $ ! > -> _xn `i -> _xk `i 1254  ]
+{
+[; ;ks0108.c: 355: s = xn;
 "355
-[e $ ! > -> _xn `i -> _xk `i 1253  ]
-{
-[; ;ks0108.c: 356: s = xn;
-"356
 [e = _s _xn ]
-[; ;ks0108.c: 357: xn = xk;
-"357
+[; ;ks0108.c: 356: xn = xk;
+"356
 [e = _xn _xk ]
-[; ;ks0108.c: 358: xk = s;
-"358
+[; ;ks0108.c: 357: xk = s;
+"357
 [e = _xk _s ]
-"360
-}
-[e :U 1253 ]
-[; ;ks0108.c: 360: }
-[; ;ks0108.c: 361: if(yn > yk) {
-"361
-[e $ ! > -> _yn `i -> _yk `i 1254  ]
-{
-[; ;ks0108.c: 362: s = yn;
-"362
-[e = _s _yn ]
-[; ;ks0108.c: 363: yn = yk;
-"363
-[e = _yn _yk ]
-[; ;ks0108.c: 364: yk = s;
-"364
-[e = _yk _s ]
-"366
+"359
 }
 [e :U 1254 ]
-[; ;ks0108.c: 366: }
-[; ;ks0108.c: 367: dx = (xk - xn);
-"367
-[e = _dx -> - -> _xk `i -> _xn `i `uc ]
-[; ;ks0108.c: 368: dy = (yk - yn);
-"368
-[e = _dy -> - -> _yk `i -> _yn `i `uc ]
-[; ;ks0108.c: 369: if((dx == 0) && (dy == 0)) return;
-"369
-[e $ ! && == -> _dx `i -> 0 `i == -> _dy `i -> 0 `i 1255  ]
-[e $UE 1252  ]
+[; ;ks0108.c: 359: }
+[; ;ks0108.c: 360: if(yn > yk){
+"360
+[e $ ! > -> _yn `i -> _yk `i 1255  ]
+{
+[; ;ks0108.c: 361: s = yn;
+"361
+[e = _s _yn ]
+[; ;ks0108.c: 362: yn = yk;
+"362
+[e = _yn _yk ]
+[; ;ks0108.c: 363: yk = s;
+"363
+[e = _yk _s ]
+"365
+}
 [e :U 1255 ]
-[; ;ks0108.c: 372: if(dx >= dy) {
+[; ;ks0108.c: 365: }
+[; ;ks0108.c: 366: dx = (xk - xn);
+"366
+[e = _dx -> - -> _xk `i -> _xn `i `uc ]
+[; ;ks0108.c: 367: dy = (yk - yn);
+"367
+[e = _dy -> - -> _yk `i -> _yn `i `uc ]
+[; ;ks0108.c: 368: if((dx == 0) && (dy == 0)) return;
+"368
+[e $ ! && == -> _dx `i -> 0 `i == -> _dy `i -> 0 `i 1256  ]
+[e $UE 1253  ]
+[e :U 1256 ]
+[; ;ks0108.c: 371: if(dx >= dy){
+"371
+[e $ ! >= -> _dx `i -> _dy `i 1257  ]
+{
+[; ;ks0108.c: 372: s = 0;
 "372
-[e $ ! >= -> _dx `i -> _dy `i 1256  ]
-{
-[; ;ks0108.c: 373: s = 0;
-"373
 [e = _s -> -> 0 `i `uc ]
-[; ;ks0108.c: 374: while(xn < xk) {
+[; ;ks0108.c: 373: while(xn < xk){
+"373
+[e $U 1258  ]
+[e :U 1259 ]
+{
+[; ;ks0108.c: 374: ks0108SetDot(xn ++, yn);
 "374
-[e $U 1257  ]
-[e :U 1258 ]
-{
-[; ;ks0108.c: 375: ks0108SetDot(xn++, yn);
-"375
 [e ( _ks0108SetDot (2 , ++ _xn -> -> 1 `i `uc _yn ]
-[; ;ks0108.c: 376: s = s + dy;
-"376
+[; ;ks0108.c: 375: s = s + dy;
+"375
 [e = _s -> + -> _s `i -> _dy `i `uc ]
-[; ;ks0108.c: 377: if(s >= dx) {
-"377
-[e $ ! >= -> _s `i -> _dx `i 1260  ]
+[; ;ks0108.c: 376: if(s >= dx){
+"376
+[e $ ! >= -> _s `i -> _dx `i 1261  ]
 {
-[; ;ks0108.c: 378: s = s - dx;
-"378
+[; ;ks0108.c: 377: s = s - dx;
+"377
 [e = _s -> - -> _s `i -> _dx `i `uc ]
-[; ;ks0108.c: 379: yn++;
-"379
+[; ;ks0108.c: 378: yn ++;
+"378
 [e ++ _yn -> -> 1 `i `uc ]
+"379
+}
+[e :U 1261 ]
 "380
 }
+[e :U 1258 ]
+"373
+[e $ < -> _xn `i -> _xk `i 1259  ]
 [e :U 1260 ]
 "381
 }
-[e :U 1257 ]
-"374
-[e $ < -> _xn `i -> _xk `i 1258  ]
-[e :U 1259 ]
-"382
-}
+[; ;ks0108.c: 379: }
 [; ;ks0108.c: 380: }
-[; ;ks0108.c: 381: }
-[; ;ks0108.c: 382: } else {
-[e $U 1261  ]
-[e :U 1256 ]
-{
-[; ;ks0108.c: 383: s = 0;
-"383
-[e = _s -> -> 0 `i `uc ]
-[; ;ks0108.c: 384: while(yn < yk) {
-"384
+[; ;ks0108.c: 381: } else {
 [e $U 1262  ]
-[e :U 1263 ]
+[e :U 1257 ]
 {
-[; ;ks0108.c: 385: ks0108SetDot(xn, yn++);
-"385
+[; ;ks0108.c: 382: s = 0;
+"382
+[e = _s -> -> 0 `i `uc ]
+[; ;ks0108.c: 383: while(yn < yk){
+"383
+[e $U 1263  ]
+[e :U 1264 ]
+{
+[; ;ks0108.c: 384: ks0108SetDot(xn, yn ++);
+"384
 [e ( _ks0108SetDot (2 , _xn ++ _yn -> -> 1 `i `uc ]
-[; ;ks0108.c: 386: s = s + dx;
-"386
+[; ;ks0108.c: 385: s = s + dx;
+"385
 [e = _s -> + -> _s `i -> _dx `i `uc ]
-[; ;ks0108.c: 387: if(s >= dy) {
-"387
-[e $ ! >= -> _s `i -> _dy `i 1265  ]
+[; ;ks0108.c: 386: if(s >= dy){
+"386
+[e $ ! >= -> _s `i -> _dy `i 1266  ]
 {
-[; ;ks0108.c: 388: s = s - dy;
-"388
+[; ;ks0108.c: 387: s = s - dy;
+"387
 [e = _s -> - -> _s `i -> _dy `i `uc ]
-[; ;ks0108.c: 389: xn++;
-"389
+[; ;ks0108.c: 388: xn ++;
+"388
 [e ++ _xn -> -> 1 `i `uc ]
+"389
+}
+[e :U 1266 ]
 "390
 }
+[e :U 1263 ]
+"383
+[e $ < -> _yn `i -> _yk `i 1264  ]
 [e :U 1265 ]
 "391
 }
 [e :U 1262 ]
-"384
-[e $ < -> _yn `i -> _yk `i 1263  ]
-[e :U 1264 ]
-"392
-}
-[e :U 1261 ]
+[; ;ks0108.c: 389: }
 [; ;ks0108.c: 390: }
 [; ;ks0108.c: 391: }
 [; ;ks0108.c: 392: }
-[; ;ks0108.c: 393: }
-"393
-[e :UE 1252 ]
+"392
+[e :UE 1253 ]
 }
-"396
+"395
 [v _ks0108Rect `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
-[; ;ks0108.c: 396: void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy) {
+[; ;ks0108.c: 395: void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy){
 [e :U _ks0108Rect ]
 [v _x `uc ~T0 @X0 1 r1 ]
 [v _y `uc ~T0 @X0 1 r2 ]
 [v _dx `uc ~T0 @X0 1 r3 ]
 [v _dy `uc ~T0 @X0 1 r4 ]
 [f ]
-"397
+"396
 [v __x `uc ~T0 @X0 1 a ]
 [v __y `uc ~T0 @X0 1 a ]
-[; ;ks0108.c: 397: BYTE _x, _y;
-[; ;ks0108.c: 398: for(_y = y; _y < (y + dy); _y++) {
-"398
+[; ;ks0108.c: 396: BYTE _x, _y;
+[; ;ks0108.c: 397: for(_y = y; _y < (y + dy); _y ++){
+"397
 {
 [e = __y _y ]
-[e $U 1270  ]
-[e :U 1267 ]
+[e $U 1271  ]
+[e :U 1268 ]
 {
-[; ;ks0108.c: 399: for(_x = x; _x < (x + dx); _x++) {
-"399
+[; ;ks0108.c: 398: for(_x = x; _x < (x + dx); _x ++){
+"398
 {
 [e = __x _x ]
-[e $U 1274  ]
-[e :U 1271 ]
-{
-[; ;ks0108.c: 401: ks0108SetDot(_x, _y);
-"401
-[e ( _ks0108SetDot (2 , __x __y ]
-"402
-}
-"399
-[e ++ __x -> -> 1 `i `uc ]
-[e :U 1274 ]
-[e $ < -> __x `i + -> _x `i -> _dx `i 1271  ]
+[e $U 1275  ]
 [e :U 1272 ]
-"402
-}
-"403
+{
+[; ;ks0108.c: 400: ks0108SetDot(_x, _y);
+"400
+[e ( _ks0108SetDot (2 , __x __y ]
+"401
 }
 "398
+[e ++ __x -> -> 1 `i `uc ]
+[e :U 1275 ]
+[e $ < -> __x `i + -> _x `i -> _dx `i 1272  ]
+[e :U 1273 ]
+"401
+}
+"402
+}
+"397
 [e ++ __y -> -> 1 `i `uc ]
-[e :U 1270 ]
-[e $ < -> __y `i + -> _y `i -> _dy `i 1267  ]
-[e :U 1268 ]
-"403
+[e :U 1271 ]
+[e $ < -> __y `i + -> _y `i -> _dy `i 1268  ]
+[e :U 1269 ]
+"402
 }
+[; ;ks0108.c: 401: }
 [; ;ks0108.c: 402: }
-[; ;ks0108.c: 403: }
-[; ;ks0108.c: 405: }
-"405
-[e :UE 1266 ]
+[; ;ks0108.c: 404: }
+"404
+[e :UE 1267 ]
 }
-"408
+"407
 [v _LabelCreate `(v ~T0 @X0 1 ef5`*S1182`uc`uc`*Cuc`uc ]
 {
-[; ;ks0108.c: 408: void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln) {
+[; ;ks0108.c: 407: void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln){
 [e :U _LabelCreate ]
 [v _lb `*S1182 ~T0 @X0 1 r1 ]
 [v _x `uc ~T0 @X0 1 r2 ]
@@ -9344,158 +9346,154 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _font `*Cuc ~T0 @X0 1 r4 ]
 [v _ln `uc ~T0 @X0 1 r5 ]
 [f ]
-"410
+"409
 [v _i `uc ~T0 @X0 1 a ]
-[; ;ks0108.c: 410: BYTE i;
-[; ;ks0108.c: 411: lb -> size = ln;
-"411
+[; ;ks0108.c: 409: BYTE i;
+[; ;ks0108.c: 410: lb -> size = ln;
+"410
 [e = . *U _lb 2 _ln ]
-[; ;ks0108.c: 412: lb -> p_font = font;
-"412
+[; ;ks0108.c: 411: lb -> p_font = font;
+"411
 [e = . *U _lb 3 _font ]
-[; ;ks0108.c: 413: lb -> x = x;
-"413
+[; ;ks0108.c: 412: lb -> x = x;
+"412
 [e = . *U _lb 0 _x ]
-[; ;ks0108.c: 414: lb -> y = y;
-"414
+[; ;ks0108.c: 413: lb -> y = y;
+"413
 [e = . *U _lb 1 _y ]
-[; ;ks0108.c: 418: for(i = 0; i < lb -> size; i++) lb -> str[i] = ' ';
-"418
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 1279  ]
-[e :U 1276 ]
-[e = *U + &U . *U _lb 4 * -> _i `ux -> -> # *U &U . *U _lb 4 `ui `ux -> -> 32 `ui `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1279 ]
-[e $ < -> _i `i -> . *U _lb 2 `i 1276  ]
-[e :U 1277 ]
-}
-[; ;ks0108.c: 420: LabelSetTxt(lb, lb -> str);
-"420
+[; ;ks0108.c: 416: lb -> str[0] = 0;
+"416
+[e = *U + &U . *U _lb 4 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _lb 4 `ui `ux -> -> 0 `i `uc ]
+[; ;ks0108.c: 417: LabelSetTxt(lb, lb -> str);
+"417
 [e ( _LabelSetTxt (2 , _lb &U . *U _lb 4 ]
-[; ;ks0108.c: 422: }
-"422
-[e :UE 1275 ]
+[; ;ks0108.c: 419: }
+"419
+[e :UE 1276 ]
 }
-"425
+"422
 [v _LabelSetTxt `(v ~T0 @X0 1 ef2`*S1182`*uc ]
 {
-[; ;ks0108.c: 425: void LabelSetTxt(Label *lb, char *str) {
+[; ;ks0108.c: 422: void LabelSetTxt(Label *lb, char *str){
 [e :U _LabelSetTxt ]
 [v _lb `*S1182 ~T0 @X0 1 r1 ]
 [v _str `*uc ~T0 @X0 1 r2 ]
 [f ]
-"427
+"423
 [v _i `uc ~T0 @X0 1 a ]
-[v _SymbWidth `uc ~T0 @X0 1 a ]
-[v _temp `uc ~T0 @X0 1 a ]
-[; ;ks0108.c: 427: BYTE i, SymbWidth, temp = 0;
-[e = _temp -> -> 0 `i `uc ]
-[; ;ks0108.c: 430: ks0108GotoXY(lb -> x, lb -> y);
+[v _w `uc ~T0 @X0 1 a ]
+[v _end `uc ~T0 @X0 1 a ]
+[; ;ks0108.c: 423: BYTE i, w, end = 0;
+[e = _end -> -> 0 `i `uc ]
+[; ;ks0108.c: 426: ks0108GotoXY(lb -> x, lb -> y);
+"426
+[e ( _ks0108GotoXY (2 , . *U _lb 0 . *U _lb 1 ]
+[; ;ks0108.c: 427: for(i = 0; i < lb -> size; i ++){
+"427
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 1281  ]
+[e :U 1278 ]
+{
+[; ;ks0108.c: 429: if(str[i] == 0){
+"429
+[e $ ! == -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `i -> 0 `i 1282  ]
+{
+[; ;ks0108.c: 430: end = 1;
 "430
-[e ( _ks0108GotoXY (2 , . *U _lb 0 . *U _lb 1 ]
-[; ;ks0108.c: 431: for(i = 0; i < lb -> size; i++) {
+[e = _end -> -> 1 `i `uc ]
 "431
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 1284  ]
-[e :U 1281 ]
-{
-[; ;ks0108.c: 432: SymbWidth = ks0108PutChar(lb -> str[i], lb -> p_font, 0);
-"432
-[e = _SymbWidth ( _ks0108PutChar (3 , , *U + &U . *U _lb 4 * -> _i `ux -> -> # *U &U . *U _lb 4 `ui `ux . *U _lb 3 -> -> 0 `i `uc ]
-"433
 }
-"431
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1284 ]
-[e $ < -> _i `i -> . *U _lb 2 `i 1281  ]
 [e :U 1282 ]
+[; ;ks0108.c: 431: }
+[; ;ks0108.c: 432: if(end == 1){
+"432
+[e $ ! == -> _end `i -> 1 `i 1283  ]
+{
+[; ;ks0108.c: 433: str[i] = ' ';
 "433
+[e = *U + _str * -> _i `ux -> -> # *U _str `ui `ux -> -> 32 `ui `uc ]
+"434
 }
-[; ;ks0108.c: 433: }
-[; ;ks0108.c: 435: ks0108GotoXY(lb -> x, lb -> y);
-"435
-[e ( _ks0108GotoXY (2 , . *U _lb 0 . *U _lb 1 ]
-[; ;ks0108.c: 436: for(i = 0; i < lb -> size; i++) {
+[e :U 1283 ]
+[; ;ks0108.c: 434: }
+[; ;ks0108.c: 436: if(lb -> str[i] != str[i]){
 "436
+[e $ ! != -> *U + &U . *U _lb 4 * -> _i `ux -> -> # *U &U . *U _lb 4 `ui `ux `i -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `i 1284  ]
 {
-[e = _i -> -> 0 `i `uc ]
-[e $U 1288  ]
-[e :U 1285 ]
-{
-[; ;ks0108.c: 437: if(str[i] == 0) temp = 1;
-"437
-[e $ ! == -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `i -> 0 `i 1289  ]
-[e = _temp -> -> 1 `i `uc ]
-[e :U 1289 ]
-[; ;ks0108.c: 438: if(temp == 0)
+[; ;ks0108.c: 438: w = ks0108PutChar(lb -> str[i], lb -> p_font, 0);
 "438
-[e $ ! == -> _temp `i -> 0 `i 1290  ]
-[; ;ks0108.c: 439: lb -> str[i] = str[i];
-"439
-[e = *U + &U . *U _lb 4 * -> _i `ux -> -> # *U &U . *U _lb 4 `ui `ux *U + _str * -> _i `ux -> -> # *U _str `ui `ux ]
-[e $U 1291  ]
+[e = _w ( _ks0108PutChar (3 , , *U + &U . *U _lb 4 * -> _i `ux -> -> # *U &U . *U _lb 4 `ui `ux . *U _lb 3 -> -> 0 `i `uc ]
+[; ;ks0108.c: 440: pos.x -= w;
 "440
-[e :U 1290 ]
-[; ;ks0108.c: 440: else
-[; ;ks0108.c: 441: lb -> str[i] = ' ';
-"441
-[e = *U + &U . *U _lb 4 * -> _i `ux -> -> # *U &U . *U _lb 4 `ui `ux -> -> 32 `ui `uc ]
-[e :U 1291 ]
+[e =- . _pos 0 _w ]
+[; ;ks0108.c: 442: lb -> str[i] = str[i];
+"442
+[e = *U + &U . *U _lb 4 * -> _i `ux -> -> # *U &U . *U _lb 4 `ui `ux *U + _str * -> _i `ux -> -> # *U _str `ui `ux ]
 [; ;ks0108.c: 443: ks0108PutChar(lb -> str[i], lb -> p_font, 1);
 "443
 [e ( _ks0108PutChar (3 , , *U + &U . *U _lb 4 * -> _i `ux -> -> # *U &U . *U _lb 4 `ui `ux . *U _lb 3 -> -> 1 `i `uc ]
 "444
 }
-"436
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1288 ]
-[e $ < -> _i `i -> . *U _lb 2 `i 1285  ]
-[e :U 1286 ]
-"444
-}
-[; ;ks0108.c: 444: }
-[; ;ks0108.c: 447: }
+[; ;ks0108.c: 444: } else {
+[e $U 1285  ]
+[e :U 1284 ]
+{
+[; ;ks0108.c: 446: ks0108PutChar(str[i], lb -> p_font, 2);
+"446
+[e ( _ks0108PutChar (3 , , *U + _str * -> _i `ux -> -> # *U _str `ui `ux . *U _lb 3 -> -> 2 `i `uc ]
 "447
-[e :UE 1280 ]
 }
-"450
+[e :U 1285 ]
+"449
+}
+"427
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1281 ]
+[e $ < -> _i `i -> . *U _lb 2 `i 1278  ]
+[e :U 1279 ]
+"449
+}
+[; ;ks0108.c: 447: }
+[; ;ks0108.c: 449: }
+[; ;ks0108.c: 452: }
+"452
+[e :UE 1277 ]
+}
+"455
 [v _LabelClrTxt `(v ~T0 @X0 1 ef1`*S1182 ]
 {
-[; ;ks0108.c: 450: void LabelClrTxt(Label *lb) {
+[; ;ks0108.c: 455: void LabelClrTxt(Label *lb){
 [e :U _LabelClrTxt ]
 [v _lb `*S1182 ~T0 @X0 1 r1 ]
 [f ]
-"452
+"456
 [v _i `uc ~T0 @X0 1 a ]
-[v _SymbWidth `uc ~T0 @X0 1 a ]
-[; ;ks0108.c: 452: BYTE i, SymbWidth;
-[; ;ks0108.c: 454: ks0108GotoXY(lb -> x, lb -> y);
-"454
+[; ;ks0108.c: 456: BYTE i;
+[; ;ks0108.c: 458: ks0108GotoXY(lb -> x, lb -> y);
+"458
 [e ( _ks0108GotoXY (2 , . *U _lb 0 . *U _lb 1 ]
-[; ;ks0108.c: 455: for(i = 0; i < lb -> size; i++) {
-"455
+[; ;ks0108.c: 459: for(i = 0; i < lb -> size; i ++){
+"459
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 1296  ]
-[e :U 1293 ]
+[e $U 1290  ]
+[e :U 1287 ]
 {
-[; ;ks0108.c: 456: SymbWidth = ks0108PutChar(lb -> str[i], lb -> p_font, 0);
-"456
-[e = _SymbWidth ( _ks0108PutChar (3 , , *U + &U . *U _lb 4 * -> _i `ux -> -> # *U &U . *U _lb 4 `ui `ux . *U _lb 3 -> -> 0 `i `uc ]
-"457
+[; ;ks0108.c: 460: ks0108PutChar(' ', lb -> p_font, 0);
+"460
+[e ( _ks0108PutChar (3 , , -> -> 32 `ui `uc . *U _lb 3 -> -> 0 `i `uc ]
+"461
 }
-"455
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1296 ]
-[e $ < -> _i `i -> . *U _lb 2 `i 1293  ]
-[e :U 1294 ]
-"457
-}
-[; ;ks0108.c: 457: }
-[; ;ks0108.c: 459: }
 "459
-[e :UE 1292 ]
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1290 ]
+[e $ < -> _i `i -> . *U _lb 2 `i 1287  ]
+[e :U 1288 ]
+"461
+}
+[; ;ks0108.c: 461: }
+[; ;ks0108.c: 463: }
+"463
+[e :UE 1286 ]
 }

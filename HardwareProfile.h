@@ -124,7 +124,7 @@ $Id: HardwareProfile.h 202 2012-08-09 14:17:18Z Vlad $
 
 #define CH10_TRIS    &TRISA
 #define CH10_LAT     &LATA
-#define CH10_IO_BIT  4
+#define CH10_IO_BIT  5
 #define CH10_AN_NUM  4
 
 

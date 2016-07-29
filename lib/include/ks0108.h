@@ -70,11 +70,9 @@ typedef struct {
     BYTE y;
     BYTE size;
     const char *p_font;
-    char str[22];
+    char str[31];
     //char *str;
 } Label;
-
-
 
 
 

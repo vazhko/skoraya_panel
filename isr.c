@@ -58,6 +58,7 @@ void interrupt high_priority HI_ISR(void) {
             Nop();
         } else {
             BUZ_ON = 0;
+            //BUZ_ON_TRIS = 1;
         }
 
 
