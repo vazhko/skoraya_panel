@@ -43,6 +43,7 @@ $Id: Main.h 202 2012-08-09 14:17:18Z Vlad $
 
 
 /***************************************************************************/
+/*
 typedef enum {
     ST_INIT = 0,
     ST_EXPERIMENT_READY,
@@ -56,19 +57,23 @@ typedef enum {
     ST_DEBUG
         
 } LAB_STATES;
+*/
 
 typedef enum {
-    KEY_MENU = 0,	
-    KEY_START,
-    KEY_M,    
-    KEY_P,
-    KEY_T1,
-    KEY_T2,
-    KEY_MM,
-    KEY_PP,
-    KEY_TT1,
-    KEY_TT2,
-    
+    KEY_0_AVT_PWR_220 = 0,    
+    KEY_1_LT_NOSHY,
+    KEY_2_LT_SALON_M,           
+    KEY_3_LT_SALON_P,             
+    KEY_4_VENT_OUT,
+    KEY_5_VENT_IN,
+    KEY_6_ROZ_ON,
+    KEY_7_LT_OUT_BACK,           
+    KEY_8_LT_OUT_SIDE,
+    KEY_9_LT_SHELF_M,
+    KEY_10_LT_SHELF_P,
+            
+    KEY_2_LT_SALON_MM,
+    KEY_3_LT_SALON_PP,    
 } KEYS;
 
 

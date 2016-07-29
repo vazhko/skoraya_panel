@@ -8303,7 +8303,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\mTouchSensor.h: 98: UINT8 channelNumber;
 [; ;include\mTouchSensor.h: 99: INT8 chargeDelay;
 [; ;include\mTouchSensor.h: 100: } SENSOR;
-[; ;include\mTouchSensor.h: 110: extern volatile SENSOR sensors [6];
+[; ;include\mTouchSensor.h: 110: extern volatile SENSOR sensors [11];
 [; ;include\mTouchSensor.h: 119: extern enum _MTOUCHSENSORSTATE_
 [; ;include\mTouchSensor.h: 120: {
 [; ;include\mTouchSensor.h: 121: SENSOR_INITIALIZING,
@@ -8339,7 +8339,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\mTouchButton.h: 66: SENSOR* pSensor;
 [; ;include\mTouchButton.h: 67: INT16 pressCounter;
 [; ;include\mTouchButton.h: 68: }MTOUCHBUTTON;
-[; ;include\mTouchButton.h: 79: extern MTOUCHBUTTON buttons[10];
+[; ;include\mTouchButton.h: 79: extern MTOUCHBUTTON buttons[13];
 [; ;include\mTouchButton.h: 107: void MTouchSetButton(UINT8 buttonNumber, UINT8 sensorNumber, UINT8 decode);
 [; ;include\mTouchButton.h: 131: void MTouchDecodeButtons(void);
 [; ;include\mTouchMatrixButton.h: 61: typedef struct tag_MTOUCHMATRIXBUTTON {
@@ -8387,8 +8387,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\mTouchControl.h: 105: } MTOUCHCONTROLDECODE;
 [; ;include\mTouchControl.h: 129: void MTouchDecode(void);
 "64 ../lib/mTouchCap/mTouchSensor.c
-[v _sensors `VS1181 ~T0 @X0 -> 6 `i e ]
-[; ;mTouchSensor.c: 64: volatile SENSOR sensors[6];
+[v _sensors `VS1181 ~T0 @X0 -> 11 `i e ]
+[; ;mTouchSensor.c: 64: volatile SENSOR sensors[11];
 [; ;mTouchSensor.c: 72: void MTouchUpdateSensorAverage(SENSOR* pSensor, UINT16 rate);
 [; ;mTouchSensor.c: 73: void MTouchSensorDecode (SENSOR* pSensor);
 "78
@@ -8435,12 +8435,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1190  ]
 [e :U 1189 ]
 {
-[; ;mTouchSensor.c: 90: pSensor->pressThreshold = 150;
+[; ;mTouchSensor.c: 90: pSensor->pressThreshold = 800;
 "90
-[e = . *U _pSensor 7 -> -> 150 `i `us ]
-[; ;mTouchSensor.c: 91: pSensor->releaseThreshold = 150>>1;
+[e = . *U _pSensor 7 -> -> 800 `i `us ]
+[; ;mTouchSensor.c: 91: pSensor->releaseThreshold = 800>>1;
 "91
-[e = . *U _pSensor 8 -> >> -> 150 `i -> 1 `i `us ]
+[e = . *U _pSensor 8 -> >> -> 800 `i -> 1 `i `us ]
 "92
 }
 [e :U 1190 ]
@@ -8792,12 +8792,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mTouchSensor.c: 264: pCurrentSensor = (SENSOR*)sensors + startSensorNumber;
 "264
 [e = _pCurrentSensor + -> &U _sensors `*S1181 * -> F9176 `ux -> -> # *U -> &U _sensors `*S1181 `ui `ux ]
-[; ;mTouchSensor.c: 265: pLastSensor = (SENSOR*)sensors + (6-1);
+[; ;mTouchSensor.c: 265: pLastSensor = (SENSOR*)sensors + (11-1);
 "265
-[e = _pLastSensor + -> &U _sensors `*S1181 * -> - -> 6 `i -> 1 `i `x -> -> # *U -> &U _sensors `*S1181 `i `x ]
-[; ;mTouchSensor.c: 268: if(startSensorNumber == (6-1))
+[e = _pLastSensor + -> &U _sensors `*S1181 * -> - -> 11 `i -> 1 `i `x -> -> # *U -> &U _sensors `*S1181 `i `x ]
+[; ;mTouchSensor.c: 268: if(startSensorNumber == (11-1))
 "268
-[e $ ! == -> F9176 `i - -> 6 `i -> 1 `i 1212  ]
+[e $ ! == -> F9176 `i - -> 11 `i -> 1 `i 1212  ]
 [; ;mTouchSensor.c: 269: {
 "269
 {
@@ -8817,11 +8817,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 1213 ]
 [; ;mTouchSensor.c: 273: }
-[; ;mTouchSensor.c: 276: for(i=0; i<6; i++)
+[; ;mTouchSensor.c: 276: for(i=0; i<11; i++)
 "276
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 6 `i 1214  ]
+[e $ < -> _i `i -> 11 `i 1214  ]
 [e $U 1215  ]
 "277
 [e :U 1214 ]
@@ -8908,7 +8908,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "276
 [e :U 1216 ]
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 6 `i 1214  ]
+[e $ < -> _i `i -> 11 `i 1214  ]
 [e :U 1215 ]
 "322
 }
@@ -8916,9 +8916,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mTouchSensor.c: 324: startSensorNumber++;
 "324
 [e ++ F9176 -> -> 1 `i `uc ]
-[; ;mTouchSensor.c: 326: if(startSensorNumber > (6-1))
+[; ;mTouchSensor.c: 326: if(startSensorNumber > (11-1))
 "326
-[e $ ! > -> F9176 `i - -> 6 `i -> 1 `i 1222  ]
+[e $ ! > -> F9176 `i - -> 11 `i -> 1 `i 1222  ]
 [; ;mTouchSensor.c: 327: {
 "327
 {

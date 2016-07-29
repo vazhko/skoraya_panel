@@ -8264,7 +8264,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\mTouchSensor.h: 98: UINT8 channelNumber;
 [; ;include\mTouchSensor.h: 99: INT8 chargeDelay;
 [; ;include\mTouchSensor.h: 100: } SENSOR;
-[; ;include\mTouchSensor.h: 110: extern volatile SENSOR sensors [6];
+[; ;include\mTouchSensor.h: 110: extern volatile SENSOR sensors [11];
 [; ;include\mTouchSensor.h: 119: extern enum _MTOUCHSENSORSTATE_
 [; ;include\mTouchSensor.h: 120: {
 [; ;include\mTouchSensor.h: 121: SENSOR_INITIALIZING,
@@ -8300,7 +8300,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\mTouchButton.h: 66: SENSOR* pSensor;
 [; ;include\mTouchButton.h: 67: INT16 pressCounter;
 [; ;include\mTouchButton.h: 68: }MTOUCHBUTTON;
-[; ;include\mTouchButton.h: 79: extern MTOUCHBUTTON buttons[10];
+[; ;include\mTouchButton.h: 79: extern MTOUCHBUTTON buttons[13];
 [; ;include\mTouchButton.h: 107: void MTouchSetButton(UINT8 buttonNumber, UINT8 sensorNumber, UINT8 decode);
 [; ;include\mTouchButton.h: 131: void MTouchDecodeButtons(void);
 [; ;include\mTouchMatrixButton.h: 61: typedef struct tag_MTOUCHMATRIXBUTTON {
@@ -8348,8 +8348,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\mTouchControl.h: 105: } MTOUCHCONTROLDECODE;
 [; ;include\mTouchControl.h: 129: void MTouchDecode(void);
 "63 ../lib/mTouchCap/mTouchButton.c
-[v _buttons `S1184 ~T0 @X0 -> 10 `i e ]
-[; ;mTouchButton.c: 63: MTOUCHBUTTON buttons[10];
+[v _buttons `S1184 ~T0 @X0 -> 13 `i e ]
+[; ;mTouchButton.c: 63: MTOUCHBUTTON buttons[13];
 "68
 [v _MTouchSetButton `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 {
@@ -8416,11 +8416,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mTouchButton.c: 92: UINT8 sensorState;
 [; ;mTouchButton.c: 94: UINT8 decode;
 [; ;mTouchButton.c: 96: UINT8 state;
-[; ;mTouchButton.c: 98: for(i = 0; i < 10; i++) {
+[; ;mTouchButton.c: 98: for(i = 0; i < 13; i++) {
 "98
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1190  ]
+[e $ < -> _i `i -> 13 `i 1190  ]
 [e $U 1191  ]
 [e :U 1190 ]
 {
@@ -8654,7 +8654,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "98
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 1190  ]
+[e $ < -> _i `i -> 13 `i 1190  ]
 [e :U 1191 ]
 "179
 }

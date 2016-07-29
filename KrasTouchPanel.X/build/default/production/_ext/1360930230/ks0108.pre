@@ -1,5 +1,5 @@
 
-# 1 "../lib/mTouchCap/mTouchDebug.c"
+# 1 "../lib/ks0108.c"
 
 # 21 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9583,16 +9583,21 @@ typedef signed char INT8;
 typedef signed short int INT16;
 typedef signed long int INT32;
 
+
+
+ typedef signed long long INT64;
+
 # 87
 typedef unsigned char UINT8;
 typedef unsigned short int UINT16;
 
-
-typedef unsigned short long UINT24;
-
+# 93
 typedef unsigned long int UINT32;
 
-# 99
+
+ typedef unsigned long long UINT64;
+
+
 typedef union
 {
 UINT8 Val;
@@ -9639,48 +9644,7 @@ struct
 } bits;
 } UINT16_VAL, UINT16_BITS;
 
-
-
-typedef union
-{
-UINT24 Val;
-UINT8 v[3] ;
-struct 
-{
-UINT8 LB;
-UINT8 HB;
-UINT8 UB;
-} byte;
-struct 
-{
- UINT8 b0:1;
- UINT8 b1:1;
- UINT8 b2:1;
- UINT8 b3:1;
- UINT8 b4:1;
- UINT8 b5:1;
- UINT8 b6:1;
- UINT8 b7:1;
- UINT8 b8:1;
- UINT8 b9:1;
- UINT8 b10:1;
- UINT8 b11:1;
- UINT8 b12:1;
- UINT8 b13:1;
- UINT8 b14:1;
- UINT8 b15:1;
- UINT8 b16:1;
- UINT8 b17:1;
- UINT8 b18:1;
- UINT8 b19:1;
- UINT8 b20:1;
- UINT8 b21:1;
- UINT8 b22:1;
- UINT8 b23:1;
-} bits;
-} UINT24_VAL, UINT24_BITS;
-
-
+# 187
 typedef union
 {
 UINT32 Val;
@@ -9739,6 +9703,95 @@ struct
  UINT8 b31:1;
 } bits;
 } UINT32_VAL;
+
+
+
+typedef union
+{
+UINT64 Val;
+UINT32 d[2] ;
+UINT16 w[4] ;
+UINT8 v[8] ;
+struct 
+{
+UINT32 LD;
+UINT32 HD;
+} dword;
+struct 
+{
+UINT16 LW;
+UINT16 HW;
+UINT16 UW;
+UINT16 MW;
+} word;
+struct 
+{
+ UINT8 b0:1;
+ UINT8 b1:1;
+ UINT8 b2:1;
+ UINT8 b3:1;
+ UINT8 b4:1;
+ UINT8 b5:1;
+ UINT8 b6:1;
+ UINT8 b7:1;
+ UINT8 b8:1;
+ UINT8 b9:1;
+ UINT8 b10:1;
+ UINT8 b11:1;
+ UINT8 b12:1;
+ UINT8 b13:1;
+ UINT8 b14:1;
+ UINT8 b15:1;
+ UINT8 b16:1;
+ UINT8 b17:1;
+ UINT8 b18:1;
+ UINT8 b19:1;
+ UINT8 b20:1;
+ UINT8 b21:1;
+ UINT8 b22:1;
+ UINT8 b23:1;
+ UINT8 b24:1;
+ UINT8 b25:1;
+ UINT8 b26:1;
+ UINT8 b27:1;
+ UINT8 b28:1;
+ UINT8 b29:1;
+ UINT8 b30:1;
+ UINT8 b31:1;
+ UINT8 b32:1;
+ UINT8 b33:1;
+ UINT8 b34:1;
+ UINT8 b35:1;
+ UINT8 b36:1;
+ UINT8 b37:1;
+ UINT8 b38:1;
+ UINT8 b39:1;
+ UINT8 b40:1;
+ UINT8 b41:1;
+ UINT8 b42:1;
+ UINT8 b43:1;
+ UINT8 b44:1;
+ UINT8 b45:1;
+ UINT8 b46:1;
+ UINT8 b47:1;
+ UINT8 b48:1;
+ UINT8 b49:1;
+ UINT8 b50:1;
+ UINT8 b51:1;
+ UINT8 b52:1;
+ UINT8 b53:1;
+ UINT8 b54:1;
+ UINT8 b55:1;
+ UINT8 b56:1;
+ UINT8 b57:1;
+ UINT8 b58:1;
+ UINT8 b59:1;
+ UINT8 b60:1;
+ UINT8 b61:1;
+ UINT8 b62:1;
+ UINT8 b63:1;
+} bits;
+} UINT64_VAL;
 
 # 339
 typedef void VOID;
@@ -10303,69 +10356,6 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 7 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 23 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdio.h"
-extern int errno;
-
-# 54
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 17 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\conio.h"
-extern int errno;
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 31
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 99 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 191
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
 # 27 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdlib.h"
 typedef struct {
 int rem;
@@ -10426,221 +10416,481 @@ extern long labs(long);
 extern char * itoa(char * buf, int val, int base);
 extern char * utoa(char * buf, unsigned val, int base);
 
-extern char * ltoa(long val, char * buf);
-extern char * ultoa(unsigned long val, char * buf);
 
-# 112
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
 extern char * ftoa(float f, int * status);
 
-# 22 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\string.h"
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
+# 3 "../lib/include\delay.h"
+extern unsigned char delayus_variable;
 
-# 42
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
+# 59
+void DelayBigUs(unsigned int cnt);
+void DelayMs(unsigned char cnt);
+void DelayMs_ISR(unsigned char cnt);
+void DelayBigMs(unsigned int cnt);
+void DelayS(unsigned char cnt);
+void DelayS_ISR(unsigned char cnt);
 
+# 56 "../lib/include\ks0108.h"
+typedef unsigned char uint8_t;
+typedef unsigned int uint16_t;
 
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
-# 81
-extern char * strupr(char *);
-extern char * strlwr(char *);
-
-# 62 "../lib/mTouchCap/include\mTouchSensor.h"
-typedef volatile unsigned char* SFR;
-typedef unsigned char IOMASK;
-
-# 83
-typedef struct tag_SENSOR {
-INT32 average;
-INT32 oversampleFilterData;
-SFR trisReg;
-SFR latReg;
-INT16 decimateFilterData;
-UINT16 sampleCounter;
-UINT16 samplesNumber;
-UINT16 pressThreshold;
-UINT16 releaseThreshold;
-UINT16 averageCount;
-UINT16 delta;
-UINT16 debounceCount;
-UINT8 state;
-IOMASK ioMask;
-UINT8 channelNumber;
-INT8 chargeDelay;
-} SENSOR;
-
-# 110
-extern volatile SENSOR sensors [11];
-
-# 119
-extern enum _MTOUCHSENSORSTATE_
-{
-SENSOR_INITIALIZING,
-SENSOR_RELEASED,
-SENSOR_PRESSED,
-SENSOR_DISCONNECTED = 0x80
-} MTOUCHSENSORSTATE;
-
-# 153
-void MTouchAcquisition(void);
-
-# 180
-INT16 MTouchAcquisitionCVD(SENSOR* pCurrentSensor, SENSOR* pPreviousSensor);
-
-# 205
-INT16 MTouchAcquisitionCTMU(SENSOR* pSensor);
-
-# 230
-void MTouchInit (void);
-
-# 268
-void MTouchSetSensor(UINT8 sensorNumber, SFR tris, SFR lat,
-UINT8 ioBitNumber, UINT8 channelNumber, INT16 threshold, INT16 oversampling, INT8 chargeDelay);
-
-# 116 "../lib/mTouchCap/include\mTouchDebug.h"
-typedef struct tag_DEBUGDELAY {
-INT16 error;
+typedef struct {
+uint8_t x;
+uint8_t y;
+uint8_t page;
+} displayPos;
 
 
 
 
-INT8 delay;
-} DEBUGDELAY;
+typedef struct {
+BYTE x;
+BYTE y;
+BYTE size;
+const char *p_font;
+char str[22];
 
-# 133
-typedef struct tag_DEBUGCURRENT {
-INT16 error;
-UINT8 current;
+} Label;
+
+# 82
+void ks0108Enable(void);
+void ks0108Fill(uint8_t mode);
+void ks0108GotoXY(uint8_t, uint8_t);
+void ks0108Init(void);
+
+BYTE ks0108PutChar(char s, const char *p_font, char mode);
+void ks0108PutString(char *string, const char *p_font, char mode);
+char ks0108ReadData(uint8_t incXAdd);
+void ks0108WriteCommand(uint8_t cmd, uint8_t chip);
+void ks0108WriteData(uint8_t data);
 
 
-} DEBUGCURRENT;
+void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
+void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk);
+void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy);
 
-# 162
-void LogChar(char ch);
+void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
+void LabelSetTxt(Label *lb, char *str);
+void LabelClrTxt(Label *lb);
 
-# 189
-DEBUGCURRENT* MTouchDebugCurrent(UINT8 sensorNumber);
+# 5 "../lib/ks0108.c"
+void ks0108SetDot(uint8_t, uint8_t);
+void ks0108ClearDot(uint8_t, uint8_t);
 
-# 216
-DEBUGDELAY* MTouchDebugDelay(UINT8 sensorNumber);
 
-# 243
-INT16 MTouchDebugThreshold(UINT8 sensorNumber);
+displayPos pos;
+
+# 19
+void ks0108Enable(void) {
+{ delayus_variable=(unsigned char)(5/1); asm("movlb (_delayus_variable) >> 8"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); } asm("decfsz (_delayus_variable)&0ffh,f"); asm("goto $ - 12");;
+LATE0 = 1;
+{ delayus_variable=(unsigned char)(5/1); asm("movlb (_delayus_variable) >> 8"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); } asm("decfsz (_delayus_variable)&0ffh,f"); asm("goto $ - 12");;
+LATE0 = 0;
+
+}
+
+
+void ks0108Fill(uint8_t mode) {
+uint8_t i, j;
+
+for(i = 0; i < 8; i++) {
+ks0108GotoXY(0, i * 8);
+for(j = 0; j < 128; j++)
+ks0108WriteData(mode);
+}
+}
+
+
+void ks0108Fill_xy(uint8_t mode, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2) {
+uint8_t i, j;
+
+for(i = y1; i < y2; i++) {
+ks0108GotoXY(x1, i * 8);
+for(j = x1; j < x2; j++)
+ks0108WriteData(mode);
+}
+}
+
+
+void ks0108GotoXY(uint8_t x, uint8_t y) {
+uint8_t chip = 0x00, cmd;
+
+if(x > 127) x = 0;
+if(y > 63) y = 0;
+
+pos.x = x;
+pos.y = y;
+pos.page = y >> 3;
+
+if(x >= 64) {
+x -= 64;
+chip = 0x01;
+}
+
+# 70
+cmd = 0x40 | x;
+ks0108WriteCommand(cmd, chip);
+
+cmd = 0xB8 | pos.page;
+
+ks0108WriteCommand(cmd, 0x00);
+ks0108WriteCommand(cmd, 0x01);
+
+
+
+}
+
+
+void ks0108SetDot(uint8_t x, uint8_t y) {
+uint8_t data;
+
+ks0108GotoXY(x, y);
+data = ks0108ReadData(1);
+data = ks0108ReadData(1);
+
+if(!(data & (0x01 << (y % 8)))) {
+
+data |= 0x01 << (y % 8);
+
+ks0108WriteData(data);
+
+}
+}
+
+
+void ks0108ClearDot(uint8_t x, uint8_t y) {
+uint8_t data;
+
+ks0108GotoXY(x, y);
+data = ks0108ReadData(1);
+data = ks0108ReadData(1);
+
+if((data & (0x01 << (y % 8)))) {
+
+data &= ~(0x01 << (y % 8));
+
+ks0108WriteData(data);
+}
+}
+
+
+
+
+void ks0108Init(void) {
+
+# 123
+TRISCbits.TRISC3 = 0;
+TRISCbits.TRISC2 = 0;
+TRISCbits.TRISC0 = 0;
+
+TRISEbits.TRISE0 = 0;
+TRISEbits.TRISE1 = 0;
+TRISEbits.TRISE2 = 0;
+
+LATC0 = 1;
+
+DelayMs(1);
+
+pos.x = 0;
+pos.y = 0;
+pos.page = 0;
+
+
+ks0108WriteCommand(0x3F, 0x00);
+ks0108WriteCommand(0x3F, 0x01);
+
+ks0108WriteCommand(0xC0, 0x00);
+ks0108WriteCommand(0xC0, 0x01);
+ks0108Fill(0x00);
+
+# 156
+}
+
+
+char ks0108ReadData(uint8_t incXAdd) {
+uint8_t data;
+volatile uint8_t i;
+
+# 167
+LATD = 0x00;
+TRISD = 0xff;
+
+if(pos.x < 64) {
+LATC3 = 1;
+LATC2 = 0;
+} else if(pos.x >= 64) {
+LATC3 = 0;
+LATC2 = 1;
+}
+
+LATE1 = 1;
+LATE2 = 1;
+
+for(i = 0; i < 8; i++);
+
+LATE0 = 1;
+
+for(i = 0; i < 8; i++);
+
+data = PORTD;
+
+# 192
+LATE0 = 0;
+
+for(i = 0; i < 8; i++);
+
+# 203
+TRISD = 0x00;
+
+
+if(incXAdd == 0)
+pos.x++;
+else
+ks0108GotoXY(pos.x, pos.y);
+
+
+return data;
+}
+
+
+void ks0108WriteCommand(uint8_t cmd, uint8_t chip) {
+
+if(chip == 0x00) {
+LATC3 = 1;
+LATC2 = 0;
+} else if(chip == 0x01) {
+LATC3 = 0;
+LATC2 = 1;
+}
+
+LATE1 = 0;
+LATE2 = 0;
+
+TRISD = 0x00;
+LATD = cmd;
+ks0108Enable();
+LATD = 0x00;
+}
+
+
+void ks0108WriteData(uint8_t data) {
+
+if(pos.x >= 128)
+return;
+
+if(pos.x < 64) {
+LATC3 = 1;
+LATC2 = 0;
+} else if(pos.x >= 64) {
+LATC3 = 0;
+LATC2 = 1;
+}
+
+if(pos.x == 64) {
+ks0108WriteCommand(0x40, 0x01);
+
+# 254
+}
+
+
+LATE1 = 0;
+LATE2 = 1;
+
+TRISD = 0x00;
 
 # 267
-void MTouchDebugLogDeltas(void);
+LATD = data;
 
-# 291
-void MTouchDebugLogAverages(void);
+ks0108Enable();
 
-# 61 "../lib/mTouchCap/include\mTouchButton.h"
-typedef struct tag_MTOUCHBUTTON {
-UINT8 state;
-UINT8 curState;
-UINT8 decode;
-UINT8 prevSensorState;
-SENSOR* pSensor;
-INT16 pressCounter;
-}MTOUCHBUTTON;
+# 276
+pos.x++;
 
-# 79
-extern MTOUCHBUTTON buttons[13];
+LATD = 0;
+}
 
-# 107
-void MTouchSetButton(UINT8 buttonNumber, UINT8 sensorNumber, UINT8 decode);
 
-# 131
-void MTouchDecodeButtons(void);
+BYTE ks0108PutChar(char s, const char *p_font, char mode) {
 
-# 61 "../lib/mTouchCap/include\mTouchMatrixButton.h"
-typedef struct tag_MTOUCHMATRIXBUTTON {
-UINT8 state;
-UINT8 curState;
-UINT8 decode;
-UINT8 prevSensorState;
-SENSOR* pCh1Sensor;
-SENSOR* pCh2Sensor;
-INT16 pressCounter;
+WORD base;
+BYTE x_, y_;
+BYTE xCnt, yCnt, x = 0, y, chWidth;
+BYTE temp = 0, mask, _fontHeight, _fontWidth;
+const char *pChImage;
 
-}MTOUCHMATRIXBUTTON;
+_fontHeight = p_font[0];
+_fontWidth = p_font[1];
 
-# 110
-void MTouchSetMatrixButton(UINT8 buttonNumber, UINT8 ch1SensorNumber, UINT8 ch2SensorNumber, UINT8 decode);
+base = s - 32;
+base *= p_font[2];
+base += 3;
 
-# 134
-void MTouchDecodeMatrixButtons(void);
 
-# 61 "../lib/mTouchCap/include\mTouch2ChSlider.h"
-typedef struct tag_MTOUCH2CHSLIDER {
-UINT8 state;
-INT16 value;
-SENSOR* pCh1Sensor;
-SENSOR* pCh2Sensor;
-}MTOUCH2CHSLIDER;
 
-# 104
-void MTouchSet2ChSlider(UINT8 sliderNumber, UINT8 ch1SensorNumber, UINT8 ch2SensorNumber);
 
-# 128
-void MTouchDecode2ChSliders(void);
+chWidth = p_font[base];
+pChImage = &p_font[base + 1];
 
-# 60 "../lib/mTouchCap/include\mTouch4ChSlider.h"
-typedef struct tag_MTOUCH4CHSLIDER {
-UINT8 state;
-INT16 value;
-SENSOR* pCh1Sensor;
-SENSOR* pCh2Sensor;
-SENSOR* pCh3Sensor;
-SENSOR* pCh4Sensor;
-}MTOUCH4CHSLIDER;
+y_ = pos.y;
+x_ = pos.x;
 
-# 108
-void MTouchSet4ChSlider(UINT8 sliderNumber, UINT8 ch1SensorNumber, UINT8 ch2SensorNumber, UINT8 ch3SensorNumber, UINT8 ch4SensorNumber);
+y = y_;
 
-# 132
-void MTouchDecode4ChSliders(void);
+for(yCnt = 0; yCnt < _fontHeight; yCnt++) {
+x = x_;
+mask = 0;
+for(xCnt = 0; xCnt < _fontWidth; xCnt++) {
+if(mask == 0) {
+temp = *pChImage++;
+mask = 0x80;
+}
 
-# 71 "../lib/mTouchCap/include\mTouchControl.h"
-extern enum _MTOUCHCONTROLSTATE_
-{
-CONTROL_IDLE = 0x80,
-CONTROL_PRESSED = 0x01,
-CONTROL_RELEASED = 0x02
-} MTOUCHCONTROLSTATE;
+if(temp & mask) {
+if(mode)
+ks0108SetDot(x, y);
+else
+ks0108ClearDot(x, y);
+} else {
 
-# 98
-extern enum _MTOUCHCONTROLDECODE_
-{
-DECODE_TOGGLE = 0x01,
-DECODE_PRESS_RELEASE = 0x02,
-DECODE_MOST_PRESSED = 0x04,
-DECODE_PRESS_REPEAT = 0x08,
-DECODE_ONE_EVENT = 0x10
-} MTOUCHCONTROLDECODE;
+}
 
-# 129
-void MTouchDecode(void);
+x++;
+mask >>= 1;
+}
+y++;
+}
+
+
+pos.x = x_ + chWidth;
+pos.y = y_;
+
+return chWidth;
+}
+
+
+void ks0108PutString(char *string, const char *p_font, char mode) {
+uint8_t i = 0;
+char c = string[0];
+
+while(c != 0) {
+ks0108PutChar(c, p_font, mode);
+c = string[++i];
+}
+}
+
+
+void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk) {
+BYTE dx, dy, s;
+
+
+if(xn > xk) {
+s = xn;
+xn = xk;
+xk = s;
+
+}
+if(yn > yk) {
+s = yn;
+yn = yk;
+yk = s;
+
+}
+dx = (xk - xn);
+dy = (yk - yn);
+if((dx == 0) && (dy == 0)) return;
+
+
+if(dx >= dy) {
+s = 0;
+while(xn < xk) {
+ks0108SetDot(xn++, yn);
+s = s + dy;
+if(s >= dx) {
+s = s - dx;
+yn++;
+}
+}
+} else {
+s = 0;
+while(yn < yk) {
+ks0108SetDot(xn, yn++);
+s = s + dx;
+if(s >= dy) {
+s = s - dy;
+xn++;
+}
+}
+}
+}
+
+
+void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy) {
+BYTE _x, _y;
+for(_y = y; _y < (y + dy); _y++) {
+for(_x = x; _x < (x + dx); _x++) {
+
+ks0108SetDot(_x, _y);
+}
+}
+
+}
+
+
+void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln) {
+
+BYTE i;
+lb -> size = ln;
+lb -> p_font = font;
+lb -> x = x;
+lb -> y = y;
+
+
+
+for(i = 0; i < lb -> size; i++) lb -> str[i] = ' ';
+
+LabelSetTxt(lb, lb -> str);
+
+}
+
+
+void LabelSetTxt(Label *lb, char *str) {
+
+BYTE i, SymbWidth, temp = 0;
+
+
+ks0108GotoXY(lb -> x, lb -> y);
+for(i = 0; i < lb -> size; i++) {
+SymbWidth = ks0108PutChar(lb -> str[i], lb -> p_font, 0);
+}
+
+ks0108GotoXY(lb -> x, lb -> y);
+for(i = 0; i < lb -> size; i++) {
+if(str[i] == 0) temp = 1;
+if(temp == 0)
+lb -> str[i] = str[i];
+else
+lb -> str[i] = ' ';
+
+ks0108PutChar(lb -> str[i], lb -> p_font, 1);
+}
+
+
+}
+
+
+void LabelClrTxt(Label *lb) {
+
+BYTE i, SymbWidth;
+
+ks0108GotoXY(lb -> x, lb -> y);
+for(i = 0; i < lb -> size; i++) {
+SymbWidth = ks0108PutChar(lb -> str[i], lb -> p_font, 0);
+}
+
+}
 

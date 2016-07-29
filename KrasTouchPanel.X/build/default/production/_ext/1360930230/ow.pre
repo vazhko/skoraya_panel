@@ -10416,10 +10416,10 @@ char init_1wire(void) {
 unsigned char st;
 
 
-((TRISB) &= ~(1 << (ow_bit)));
+((TRISC) &= ~(1 << (ow_bit)));
 __nop();
 
-((LATB) &= ~(1 << (ow_bit)));
+((LATC) &= ~(1 << (ow_bit)));
 
 ow_delay(295);
 ow_delay(295);
@@ -10427,11 +10427,11 @@ ow_delay(295);
 __gie = (unsigned char)GIE;
 GIE = 0;
 
-((TRISB) |= (1 << (ow_bit)));
+((TRISC) |= (1 << (ow_bit)));
 
 ow_delay(78);
 
-st = !((PORTB) & (1 <<(ow_bit)));
+st = !((PORTC) & (1 <<(ow_bit)));
 
 GIE = (bit)__gie;
 
@@ -10452,22 +10452,22 @@ char i, data = 0;
 __gie = (unsigned char)GIE;
 GIE = 0;
 
-((LATB) |= (1 << (ow_bit)));
+((LATC) |= (1 << (ow_bit)));
 
 for(i = 0; i < 8; i++) {
 
-((TRISB) &= ~(1 << (ow_bit)));
-((LATB) &= ~(1 << (ow_bit)));
+((TRISC) &= ~(1 << (ow_bit)));
+((LATC) &= ~(1 << (ow_bit)));
 
 ow_delay(5);
 
-((TRISB) |= (1 << (ow_bit)));
+((TRISC) |= (1 << (ow_bit)));
 
 ow_delay(16);
 
 data >>= 1;
 
-if(((PORTB) & (1 <<(ow_bit))))data |= 0x80;
+if(((PORTC) & (1 <<(ow_bit))))data |= 0x80;
 else data &= 0x7f;
 
 ow_delay(78);
@@ -10486,27 +10486,27 @@ char i;
 __gie = (unsigned char)GIE;
 GIE = 0;
 
-((LATB) |= (1 << (ow_bit)));
+((LATC) |= (1 << (ow_bit)));
 
 for(i = 0; i < 8; i++) {
 
-((TRISB) &= ~(1 << (ow_bit)));
-((LATB) &= ~(1 << (ow_bit)));
+((TRISC) &= ~(1 << (ow_bit)));
+((LATC) &= ~(1 << (ow_bit)));
 
 ow_delay(5);
 
-if(((data) & (1 <<(i)))) ((LATB) |= (1 << (ow_bit))); else ((LATB) &= ~(1 << (ow_bit)));
+if(((data) & (1 <<(i)))) ((LATC) |= (1 << (ow_bit))); else ((LATC) &= ~(1 << (ow_bit)));
 
 ow_delay(78);
 
-((LATB) |= (1 << (ow_bit)));
+((LATC) |= (1 << (ow_bit)));
 
 ow_delay(60);
 }
 
 GIE = (bit)__gie;
 
-((TRISB) |= (1 << (ow_bit)));
+((TRISC) |= (1 << (ow_bit)));
 
 }
 
@@ -10517,7 +10517,7 @@ int t;
 char i;
 double f;
 
-((TRISB) |= (1 << (ow_bit)));
+((TRISC) |= (1 << (ow_bit)));
 
 if(init_1wire()) {
 write_1wire(0xcc);
@@ -10556,8 +10556,8 @@ write_1wire(0x44);
 ow_delay(16);
 
 
-((TRISB) &= ~(1 << (ow_bit)));
-((LATB) |= (1 << (ow_bit)));
+((TRISC) &= ~(1 << (ow_bit)));
+((LATC) |= (1 << (ow_bit)));
 
 
 
@@ -10571,27 +10571,27 @@ char i;
 __gie = (unsigned char)GIE;
 GIE = 0;
 
-LATB = 0xff;
+LATC = 0xff;
 
 for(i = 0; i < 8; i++) {
 
-TRISB = 0x00;
-LATB= 0x00;
+TRISC = 0x00;
+LATC= 0x00;
 
 ow_delay(5);
 
-if(((data) & (1 <<(i)))) LATB = 0xff; else LATB = 0x00;
+if(((data) & (1 <<(i)))) LATC = 0xff; else LATC = 0x00;
 
 ow_delay(78);
 
-LATB = 0xff;
+LATC = 0xff;
 
 ow_delay(60);
 }
 
 GIE = (bit)__gie;
 
-TRISB = 0xff;
+TRISC = 0xff;
 
 }
 
@@ -10599,11 +10599,11 @@ TRISB = 0xff;
 void ds18b20_start_port(void) {
 
 
-TRISB = 0x00;
-LATB = 0x00;
+TRISC = 0x00;
+LATC = 0x00;
 ow_delay(295);
 ow_delay(295);
-TRISB = 0xff;
+TRISC = 0xff;
 
 ow_delay(78);
 ow_delay(295);
@@ -10615,8 +10615,8 @@ write_1wire_port(0x44);
 ow_delay(16);
 
 
-TRISB = 0x00;
-LATB = 0xff;
+TRISC = 0x00;
+LATC = 0xff;
 
 
 

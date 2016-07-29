@@ -1,7 +1,4 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"14 ../Main.c
-[c E9449 0 1 2 3 4 5 6 7 8 .. ]
-[n E9449 . ST_INIT ST_EXPERIMENT_READY ST_EXPERIMENT_WAITING ST_EXPERIMENT_DOING ST_EXPERIMENT_DONE ST_MENU ST_VIEW_RESULTS ST_VIEW_RESULTS_ASK_DEL ST_DEBUG  ]
 "68 ../lib/include\ks0108.h
 [s S1191 `uc 1 `uc 1 `uc 1 `*Cuc 1 `uc -> 22 `i ]
 [n S1191 . x y size p_font str ]
@@ -11,16 +8,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p i ___nop ]
 "18 ../lib/include\messages.h
 [v _InitMessages `(v ~T0 @X0 0 ef ]
-"79 ../Main.h
+"84 ../Main.h
 [v _InitializeSystem `(v ~T0 @X0 0 ef ]
 "85 ../lib/include\ks0108.h
 [v _ks0108Init `(v ~T0 @X0 0 ef ]
 "98
 [v _LabelCreate `(v ~T0 @X0 0 ef5`*S1191`uc`uc`*Cuc`uc ]
-"205 C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"99 ../lib/include\ks0108.h
-[v _LabelSetTxt `(v ~T0 @X0 0 ef2`*S1191`*uc ]
 "84
 [v _ks0108GotoXY `(v ~T0 @X0 0 ef2`uc`uc ]
 "87
@@ -45,12 +38,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1112 . . . . . . ]
 "17681
 [v _INTCONbits `VS1112 ~T0 @X0 0 e@4082 ]
-"80 ../Main.h
+"85 ../Main.h
 [v _Beep `(v ~T0 @X0 0 ef1`uc ]
-"21 ../Main.c
+"19 ../Main.c
 [v _tsk_display `(v ~T0 @X0 0 ef ]
-"19
+"18
 [v _tsk_process `(v ~T0 @X0 0 ef ]
+"20
+[v _tsk_ds18b20 `(v ~T0 @X0 0 ef ]
 "18824 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
 [v _FERR1 `Vb ~T0 @X0 0 e@32090 ]
 "19256
@@ -61,6 +56,97 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SWDTEN `Vb ~T0 @X0 0 e@32392 ]
 "46 ../lib/include\messages.h
 [v _ProcessMessages `(v ~T0 @X0 0 ef ]
+"129 ../lib/mTouchCap/include\mTouchControl.h
+[v _MTouchDecode `(v ~T0 @X0 0 ef ]
+"83 ../lib/mTouchCap/include\mTouchSensor.h
+[s S1182 `l 1 `l 1 `*Vuc 1 `*Vuc 1 `s 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 `uc 1 `c 1 ]
+[n S1182 tag_SENSOR average oversampleFilterData trisReg latReg decimateFilterData sampleCounter samplesNumber pressThreshold releaseThreshold averageCount delta debounceCount state ioMask channelNumber chargeDelay ]
+"61 ../lib/mTouchCap/include\mTouchButton.h
+[s S1185 `uc 1 `uc 1 `uc 1 `uc 1 `*S1182 1 `s 1 ]
+[n S1185 tag_MTOUCHBUTTON state curState decode prevSensorState pSensor pressCounter ]
+"79
+[v _buttons `S1185 ~T0 @X0 -> 0 `x e ]
+"116 ../Main.c
+[c E9449 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E9449 . KEY_0_AVT_PWR_220 KEY_1_LT_NOSHY KEY_2_LT_SALON_M KEY_3_LT_SALON_P KEY_4_VENT_OUT KEY_5_VENT_IN KEY_6_ROZ_ON KEY_7_LT_OUT_BACK KEY_8_LT_OUT_SIDE KEY_9_LT_SHELF_M KEY_10_LT_SHELF_P KEY_2_LT_SALON_MM KEY_3_LT_SALON_PP  ]
+[c E9186 128 1 2 .. ]
+[n E9186 _MTOUCHCONTROLSTATE_ CONTROL_IDLE CONTROL_PRESSED CONTROL_RELEASED  ]
+"7780 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
+[s S469 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S469 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"7790
+[s S470 :1 `uc 1 ]
+[n S470 . LA0 ]
+"7793
+[s S471 :1 `uc 1 :1 `uc 1 ]
+[n S471 . . LA1 ]
+"7797
+[s S472 :2 `uc 1 :1 `uc 1 ]
+[n S472 . . LA2 ]
+"7801
+[s S473 :3 `uc 1 :1 `uc 1 ]
+[n S473 . . LA3 ]
+"7805
+[s S474 :4 `uc 1 :1 `uc 1 ]
+[n S474 . . LA4 ]
+"7809
+[s S475 :5 `uc 1 :1 `uc 1 ]
+[n S475 . . LA5 ]
+"7813
+[s S476 :6 `uc 1 :1 `uc 1 ]
+[n S476 . . LA6 ]
+"7817
+[s S477 :7 `uc 1 :1 `uc 1 ]
+[n S477 . . LA7 ]
+"7779
+[u S468 `S469 1 `S470 1 `S471 1 `S472 1 `S473 1 `S474 1 `S475 1 `S476 1 `S477 1 ]
+[n S468 . . . . . . . . . . ]
+"7822
+[v _LATAbits `VS468 ~T0 @X0 0 e@3977 ]
+"7912
+[s S479 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S479 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"7922
+[s S480 :1 `uc 1 ]
+[n S480 . LB0 ]
+"7925
+[s S481 :1 `uc 1 :1 `uc 1 ]
+[n S481 . . LB1 ]
+"7929
+[s S482 :2 `uc 1 :1 `uc 1 ]
+[n S482 . . LB2 ]
+"7933
+[s S483 :3 `uc 1 :1 `uc 1 ]
+[n S483 . . LB3 ]
+"7937
+[s S484 :4 `uc 1 :1 `uc 1 ]
+[n S484 . . LB4 ]
+"7941
+[s S485 :5 `uc 1 :1 `uc 1 ]
+[n S485 . . LB5 ]
+"7945
+[s S486 :6 `uc 1 :1 `uc 1 ]
+[n S486 . . LB6 ]
+"7949
+[s S487 :7 `uc 1 :1 `uc 1 ]
+[n S487 . . LB7 ]
+"7911
+[u S478 `S479 1 `S480 1 `S481 1 `S482 1 `S483 1 `S484 1 `S485 1 `S486 1 `S487 1 ]
+[n S478 . . . . . . . . . . ]
+"7954
+[v _LATBbits `VS478 ~T0 @X0 0 e@3978 ]
+"205 C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"99 ../lib/include\ks0108.h
+[v _LabelSetTxt `(v ~T0 @X0 0 ef2`*S1191`*uc ]
+"15 ../Main.c
+[v _ow_bit `uc ~T0 @X0 0 e ]
+"100 ../lib/include\ow.h
+[v _ds18b20_start `(v ~T0 @X0 0 ef ]
+"107 ../lib/oss\oss.h
+[v __sys_tick `Vi ~T0 @X0 0 e ]
+"99 ../lib/include\ow.h
+[v _ds18b20_read `(d ~T0 @X0 0 ef ]
 [; ;include\htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;include\htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;include\pic18f46k22.h: 47: extern volatile unsigned char ANSELA @ 0xF38;
@@ -8358,7 +8444,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\mTouchSensor.h: 98: UINT8 channelNumber;
 [; ;include\mTouchSensor.h: 99: INT8 chargeDelay;
 [; ;include\mTouchSensor.h: 100: } SENSOR;
-[; ;include\mTouchSensor.h: 110: extern volatile SENSOR sensors [6];
+[; ;include\mTouchSensor.h: 110: extern volatile SENSOR sensors [11];
 [; ;include\mTouchSensor.h: 119: extern enum _MTOUCHSENSORSTATE_
 [; ;include\mTouchSensor.h: 120: {
 [; ;include\mTouchSensor.h: 121: SENSOR_INITIALIZING,
@@ -8394,7 +8480,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\mTouchButton.h: 66: SENSOR* pSensor;
 [; ;include\mTouchButton.h: 67: INT16 pressCounter;
 [; ;include\mTouchButton.h: 68: }MTOUCHBUTTON;
-[; ;include\mTouchButton.h: 79: extern MTOUCHBUTTON buttons[10];
+[; ;include\mTouchButton.h: 79: extern MTOUCHBUTTON buttons[13];
 [; ;include\mTouchButton.h: 107: void MTouchSetButton(UINT8 buttonNumber, UINT8 sensorNumber, UINT8 decode);
 [; ;include\mTouchButton.h: 131: void MTouchDecodeButtons(void);
 [; ;include\mTouchMatrixButton.h: 61: typedef struct tag_MTOUCHMATRIXBUTTON {
@@ -8567,32 +8653,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\ks0108.h: 98: void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
 [; ;include\ks0108.h: 99: void LabelSetTxt(Label *lb, char *str);
 [; ;include\ks0108.h: 100: void LabelClrTxt(Label *lb);
-[; ;Main.h: 46: typedef enum {
-[; ;Main.h: 47: ST_INIT = 0,
-[; ;Main.h: 48: ST_EXPERIMENT_READY,
-[; ;Main.h: 49: ST_EXPERIMENT_WAITING,
-[; ;Main.h: 50: ST_EXPERIMENT_DOING,
-[; ;Main.h: 51: ST_EXPERIMENT_DONE,
-[; ;Main.h: 52: ST_MENU,
-[; ;Main.h: 54: ST_VIEW_RESULTS,
-[; ;Main.h: 55: ST_VIEW_RESULTS_ASK_DEL,
-[; ;Main.h: 56: ST_DEBUG
-[; ;Main.h: 58: } LAB_STATES;
-[; ;Main.h: 60: typedef enum {
-[; ;Main.h: 61: KEY_MENU = 0,
-[; ;Main.h: 62: KEY_START,
-[; ;Main.h: 63: KEY_M,
-[; ;Main.h: 64: KEY_P,
-[; ;Main.h: 65: KEY_T1,
-[; ;Main.h: 66: KEY_T2,
-[; ;Main.h: 67: KEY_MM,
-[; ;Main.h: 68: KEY_PP,
-[; ;Main.h: 69: KEY_TT1,
-[; ;Main.h: 70: KEY_TT2,
-[; ;Main.h: 72: } KEYS;
-[; ;Main.h: 79: extern void InitializeSystem(void);
-[; ;Main.h: 80: extern void Beep(BYTE );
-[; ;Main.h: 81: extern void pwm4_load(WORD );
+[; ;Main.h: 62: typedef enum {
+[; ;Main.h: 63: KEY_0_AVT_PWR_220 = 0,
+[; ;Main.h: 64: KEY_1_LT_NOSHY,
+[; ;Main.h: 65: KEY_2_LT_SALON_M,
+[; ;Main.h: 66: KEY_3_LT_SALON_P,
+[; ;Main.h: 67: KEY_4_VENT_OUT,
+[; ;Main.h: 68: KEY_5_VENT_IN,
+[; ;Main.h: 69: KEY_6_ROZ_ON,
+[; ;Main.h: 70: KEY_7_LT_OUT_BACK,
+[; ;Main.h: 71: KEY_8_LT_OUT_SIDE,
+[; ;Main.h: 72: KEY_9_LT_SHELF_M,
+[; ;Main.h: 73: KEY_10_LT_SHELF_P,
+[; ;Main.h: 75: KEY_2_LT_SALON_MM,
+[; ;Main.h: 76: KEY_3_LT_SALON_PP,
+[; ;Main.h: 77: } KEYS;
+[; ;Main.h: 84: extern void InitializeSystem(void);
+[; ;Main.h: 85: extern void Beep(BYTE );
+[; ;Main.h: 86: extern void pwm4_load(WORD );
 "1 ../font13.h
 [v _font13 `Cuc ~T0 @X0 -> 0 `x e ]
 [i _font13
@@ -26064,28 +26142,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;cour13.h: 899: 0x00
 [; ;cour13.h: 900: };
 "14 ../Main.c
-[v _curr_state `E9449 ~T0 @X0 1 e ]
-[i _curr_state
--> . `E9449 0 `E9449
-]
-[; ;Main.c: 14: LAB_STATES curr_state = ST_INIT;
-"15
 [v _sys_tick `Vi ~T0 @X0 1 e ]
 [i _sys_tick
 -> 0 `i
 ]
-[; ;Main.c: 15: volatile int sys_tick = 0;
-[; ;Main.c: 16: extern unsigned char ow_bit;
-[; ;Main.c: 19: void tsk_process(void);
-[; ;Main.c: 20: void tsk_exp(void);
-[; ;Main.c: 21: void tsk_display(void);
-[; ;Main.c: 22: void tsk_adc(void);
-[; ;Main.c: 23: void tsk_ds18b20(void);
-[; ;Main.c: 24: void tsk_pid(void);
-[; ;Main.c: 25: void tsk_sign_flash(void);
-[; ;Main.c: 26: void tsk_write_flash(void);
-"28
-[; ;Main.c: 28: asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x01" "," "0x00" "," "0x01" "," "0x00" "," "0x02" "," "0x00" "," "0x16" "," "0x06");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x25" "," "0x0B" "," "0x16" "," "0x0F" ","
+[; ;Main.c: 14: volatile int sys_tick = 0;
+[; ;Main.c: 15: extern unsigned char ow_bit;
+[; ;Main.c: 18: void tsk_process(void);
+[; ;Main.c: 19: void tsk_display(void);
+[; ;Main.c: 20: void tsk_ds18b20(void);
+"23
+[; ;Main.c: 23: asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x01" "," "0x00" "," "0x01" "," "0x00" "," "0x02" "," "0x00" "," "0x16" "," "0x06");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x25" "," "0x0B" "," "0x16" "," "0x0F" ","
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
 [; <" 	db	0x01,0x00,0x01,0x00,0x02,0x00,0x16,0x06 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
@@ -26150,161 +26217,447 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
 [; <" 	psect eeprom_data,class=EEDATA,noexec ;# ">
 [; <" 	db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ;# ">
-"31
+"26
 [v _a `Vuc ~T0 @X0 1 e ]
 [v _b `Vuc ~T0 @X0 1 e ]
-[; ;Main.c: 31: volatile char a, b;
-"32
+[; ;Main.c: 26: volatile char a, b;
+"27
 [v _c `Vi ~T0 @X0 1 e ]
 [v _d `Vi ~T0 @X0 1 e ]
-[; ;Main.c: 32: volatile int c, d;
-"33
+[; ;Main.c: 27: volatile int c, d;
+"28
 [v _e `Vul ~T0 @X0 1 e ]
 [v _f `Vul ~T0 @X0 1 e ]
-[; ;Main.c: 33: volatile DWORD e, f;
-"34
+[; ;Main.c: 28: volatile DWORD e, f;
+"29
 [v _k `Vd ~T0 @X0 1 e ]
 [v _l `Vd ~T0 @X0 1 e ]
-[; ;Main.c: 34: volatile double k, l;
-"36
+[; ;Main.c: 29: volatile double k, l;
+"31
+[v _f_T_salona `d ~T0 @X0 1 e ]
+[; ;Main.c: 31: double f_T_salona;
+"33
 [v _str `uc ~T0 @X0 -> 20 `i e ]
-[; ;Main.c: 36: char str[20];
+[; ;Main.c: 33: char str[20];
+"36
+[v _lb_temp `S1191 ~T0 @X0 1 e ]
+[; ;Main.c: 36: Label lb_temp;
+"37
+[v _lb_temp2 `S1191 ~T0 @X0 1 e ]
+[; ;Main.c: 37: Label lb_temp2;
 "39
-[v _lb_napr `S1191 ~T0 @X0 1 e ]
-[; ;Main.c: 39: Label lb_napr;
-"41
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;Main.c: 41: void main(void) {
+[; ;Main.c: 39: void main(void) {
 [e :U _main ]
 [f ]
-[; ;Main.c: 43: __nop();
-"43
+[; ;Main.c: 41: __nop();
+"41
 [e ( ___nop ..  ]
-[; ;Main.c: 44: InitMessages();
-"44
+[; ;Main.c: 42: InitMessages();
+"42
 [e ( _InitMessages ..  ]
-[; ;Main.c: 45: InitializeSystem();
-"45
+[; ;Main.c: 43: InitializeSystem();
+"43
 [e ( _InitializeSystem ..  ]
-[; ;Main.c: 48: ks0108Init();
-"48
+[; ;Main.c: 45: ks0108Init();
+"45
 [e ( _ks0108Init ..  ]
-[; ;Main.c: 49: LabelCreate(&lb_napr, 0, 30, font13, 10);
+[; ;Main.c: 49: LabelCreate(&lb_temp, 60, 22, font13, 10);
 "49
-[e ( _LabelCreate (4 , , , , &U _lb_napr -> -> 0 `i `uc -> -> 30 `i `uc &U _font13 -> -> 10 `i `uc ]
-[; ;Main.c: 50: sprintf(str, "URA!!!!");
-"50
-[e ( _sprintf (1 , &U _str :s 1C ]
-[; ;Main.c: 51: LabelSetTxt(&lb_napr, str);
-"51
-[e ( _LabelSetTxt (2 , &U _lb_napr &U _str ]
+[e ( _LabelCreate (4 , , , , &U _lb_temp -> -> 60 `i `uc -> -> 22 `i `uc &U _font13 -> -> 10 `i `uc ]
 [; ;Main.c: 55: ks0108GotoXY(40, 50);
 "55
 [e ( _ks0108GotoXY (2 , -> -> 40 `i `uc -> -> 50 `i `uc ]
-[; ;Main.c: 56: ks0108PutChar(0x89, &font13, 1);
+[; ;Main.c: 56: ks0108PutChar('A', &font13, 1);
 "56
-[e ( _ks0108PutChar (3 , , -> -> 137 `i `uc &U _font13 -> -> 1 `i `uc ]
-[; ;Main.c: 58: ks0108GotoXY(34, 50);
+[e ( _ks0108PutChar (3 , , -> -> 65 `ui `uc &U _font13 -> -> 1 `i `uc ]
+[; ;Main.c: 57: ks0108GotoXY(50, 50);
+"57
+[e ( _ks0108GotoXY (2 , -> -> 50 `i `uc -> -> 50 `i `uc ]
+[; ;Main.c: 58: ks0108PutChar('B', &font13, 1);
 "58
-[e ( _ks0108GotoXY (2 , -> -> 34 `i `uc -> -> 50 `i `uc ]
-[; ;Main.c: 59: ks0108PutChar(0x8a, &font13, 1);
-"59
-[e ( _ks0108PutChar (3 , , -> -> 138 `i `uc &U _font13 -> -> 1 `i `uc ]
-[; ;Main.c: 62: __nop();
-"62
-[e ( ___nop ..  ]
-[; ;Main.c: 63: __nop();
-"63
-[e ( ___nop ..  ]
-[; ;Main.c: 66: INTCONbits.GIE = 1;
+[e ( _ks0108PutChar (3 , , -> -> 66 `ui `uc &U _font13 -> -> 1 `i `uc ]
+[; ;Main.c: 66: __nop();
 "66
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;Main.c: 68: Beep(10);
-"68
-[e ( _Beep (1 -> -> 10 `i `uc ]
-[; ;Main.c: 70: while(1) {
+[e ( ___nop ..  ]
+[; ;Main.c: 67: __nop();
+"67
+[e ( ___nop ..  ]
+[; ;Main.c: 70: INTCONbits.GIE = 1;
 "70
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;Main.c: 72: Beep(10);
+"72
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 77: while(1) {
+"77
 [e :U 1194 ]
 {
-[; ;Main.c: 74: tsk_display();
-"74
-[e ( _tsk_display ..  ]
-[; ;Main.c: 75: tsk_process();
-"75
-[e ( _tsk_process ..  ]
-[; ;Main.c: 80: __nop();
+[; ;Main.c: 80: tsk_display();
 "80
-[e ( ___nop ..  ]
-[; ;Main.c: 81: __nop();
+[e ( _tsk_display ..  ]
+[; ;Main.c: 81: tsk_process();
 "81
-[e ( ___nop ..  ]
-[; ;Main.c: 84: if((FERR1) || (OERR1)) {
-"84
-[e $ ! || _FERR1 _OERR1 1196  ]
-{
-[; ;Main.c: 85: CREN1 = 0;
-"85
-[e = _CREN1 -> -> 0 `i `b ]
+[e ( _tsk_process ..  ]
+[; ;Main.c: 82: tsk_ds18b20();
+"82
+[e ( _tsk_ds18b20 ..  ]
 [; ;Main.c: 86: __nop();
 "86
 [e ( ___nop ..  ]
-[; ;Main.c: 87: CREN1 = 1;
+[; ;Main.c: 87: __nop();
 "87
+[e ( ___nop ..  ]
+[; ;Main.c: 90: if((FERR1) || (OERR1)) {
+"90
+[e $ ! || _FERR1 _OERR1 1196  ]
+{
+[; ;Main.c: 91: CREN1 = 0;
+"91
+[e = _CREN1 -> -> 0 `i `b ]
+[; ;Main.c: 92: __nop();
+"92
+[e ( ___nop ..  ]
+[; ;Main.c: 93: CREN1 = 1;
+"93
 [e = _CREN1 -> -> 1 `i `b ]
-"88
+"94
 }
 [e :U 1196 ]
-[; ;Main.c: 88: }
-[; ;Main.c: 90: if(SWDTEN == 0) {
-"90
+[; ;Main.c: 94: }
+[; ;Main.c: 96: if(SWDTEN == 0) {
+"96
 [e $ ! == -> _SWDTEN `i -> 0 `i 1197  ]
 {
-"92
-}
-[e :U 1197 ]
-[; ;Main.c: 92: }
-[; ;Main.c: 93: asm(" clrwdt");
-"93
-[; <"  clrwdt ;# ">
-[; ;Main.c: 96: ProcessMessages();
-"96
-[e ( _ProcessMessages ..  ]
 "98
 }
+[e :U 1197 ]
+[; ;Main.c: 98: }
+[; ;Main.c: 99: asm(" clrwdt");
+"99
+[; <"  clrwdt ;# ">
+[; ;Main.c: 102: ProcessMessages();
+"102
+[e ( _ProcessMessages ..  ]
+"104
+}
 [e :U 1193 ]
-"70
+"77
 [e $U 1194  ]
 [e :U 1195 ]
-[; ;Main.c: 98: }
-[; ;Main.c: 99: }
-"99
-[e :UE 1192 ]
-}
-"102
-[v _tsk_process `(v ~T0 @X0 1 ef ]
-{
-[; ;Main.c: 102: void tsk_process(void) {
-[e :U _tsk_process ]
-[f ]
-"103
-[v F9513 `i ~T0 @X0 1 s prev_tick ]
-[v F9514 `i ~T0 @X0 1 s i ]
-[; ;Main.c: 103: static int prev_tick, i;
+[; ;Main.c: 104: }
 [; ;Main.c: 105: }
 "105
-[e :UE 1198 ]
+[e :UE 1192 ]
 }
 "108
+[v _tsk_process `(v ~T0 @X0 1 ef ]
+{
+[; ;Main.c: 108: void tsk_process(void) {
+[e :U _tsk_process ]
+[f ]
+"109
+[v F9496 `i ~T0 @X0 1 s prev_tick ]
+[v F9497 `i ~T0 @X0 1 s i ]
+[; ;Main.c: 109: static int prev_tick, i;
+[; ;Main.c: 113: MTouchDecode();
+"113
+[e ( _MTouchDecode ..  ]
+[; ;Main.c: 116: if(((buttons[KEY_7_LT_OUT_BACK].state) == CONTROL_PRESSED)) {
+"116
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 7 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1199  ]
+{
+[; ;Main.c: 117: Beep(10);
+"117
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 118: LATAbits.LATA6 ^= 1;
+"118
+[e =^ . . _LATAbits 0 6 -> -> 1 `i `uc ]
+"119
+}
+[e :U 1199 ]
+[; ;Main.c: 119: }
+[; ;Main.c: 121: if(((buttons[KEY_8_LT_OUT_SIDE].state) == CONTROL_PRESSED)) {
+"121
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 8 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1200  ]
+{
+[; ;Main.c: 122: Beep(10);
+"122
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 123: LATAbits.LATA7 ^= 1;
+"123
+[e =^ . . _LATAbits 0 7 -> -> 1 `i `uc ]
+"124
+}
+[e :U 1200 ]
+[; ;Main.c: 124: }
+[; ;Main.c: 126: if(((buttons[KEY_6_ROZ_ON].state) == CONTROL_PRESSED)) {
+"126
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 6 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1201  ]
+{
+[; ;Main.c: 127: Beep(10);
+"127
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 128: LATBbits.LATB7 ^= 1;
+"128
+[e =^ . . _LATBbits 0 7 -> -> 1 `i `uc ]
+"129
+}
+[e :U 1201 ]
+[; ;Main.c: 129: }
+[; ;Main.c: 131: if(((buttons[KEY_0_AVT_PWR_220].state) == CONTROL_PRESSED)) {
+"131
+[e $ ! == -> . *U + &U _buttons * -> . `E9449 0 `ux -> -> # *U &U _buttons `ui `ux 0 `i -> . `E9186 1 `i 1202  ]
+{
+[; ;Main.c: 132: Beep(10);
+"132
+[e ( _Beep (1 -> -> 10 `i `uc ]
+[; ;Main.c: 133: LATBbits.LATB6 ^= 1;
+"133
+[e =^ . . _LATBbits 0 6 -> -> 1 `i `uc ]
+"134
+}
+[e :U 1202 ]
+[; ;Main.c: 134: }
+[; ;Main.c: 138: }
+"138
+[e :UE 1198 ]
+}
+"141
 [v _tsk_display `(v ~T0 @X0 1 ef ]
 {
-[; ;Main.c: 108: void tsk_display(void) {
+[; ;Main.c: 141: void tsk_display(void) {
 [e :U _tsk_display ]
 [f ]
-[; ;Main.c: 111: }
-"111
-[e :UE 1199 ]
+"142
+[v F9499 `d ~T0 @X0 1 s f_prev_T ]
+[i F9499
+-U .100.0
+]
+[; ;Main.c: 142: static double f_prev_T = -100.0;
+[; ;Main.c: 145: if(f_prev_T != f_T_salona) {
+"145
+[e $ ! != F9499 _f_T_salona 1204  ]
+{
+[; ;Main.c: 146: f_prev_T = f_T_salona;
+"146
+[e = F9499 _f_T_salona ]
+[; ;Main.c: 147: sprintf(str, "T=%2.1f", f_T_salona);
+"147
+[e ( _sprintf (1 , (. , &U _str :s 1C _f_T_salona ]
+[; ;Main.c: 148: LabelSetTxt(&lb_temp, str);
+"148
+[e ( _LabelSetTxt (2 , &U _lb_temp &U _str ]
+"149
 }
-[p f _sprintf 8388608 ]
-[a 1C 85 82 65 33 33 33 33 0 ]
+[e :U 1204 ]
+[; ;Main.c: 149: }
+[; ;Main.c: 152: }
+"152
+[e :UE 1203 ]
+}
+"155
+[v _tsk_ds18b20 `(v ~T0 @X0 1 ef ]
+{
+[; ;Main.c: 155: void tsk_ds18b20(void) {
+[e :U _tsk_ds18b20 ]
+[f ]
+"156
+[v F9501 `d ~T0 @X0 1 s f_temp ]
+"157
+[v F9502 `uc ~T0 @X0 -> -> 1 `i `ux s ow_err ]
+"159
+[v F9503 `i ~T0 @X0 1 s _prev_tick ]
+[v F9504 `i ~T0 @X0 1 s chk_count ]
+[v F9505 `uc ~T0 @X0 1 s _yield_flag ]
+[v F9506 `ui ~T0 @X0 1 s _state ]
+[i F9506
+-> -> 0 `i `ui
+]
+[v F9507 `uc ~T0 @X0 1 s _running_msg ]
+[i F9507
+-> -> 0 `i `uc
+]
+[v F9508 `uc ~T0 @X0 1 s _interrupt_state ]
+[; ;Main.c: 156: static double f_temp;
+[; ;Main.c: 157: static BYTE ow_err[1];
+[; ;Main.c: 159: static int _prev_tick; static int chk_count; static char _yield_flag; static unsigned int _state = 0; static char _running_msg = (0); static char _interrupt_state; _yield_flag = 1; switch(_state){ default: case 0: for(;;){ __nop();
+[e = F9505 -> -> 1 `i `uc ]
+[e $U 1207  ]
+{
+[e :U 1208 ]
+[e :U 1209 ]
+{
+[e :U 1210 ]
+{
+[e ( ___nop ..  ]
+[; ;Main.c: 161: ow_bit = 1;
+"161
+[e = _ow_bit -> -> 1 `i `uc ]
+[; ;Main.c: 162: ds18b20_start();
+"162
+[e ( _ds18b20_start ..  ]
+[; ;Main.c: 164: do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 164; case 164: if(((_sys_tick - _prev_tick) < 750)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick
+"164
+[e :U 1215 ]
+{
+[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1216  ]
+[e = F9508 -> -> 1 `i `uc ]
+[e $U 1217  ]
+[e :U 1216 ]
+[e = F9508 -> -> 0 `i `uc ]
+[e :U 1217 ]
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[e = F9503 __sys_tick ]
+[e = F9506 -> -> 164 `i `ui ]
+[e :U 1218 ]
+[e $ ! < - __sys_tick F9503 -> 750 `i 1219  ]
+{
+[e $ ! == -> F9508 `i -> 1 `i 1220  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1220 ]
+[e $UE 1205  ]
+}
+[e $U 1221  ]
+[e :U 1219 ]
+{
+[e = F9503 __sys_tick ]
+[e $ ! == -> F9508 `i -> 1 `i 1222  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1222 ]
+}
+[e :U 1221 ]
+}
+[e :U 1214 ]
+[e ( ___nop ..  ]
+[; ;Main.c: 168: f_temp = ds18b20_read();
+"168
+[e = F9501 ( _ds18b20_read ..  ]
+[; ;Main.c: 170: __nop();
+"170
+[e ( ___nop ..  ]
+[; ;Main.c: 171: __nop();
+"171
+[e ( ___nop ..  ]
+[; ;Main.c: 173: if((f_temp != -60.0) && (f_temp != 85.0)) {
+"173
+[e $ ! && != F9501 -U .60.0 != F9501 .85.0 1223  ]
+{
+[; ;Main.c: 175: if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0;
+"175
+[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1224  ]
+[e = F9508 -> -> 1 `i `uc ]
+[e $U 1225  ]
+[e :U 1224 ]
+[e = F9508 -> -> 0 `i `uc ]
+[e :U 1225 ]
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;Main.c: 176: f_T_salona = f_temp;
+"176
+[e = _f_T_salona F9501 ]
+[; ;Main.c: 177: if(_interrupt_state==1) INTCONbits.GIE=1;
+"177
+[e $ ! == -> F9508 `i -> 1 `i 1226  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1226 ]
+[; ;Main.c: 179: ow_err[0] = 0;
+"179
+[e = *U + &U F9502 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9502 `ui `ux -> -> 0 `i `uc ]
+"180
+}
+[; ;Main.c: 180: } else {
+[e $U 1227  ]
+[e :U 1223 ]
+{
+[; ;Main.c: 181: ow_err[0]++;
+"181
+[e ++ *U + &U F9502 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9502 `ui `ux -> -> 1 `i `uc ]
+[; ;Main.c: 182: if(ow_err[0] > 4) {
+"182
+[e $ ! > -> *U + &U F9502 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9502 `ui `ux `i -> 4 `i 1228  ]
+{
+[; ;Main.c: 183: ow_err[0] = 0;
+"183
+[e = *U + &U F9502 * -> -> -> 0 `i `ui `ux -> -> # *U &U F9502 `ui `ux -> -> 0 `i `uc ]
+[; ;Main.c: 184: if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0;
+"184
+[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1229  ]
+[e = F9508 -> -> 1 `i `uc ]
+[e $U 1230  ]
+[e :U 1229 ]
+[e = F9508 -> -> 0 `i `uc ]
+[e :U 1230 ]
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;Main.c: 185: f_T_salona = 0.0;
+"185
+[e = _f_T_salona .0.0 ]
+[; ;Main.c: 186: if(_interrupt_state==1) INTCONbits.GIE=1;
+"186
+[e $ ! == -> F9508 `i -> 1 `i 1231  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1231 ]
+"187
+}
+[e :U 1228 ]
+"188
+}
+[e :U 1227 ]
+[; ;Main.c: 187: }
+[; ;Main.c: 188: }
+[; ;Main.c: 192: do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 192; case 192: if(((_sys_tick - _prev_tick) < 100)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick
+"192
+[e :U 1234 ]
+{
+[e $ ! == -> . . _INTCONbits 1 7 `i -> 1 `i 1235  ]
+[e = F9508 -> -> 1 `i `uc ]
+[e $U 1236  ]
+[e :U 1235 ]
+[e = F9508 -> -> 0 `i `uc ]
+[e :U 1236 ]
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[e = F9503 __sys_tick ]
+[e = F9506 -> -> 192 `i `ui ]
+[e :U 1237 ]
+[e $ ! < - __sys_tick F9503 -> 100 `i 1238  ]
+{
+[e $ ! == -> F9508 `i -> 1 `i 1239  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1239 ]
+[e $UE 1205  ]
+}
+[e $U 1240  ]
+[e :U 1238 ]
+{
+[e = F9503 __sys_tick ]
+[e $ ! == -> F9508 `i -> 1 `i 1241  ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e :U 1241 ]
+}
+[e :U 1240 ]
+}
+[e :U 1233 ]
+[e ( ___nop ..  ]
+"193
+}
+[; ;Main.c: 193: }};
+[e $U 1210  ]
+[e :U 1211 ]
+}
+}
+[e $U 1206  ]
+"159
+[e :U 1207 ]
+[e [\ F9506 , $ -> -> 0 `i `ui 1209
+ , $ -> -> 164 `i `ui 1218
+ , $ -> -> 192 `i `ui 1237
+ 1208 ]
+"193
+[e :U 1206 ]
+[; ;Main.c: 194: }
+"194
+[e :UE 1205 ]
+}
+[p f _sprintf 8495104 ]
+[a 1C 84 61 37 50 46 49 102 0 ]
 

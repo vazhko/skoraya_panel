@@ -2,14 +2,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 "42 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"8625 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"7906
-[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
+"8846 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"8038
+[v _LATC `Vuc ~T0 @X0 0 e@3979 ]
 "18844
 [v _GIE `Vb ~T0 @X0 0 e@32663 ]
-"6654
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"6923
+[v _PORTC `Vuc ~T0 @X0 0 e@3970 ]
 [; ;include\htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;include\htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;include\pic18f46k22.h: 47: extern volatile unsigned char ANSELA @ 0xF38;
@@ -8523,15 +8523,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "65
 [v _st `uc ~T0 @X0 1 a ]
 [; ;ow.c: 65: unsigned char st;
-[; ;ow.c: 68: ((TRISB) &= ~(1 << (ow_bit)));
+[; ;ow.c: 68: ((TRISC) &= ~(1 << (ow_bit)));
 "68
-[e =& _TRISB -> ~ << -> 1 `i _ow_bit `uc ]
+[e =& _TRISC -> ~ << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 69: __nop();
 "69
 [e ( ___nop ..  ]
-[; ;ow.c: 71: ((LATB) &= ~(1 << (ow_bit)));
+[; ;ow.c: 71: ((LATC) &= ~(1 << (ow_bit)));
 "71
-[e =& _LATB -> ~ << -> 1 `i _ow_bit `uc ]
+[e =& _LATC -> ~ << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 73: ow_delay(295);
 "73
 [e ( _ow_delay (1 -> -> 295 `i `ui ]
@@ -8544,15 +8544,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ow.c: 77: GIE = 0;
 "77
 [e = _GIE -> -> 0 `i `b ]
-[; ;ow.c: 79: ((TRISB) |= (1 << (ow_bit)));
+[; ;ow.c: 79: ((TRISC) |= (1 << (ow_bit)));
 "79
-[e =| _TRISB -> << -> 1 `i _ow_bit `uc ]
+[e =| _TRISC -> << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 81: ow_delay(78);
 "81
 [e ( _ow_delay (1 -> -> 78 `i `ui ]
-[; ;ow.c: 83: st = !((PORTB) & (1 <<(ow_bit)));
+[; ;ow.c: 83: st = !((PORTC) & (1 <<(ow_bit)));
 "83
-[e = _st -> -> ! != & -> _PORTB `i << -> 1 `i _ow_bit -> 0 `i `i `uc ]
+[e = _st -> -> ! != & -> _PORTC `i << -> 1 `i _ow_bit -> 0 `i `i `uc ]
 [; ;ow.c: 85: GIE = (bit)__gie;
 "85
 [e = _GIE -> ___gie `b ]
@@ -8596,9 +8596,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ow.c: 102: GIE = 0;
 "102
 [e = _GIE -> -> 0 `i `b ]
-[; ;ow.c: 104: ((LATB) |= (1 << (ow_bit)));
+[; ;ow.c: 104: ((LATC) |= (1 << (ow_bit)));
 "104
-[e =| _LATB -> << -> 1 `i _ow_bit `uc ]
+[e =| _LATC -> << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 106: for(i = 0; i < 8; i++) {
 "106
 {
@@ -8607,27 +8607,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1186  ]
 [e :U 1185 ]
 {
-[; ;ow.c: 108: ((TRISB) &= ~(1 << (ow_bit)));
+[; ;ow.c: 108: ((TRISC) &= ~(1 << (ow_bit)));
 "108
-[e =& _TRISB -> ~ << -> 1 `i _ow_bit `uc ]
-[; ;ow.c: 109: ((LATB) &= ~(1 << (ow_bit)));
+[e =& _TRISC -> ~ << -> 1 `i _ow_bit `uc ]
+[; ;ow.c: 109: ((LATC) &= ~(1 << (ow_bit)));
 "109
-[e =& _LATB -> ~ << -> 1 `i _ow_bit `uc ]
+[e =& _LATC -> ~ << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 111: ow_delay(5);
 "111
 [e ( _ow_delay (1 -> -> 5 `i `ui ]
-[; ;ow.c: 113: ((TRISB) |= (1 << (ow_bit)));
+[; ;ow.c: 113: ((TRISC) |= (1 << (ow_bit)));
 "113
-[e =| _TRISB -> << -> 1 `i _ow_bit `uc ]
+[e =| _TRISC -> << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 115: ow_delay(16);
 "115
 [e ( _ow_delay (1 -> -> 16 `i `ui ]
 [; ;ow.c: 117: data >>= 1;
 "117
 [e =>> _data -> 1 `i ]
-[; ;ow.c: 119: if(((PORTB) & (1 <<(ow_bit))))data |= 0x80;
+[; ;ow.c: 119: if(((PORTC) & (1 <<(ow_bit))))data |= 0x80;
 "119
-[e $ ! != & -> _PORTB `i << -> 1 `i _ow_bit -> 0 `i 1188  ]
+[e $ ! != & -> _PORTC `i << -> 1 `i _ow_bit -> 0 `i 1188  ]
 [e =| _data -> -> 128 `i `uc ]
 [e $U 1189  ]
 "120
@@ -8674,9 +8674,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ow.c: 136: GIE = 0;
 "136
 [e = _GIE -> -> 0 `i `b ]
-[; ;ow.c: 138: ((LATB) |= (1 << (ow_bit)));
+[; ;ow.c: 138: ((LATC) |= (1 << (ow_bit)));
 "138
-[e =| _LATB -> << -> 1 `i _ow_bit `uc ]
+[e =| _LATC -> << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 140: for(i = 0; i < 8; i++) {
 "140
 {
@@ -8685,29 +8685,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1192  ]
 [e :U 1191 ]
 {
-[; ;ow.c: 142: ((TRISB) &= ~(1 << (ow_bit)));
+[; ;ow.c: 142: ((TRISC) &= ~(1 << (ow_bit)));
 "142
-[e =& _TRISB -> ~ << -> 1 `i _ow_bit `uc ]
-[; ;ow.c: 143: ((LATB) &= ~(1 << (ow_bit)));
+[e =& _TRISC -> ~ << -> 1 `i _ow_bit `uc ]
+[; ;ow.c: 143: ((LATC) &= ~(1 << (ow_bit)));
 "143
-[e =& _LATB -> ~ << -> 1 `i _ow_bit `uc ]
+[e =& _LATC -> ~ << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 145: ow_delay(5);
 "145
 [e ( _ow_delay (1 -> -> 5 `i `ui ]
-[; ;ow.c: 147: if(((data) & (1 <<(i)))) ((LATB) |= (1 << (ow_bit))); else ((LATB) &= ~(1 << (ow_bit)));
+[; ;ow.c: 147: if(((data) & (1 <<(i)))) ((LATC) |= (1 << (ow_bit))); else ((LATC) &= ~(1 << (ow_bit)));
 "147
 [e $ ! != & -> _data `i << -> 1 `i _i -> 0 `i 1194  ]
-[e =| _LATB -> << -> 1 `i _ow_bit `uc ]
+[e =| _LATC -> << -> 1 `i _ow_bit `uc ]
 [e $U 1195  ]
 [e :U 1194 ]
-[e =& _LATB -> ~ << -> 1 `i _ow_bit `uc ]
+[e =& _LATC -> ~ << -> 1 `i _ow_bit `uc ]
 [e :U 1195 ]
 [; ;ow.c: 149: ow_delay(78);
 "149
 [e ( _ow_delay (1 -> -> 78 `i `ui ]
-[; ;ow.c: 151: ((LATB) |= (1 << (ow_bit)));
+[; ;ow.c: 151: ((LATC) |= (1 << (ow_bit)));
 "151
-[e =| _LATB -> << -> 1 `i _ow_bit `uc ]
+[e =| _LATC -> << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 153: ow_delay(60);
 "153
 [e ( _ow_delay (1 -> -> 60 `i `ui ]
@@ -8723,9 +8723,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ow.c: 156: GIE = (bit)__gie;
 "156
 [e = _GIE -> ___gie `b ]
-[; ;ow.c: 158: ((TRISB) |= (1 << (ow_bit)));
+[; ;ow.c: 158: ((TRISC) |= (1 << (ow_bit)));
 "158
-[e =| _TRISB -> << -> 1 `i _ow_bit `uc ]
+[e =| _TRISC -> << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 160: }
 "160
 [e :UE 1190 ]
@@ -8745,9 +8745,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ow.c: 165: int t;
 [; ;ow.c: 166: char i;
 [; ;ow.c: 167: double f;
-[; ;ow.c: 169: ((TRISB) |= (1 << (ow_bit)));
+[; ;ow.c: 169: ((TRISC) |= (1 << (ow_bit)));
 "169
-[e =| _TRISB -> << -> 1 `i _ow_bit `uc ]
+[e =| _TRISC -> << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 171: if(init_1wire()) {
 "171
 [e $ ! != -> ( _init_1wire ..  `i -> -> -> 0 `i `uc `i 1197  ]
@@ -8839,12 +8839,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ow.c: 212: ow_delay(16);
 "212
 [e ( _ow_delay (1 -> -> 16 `i `ui ]
-[; ;ow.c: 215: ((TRISB) &= ~(1 << (ow_bit)));
+[; ;ow.c: 215: ((TRISC) &= ~(1 << (ow_bit)));
 "215
-[e =& _TRISB -> ~ << -> 1 `i _ow_bit `uc ]
-[; ;ow.c: 216: ((LATB) |= (1 << (ow_bit)));
+[e =& _TRISC -> ~ << -> 1 `i _ow_bit `uc ]
+[; ;ow.c: 216: ((LATC) |= (1 << (ow_bit)));
 "216
-[e =| _LATB -> << -> 1 `i _ow_bit `uc ]
+[e =| _LATC -> << -> 1 `i _ow_bit `uc ]
 [; ;ow.c: 221: }
 "221
 [e :UE 1203 ]
@@ -8865,9 +8865,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ow.c: 232: GIE = 0;
 "232
 [e = _GIE -> -> 0 `i `b ]
-[; ;ow.c: 234: LATB = 0xff;
+[; ;ow.c: 234: LATC = 0xff;
 "234
-[e = _LATB -> -> 255 `i `uc ]
+[e = _LATC -> -> 255 `i `uc ]
 [; ;ow.c: 236: for(i = 0; i < 8; i++) {
 "236
 {
@@ -8876,29 +8876,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1207  ]
 [e :U 1206 ]
 {
-[; ;ow.c: 238: TRISB = 0x00;
+[; ;ow.c: 238: TRISC = 0x00;
 "238
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;ow.c: 239: LATB= 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;ow.c: 239: LATC= 0x00;
 "239
-[e = _LATB -> -> 0 `i `uc ]
+[e = _LATC -> -> 0 `i `uc ]
 [; ;ow.c: 241: ow_delay(5);
 "241
 [e ( _ow_delay (1 -> -> 5 `i `ui ]
-[; ;ow.c: 243: if(((data) & (1 <<(i)))) LATB = 0xff; else LATB = 0x00;
+[; ;ow.c: 243: if(((data) & (1 <<(i)))) LATC = 0xff; else LATC = 0x00;
 "243
 [e $ ! != & -> _data `i << -> 1 `i _i -> 0 `i 1209  ]
-[e = _LATB -> -> 255 `i `uc ]
+[e = _LATC -> -> 255 `i `uc ]
 [e $U 1210  ]
 [e :U 1209 ]
-[e = _LATB -> -> 0 `i `uc ]
+[e = _LATC -> -> 0 `i `uc ]
 [e :U 1210 ]
 [; ;ow.c: 245: ow_delay(78);
 "245
 [e ( _ow_delay (1 -> -> 78 `i `ui ]
-[; ;ow.c: 247: LATB = 0xff;
+[; ;ow.c: 247: LATC = 0xff;
 "247
-[e = _LATB -> -> 255 `i `uc ]
+[e = _LATC -> -> 255 `i `uc ]
 [; ;ow.c: 249: ow_delay(60);
 "249
 [e ( _ow_delay (1 -> -> 60 `i `ui ]
@@ -8914,9 +8914,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ow.c: 252: GIE = (bit)__gie;
 "252
 [e = _GIE -> ___gie `b ]
-[; ;ow.c: 254: TRISB = 0xff;
+[; ;ow.c: 254: TRISC = 0xff;
 "254
-[e = _TRISB -> -> 255 `i `uc ]
+[e = _TRISC -> -> 255 `i `uc ]
 [; ;ow.c: 256: }
 "256
 [e :UE 1205 ]
@@ -8927,21 +8927,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ow.c: 259: void ds18b20_start_port(void) {
 [e :U _ds18b20_start_port ]
 [f ]
-[; ;ow.c: 262: TRISB = 0x00;
+[; ;ow.c: 262: TRISC = 0x00;
 "262
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;ow.c: 263: LATB = 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;ow.c: 263: LATC = 0x00;
 "263
-[e = _LATB -> -> 0 `i `uc ]
+[e = _LATC -> -> 0 `i `uc ]
 [; ;ow.c: 264: ow_delay(295);
 "264
 [e ( _ow_delay (1 -> -> 295 `i `ui ]
 [; ;ow.c: 265: ow_delay(295);
 "265
 [e ( _ow_delay (1 -> -> 295 `i `ui ]
-[; ;ow.c: 266: TRISB = 0xff;
+[; ;ow.c: 266: TRISC = 0xff;
 "266
-[e = _TRISB -> -> 255 `i `uc ]
+[e = _TRISC -> -> 255 `i `uc ]
 [; ;ow.c: 268: ow_delay(78);
 "268
 [e ( _ow_delay (1 -> -> 78 `i `ui ]
@@ -8957,12 +8957,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ow.c: 275: ow_delay(16);
 "275
 [e ( _ow_delay (1 -> -> 16 `i `ui ]
-[; ;ow.c: 278: TRISB = 0x00;
+[; ;ow.c: 278: TRISC = 0x00;
 "278
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;ow.c: 279: LATB = 0xff;
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;ow.c: 279: LATC = 0xff;
 "279
-[e = _LATB -> -> 255 `i `uc ]
+[e = _LATC -> -> 255 `i `uc ]
 [; ;ow.c: 284: }
 "284
 [e :UE 1211 ]

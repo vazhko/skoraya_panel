@@ -10371,7 +10371,7 @@ void uart_init(void) {
 
 BRGH1 = 0;
 
-SPBRG = ((64000000ul)/(16UL * 19200))-1;
+SPBRG = ((64000000ul)/(64UL * 9600))-1;
 TXEN1 = 1;
 CREN1 = 1;
 SPEN1 = 1;
@@ -10380,8 +10380,8 @@ SPEN1 = 1;
 
 void uart16_init(void) {
 
-SPBRG = ((64000000ul)/(16UL * 19200))-1;
-BRGH1 = 1;
+SPBRG = ((64000000ul)/(64UL * 9600))-1;
+BRGH1 = 0;
 
 
 

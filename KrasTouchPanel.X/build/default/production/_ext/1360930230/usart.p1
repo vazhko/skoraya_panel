@@ -8215,9 +8215,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;usart.c: 18: BRGH1 = 0;
 "18
 [e = _BRGH1 -> -> 0 `i `b ]
-[; ;usart.c: 20: SPBRG = ((64000000ul)/(16UL * 19200))-1;
+[; ;usart.c: 20: SPBRG = ((64000000ul)/(64UL * 9600))-1;
 "20
-[e = _SPBRG -> - / -> 64000000 `ul * -> 16 `ul -> -> -> 19200 `i `l `ul -> -> -> 1 `i `l `ul `uc ]
+[e = _SPBRG -> - / -> 64000000 `ul * -> 64 `ul -> -> -> 9600 `i `l `ul -> -> -> 1 `i `l `ul `uc ]
 [; ;usart.c: 21: TXEN1 = 1;
 "21
 [e = _TXEN1 -> -> 1 `i `b ]
@@ -8237,12 +8237,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;usart.c: 27: void uart16_init(void) {
 [e :U _uart16_init ]
 [f ]
-[; ;usart.c: 29: SPBRG = ((64000000ul)/(16UL * 19200))-1;
+[; ;usart.c: 29: SPBRG = ((64000000ul)/(64UL * 9600))-1;
 "29
-[e = _SPBRG -> - / -> 64000000 `ul * -> 16 `ul -> -> -> 19200 `i `l `ul -> -> -> 1 `i `l `ul `uc ]
-[; ;usart.c: 30: BRGH1 = 1;
+[e = _SPBRG -> - / -> 64000000 `ul * -> 64 `ul -> -> -> 9600 `i `l `ul -> -> -> 1 `i `l `ul `uc ]
+[; ;usart.c: 30: BRGH1 = 0;
 "30
-[e = _BRGH1 -> -> 1 `i `b ]
+[e = _BRGH1 -> -> 0 `i `b ]
 [; ;usart.c: 34: BRG161 = 0;
 "34
 [e = _BRG161 -> -> 0 `i `b ]

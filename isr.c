@@ -8,7 +8,6 @@ $Id: isr.c 202 2012-08-09 14:17:18Z Vlad $
 
 
 extern volatile int sys_tick;
-extern LAB_STATES curr_state;
 volatile WORD beep_timer;
 volatile BYTE beep_count;
 volatile char dummy;
@@ -90,8 +89,6 @@ void interrupt low_priority LO_ISR(void) {
     //static BYTE beep;
     char i;
     char lcData, lcAdr;
-
-
 
 
     NOP();

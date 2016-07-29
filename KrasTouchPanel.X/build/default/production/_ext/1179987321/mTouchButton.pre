@@ -10493,7 +10493,7 @@ INT8 chargeDelay;
 } SENSOR;
 
 # 110
-extern volatile SENSOR sensors [6];
+extern volatile SENSOR sensors [11];
 
 # 119
 extern enum _MTOUCHSENSORSTATE_
@@ -10567,7 +10567,7 @@ INT16 pressCounter;
 }MTOUCHBUTTON;
 
 # 79
-extern MTOUCHBUTTON buttons[10];
+extern MTOUCHBUTTON buttons[13];
 
 # 107
 void MTouchSetButton(UINT8 buttonNumber, UINT8 sensorNumber, UINT8 decode);
@@ -10645,7 +10645,7 @@ DECODE_ONE_EVENT = 0x10
 void MTouchDecode(void);
 
 # 63 "../lib/mTouchCap/mTouchButton.c"
-MTOUCHBUTTON buttons[10];
+MTOUCHBUTTON buttons[13];
 
 
 
@@ -10680,7 +10680,7 @@ UINT8 decode;
 
 UINT8 state;
 
-for(i = 0; i < 10; i++) {
+for(i = 0; i < 13; i++) {
 
 pSensor = pButton->pSensor;
 

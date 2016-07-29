@@ -112,12 +112,13 @@ void ks0108ClearDot(uint8_t x, uint8_t y) {
     }
 }
 
-BYTE ddd = 0;
+//BYTE ddd = 0;
 
 /******************************************************************************************/
 void ks0108Init(void) {
-
-    //WORD i;
+#ifndef USE_LCD_MEM
+    WORD i;
+#endif    
 
     LCD_CS1_TRIS = 0;
     LCD_CS2_TRIS = 0;

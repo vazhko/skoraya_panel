@@ -8249,7 +8249,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\mTouchSensor.h: 98: UINT8 channelNumber;
 [; ;include\mTouchSensor.h: 99: INT8 chargeDelay;
 [; ;include\mTouchSensor.h: 100: } SENSOR;
-[; ;include\mTouchSensor.h: 110: extern volatile SENSOR sensors [6];
+[; ;include\mTouchSensor.h: 110: extern volatile SENSOR sensors [11];
 [; ;include\mTouchSensor.h: 119: extern enum _MTOUCHSENSORSTATE_
 [; ;include\mTouchSensor.h: 120: {
 [; ;include\mTouchSensor.h: 121: SENSOR_INITIALIZING,
@@ -8285,7 +8285,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;include\mTouchButton.h: 66: SENSOR* pSensor;
 [; ;include\mTouchButton.h: 67: INT16 pressCounter;
 [; ;include\mTouchButton.h: 68: }MTOUCHBUTTON;
-[; ;include\mTouchButton.h: 79: extern MTOUCHBUTTON buttons[10];
+[; ;include\mTouchButton.h: 79: extern MTOUCHBUTTON buttons[13];
 [; ;include\mTouchButton.h: 107: void MTouchSetButton(UINT8 buttonNumber, UINT8 sensorNumber, UINT8 decode);
 [; ;include\mTouchButton.h: 131: void MTouchDecodeButtons(void);
 [; ;include\mTouchMatrixButton.h: 61: typedef struct tag_MTOUCHMATRIXBUTTON {

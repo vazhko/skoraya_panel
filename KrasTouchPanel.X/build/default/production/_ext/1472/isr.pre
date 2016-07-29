@@ -10546,7 +10546,7 @@ INT8 chargeDelay;
 } SENSOR;
 
 # 110
-extern volatile SENSOR sensors [6];
+extern volatile SENSOR sensors [11];
 
 # 119
 extern enum _MTOUCHSENSORSTATE_
@@ -10620,7 +10620,7 @@ INT16 pressCounter;
 }MTOUCHBUTTON;
 
 # 79
-extern MTOUCHBUTTON buttons[10];
+extern MTOUCHBUTTON buttons[13];
 
 # 107
 void MTouchSetButton(UINT8 buttonNumber, UINT8 sensorNumber, UINT8 decode);
@@ -10906,43 +10906,31 @@ void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
 void LabelSetTxt(Label *lb, char *str);
 void LabelClrTxt(Label *lb);
 
-# 46 "../Main.h"
+# 62 "../Main.h"
 typedef enum {
-ST_INIT = 0,
-ST_EXPERIMENT_READY,
-ST_EXPERIMENT_WAITING,
-ST_EXPERIMENT_DOING,
-ST_EXPERIMENT_DONE,
-ST_MENU,
+KEY_0_AVT_PWR_220 = 0,
+KEY_1_LT_NOSHY,
+KEY_2_LT_SALON_M,
+KEY_3_LT_SALON_P,
+KEY_4_VENT_OUT,
+KEY_5_VENT_IN,
+KEY_6_ROZ_ON,
+KEY_7_LT_OUT_BACK,
+KEY_8_LT_OUT_SIDE,
+KEY_9_LT_SHELF_M,
+KEY_10_LT_SHELF_P,
 
-ST_VIEW_RESULTS,
-ST_VIEW_RESULTS_ASK_DEL,
-ST_DEBUG
-
-} LAB_STATES;
-
-typedef enum {
-KEY_MENU = 0,
-KEY_START,
-KEY_M,
-KEY_P,
-KEY_T1,
-KEY_T2,
-KEY_MM,
-KEY_PP,
-KEY_TT1,
-KEY_TT2,
-
+KEY_2_LT_SALON_MM,
+KEY_3_LT_SALON_PP,
 } KEYS;
 
-# 79
+# 84
 extern void InitializeSystem(void);
 extern void Beep(BYTE );
 extern void pwm4_load(WORD );
 
 # 10 "../isr.c"
 extern volatile int sys_tick;
-extern LAB_STATES curr_state;
 volatile WORD beep_timer;
 volatile BYTE beep_count;
 volatile char dummy;
@@ -10953,7 +10941,7 @@ volatile WORD j_rx = 0;
 extern void Beep(BYTE);
 BYTE recieve_from_usb(BYTE count);
 
-# 26
+# 25
 void write_buff(unsigned int adr, char *var, unsigned char byte) {
 while(byte--) {
 RxTxBuff[adr + byte] = (unsigned char) (*(((unsigned char *) var) + byte));
@@ -11000,13 +10988,11 @@ PIR5bits.TMR4IF = 0;
 
 }
 
-# 89
+# 88
 void interrupt low_priority LO_ISR(void) {
 
 char i;
 char lcData, lcAdr;
-
-
 
 
 __nop();
@@ -11125,6 +11111,6 @@ TRISAbits.TRISA4 = 0;
 beep_timer = ms10 * 40;
 beep_count = 1;
 
-# 217
+# 214
 }
 

@@ -79,13 +79,13 @@
 /****************************************************************************
   Number of sensors (analog inputs connected to sensors).
   ***************************************************************************/
-#define MTOUCH_SENSORS_NUMBER         6
+#define MTOUCH_SENSORS_NUMBER         11
 
 /****************************************************************************
   Number of button controls.
   mTouchControl.c and mTouchButton.c must be added in project for this option.
   ***************************************************************************/
-#define MTOUCH_BUTTONS_NUMBER         10
+#define MTOUCH_BUTTONS_NUMBER         13
 
 /****************************************************************************
   Number of matrix button controls.
@@ -122,7 +122,7 @@
   Default threshold for press event detection.
   This value is used when "threshold" is set to -1 in MTouchSetSensor(...) call.
   ***************************************************************************/
-#define MTOUCH_DEFAULT_THRESHOLD      150
+#define MTOUCH_DEFAULT_THRESHOLD      800
 
 /****************************************************************************
   Number of acquisitions for one sample of the sensor.

@@ -10493,7 +10493,7 @@ INT8 chargeDelay;
 } SENSOR;
 
 # 110
-extern volatile SENSOR sensors [6];
+extern volatile SENSOR sensors [11];
 
 # 119
 extern enum _MTOUCHSENSORSTATE_
@@ -10567,7 +10567,7 @@ INT16 pressCounter;
 }MTOUCHBUTTON;
 
 # 79
-extern MTOUCHBUTTON buttons[10];
+extern MTOUCHBUTTON buttons[13];
 
 # 107
 void MTouchSetButton(UINT8 buttonNumber, UINT8 sensorNumber, UINT8 decode);
@@ -10645,7 +10645,7 @@ DECODE_ONE_EVENT = 0x10
 void MTouchDecode(void);
 
 # 64 "../lib/mTouchCap/mTouchSensor.c"
-volatile SENSOR sensors[6];
+volatile SENSOR sensors[11];
 
 # 72
 void MTouchUpdateSensorAverage(SENSOR* pSensor, UINT16 rate);
@@ -10666,8 +10666,8 @@ if(threshold > 0)
 pSensor->pressThreshold = threshold;
 pSensor->releaseThreshold = threshold>>1;
 }else{
-pSensor->pressThreshold = 150;
-pSensor->releaseThreshold = 150>>1;
+pSensor->pressThreshold = 800;
+pSensor->releaseThreshold = 800>>1;
 }
 pSensor->trisReg = tris;
 pSensor->latReg = lat;
@@ -10811,10 +10811,10 @@ SENSOR* pPreviousSensor;
 
 
 pCurrentSensor = (SENSOR*)sensors + startSensorNumber;
-pLastSensor = (SENSOR*)sensors + (6-1);
+pLastSensor = (SENSOR*)sensors + (11-1);
 
 
-if(startSensorNumber == (6-1))
+if(startSensorNumber == (11-1))
 {
 pPreviousSensor = (SENSOR*)sensors;
 }else{
@@ -10822,7 +10822,7 @@ pPreviousSensor = pCurrentSensor + 1;
 }
 
 
-for(i=0; i<6; i++)
+for(i=0; i<11; i++)
 {
 if((pCurrentSensor->state&SENSOR_DISCONNECTED) == 0)
 {
@@ -10867,7 +10867,7 @@ pCurrentSensor++;
 
 startSensorNumber++;
 
-if(startSensorNumber > (6-1))
+if(startSensorNumber > (11-1))
 {
 startSensorNumber = 0;
 }

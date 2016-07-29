@@ -16,12 +16,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _crc_send ]
 [v _crc `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;modbus_RTU.c: 10: putbyte((unsigned char) (crc >> 8));
-"10
-[e ( _putbyte (1 -> >> _crc -> 8 `i `uc ]
-[; ;modbus_RTU.c: 11: putbyte((unsigned char) crc);
-"11
+[; ;modbus_RTU.c: 13: putbyte((unsigned char) crc);
+"13
 [e ( _putbyte (1 -> _crc `uc ]
+[; ;modbus_RTU.c: 14: putbyte((unsigned char) (crc >> 8));
+"14
+[e ( _putbyte (1 -> >> _crc -> 8 `i `uc ]
 [; ;modbus_RTU.c: 17: }
 "17
 [e :UE 1 ]
@@ -248,9 +248,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "83
 }
 [; ;modbus_RTU.c: 83: }
-[; ;modbus_RTU.c: 91: if (((unsigned char) (crc >> 8) == *buffer++) && ((unsigned char) crc == *buffer)) return 1;
-"91
-[e $ ! && == -> -> >> _crc -> 8 `i `uc `i -> *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x `i == -> -> _crc `uc `i -> *U _buffer `i 24  ]
+[; ;modbus_RTU.c: 93: if (((unsigned char) (crc) == *buffer++) && ((unsigned char) (crc >> 8) == *buffer)) return 1;
+"93
+[e $ ! && == -> -> _crc `uc `i -> *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x `i == -> -> >> _crc -> 8 `i `uc `i -> *U _buffer `i 24  ]
 [e ) -> -> 1 `i `uc ]
 [e $UE 19  ]
 [e :U 24 ]

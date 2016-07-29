@@ -11,19 +11,14 @@ $Id: Main.c 201 2012-08-09 14:15:36Z Vlad $
 
 /***GLOBAL VAR*****************************************************************/
 
-LAB_STATES curr_state = ST_INIT;
 volatile int sys_tick = 0;
 extern unsigned char ow_bit;
 
 /** LOCAL PROTOTYPES **********************************************************/
 void tsk_process(void);
-void tsk_exp(void);
 void tsk_display(void);
-void tsk_adc(void);
 void tsk_ds18b20(void);
-void tsk_pid(void);
-void tsk_sign_flash(void);
-void tsk_write_flash(void);
+
 /****************************************************************************/
 EEPROM_INIT;
 
@@ -33,10 +28,13 @@ volatile int c, d;
 volatile DWORD e, f;
 volatile double k, l;
 
+double f_T_salona;
+
 char str[20];
 
 //Надписи
-Label lb_napr; // напруга
+Label lb_temp; // напруга
+Label lb_temp2; // напруга
 
 void main(void) {
 
@@ -44,19 +42,25 @@ void main(void) {
     InitMessages();
     InitializeSystem();
 
-
     ks0108Init();
-    LabelCreate(&lb_napr, 0, 30, font13, 10); // напряжение
-    sprintf(str, "URA!!!!");
-    LabelSetTxt(&lb_napr, str);
-    
-    
 
-	ks0108GotoXY(40, 50);
-	ks0108PutChar(0x89, &font13, 1);
+    // создаем транспарант температуры
+
+    LabelCreate(&lb_temp, 60, 22, font13, 10); // температура
+    //LabelCreate(&lb_temp2, 0, 10, font13, 10); // просто надпись
     
-    ks0108GotoXY(34, 50);
-	ks0108PutChar(0x8a, &font13, 1);
+    //sprintf(str, "AB");
+    //LabelSetTxt(&lb_temp, str);
+    
+    ks0108GotoXY(40, 50);
+	ks0108PutChar('A', &font13, 1);
+    ks0108GotoXY(50, 50);
+    ks0108PutChar('B', &font13, 1);
+    
+    //ks0108Line(10,10, 50, 50);    
+    //ks0108Line(2,5, 50, 10);    
+    //ks0108Rect(60, 35, 15, 15);    
+    //ks0108Line( 80, 1, 80, 60);
 
 
     Nop();
@@ -66,14 +70,16 @@ void main(void) {
     INTCONbits.GIE = 1;
 
     Beep(10);
+    
+    
+
 
     while(1) {
 
 
-
         tsk_display();
         tsk_process();
-        //tsk_ds18b20();       
+        tsk_ds18b20();
 
 
         //Beep(10);
@@ -102,79 +108,88 @@ void main(void) {
 void tsk_process(void) {
     static int prev_tick, i;
 
+
+    // Decode all controls.
+    MTouchDecode();
+
+
+    if(BTN_PRESSED(KEY_7_LT_OUT_BACK)) {
+        Beep(10);
+        LED4_LT_BACK ^= 1;
+    }
+
+    if(BTN_PRESSED(KEY_8_LT_OUT_SIDE)) {
+        Beep(10);
+        LED5_LT_SIDE ^= 1;
+    }
+
+    if(BTN_PRESSED(KEY_6_ROZ_ON)) {
+        Beep(10);
+        LED2_ROZ ^= 1;
+    }
+
+    if(BTN_PRESSED(KEY_0_AVT_PWR_220)) {
+        Beep(10);
+        LED1_AVT_PWR ^= 1;
+    }
+
+
+
 }
 
 /******************************************************************************************/
 void tsk_display(void) {
+    static double f_prev_T = -100.0;
+
+
+    if(f_prev_T != f_T_salona) {
+        f_prev_T = f_T_salona;
+        sprintf(str, "T=%2.1f", f_T_salona);
+        LabelSetTxt(&lb_temp, str);
+    }
 
 
 }
 
-
-
 /******************************************************************************************/
-/*
 void tsk_ds18b20(void) {
-    static double f_temp;
-    double f_A, f_B;
-    static BYTE ow_err[2];
+    static double f_temp;    
+    static BYTE ow_err[1];
 
     OS_TaskBegin();
 
-    ow_bit = 2;
+    ow_bit = 1;
     ds18b20_start();
-    OS_Yield();
-    ow_bit = 3;
-    ds18b20_start();
+
     OS_Delay(750);
+    
+    //LED4_ON ^= 1;
 
-    ow_bit = 3;
     f_temp = ds18b20_read();
+
+    Nop();
+    Nop();
+
     if((f_temp != OW_ERROR) && (f_temp != 85.0)) {
-        filter_processor(&f_temp, CH_FRIDGE);
 
         TSK_DI();
-        g_data.f_T_fridge0 = f_temp;
-        TSK_EI();
-
-        EE_TO_RAM(PF_AC, f_A);
-        EE_TO_RAM(PF_BC, f_B);
-        f_temp = f_temp * f_B + f_A;
-
-        TSK_DI();
-        g_data.f_T_fridge = f_temp;
+        f_T_salona = f_temp;
         TSK_EI();
 
         ow_err[0] = 0;
     } else {
         ow_err[0]++;
         if(ow_err[0] > 4) {
-            ow_err[1] = 0;
+            ow_err[0] = 0;
             TSK_DI();
-            g_data.f_T_fridge = 0.0;
-            g_data.f_T_fridge0 = 0.0;
+            f_T_salona = 0.0;
             TSK_EI();
         }
     }
     //OS_Yield();
-
-    ow_bit = 2;
-    f_temp = ds18b20_read();
-    if((f_temp != OW_ERROR) && (f_temp != 85.0)) {
-        filter_processor(&f_temp, CH_HEAT);
-        g_data.f_T_heat = f_temp;
-        ow_err[1] = 0;
-    } else {
-        ow_err[1]++;
-        if(ow_err[1] > 4) {
-            ow_err[1] = 0;
-            g_data.f_T_heat = 0.0;
-        }
-    }
 
 
     OS_Delay(100);
     OS_TaskEnd();
 }
 
- */

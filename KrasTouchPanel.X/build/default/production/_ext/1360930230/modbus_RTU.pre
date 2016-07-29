@@ -19,10 +19,13 @@ extern void putbyte(char byte);
 
 void crc_send(unsigned int crc) {
 
-putbyte((unsigned char) (crc >> 8));
-putbyte((unsigned char) crc);
 
-# 17
+
+
+putbyte((unsigned char) crc);
+putbyte((unsigned char) (crc >> 8));
+
+
 }
 
 
@@ -91,10 +94,10 @@ for (i = 0; i < cnt; i++) {
 crc_mb_calc(&crc, *buffer++);
 }
 
-# 91
-if (((unsigned char) (crc >> 8) == *buffer++) && ((unsigned char) crc == *buffer)) return 1;
+# 93
+if (((unsigned char) (crc) == *buffer++) && ((unsigned char) (crc >> 8) == *buffer)) return 1;
 
-# 96
+
 return 0;
 
 
