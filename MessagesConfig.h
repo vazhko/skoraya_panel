@@ -9,14 +9,7 @@
 
 typedef enum {
     //MES_NONE = 0,	
-    MES_ADC_INIT_DONE,
-    MES_ADC_INIT,
-    MES_POINT,
-    EXP_STOP_BY_TIME,
-    EXP_STOP_BY_TEMP,        
-    USB_FLASH_SEND_CMD,    
-    USB_FLASH_ATTACH,
-    USB_FLASH_DEATTACH    
+    MES_RX   
 } MESSAGES;
 
 

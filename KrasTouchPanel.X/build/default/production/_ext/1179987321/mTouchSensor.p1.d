@@ -16,4 +16,4 @@
 ../mTouchConfig.h  \
 ../lib/mTouchCap/include/mTouchAcquisitionMCU8.h  \
 ../lib/mTouchCap/include/mTouchSensor.h  \
-../lib/include/Compiler.h  \
+../lib/include/Compiler.h 

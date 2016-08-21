@@ -1,13 +1,13 @@
 
 # 1 "../Main.c"
 
-# 21 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\htc.h"
+# 21 "C:\Program Files\Microchip\xc8\v1.33\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 47 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h"
+# 47 "C:\Program Files\Microchip\xc8\v1.33\include\pic18f46k22.h"
 extern volatile unsigned char ANSELA @ 0xF38;
 
 asm("ANSELA equ 0F38h");
@@ -9315,7 +9315,7 @@ extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 2008 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\adc.h"
+# 2008 "C:\Program Files\Microchip\xc8\v1.33\include\plib\adc.h"
 union ADCResult
 {
 int lr;
@@ -9342,13 +9342,13 @@ void SetChanADC(unsigned char );
 # 2100
 void SelChanConvADC( unsigned char );
 
-# 90 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\ancomp.h"
+# 90 "C:\Program Files\Microchip\xc8\v1.33\include\plib\ancomp.h"
 void Close_ancomp1( void );
 void Open_ancomp1(unsigned char config);
 void Close_ancomp2( void );
 void Open_ancomp2(unsigned char config);
 
-# 236 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\spi.h"
+# 236 "C:\Program Files\Microchip\xc8\v1.33\include\plib\spi.h"
 void OpenSPI1( unsigned char sync_mode,
 unsigned char bus_mode,
 unsigned char smp_phase );
@@ -9374,7 +9374,7 @@ void putsSPI2( unsigned char *wrptr );
 
 unsigned char ReadSPI2( void );
 
-# 414 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\can2510.h"
+# 414 "C:\Program Files\Microchip\xc8\v1.33\include\plib\can2510.h"
 void CAN2510Initialize(  unsigned int configuration,
  unsigned char brp,
  unsigned char interruptFlags,
@@ -9481,7 +9481,7 @@ unsigned char CAN2510DataRead(  unsigned char bufferNum,
  unsigned char *numBytes,
  unsigned char *data );
 
-# 64 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\capture.h"
+# 64 "C:\Program Files\Microchip\xc8\v1.33\include\plib\capture.h"
 union capstatus
 {
 
@@ -9539,7 +9539,7 @@ void OpenECapture3 ( unsigned char config);
 unsigned int ReadECapture3 (void);
 void CloseECapture3 (void);
 
-# 403 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\compare.h"
+# 403 "C:\Program Files\Microchip\xc8\v1.33\include\plib\compare.h"
 void OpenCompare4(unsigned char config,unsigned int period);
 void CloseCompare4(void);
 
@@ -9557,19 +9557,19 @@ void CloseECompare2(void);
 void OpenECompare3(unsigned char config,unsigned int period);
 void CloseECompare3(void);
 
-# 374 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\ctmu.h"
+# 374 "C:\Program Files\Microchip\xc8\v1.33\include\plib\ctmu.h"
 void OpenCTMU(unsigned char config1,unsigned char config2,unsigned char config3);
 
 # 379
 void CurrentControlCTMU(unsigned char config);
 void CloseCTMU(void);
 
-# 36 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\EEP.h"
+# 36 "C:\Program Files\Microchip\xc8\v1.33\include\plib\EEP.h"
 void Busy_eep ( void );
 unsigned char Read_b_eep( unsigned int badd );
 void Write_b_eep( unsigned int badd, unsigned char bdat );
 
-# 2 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stddef.h"
+# 2 "C:\Program Files\Microchip\xc8\v1.33\include\stddef.h"
 typedef int ptrdiff_t;
 typedef unsigned size_t;
 typedef unsigned short wchar_t;
@@ -10004,7 +10004,7 @@ struct
 } bits;
 } QWORD_VAL;
 
-# 113 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\flash.h"
+# 113 "C:\Program Files\Microchip\xc8\v1.33\include\plib\flash.h"
 extern void ReadFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
 
 # 120
@@ -10014,7 +10014,7 @@ extern void WriteBlockFlash(unsigned long startaddr, unsigned char num_blocks, u
 
 extern void WriteBytesFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
 
-# 244 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\i2c.h"
+# 244 "C:\Program Files\Microchip\xc8\v1.33\include\plib\i2c.h"
 void OpenI2C1( unsigned char sync_mode, unsigned char slew );
 
 # 264
@@ -10088,7 +10088,7 @@ unsigned char address,
 unsigned char *rdptr,
 unsigned char length );
 
-# 200 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\mwire.h"
+# 200 "C:\Program Files\Microchip\xc8\v1.33\include\plib\mwire.h"
 void OpenMwire1( unsigned char sync_mode );
 
 
@@ -10101,7 +10101,7 @@ signed char WriteMwire1( unsigned char data_out );
 # 234
 void getsMwire1( unsigned char *rdptr, unsigned char length );
 
-# 126 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\portb.h"
+# 126 "C:\Program Files\Microchip\xc8\v1.33\include\plib\portb.h"
 void OpenPORTB( unsigned char config);
 
 # 176
@@ -10113,7 +10113,7 @@ void OpenRB1INT( unsigned char config);
 # 211
 void OpenRB2INT( unsigned char config);
 
-# 85 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\pwm.h"
+# 85 "C:\Program Files\Microchip\xc8\v1.33\include\plib\pwm.h"
 union PWMDC
 {
 unsigned int lpwm;
@@ -10157,7 +10157,7 @@ void SetOutputEPWM3 ( unsigned char output_config,
 unsigned char pwm_mode);
 void CloseEPWM3 (void);
 
-# 16 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\reset.h"
+# 16 "C:\Program Files\Microchip\xc8\v1.33\include\plib\reset.h"
 char isMCLR(void);
 void StatusReset(void);
 char isPOR(void);
@@ -10175,12 +10175,12 @@ char isWDTWU(void);
 
 char isLVD(void);
 
-# 687 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\rtcc.h"
+# 687 "C:\Program Files\Microchip\xc8\v1.33\include\plib\rtcc.h"
 void Open_RTCC(void);
 void Close_RTCC(void);
 unsigned char update_RTCC(void);
 
-# 97 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\sw_i2c.h"
+# 97 "C:\Program Files\Microchip\xc8\v1.33\include\plib\sw_i2c.h"
 void SWStopI2C ( void );
 void SWStartI2C ( void );
 void SWRestartI2C ( void );
@@ -10193,7 +10193,7 @@ signed char SWWriteI2C(  unsigned char data_out );
 signed char SWGetsI2C(  unsigned char *rdptr,  unsigned char length );
 signed char SWPutsI2C(  unsigned char *wrptr );
 
-# 84 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\sw_spi.h"
+# 84 "C:\Program Files\Microchip\xc8\v1.33\include\plib\sw_spi.h"
 void OpenSWSPI(void);
 
 
@@ -10205,7 +10205,7 @@ void SetCSSWSPI(void);
 
 void ClearCSSWSPI(void);
 
-# 47 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\sw_uart.h"
+# 47 "C:\Program Files\Microchip\xc8\v1.33\include\plib\sw_uart.h"
 void OpenUART(void);
 
 unsigned char ReadUART(void);
@@ -10221,7 +10221,7 @@ extern void DelayRXBitUART (void);
 extern void DelayRXHalfBitUART(void);
 extern void DelayTXBitUART (void);
 
-# 36 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\timers.h"
+# 36 "C:\Program Files\Microchip\xc8\v1.33\include\plib\timers.h"
 union Timers
 {
 unsigned int lt;
@@ -10289,7 +10289,7 @@ extern void uart16_init2(void);
 extern volatile BYTE timeout_error;
 extern volatile BYTE timeout_error2;
 
-# 87 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\xlcd.h"
+# 87 "C:\Program Files\Microchip\xc8\v1.33\include\plib\xlcd.h"
 void OpenXLCD( unsigned char);
 
 # 92
@@ -10324,7 +10324,7 @@ extern void DelayFor18TCY(void);
 extern void DelayPORXLCD(void);
 extern void DelayXLCD(void);
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\plib\delays.h"
+# 13 "C:\Program Files\Microchip\xc8\v1.33\include\plib\delays.h"
 void Delay1TCYx(unsigned char);
 
 # 19
@@ -10339,7 +10339,7 @@ void Delay1KTCYx(unsigned char);
 # 37
 void Delay10KTCYx(unsigned char);
 
-# 18 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18.h"
+# 18 "C:\Program Files\Microchip\xc8\v1.33\include\pic18.h"
 __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 
 
@@ -10356,7 +10356,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 7 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdarg.h"
+# 7 "C:\Program Files\Microchip\xc8\v1.33\include\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -10365,7 +10365,7 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 23 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdio.h"
+# 23 "C:\Program Files\Microchip\xc8\v1.33\include\stdio.h"
 extern int errno;
 
 # 54
@@ -10375,7 +10375,7 @@ char * ptr;
 void (* func)(char);
 };
 
-# 17 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\conio.h"
+# 17 "C:\Program Files\Microchip\xc8\v1.33\include\conio.h"
 extern int errno;
 
 
@@ -10392,7 +10392,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 99 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdio.h"
+# 99 "C:\Program Files\Microchip\xc8\v1.33\include\stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -10419,7 +10419,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 27 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdlib.h"
+# 27 "C:\Program Files\Microchip\xc8\v1.33\include\stdlib.h"
 typedef struct {
 int rem;
 int quot;
@@ -10485,7 +10485,7 @@ extern char * ultoa(unsigned long val, char * buf);
 # 112
 extern char * ftoa(float f, int * status);
 
-# 22 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\string.h"
+# 22 "C:\Program Files\Microchip\xc8\v1.33\include\string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
 extern void * memset(void *, int, size_t);
@@ -10700,14 +10700,7 @@ void MTouchDecode(void);
 # 10 "..\MessagesConfig.h"
 typedef enum {
 
-MES_ADC_INIT_DONE,
-MES_ADC_INIT,
-MES_POINT,
-EXP_STOP_BY_TIME,
-EXP_STOP_BY_TEMP,
-USB_FLASH_SEND_CMD,
-USB_FLASH_ATTACH,
-USB_FLASH_DEATTACH
+MES_RX
 } MESSAGES;
 
 
@@ -10775,7 +10768,7 @@ double ds18b20_read_bit(unsigned char b);
 
 void ow_set_port(volatile unsigned char *tris, volatile unsigned char *lat, volatile unsigned char *port);
 
-# 11 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\time.h"
+# 11 "C:\Program Files\Microchip\xc8\v1.33\include\time.h"
 typedef long time_t;
 struct tm {
 int tm_sec;
@@ -10842,7 +10835,7 @@ void T9000_set_channel(BYTE ch);
 # 42 "../lib/include\macro.h"
 extern char ___gie;
 
-# 103 "C:/Program Files (x86)/Microchip/xc8/v1.33/include\stdlib.h"
+# 103 "C:\Program Files\Microchip\xc8\v1.33\include\stdlib.h"
 extern char * itoa(char * buf, int val, int base);
 extern char * utoa(char * buf, unsigned val, int base);
 
@@ -12889,6 +12882,8 @@ extern unsigned char ow_bit;
 void tsk_process_btn(void);
 void tsk_display(void);
 void tsk_ds18b20(void);
+void tsk_rx(void);
+void tsk_btn(void);
 
 
 asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x01" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");asm("\tpsect eeprom_data,class=EEDATA,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");;
@@ -12906,12 +12901,16 @@ status_t stat;
 double f_T_salona = 20.0;
 
 char str[40];
+char out_packet[63];
+char in_packet[55];
 
 
 Label lb_temp;
 Label lb_paket;
+Label lb_cond, lb_vent;
+Label lb_v1, lb_v2;
 
-void main(void){
+void main(void) {
 
 __nop();
 InitMessages();
@@ -12920,63 +12919,57 @@ InitializeSystem();
 ks0108Init();
 
 
-LabelCreate(&lb_temp, 0, 0, font13, 6);
-LabelCreate(&lb_paket, 0, 10, font13, 22);
-
-sprintf(str, "AB");
-LabelSetTxt(&lb_temp, str);
-
-ks0108GotoXY(20, 50);
-ks0108PutChar('A', &font13, 1);
-
-ks0108GotoXY(1, 40);
-ks0108PutChar('B', &font23, 1);
-
-ks0108GotoXY(100,30);
-ks0108PutChar(0x5e, &font23, 1);
-
-ks0108GotoXY(100, 0);
-ks0108PutChar(0x89, &font13, 1);
 
 
-ks0108Line(5,30, 60, 60);
+LabelCreate(&lb_temp, 0, 0, font13, 10);
+LabelCreate(&lb_paket, 0, 22, font13, 22);
 
-ks0108Rect(60, 35, 15, 15);
+LabelCreate(&lb_cond, 85, 51, font13, 4);
+LabelCreate(&lb_vent, 5, 51, font13, 4);
 
+LabelCreate(&lb_v1, 0, 11, font13, 10);
+LabelCreate(&lb_v2, 63, 11, font13, 10);
 
-
+# 92
 __nop();
 __nop();
 
 
-INTCONbits.GIE = 1;
+
 
 Beep(10);
 
 
 
 
-while(1){
+while (1) {
 
 
 tsk_display();
 tsk_process_btn();
 tsk_ds18b20();
+tsk_rx();
+tsk_btn();
 
 __nop();
 __nop();
 
 
-if((FERR1) || (OERR1)){
+if ((FERR1) || (OERR1)) {
 CREN1 = 0;
 __nop();
 CREN1 = 1;
 }
+LATCbits.LATC5 = 0;
 
-if(SWDTEN == 0){
+if (SWDTEN == 0) {
 
 }
 asm(" clrwdt");
+
+if (INTCONbits.GIE == 0) {
+INTCONbits.GIE = 1;
+}
 
 
 ProcessMessages();
@@ -12987,7 +12980,7 @@ ProcessMessages();
 
 
 
-void tsk_process_btn(void){
+void tsk_process_btn(void) {
 static int prev_tick, i;
 
 
@@ -12996,133 +12989,187 @@ MTouchDecode();
 
 
 
-if(((buttons[KEY_7_LT_OUT_BACK].state) == CONTROL_PRESSED)){
+if (((buttons[KEY_7_LT_OUT_BACK].state) == CONTROL_PRESSED)) {
 Beep(10);
 stat.st_lt_back ^= 1;
 LATAbits.LATA6 = stat.st_lt_back;
 }
 
 
-if(((buttons[KEY_8_LT_OUT_SIDE].state) == CONTROL_PRESSED)){
+if (((buttons[KEY_8_LT_OUT_SIDE].state) == CONTROL_PRESSED)) {
 Beep(10);
 stat.st_lt_side ^= 1;
 LATAbits.LATA7 = stat.st_lt_side;
 }
 
 
-if(((buttons[KEY_6_ROZ_ON].state) == CONTROL_PRESSED)){
+if (((buttons[KEY_6_ROZ_ON].state) == CONTROL_PRESSED)) {
 Beep(10);
 stat.st_12V ^= 1;
 LATBbits.LATB7 = stat.st_12V;
 }
 
 
-if(((buttons[KEY_0_AVT_PWR_220].state) == CONTROL_PRESSED)){
+if (((buttons[KEY_0_AVT_PWR_220].state) == CONTROL_PRESSED)) {
 Beep(10);
 stat.st_220V ^= 1;
 LATBbits.LATB6 = stat.st_220V;
 }
 
 
-if(((buttons[KEY_2_LT_SALON_M].state) == CONTROL_PRESSED)){
-if(stat.st_lt_salon == 0){
+if (((buttons[KEY_2_LT_SALON_M].state) == CONTROL_PRESSED)) {
 Beep(10);
+if (stat.st_lt_salon == 0) {
 stat.st_lt_blue ^= 1;
-
 } else {
 stat.st_lt_salon = 0;
 stat.st_lt_blue = 0;
 }
 }
 
-if(((buttons[KEY_3_LT_SALON_P].state) == CONTROL_PRESSED)){
-
+if (((buttons[KEY_3_LT_SALON_P].state) == CONTROL_PRESSED)) {
 Beep(10);
-
-
 stat.st_lt_salon = 31;
 
-if(stat.st_lt_salon > 0){
+if (stat.st_lt_salon > 0) {
 stat.st_lt_blue = 0;
 }
 }
 
-
-if(((buttons[KEY_2_LT_SALON_MM].state) == CONTROL_PRESSED)){
-if(stat.st_lt_salon > 0){
-Beep(10);
-stat.st_lt_salon --;
-stat.st_lt_blue = 0;
-}
-}
-
-if(((buttons[KEY_3_LT_SALON_PP].state) == CONTROL_PRESSED)){
-if(stat.st_lt_salon < 31){
-Beep(10);
-stat.st_lt_salon ++;
-}
-if(stat.st_lt_salon > 0){
-stat.st_lt_blue = 0;
-}
-}
-
-
-if(((buttons[KEY_1_LT_NOSHY].state) == CONTROL_PRESSED)){
+# 218
+if (((buttons[KEY_1_LT_NOSHY].state) == CONTROL_PRESSED)) {
 Beep(10);
 stat.st_lt_noshy ^= 1;
 }
 
 
-if(((buttons[KEY_9_LT_KOND_M].state) == CONTROL_PRESSED)){
-if(stat.st_kond > 0){
+if (((buttons[KEY_9_LT_KOND_M].state) == CONTROL_PRESSED)) {
+if (stat.st_kond > 0) {
 Beep(10);
-stat.st_kond --;
+stat.st_kond--;
 }
 }
 
-if(((buttons[KEY_10_LT_KOND_P].state) == CONTROL_PRESSED)){
-if(stat.st_kond < 2){
+if (((buttons[KEY_10_LT_KOND_P].state) == CONTROL_PRESSED)) {
+if (stat.st_kond < 3) {
 Beep(10);
-stat.st_kond ++;
+stat.st_kond++;
 }
 }
 
 
-if(((buttons[KEY_4_VENT_OUT].state) == CONTROL_PRESSED)){
+if (((buttons[KEY_4_VENT_OUT].state) == CONTROL_PRESSED)) {
 Beep(10);
-stat.st_fan = (stat.st_fan == 0)? 1: 0;
+stat.st_fan = (stat.st_fan == 0) ? 1 : 0;
 }
 
-if(((buttons[KEY_5_VENT_IN].state) == CONTROL_PRESSED)){
+if (((buttons[KEY_5_VENT_IN].state) == CONTROL_PRESSED)) {
 Beep(10);
-stat.st_fan = (stat.st_fan == 0)? 2: 0;
+stat.st_fan = (stat.st_fan == 0) ? 2 : 0;
 }
 
 
 }
 
 
-void tsk_display(void){
-static double f_prev_T = - 100.0;
+void tsk_display(void) {
+static double f_prev_T = -100.0;
+static BYTE blink, prev_cond = 5, prev_fan = 10, prev_lt_blue = 0, prev_lt_salon = 0;
+char str[30], strt[6];
 
 static int _prev_tick; static int chk_count; static char _yield_flag; static unsigned int _state = 0; static char _running_msg = (0); static char _interrupt_state; __nop();
 
-if(f_prev_T != f_T_salona){
-f_prev_T = f_T_salona;
-sprintf(str, "T=%2.1f", f_T_salona);
-LabelSetTxt(&lb_temp, str);
-}
+
 
 _yield_flag = 1; switch(_state){ default: case 0: for(;;){ __nop();
 
-do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 247; case 247: if(((_sys_tick - _prev_tick) < 500)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick = _sys_tick; if(_interrupt_state==1) INTCONbits.GIE=1; } } while(0); __nop();
+do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 264; case 264: if(((_sys_tick - _prev_tick) < 500)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick = _sys_tick; if(_interrupt_state==1) INTCONbits.GIE=1; } } while(0); __nop();
 
-sprintf(str, "%01u %01u %01u %01u %01u %02u %01u %01u %01u",
-stat.st_12V, stat.st_220V, stat.st_lt_back, stat.st_lt_side, stat.st_lt_noshy,
-stat.st_lt_salon, stat.st_lt_blue, stat.st_fan, stat.st_kond);
+blink++;
 
-LabelSetTxt(&lb_paket, str);
+if (f_prev_T != f_T_salona) {
+f_prev_T = f_T_salona;
+if (f_T_salona != 0.0) {
 
+
+sprintf(str, "T=%2.1f", f_T_salona);
+} else {
+sprintf(str, "     ");
+}
+LabelSetTxt(&lb_temp, str);
+}
+
+sprintf(str, "U1=%c%c.%cB", in_packet[9], in_packet[10], in_packet[12]);
+LabelSetTxt(&lb_v1, str);
+
+sprintf(str, "U2=%c%c.%cB", in_packet[17], in_packet[18], in_packet[20]);
+LabelSetTxt(&lb_v2, str);
+
+# 298
+do { _yield_flag = 0; _state = 298; case 298: if(_yield_flag == 0) { return; } } while(0); __nop();
+
+# 311
+if ((stat.st_lt_salon != prev_lt_salon) || (stat.st_lt_blue != prev_lt_blue)) {
+prev_lt_salon = stat.st_lt_salon;
+prev_lt_blue = stat.st_lt_blue;
+
+ks0108GotoXY(40, 50);
+ks0108PutChar(0x89, &font13, 0);
+
+if (stat.st_lt_salon > 0) {
+ks0108PutChar(0x89, &font13, 1);
+} else {
+ks0108PutChar(0x89, &font13, 0);
+}
+
+if (stat.st_lt_blue) {
+ks0108PutChar(0x89, &font13, 1);
+} else {
+ks0108PutChar(0x89, &font13, 0);
+}
+}
+
+
+
+do { _yield_flag = 0; _state = 333; case 333: if(_yield_flag == 0) { return; } } while(0); __nop();
+
+
+
+
+if (stat.st_kond != prev_cond) {
+prev_cond = stat.st_kond;
+if (stat.st_kond == 0) {
+sprintf(str, "   ");
+} else if (stat.st_kond == 1) {
+sprintf(str, "%c  ", 0x84);
+} else if (stat.st_kond == 2) {
+sprintf(str, "%c%c ", 0x84, 0x84);
+} else if (stat.st_kond == 3) {
+sprintf(str, "%c%c%c", 0x84, 0x84, 0x84);
+}
+LabelSetTxt(&lb_cond, str);
+}
+
+
+do { _yield_flag = 0; _state = 353; case 353: if(_yield_flag == 0) { return; } } while(0); __nop();
+
+
+if (stat.st_fan != prev_fan) {
+prev_fan = stat.st_fan;
+if (stat.st_fan == 1) {
+
+sprintf(str, "%c", 0x85);
+} else if (stat.st_fan == 2) {
+
+sprintf(str, "%c", 0x85);
+} else {
+sprintf(str, " ");
+
+}
+LabelSetTxt(&lb_vent, str);
+}
+
+do { _yield_flag = 0; _state = 371; case 371: if(_yield_flag == 0) { return; } } while(0); __nop();
 
 }};
 
@@ -13131,7 +13178,7 @@ LabelSetTxt(&lb_paket, str);
 }
 
 
-void tsk_ds18b20(void){
+void tsk_ds18b20(void) {
 static double f_temp;
 static BYTE ow_err[1];
 
@@ -13140,14 +13187,14 @@ static int _prev_tick; static int chk_count; static char _yield_flag; static uns
 ow_bit = 1;
 ds18b20_start();
 
-do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 272; case 272: if(((_sys_tick - _prev_tick) < 750)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick = _sys_tick; if(_interrupt_state==1) INTCONbits.GIE=1; } } while(0); __nop();
+do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 389; case 389: if(((_sys_tick - _prev_tick) < 750)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick = _sys_tick; if(_interrupt_state==1) INTCONbits.GIE=1; } } while(0); __nop();
 
 f_temp = ds18b20_read();
 
 __nop();
 __nop();
 
-if((f_temp != -60.0) && (f_temp != 85.0)){
+if ((f_temp != -60.0) && (f_temp != 85.0)) {
 
 if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0;
 f_T_salona = f_temp;
@@ -13155,8 +13202,8 @@ if(_interrupt_state==1) INTCONbits.GIE=1;
 
 ow_err[0] = 0;
 } else {
-ow_err[0] ++;
-if(ow_err[0] > 4){
+ow_err[0]++;
+if (ow_err[0] > 4) {
 ow_err[0] = 0;
 if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0;
 f_T_salona = 0.0;
@@ -13164,7 +13211,33 @@ if(_interrupt_state==1) INTCONbits.GIE=1;
 }
 }
 
-do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 296; case 296: if(((_sys_tick - _prev_tick) < 100)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick = _sys_tick; if(_interrupt_state==1) INTCONbits.GIE=1; } } while(0); __nop();
+do { if(INTCONbits.GIE==1) _interrupt_state = 1; else _interrupt_state = 0; INTCONbits.GIE=0; _prev_tick = _sys_tick; _state = 413; case 413: if(((_sys_tick - _prev_tick) < 100)) { if(_interrupt_state==1) INTCONbits.GIE=1; return; } else { _prev_tick = _sys_tick; if(_interrupt_state==1) INTCONbits.GIE=1; } } while(0); __nop();
 }};
 }
 
+
+void tsk_rx(void) {
+if (GetMessage(MES_RX)) {
+
+__nop();
+__nop();
+
+
+
+
+sprintf(out_packet, ">Com@12V=%01u 220V=%01u LRi=%01u LRe=%01u LNo=%01u Led=%02u Blu=%01u Fan=%01u Con=%01u$\r",
+stat.st_12V, stat.st_220V, stat.st_lt_back, stat.st_lt_side, stat.st_lt_noshy,
+stat.st_lt_salon, stat.st_lt_blue, stat.st_fan, stat.st_kond);
+}
+
+}
+
+
+void tsk_btn(void) {
+static int prev_tick;
+
+if (prev_tick == sys_tick) return;
+prev_tick = sys_tick;
+
+
+}

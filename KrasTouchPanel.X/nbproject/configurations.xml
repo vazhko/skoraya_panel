@@ -114,7 +114,7 @@
       </makeCustomizationType>
       <HI-TECH-COMP>
         <property key="asmlist" value="true"/>
-        <property key="define-macros" value="OW_USE_CHANGING_BIT;USE_EE_DATA"/>
+        <property key="define-macros" value="OW_USE_CHANGING_BIT;USE_EE_DATA;USE_RS485"/>
         <property key="extra-include-directories"
                   value="..;..\..;..\..\lib\include;..\..\lib\mTouchCap\include;..\..\lib\oss;..\lib\include;..\lib\mTouchCap\include;..\lib\oss;C:\Program Files (x86)\Microchip\xc8\v1.33\include;."/>
         <property key="identifier-length" value="255"/>

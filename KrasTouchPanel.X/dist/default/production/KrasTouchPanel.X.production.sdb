@@ -1,9 +1,9 @@
-[p LITE_MODE PRO_MODE AUTOSTATIC IEEE_DBL LFSROK SPACEOPT EMI_WORD IEEE_FLT ]
+[p LITE_MODE AUTOSTATIC IEEE_DBL LFSROK EMI_WORD IEEE_FLT ]
 [d version 1.1 ]
 [d edition pro ]
 [d chip 18F46K22 ]
 [d frameptr 4065 ]
-"73 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchButton.c
+"73 D:\vlad\xc8/lib/mTouchCap/mTouchButton.c
 [e E9139 _MTOUCHCONTROLSTATE_ `uc
 CONTROL_IDLE 128
 CONTROL_PRESSED 1
@@ -24,33 +24,19 @@ DECODE_MOST_PRESSED 4
 DECODE_PRESS_REPEAT 8
 DECODE_ONE_EVENT 16
 ]
-"97 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchSensor.c
+"97 D:\vlad\xc8/lib/mTouchCap/mTouchSensor.c
 [e E9036 _MTOUCHSENSORSTATE_ `uc
 SENSOR_INITIALIZING 0
 SENSOR_RELEASED 1
 SENSOR_PRESSED 2
 SENSOR_DISCONNECTED 128
 ]
-"153 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
+"103 D:\vlad\xc8/isr.c
 [e E9200 . `uc
-MES_ADC_INIT_DONE 0
-MES_ADC_INIT 1
-MES_POINT 2
-EXP_STOP_BY_TIME 3
-EXP_STOP_BY_TEMP 4
-USB_FLASH_SEND_CMD 5
-USB_FLASH_ATTACH 6
-USB_FLASH_DEATTACH 7
+MES_RX 0
 ]
-"172
-[e E9210 . `uc
-SEM_IS_FLASH_COMMUNICATING 0
-SEM_RX_DONE 1
-SEM_WR_DONE 2
-SEM_WR_ERR 3
-]
-"128 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
-[e E9449 . `uc
+"150 D:\vlad\xc8/Main.c
+[e E9442 . `uc
 KEY_0_AVT_PWR_220 0
 KEY_1_LT_NOSHY 1
 KEY_2_LT_SALON_M 2
@@ -70,8 +56,12 @@ CONTROL_IDLE 128
 CONTROL_PRESSED 1
 CONTROL_RELEASED 2
 ]
-"124 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/misc.c
-[e E9449 . `uc
+"419
+[e E9200 . `uc
+MES_RX 0
+]
+"124 D:\vlad\xc8/misc.c
+[e E9442 . `uc
 KEY_0_AVT_PWR_220 0
 KEY_1_LT_NOSHY 1
 KEY_2_LT_SALON_M 2
@@ -93,24 +83,25 @@ DECODE_MOST_PRESSED 4
 DECODE_PRESS_REPEAT 8
 DECODE_ONE_EVENT 16
 ]
-"24 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/messages.c
-[e E17 . `uc
+"24 D:\vlad\xc8/lib/messages.c
+[e E10 . `uc
 MSG_PHASE_NONE 0
 MSG_PHASE_PREPARE 1
 MSG_PHASE_READY 2
 ]
-"25 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
+"25 D:\vlad\xc8/isr.c
 [v _write_buff write_buff `(v  1 e 0 0 ]
 "32
 [v _HI_ISR HI_ISR `IIH(v  1 e 0 0 ]
-"89
+"81
 [v _LO_ISR LO_ISR `IIL(v  1 e 0 0 ]
-"202
+"118
 [v _Beep Beep `(v  1 e 0 0 ]
-"28 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/delay.c
+"28 D:\vlad\xc8/lib/delay.c
 [v _DelayBigUs DelayBigUs `(v  1 e 0 0 ]
 "41
 [v _DelayMs DelayMs `(v  1 e 0 0 ]
+[v i1_DelayMs DelayMs `(v  1 e 0 0 ]
 "54
 [v _DelayMs_ISR DelayMs_ISR `(v  1 e 0 0 ]
 "65
@@ -119,7 +110,7 @@ MSG_PHASE_READY 2
 [v _DelayS DelayS `(v  1 e 0 0 ]
 "89
 [v _DelayS_ISR DelayS_ISR `(v  1 e 0 0 ]
-"11 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/eeprom.c
+"11 D:\vlad\xc8/lib/eeprom.c
 [v _write___ee write___ee `(v  1 e 0 0 ]
 "18
 [v _read___ee read___ee `(v  1 e 0 0 ]
@@ -127,41 +118,41 @@ MSG_PHASE_READY 2
 [v _set_ee_default set_ee_default `(v  1 e 0 0 ]
 "45
 [v _is_ee_wr is_ee_wr `(uc  1 e 1 0 ]
-"19 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ks0108.c
+"19 D:\vlad\xc8/lib/ks0108.c
 [v _ks0108Enable ks0108Enable `(v  1 e 0 0 ]
-"28
+"29
 [v _ks0108Fill ks0108Fill `(v  1 e 0 0 ]
-"39
+"40
 [v _ks0108Fill_xy ks0108Fill_xy `(v  1 e 0 0 ]
-"50
+"51
 [v _ks0108GotoXY ks0108GotoXY `(v  1 e 0 0 ]
-"83
+"84
 [v _ks0108SetDot ks0108SetDot `(v  1 e 0 0 ]
-"100
+"101
 [v _ks0108ClearDot ks0108ClearDot `(v  1 e 0 0 ]
-"118
+"119
 [v _ks0108Init ks0108Init `(v  1 e 0 0 ]
-"159
+"161
 [v _ks0108ReadData ks0108ReadData `(uc  1 e 1 0 ]
-"216
+"218
 [v _ks0108WriteCommand ks0108WriteCommand `(v  1 e 0 0 ]
-"236
+"238
 [v _ks0108WriteData ks0108WriteData `(v  1 e 0 0 ]
-"282
+"284
 [v _ks0108PutChar ks0108PutChar `(uc  1 e 1 0 ]
-"339
+"341
 [v _ks0108PutString ks0108PutString `(v  1 e 0 0 ]
-"350
+"352
 [v _ks0108Line ks0108Line `(v  1 e 0 0 ]
-"395
+"397
 [v _ks0108Rect ks0108Rect `(v  1 e 0 0 ]
-"407
+"409
 [v _LabelCreate LabelCreate `(v  1 e 0 0 ]
-"422
+"424
 [v _LabelSetTxt LabelSetTxt `(v  1 e 0 0 ]
-"455
+"457
 [v _LabelClrTxt LabelClrTxt `(v  1 e 0 0 ]
-"20 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/messages.c
+"20 D:\vlad\xc8/lib/messages.c
 [v _InitMessages InitMessages `(v  1 e 0 0 ]
 "43
 [v _SendMessage SendMessage `(v  1 e 0 0 ]
@@ -183,7 +174,7 @@ MSG_PHASE_READY 2
 [v _BSemOff BSemOff `(v  1 e 0 0 ]
 "152
 [v _BSemSw BSemSw `(v  1 e 0 0 ]
-"8 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/modbus_RTU.c
+"8 D:\vlad\xc8/lib/modbus_RTU.c
 [v _crc_send crc_send `(v  1 e 0 0 ]
 "20
 [v _crc_mb_init crc_mb_init `(v  1 e 0 0 ]
@@ -197,15 +188,15 @@ MSG_PHASE_READY 2
 [v _crc_mb crc_mb `(ui  1 e 2 0 ]
 "74
 [v _crc_mb_check crc_mb_check `(uc  1 e 1 0 ]
-"121 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchAcquistion.c
+"121 D:\vlad\xc8/lib/mTouchCap/mTouchAcquistion.c
 [v _MTouchAcquisitionCVD MTouchAcquisitionCVD `(s  1 e 2 0 ]
-"68 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchButton.c
+"68 D:\vlad\xc8/lib/mTouchCap/mTouchButton.c
 [v _MTouchSetButton MTouchSetButton `(v  1 e 0 0 ]
 "82
 [v _MTouchDecodeButtons MTouchDecodeButtons `(v  1 e 0 0 ]
-"58 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchControl.c
+"58 D:\vlad\xc8/lib/mTouchCap/mTouchControl.c
 [v _MTouchDecode MTouchDecode `(v  1 e 0 0 ]
-"78 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchSensor.c
+"78 D:\vlad\xc8/lib/mTouchCap/mTouchSensor.c
 [v _MTouchSetSensor MTouchSetSensor `(v  1 e 0 0 ]
 "125
 [v _MTouchInit MTouchInit `(v  1 e 0 0 ]
@@ -215,7 +206,7 @@ MSG_PHASE_READY 2
 [v _MTouchUpdateSensorAverage MTouchUpdateSensorAverage `(v  1 e 0 0 ]
 "249
 [v _MTouchAcquisition MTouchAcquisition `(v  1 e 0 0 ]
-"59 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ow.c
+"59 D:\vlad\xc8/lib/ow.c
 [v _ow_delay ow_delay `(v  1 e 0 0 ]
 "64
 [v _init_1wire init_1wire `(uc  1 e 1 0 ]
@@ -233,7 +224,7 @@ MSG_PHASE_READY 2
 [v _ds18b20_start_port ds18b20_start_port `(v  1 e 0 0 ]
 "287
 [v _ds18b20_read_bit ds18b20_read_bit `(d  1 e 4 0 ]
-"6 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/sub18.c
+"6 D:\vlad\xc8/lib/sub18.c
 [v _read_float_ee read_float_ee `(v  1 e 0 0 ]
 "18
 [v _pow_i pow_i `(d  1 e 4 0 ]
@@ -249,11 +240,11 @@ MSG_PHASE_READY 2
 [v _pwm1_load pwm1_load `(v  1 e 0 0 ]
 "130
 [v _pwm2_load pwm2_load `(v  1 e 0 0 ]
-"71 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/TimeDelay.c
+"71 D:\vlad\xc8/lib/TimeDelay.c
 [v __Delay10us _Delay10us `(v  1 e 0 0 ]
 "124
 [v __DelayMs _DelayMs `(v  1 e 0 0 ]
-"14 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/usart.c
+"14 D:\vlad\xc8/lib/usart.c
 [v _uart_init uart_init `(v  1 e 0 0 ]
 "27
 [v _uart16_init uart16_init `(v  1 e 0 0 ]
@@ -271,165 +262,171 @@ MSG_PHASE_READY 2
 [v _putstr putstr `(v  1 e 0 0 ]
 "119
 [v _putstrc putstrc `(v  1 e 0 0 ]
-"43 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
+"49 D:\vlad\xc8/Main.c
 [v _main main `(v  1 e 0 0 ]
-"119
+"141
 [v _tsk_process_btn tsk_process_btn `(v  1 e 0 0 ]
-"234
+"253
 [v _tsk_display tsk_display `(v  1 e 0 0 ]
-"263
+"380
 [v _tsk_ds18b20 tsk_ds18b20 `(v  1 e 0 0 ]
-"10 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/misc.c
+"418
+[v _tsk_rx tsk_rx `(v  1 e 0 0 ]
+"435
+[v _tsk_btn tsk_btn `(v  1 e 0 0 ]
+"10 D:\vlad\xc8/misc.c
 [v _pwm4_load pwm4_load `(v  1 e 0 0 ]
 "24
 [v _InitializeSystem InitializeSystem `(v  1 e 0 0 ]
-"191
+"193
 [v _SysDelayMs SysDelayMs `(v  1 e 0 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\abdiv.c
+"4 C:\Program Files\Microchip\xc8\v1.33\sources\common\abdiv.c
 [v ___abdiv __abdiv `(c  1 e 1 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\abmod.c
+"4 C:\Program Files\Microchip\xc8\v1.33\sources\common\abmod.c
 [v ___abmod __abmod `(c  1 e 1 0 ]
-"31 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\abtofl.c
+"31 C:\Program Files\Microchip\xc8\v1.33\sources\common\abtofl.c
 [v ___abtofl __abtofl `(d  1 e 4 0 ]
-"33 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\abtoft.c
+"33 C:\Program Files\Microchip\xc8\v1.33\sources\common\abtoft.c
 [v ___abtoft __abtoft `(f  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\almod.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\almod.c
 [v ___almod __almod `(l  1 e 4 0 ]
-"36 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\altofl.c
+"36 C:\Program Files\Microchip\xc8\v1.33\sources\common\altofl.c
 [v ___altofl __altofl `(d  1 e 4 0 ]
-"42 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\altoft.c
+"42 C:\Program Files\Microchip\xc8\v1.33\sources\common\altoft.c
 [v ___altoft __altoft `(f  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\atdiv.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\atdiv.c
 [v ___atdiv __atdiv `(m  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\atmod.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\atmod.c
 [v ___atmod __atmod `(m  1 e 3 0 ]
-"37 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\attofl.c
+"37 C:\Program Files\Microchip\xc8\v1.33\sources\common\attofl.c
 [v ___attofl __attofl `(d  1 e 4 0 ]
-"37 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\attoft.c
+"37 C:\Program Files\Microchip\xc8\v1.33\sources\common\attoft.c
 [v ___attoft __attoft `(f  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awdiv.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awmod.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
-"31 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awtofl.c
+"31 C:\Program Files\Microchip\xc8\v1.33\sources\common\awtofl.c
 [v ___awtofl __awtofl `(d  1 e 4 0 ]
-"32 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awtoft.c
+"32 C:\Program Files\Microchip\xc8\v1.33\sources\common\awtoft.c
 [v ___awtoft __awtoft `(f  1 e 4 0 ]
-"409 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
+"409 C:\Program Files\Microchip\xc8\v1.33\sources\common\doprnt.c
 [v _fround fround `(d  1 s 4 fround ]
 "425
 [v _scale scale `(d  1 s 4 scale ]
 "492
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"63 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\double.c
+"63 C:\Program Files\Microchip\xc8\v1.33\sources\common\double.c
 [v ___flpack __flpack `(d  1 e 4 0 ]
-"88 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fladd.c
+"88 C:\Program Files\Microchip\xc8\v1.33\sources\common\fladd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"49 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fldiv.c
+"49 C:\Program Files\Microchip\xc8\v1.33\sources\common\fldiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
-"60 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fldivl.c
+"60 C:\Program Files\Microchip\xc8\v1.33\sources\common\fldivl.c
 [v __div_to_l_ _div_to_l_ `(ul  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\flge.c
+"4 C:\Program Files\Microchip\xc8\v1.33\sources\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\flmul.c
+"62 C:\Program Files\Microchip\xc8\v1.33\sources\common\flmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\flneg.c
+"15 C:\Program Files\Microchip\xc8\v1.33\sources\common\flneg.c
 [v ___flneg __flneg `(d  1 e 4 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c
+"62 C:\Program Files\Microchip\xc8\v1.33\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
-"20 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\flsub.c
+"20 C:\Program Files\Microchip\xc8\v1.33\sources\common\flsub.c
 [v ___flsub __flsub `(d  1 e 4 0 ]
-"43 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fltol.c
+"43 C:\Program Files\Microchip\xc8\v1.33\sources\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
-"86 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftadd.c
+"86 C:\Program Files\Microchip\xc8\v1.33\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
-"49 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftdiv.c
+"49 C:\Program Files\Microchip\xc8\v1.33\sources\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 4 0 ]
-"60 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftdivl.c
+"60 C:\Program Files\Microchip\xc8\v1.33\sources\common\ftdivl.c
 [v __tdiv_to_l_ _tdiv_to_l_ `(ul  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c
+"4 C:\Program Files\Microchip\xc8\v1.33\sources\common\ftge.c
 [v ___ftge __ftge `(b  1 e 0 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftmul.c
+"62 C:\Program Files\Microchip\xc8\v1.33\sources\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c
+"15 C:\Program Files\Microchip\xc8\v1.33\sources\common\ftneg.c
 [v ___ftneg __ftneg `(f  1 e 4 0 ]
-"20 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftsub.c
+"20 C:\Program Files\Microchip\xc8\v1.33\sources\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"44 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fttol.c
+"44 C:\Program Files\Microchip\xc8\v1.33\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\isdigit.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\isdigit.c
 [v _isdigit isdigit `(b  1 e 0 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbdiv.c
+"4 C:\Program Files\Microchip\xc8\v1.33\sources\common\lbdiv.c
 [v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbmod.c
+"4 C:\Program Files\Microchip\xc8\v1.33\sources\common\lbmod.c
 [v ___lbmod __lbmod `(uc  1 e 1 0 ]
-"27 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbtofl.c
+"27 C:\Program Files\Microchip\xc8\v1.33\sources\common\lbtofl.c
 [v ___lbtofl __lbtofl `(d  1 e 4 0 ]
-"27 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbtoft.c
+"27 C:\Program Files\Microchip\xc8\v1.33\sources\common\lbtoft.c
 [v ___lbtoft __lbtoft `(f  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lldiv.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\llmod.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\llmod.c
 [v ___llmod __llmod `(ul  1 e 4 0 ]
-"30 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lltofl.c
+"30 C:\Program Files\Microchip\xc8\v1.33\sources\common\lltofl.c
 [v ___lltofl __lltofl `(d  1 e 4 0 ]
-"35 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lltoft.c
+"35 C:\Program Files\Microchip\xc8\v1.33\sources\common\lltoft.c
 [v ___lltoft __lltoft `(f  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ltdiv.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\ltdiv.c
 [v ___ltdiv __ltdiv `(um  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ltmod.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\ltmod.c
 [v ___ltmod __ltmod `(um  1 e 3 0 ]
-"30 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lttofl.c
+"30 C:\Program Files\Microchip\xc8\v1.33\sources\common\lttofl.c
 [v ___lttofl __lttofl `(d  1 e 4 0 ]
-"30 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lttoft.c
+"30 C:\Program Files\Microchip\xc8\v1.33\sources\common\lttoft.c
 [v ___lttoft __lttoft `(f  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"28 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtofl.c
+"28 C:\Program Files\Microchip\xc8\v1.33\sources\common\lwtofl.c
 [v ___lwtofl __lwtofl `(d  1 e 4 0 ]
-"28 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c
+"28 C:\Program Files\Microchip\xc8\v1.33\sources\common\lwtoft.c
 [v ___lwtoft __lwtoft `(f  1 e 4 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
+"15 C:\Program Files\Microchip\xc8\v1.33\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul24.c
+"15 C:\Program Files\Microchip\xc8\v1.33\sources\common\Umul24.c
 [v ___tmul __tmul `(um  1 e 3 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul32.c
+"15 C:\Program Files\Microchip\xc8\v1.33\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul8.c
+"4 C:\Program Files\Microchip\xc8\v1.33\sources\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\asfladd.c
+"6 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\asfladd.c
 [v ___asfladd __asfladd `(d  1 e 4 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\asfldiv.c
+"6 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\asfldiv.c
 [v ___asfldiv __asfldiv `(d  1 e 4 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\asflmul.c
+"6 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\asflmul.c
 [v ___asflmul __asflmul `(d  1 e 4 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\asflsub.c
+"6 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\asflsub.c
 [v ___asflsub __asflsub `(d  1 e 4 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\asftadd.c
+"6 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\asftadd.c
 [v ___asftadd __asftadd `(f  1 e 4 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\asftdiv.c
+"6 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\asftdiv.c
 [v ___asftdiv __asftdiv `(f  1 e 4 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\asftmul.c
+"6 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\asftmul.c
 [v ___asftmul __asftmul `(f  1 e 4 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\asftsub.c
+"6 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\asftsub.c
 [v ___asftsub __asftsub `(f  1 e 4 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\aslmul.c
+"6 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\aslmul.c
 [v ___aslmul __aslmul `(ul  1 e 4 0 ]
-"12 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\plib\EEP\busy_eep.c
+"12 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\EEP\busy_eep.c
 [v _Busy_eep Busy_eep `(v  1 e 0 0 ]
-"35 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\plib\EEP\read_B.c
+"35 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\EEP\read_B.c
 [v _Read_b_eep Read_b_eep `(uc  1 e 1 0 ]
-"49 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\plib\EEP\write_B.c
+"49 C:\Program Files\Microchip\xc8\v1.33\sources\pic18\plib\EEP\write_B.c
 [v _Write_b_eep Write_b_eep `(v  1 e 0 0 ]
-"1 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/font13.h
+"1 D:\vlad\xc8/cour13.h
+[v _gost12 gost12 `C[5578]uc  1 e 5578 0 ]
+"1 D:\vlad\xc8/font13.h
 [v _font13 font13 `C[2892]uc  1 e 2892 0 ]
-"3 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/font23.h
+"3 D:\vlad\xc8/font23.h
 [v _font23 font23 `C[5955]uc  1 e 5955 0 ]
-"11 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
+"11 D:\vlad\xc8/isr.c
 [v _beep_timer beep_timer `VEus  1 e 2 0 ]
 "12
 [v _beep_count beep_count `VEuc  1 e 1 0 ]
@@ -441,30 +438,32 @@ MSG_PHASE_READY 2
 [v _RxBuff RxBuff `VE[256]uc  1 e 256 0 ]
 "16
 [v _j_rx j_rx `VEus  1 e 2 0 ]
-"26 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/delay.c
+"75
+[v _in_packet_template in_packet_template `C[54]uc  1 e 54 0 ]
+"26 D:\vlad\xc8/lib/delay.c
 [v _delayus_variable delayus_variable `uc  1 e 1 0 ]
-"27 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/eeprom.c
+"27 D:\vlad\xc8/lib/eeprom.c
 [v _eedata eedata `C[256]uc  1 e 256 0 ]
-[s S2141 . 3 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 page 1 2 ]
-"9 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ks0108.c
-[v _pos pos `S2141  1 e 3 0 ]
-"5 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/messages.c
+[s S2244 . 3 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 page 1 2 ]
+"9 D:\vlad\xc8/lib/ks0108.c
+[v _pos pos `S2244  1 e 3 0 ]
+"5 D:\vlad\xc8/lib/messages.c
 [v _Messages Messages `VE[10]uc  1 e 10 0 ]
 "12
 [v _BroadcastMessages BroadcastMessages `VE[1]uc  1 e 1 0 ]
 "16
 [v _BSem BSem `VE[4]uc  1 e 4 0 ]
 [s S21 tag_SENSOR 32 `l 1 average 4 0 `l 1 oversampleFilterData 4 4 `*.39VEuc 1 trisReg 2 8 `*.39VEuc 1 latReg 2 10 `s 1 decimateFilterData 2 12 `us 1 sampleCounter 2 14 `us 1 samplesNumber 2 16 `us 1 pressThreshold 2 18 `us 1 releaseThreshold 2 20 `us 1 averageCount 2 22 `us 1 delta 2 24 `us 1 debounceCount 2 26 `uc 1 state 1 28 `uc 1 ioMask 1 29 `uc 1 channelNumber 1 30 `c 1 chargeDelay 1 31 ]
-"63 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchButton.c
+"63 D:\vlad\xc8/lib/mTouchCap/mTouchButton.c
 [s S180 tag_MTOUCHBUTTON 8 `uc 1 state 1 0 `uc 1 curState 1 1 `uc 1 decode 1 2 `uc 1 prevSensorState 1 3 `*.39S21 1 pSensor 2 4 `s 1 pressCounter 2 6 ]
 [v _buttons buttons `[13]S180  1 e 104 0 ]
-"64 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchSensor.c
+"64 D:\vlad\xc8/lib/mTouchCap/mTouchSensor.c
 [v _sensors sensors `VE[11]S21  1 e 352 0 ]
-"4 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/oss/oss.c
+"4 D:\vlad\xc8/lib/oss/oss.c
 [v _curr_task curr_task `VEuc  1 e 1 0 ]
 "5
 [v __sys_tick _sys_tick `VEi  1 e 2 0 ]
-"8 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ow.c
+"8 D:\vlad\xc8/lib/ow.c
 [v ___gie __gie `uc  1 s 1 __gie ]
 "15
 [v _ow_bit ow_bit `uc  1 e 1 0 ]
@@ -472,35 +471,45 @@ MSG_PHASE_READY 2
 [v _scratch scratch `[9]uc  1 e 9 0 ]
 "29
 [v _dscrc_table dscrc_table `C[256]uc  1 e 256 0 ]
-"9 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/usart.c
+"9 D:\vlad\xc8/lib/usart.c
 [v _timeout_error timeout_error `VEuc  1 e 1 0 ]
-"14 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
+"14 D:\vlad\xc8/Main.c
 [v _sys_tick sys_tick `VEi  1 e 2 0 ]
-"26
+"28
 [v _a a `VEuc  1 e 1 0 ]
 [v _b b `VEuc  1 e 1 0 ]
-"27
+"29
 [v _c c `VEi  1 e 2 0 ]
 [v _d d `VEi  1 e 2 0 ]
-"28
+"30
 [v _e e `VEul  1 e 4 0 ]
 [v _f f `VEul  1 e 4 0 ]
-"29
+"31
 [v _k k `VEd  1 e 4 0 ]
 [v _l l `VEd  1 e 4 0 ]
-[s S901 . 9 `uc 1 st_12V 1 0 `uc 1 st_220V 1 1 `uc 1 st_lt_back 1 2 `uc 1 st_lt_side 1 3 `uc 1 st_lt_noshy 1 4 `uc 1 st_lt_salon 1 5 `uc 1 st_lt_blue 1 6 `uc 1 st_fan 1 7 `uc 1 st_kond 1 8 ]
-"33
-[v _stat stat `S901  1 e 9 0 ]
+[s S957 . 9 `uc 1 st_12V 1 0 `uc 1 st_220V 1 1 `uc 1 st_lt_back 1 2 `uc 1 st_lt_side 1 3 `uc 1 st_lt_noshy 1 4 `uc 1 st_lt_salon 1 5 `uc 1 st_lt_blue 1 6 `uc 1 st_fan 1 7 `uc 1 st_kond 1 8 ]
 "35
-[v _f_T_salona f_T_salona `d  1 e 4 0 ]
+[v _stat stat `S957  1 e 9 0 ]
 "37
+[v _f_T_salona f_T_salona `d  1 e 4 0 ]
+"39
 [v _str str `[40]uc  1 e 40 0 ]
-[s S911 . 36 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 size 1 2 `*.25Cuc 1 p_font 2 3 `[31]uc 1 str 31 5 ]
 "40
-[v _lb_temp lb_temp `S911  1 e 36 0 ]
+[v _out_packet out_packet `[63]uc  1 e 63 0 ]
 "41
-[v _lb_paket lb_paket `S911  1 e 36 0 ]
-"47 C:/Program Files (x86)/Microchip/xc8/v1.33/include\pic18f46k22.h
+[v _in_packet in_packet `[55]uc  1 e 55 0 ]
+[s S967 . 36 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 size 1 2 `*.25Cuc 1 p_font 2 3 `[31]uc 1 str 31 5 ]
+"44
+[v _lb_temp lb_temp `S967  1 e 36 0 ]
+"45
+[v _lb_paket lb_paket `S967  1 e 36 0 ]
+"46
+[v _lb_cond lb_cond `S967  1 e 36 0 ]
+[v _lb_vent lb_vent `S967  1 e 36 0 ]
+"47
+[v _lb_v1 lb_v1 `S967  1 e 36 0 ]
+[v _lb_v2 lb_v2 `S967  1 e 36 0 ]
+"47 C:\Program Files\Microchip\xc8\v1.33\include\pic18f46k22.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
 "91
 [v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
@@ -510,12 +519,12 @@ MSG_PHASE_READY 2
 [v _ANSELD ANSELD `VEuc  1 e 1 @3899 ]
 "251
 [v _ANSELE ANSELE `VEuc  1 e 1 @3900 ]
-[s S1449 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S1592 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
 "1820
-[s S1453 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S1596 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -523,106 +532,106 @@ MSG_PHASE_READY 2
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[u S1461 . 1 `S1449 1 . 1 0 `S1453 1 . 1 0 ]
-[v _T4CONbits T4CONbits `VES1461  1 e 1 @3921 ]
+[u S1604 . 1 `S1592 1 . 1 0 `S1596 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES1604  1 e 1 @3921 ]
 "1869
 [v _PR4 PR4 `VEuc  1 e 1 @3922 ]
 "1888
 [v _TMR4 TMR4 `VEuc  1 e 1 @3923 ]
 "1907
 [v _CCP5CON CCP5CON `VEuc  1 e 1 @3924 ]
-[s S1330 . 1 `uc 1 CCP4M 1 0 :4:0 
+[s S1473 . 1 `uc 1 CCP4M 1 0 :4:0 
 `uc 1 DC4B 1 0 :2:4 
 ]
 "2033
-[s S1333 . 1 `uc 1 CCP4M0 1 0 :1:0 
+[s S1476 . 1 `uc 1 CCP4M0 1 0 :1:0 
 `uc 1 CCP4M1 1 0 :1:1 
 `uc 1 CCP4M2 1 0 :1:2 
 `uc 1 CCP4M3 1 0 :1:3 
 `uc 1 DC4B0 1 0 :1:4 
 `uc 1 DC4B1 1 0 :1:5 
 ]
-[u S1340 . 1 `S1330 1 . 1 0 `S1333 1 . 1 0 ]
-[v _CCP4CONbits CCP4CONbits `VES1340  1 e 1 @3927 ]
+[u S1483 . 1 `S1473 1 . 1 0 `S1476 1 . 1 0 ]
+[v _CCP4CONbits CCP4CONbits `VES1483  1 e 1 @3927 ]
 "2083
 [v _CCPR4L CCPR4L `VEuc  1 e 1 @3928 ]
 "3357
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @3943 ]
-[s S653 . 1 `uc 1 TMR4IE 1 0 :1:0 
+[s S741 . 1 `uc 1 TMR4IE 1 0 :1:0 
 `uc 1 TMR5IE 1 0 :1:1 
 `uc 1 TMR6IE 1 0 :1:2 
 ]
 "6270
-[u S657 . 1 `S653 1 . 1 0 ]
-[v _PIE5bits PIE5bits `VES657  1 e 1 @3965 ]
+[u S745 . 1 `S741 1 . 1 0 ]
+[v _PIE5bits PIE5bits `VES745  1 e 1 @3965 ]
 "6301
-[v _PIR5bits PIR5bits `VES657  1 e 1 @3966 ]
-[s S1571 . 1 `uc 1 TMR4IP 1 0 :1:0 
+[v _PIR5bits PIR5bits `VES745  1 e 1 @3966 ]
+[s S1714 . 1 `uc 1 TMR4IP 1 0 :1:0 
 `uc 1 TMR5IP 1 0 :1:1 
 `uc 1 TMR6IP 1 0 :1:2 
 ]
 "6339
-[s S1575 . 1 `uc 1 CCH05 1 0 :1:0 
+[s S1718 . 1 `uc 1 CCH05 1 0 :1:0 
 ]
-[s S1577 . 1 `uc 1 . 1 0 :1:0 
+[s S1720 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCH15 1 0 :1:1 
 ]
-[u S1580 . 1 `S1571 1 . 1 0 `S1575 1 . 1 0 `S1577 1 . 1 0 ]
-[v _IPR5bits IPR5bits `VES1580  1 e 1 @3967 ]
+[u S1723 . 1 `S1714 1 . 1 0 `S1718 1 . 1 0 `S1720 1 . 1 0 ]
+[v _IPR5bits IPR5bits `VES1723  1 e 1 @3967 ]
 "6923
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
 "7232
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
 "7774
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S675 . 1 `uc 1 LATA0 1 0 :1:0 
-`uc 1 LATA1 1 0 :1:1 
-`uc 1 LATA2 1 0 :1:2 
-`uc 1 LATA3 1 0 :1:3 
-`uc 1 LATA4 1 0 :1:4 
-`uc 1 LATA5 1 0 :1:5 
-`uc 1 LATA6 1 0 :1:6 
-`uc 1 LATA7 1 0 :1:7 
+[s S530 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
 ]
 "7822
-[s S684 . 1 `uc 1 LA0 1 0 :1:0 
+[s S539 . 1 `uc 1 LC0 1 0 :1:0 
 ]
-[s S686 . 1 `uc 1 . 1 0 :1:0 
-`uc 1 LA1 1 0 :1:1 
+[s S541 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
 ]
-[s S689 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 LA2 1 0 :1:2 
+[s S544 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LC2 1 0 :1:2 
 ]
-[s S692 . 1 `uc 1 . 1 0 :3:0 
-`uc 1 LA3 1 0 :1:3 
+[s S547 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LC3 1 0 :1:3 
 ]
-[s S695 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 LA4 1 0 :1:4 
+[s S550 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LC4 1 0 :1:4 
 ]
-[s S698 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 LA5 1 0 :1:5 
+[s S553 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LC5 1 0 :1:5 
 ]
-[s S701 . 1 `uc 1 . 1 0 :6:0 
-`uc 1 LA6 1 0 :1:6 
+[s S556 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LC6 1 0 :1:6 
 ]
-[s S704 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 LA7 1 0 :1:7 
+[s S559 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LC7 1 0 :1:7 
 ]
-[u S707 . 1 `S675 1 . 1 0 `S684 1 . 1 0 `S686 1 . 1 0 `S689 1 . 1 0 `S692 1 . 1 0 `S695 1 . 1 0 `S698 1 . 1 0 `S701 1 . 1 0 `S704 1 . 1 0 ]
-[v _LATAbits LATAbits `VES707  1 e 1 @3977 ]
+[u S562 . 1 `S530 1 . 1 0 `S539 1 . 1 0 `S541 1 . 1 0 `S544 1 . 1 0 `S547 1 . 1 0 `S550 1 . 1 0 `S553 1 . 1 0 `S556 1 . 1 0 `S559 1 . 1 0 ]
+[v _LATAbits LATAbits `VES562  1 e 1 @3977 ]
 "7906
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 "7954
-[v _LATBbits LATBbits `VES707  1 e 1 @3978 ]
+[v _LATBbits LATBbits `VES562  1 e 1 @3978 ]
 "8038
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "8086
-[v _LATCbits LATCbits `VES707  1 e 1 @3979 ]
+[v _LATCbits LATCbits `VES562  1 e 1 @3979 ]
 "8170
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
 "8404
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
-[s S801 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S858 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -632,7 +641,7 @@ MSG_PHASE_READY 2
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "8436
-[s S810 . 1 `uc 1 RA0 1 0 :1:0 
+[s S867 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -641,46 +650,46 @@ MSG_PHASE_READY 2
 `uc 1 RA6 1 0 :1:6 
 `uc 1 RA7 1 0 :1:7 
 ]
-[u S819 . 1 `S801 1 . 1 0 `S810 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES819  1 e 1 @3986 ]
+[u S876 . 1 `S858 1 . 1 0 `S867 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES876  1 e 1 @3986 ]
 "8625
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "8657
-[v _TRISBbits TRISBbits `VES819  1 e 1 @3987 ]
+[v _TRISBbits TRISBbits `VES876  1 e 1 @3987 ]
 "8846
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "8878
-[v _TRISCbits TRISCbits `VES819  1 e 1 @3988 ]
+[v _TRISCbits TRISCbits `VES876  1 e 1 @3988 ]
 "9067
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S2186 . 1 `uc 1 TRISE0 1 0 :1:0 
+[s S2289 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 WPUE3 1 0 :1:7 
 ]
 "9312
-[s S2192 . 1 `uc 1 RE0 1 0 :1:0 
+[s S2295 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 ]
-[u S2196 . 1 `S2186 1 . 1 0 `S2192 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES2196  1 e 1 @3990 ]
-[s S1356 . 1 `uc 1 TUN 1 0 :6:0 
+[u S2299 . 1 `S2289 1 . 1 0 `S2295 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES2299  1 e 1 @3990 ]
+[s S1499 . 1 `uc 1 TUN 1 0 :6:0 
 `uc 1 PLLEN 1 0 :1:6 
 `uc 1 INTSRC 1 0 :1:7 
 ]
 "9423
-[s S1360 . 1 `uc 1 TUN0 1 0 :1:0 
+[s S1503 . 1 `uc 1 TUN0 1 0 :1:0 
 `uc 1 TUN1 1 0 :1:1 
 `uc 1 TUN2 1 0 :1:2 
 `uc 1 TUN3 1 0 :1:3 
 `uc 1 TUN4 1 0 :1:4 
 `uc 1 TUN5 1 0 :1:5 
 ]
-[u S1367 . 1 `S1356 1 . 1 0 `S1360 1 . 1 0 ]
-[v _OSCTUNEbits OSCTUNEbits `VES1367  1 e 1 @3995 ]
-[s S589 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[u S1510 . 1 `S1499 1 . 1 0 `S1503 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES1510  1 e 1 @3995 ]
+[s S677 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -689,17 +698,40 @@ MSG_PHASE_READY 2
 `uc 1 ADIE 1 0 :1:6 
 ]
 "9773
-[s S597 . 1 `uc 1 . 1 0 :3:0 
+[s S685 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIE 1 0 :1:3 
 `uc 1 TXIE 1 0 :1:4 
 `uc 1 RCIE 1 0 :1:5 
 ]
-[u S602 . 1 `S589 1 . 1 0 `S597 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES602  1 e 1 @3997 ]
+[u S690 . 1 `S677 1 . 1 0 `S685 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES690  1 e 1 @3997 ]
 "9849
-[v _PIR1bits PIR1bits `VES602  1 e 1 @3998 ]
+[v _PIR1bits PIR1bits `VES690  1 e 1 @3998 ]
 "9925
-[v _IPR1bits IPR1bits `VES602  1 e 1 @3999 ]
+[v _IPR1bits IPR1bits `VES690  1 e 1 @3999 ]
+[s S2532 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CFGS 1 0 :1:6 
+`uc 1 EEPGD 1 0 :1:7 
+]
+"10536
+[s S2541 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 EEFS 1 0 :1:6 
+]
+[u S2544 . 1 `S2532 1 . 1 0 `S2541 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES2544  1 e 1 @4006 ]
+"10580
+[v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
+"10599
+[v _EEDATA EEDATA `VEuc  1 e 1 @4008 ]
+"10618
+[v _EEADR EEADR `VEuc  1 e 1 @4009 ]
+"10687
+[v _EEADRH EEADRH `VEuc  1 e 1 @4010 ]
 "11566
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "11643
@@ -707,7 +739,7 @@ MSG_PHASE_READY 2
 "11720
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "13733
-[v _T2CONbits T2CONbits `VES1461  1 e 1 @4026 ]
+[v _T2CONbits T2CONbits `VES1604  1 e 1 @4026 ]
 "13782
 [v _PR2 PR2 `VEuc  1 e 1 @4027 ]
 "13801
@@ -772,22 +804,22 @@ MSG_PHASE_READY 2
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "14231
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-[s S1382 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S1525 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "16608
-[s S1384 . 1 `uc 1 . 1 0 :1:0 
+[s S1527 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S1387 . 1 `uc 1 . 1 0 :2:0 
+[s S1530 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S1390 . 1 `uc 1 . 1 0 :3:0 
+[s S1533 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S1393 . 1 `uc 1 . 1 0 :4:0 
+[s S1536 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S1396 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S1539 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -796,17 +828,17 @@ MSG_PHASE_READY 2
 `uc 1 SBOREN 1 0 :1:6 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S1405 . 1 `uc 1 BOR 1 0 :1:0 
+[s S1548 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
 `uc 1 RI 1 0 :1:4 
 ]
-[u S1411 . 1 `S1382 1 . 1 0 `S1384 1 . 1 0 `S1387 1 . 1 0 `S1390 1 . 1 0 `S1393 1 . 1 0 `S1396 1 . 1 0 `S1405 1 . 1 0 ]
-[v _RCONbits RCONbits `VES1411  1 e 1 @4048 ]
+[u S1554 . 1 `S1525 1 . 1 0 `S1527 1 . 1 0 `S1530 1 . 1 0 `S1533 1 . 1 0 `S1536 1 . 1 0 `S1539 1 . 1 0 `S1548 1 . 1 0 ]
+[v _RCONbits RCONbits `VES1554  1 e 1 @4048 ]
 "16780
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-[s S980 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S1063 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -816,7 +848,7 @@ MSG_PHASE_READY 2
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "17681
-[s S989 . 1 `uc 1 . 1 0 :1:0 
+[s S1072 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -825,12 +857,12 @@ MSG_PHASE_READY 2
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S998 . 1 `uc 1 . 1 0 :6:0 
+[s S1081 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S1015 . 1 `S980 1 . 1 0 `S989 1 . 1 0 `S998 1 . 1 0 `S989 1 . 1 0 `S998 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES1015  1 e 1 @4082 ]
+[u S1098 . 1 `S1063 1 . 1 0 `S1072 1 . 1 0 `S1081 1 . 1 0 `S1072 1 . 1 0 `S1081 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1098  1 e 1 @4082 ]
 "18342
 [v _BRG161 BRG161 `VEb  1 e 0 @32195 ]
 "18346
@@ -887,94 +919,86 @@ MSG_PHASE_READY 2
 [v _TXEN1 TXEN1 `VEb  1 e 0 @32101 ]
 "20306
 [v _TXIE TXIE `VEb  1 e 0 @31980 ]
-[s S2431 . 1 `uc 1 RD 1 0 :1:0 
-`uc 1 WR 1 0 :1:1 
-`uc 1 WREN 1 0 :1:2 
-`uc 1 WRERR 1 0 :1:3 
-`uc 1 FREE 1 0 :1:4 
-`uc 1 . 1 0 :1:5 
-`uc 1 CFGS 1 0 :1:6 
-`uc 1 EEPGD 1 0 :1:7 
-]
-"10536 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic18f46k22.h
-[s S2440 . 1 `uc 1 . 1 0 :6:0 
-`uc 1 EEFS 1 0 :1:6 
-]
-[u S2443 . 1 `S2431 1 . 1 0 `S2440 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES2443  1 e 1 @4006 ]
-"10580
-[v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
-"10599
-[v _EEDATA EEDATA `VEuc  1 e 1 @4008 ]
-"10618
-[v _EEADR EEADR `VEuc  1 e 1 @4009 ]
-"10687
-[v _EEADRH EEADRH `VEuc  1 e 1 @4010 ]
-"354 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
+"354 C:\Program Files\Microchip\xc8\v1.33\sources\common\doprnt.c
 [v _dpowers dpowers `C[10]ul  1 s 40 dpowers ]
-"7 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\powers.c
+"7 C:\Program Files\Microchip\xc8\v1.33\sources\common\powers.c
 [v __powers_ _powers_ `C[13]d  1 e 52 0 ]
 "39
 [v __npowers_ _npowers_ `C[13]d  1 e 52 0 ]
-"43 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
+"49 D:\vlad\xc8/Main.c
 [v _main main `(v  1 e 0 0 ]
 {
-"114
+"136
 } 0
-"119
+"418
+[v _tsk_rx tsk_rx `(v  1 e 0 0 ]
+{
+"432
+} 0
+"48 D:\vlad\xc8/lib/messages.c
+[v _GetMessage GetMessage `(uc  1 e 1 0 ]
+{
+[v GetMessage@Msg Msg `uc  1 a 1 wreg ]
+[v GetMessage@Msg Msg `uc  1 a 1 wreg ]
+"50
+[v GetMessage@Msg Msg `uc  1 a 1 24 ]
+"55
+} 0
+"141 D:\vlad\xc8/Main.c
 [v _tsk_process_btn tsk_process_btn `(v  1 e 0 0 ]
 {
-"231
+"250
 } 0
-"58 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchControl.c
+"58 D:\vlad\xc8/lib/mTouchCap/mTouchControl.c
 [v _MTouchDecode MTouchDecode `(v  1 e 0 0 ]
 {
 "76
 } 0
-"82 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchButton.c
+"82 D:\vlad\xc8/lib/mTouchCap/mTouchButton.c
 [v _MTouchDecodeButtons MTouchDecodeButtons `(v  1 e 0 0 ]
 {
 [s S21 tag_SENSOR 32 `l 1 average 4 0 `l 1 oversampleFilterData 4 4 `*.39VEuc 1 trisReg 2 8 `*.39VEuc 1 latReg 2 10 `s 1 decimateFilterData 2 12 `us 1 sampleCounter 2 14 `us 1 samplesNumber 2 16 `us 1 pressThreshold 2 18 `us 1 releaseThreshold 2 20 `us 1 averageCount 2 22 `us 1 delta 2 24 `us 1 debounceCount 2 26 `uc 1 state 1 28 `uc 1 ioMask 1 29 `uc 1 channelNumber 1 30 `c 1 chargeDelay 1 31 ]
 "84
 [s S180 tag_MTOUCHBUTTON 8 `uc 1 state 1 0 `uc 1 curState 1 1 `uc 1 decode 1 2 `uc 1 prevSensorState 1 3 `*.39S21 1 pSensor 2 4 `s 1 pressCounter 2 6 ]
-[v MTouchDecodeButtons@pButton pButton `*.39S180  1 a 2 51 ]
+[v MTouchDecodeButtons@pButton pButton `*.39S180  1 a 2 36 ]
 "86
-[v MTouchDecodeButtons@pMostPressedButton pMostPressedButton `*.39S180  1 a 2 48 ]
+[v MTouchDecodeButtons@pMostPressedButton pMostPressedButton `*.39S180  1 a 2 33 ]
 "88
-[v MTouchDecodeButtons@pSensor pSensor `*.39S21  1 a 2 43 ]
+[v MTouchDecodeButtons@pSensor pSensor `*.39S21  1 a 2 28 ]
 "92
-[v MTouchDecodeButtons@sensorState sensorState `uc  1 a 1 50 ]
+[v MTouchDecodeButtons@sensorState sensorState `uc  1 a 1 35 ]
 "94
-[v MTouchDecodeButtons@decode decode `uc  1 a 1 47 ]
+[v MTouchDecodeButtons@decode decode `uc  1 a 1 32 ]
 "96
-[v MTouchDecodeButtons@state state `uc  1 a 1 46 ]
+[v MTouchDecodeButtons@state state `uc  1 a 1 31 ]
 "90
-[v MTouchDecodeButtons@i i `uc  1 a 1 45 ]
+[v MTouchDecodeButtons@i i `uc  1 a 1 30 ]
 "185
 } 0
-"202 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
+"118 D:\vlad\xc8/isr.c
 [v _Beep Beep `(v  1 e 0 0 ]
 {
 [v Beep@ms10 ms10 `uc  1 a 1 wreg ]
 [v Beep@ms10 ms10 `uc  1 a 1 wreg ]
-"204
-[v Beep@ms10 ms10 `uc  1 a 1 39 ]
-"215
+"120
+[v Beep@ms10 ms10 `uc  1 a 1 24 ]
+"131
 } 0
-"263 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
+"380 D:\vlad\xc8/Main.c
 [v _tsk_ds18b20 tsk_ds18b20 `(v  1 e 0 0 ]
 {
-"264
+"381
 [v tsk_ds18b20@f_temp f_temp `d  1 s 4 f_temp ]
-"265
+"382
 [v tsk_ds18b20@ow_err ow_err `[1]uc  1 s 1 ow_err ]
-"267
+"384
 [v tsk_ds18b20@_prev_tick _prev_tick `i  1 s 2 prev_tick ]
+[v tsk_ds18b20@_yield_flag _yield_flag `uc  1 s 1 yield_flag ]
 [v tsk_ds18b20@_state _state `ui  1 s 2 state ]
 [v tsk_ds18b20@_interrupt_state _interrupt_state `uc  1 s 1 interrupt_state ]
-"298
+"415
 } 0
-"205 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ow.c
+"205 D:\vlad\xc8/lib/ow.c
 [v _ds18b20_start ds18b20_start `(v  1 e 0 0 ]
 {
 "221
@@ -983,13 +1007,13 @@ MSG_PHASE_READY 2
 [v _ds18b20_read ds18b20_read `(d  1 e 4 0 ]
 {
 "167
-[v ds18b20_read@f f `d  1 a 4 36 ]
+[v ds18b20_read@f f `d  1 a 4 94 ]
 "165
-[v ds18b20_read@t t `i  1 a 2 34 ]
+[v ds18b20_read@t t `i  1 a 2 92 ]
 "166
-[v ds18b20_read@i i `uc  1 a 1 41 ]
+[v ds18b20_read@i i `uc  1 a 1 99 ]
 "177
-[v ds18b20_read@dowcrc dowcrc `uc  1 a 1 40 ]
+[v ds18b20_read@dowcrc dowcrc `uc  1 a 1 98 ]
 "201
 } 0
 "132
@@ -997,83 +1021,92 @@ MSG_PHASE_READY 2
 {
 [v write_1wire@data data `uc  1 a 1 wreg ]
 "133
-[v write_1wire@i i `uc  1 a 1 44 ]
+[v write_1wire@i i `uc  1 a 1 29 ]
 "132
 [v write_1wire@data data `uc  1 a 1 wreg ]
 "135
-[v write_1wire@data data `uc  1 a 1 43 ]
+[v write_1wire@data data `uc  1 a 1 28 ]
 "160
 } 0
 "97
 [v _read_1wire read_1wire `(uc  1 e 1 0 ]
 {
 "99
-[v read_1wire@i i `uc  1 a 1 44 ]
-[v read_1wire@data data `uc  1 a 1 43 ]
+[v read_1wire@i i `uc  1 a 1 29 ]
+[v read_1wire@data data `uc  1 a 1 28 ]
 "129
 } 0
 "64
 [v _init_1wire init_1wire `(uc  1 e 1 0 ]
 {
 "65
-[v init_1wire@st st `uc  1 a 1 43 ]
+[v init_1wire@st st `uc  1 a 1 28 ]
 "93
 } 0
 "59
 [v _ow_delay ow_delay `(v  1 e 0 0 ]
 {
-[v ow_delay@del del `ui  1 p 2 39 ]
+[v ow_delay@del del `ui  1 p 2 24 ]
 "61
 } 0
-"31 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awtofl.c
+"31 C:\Program Files\Microchip\xc8\v1.33\sources\common\awtofl.c
 [v ___awtofl __awtofl `(d  1 e 4 0 ]
 {
 "34
-[v ___awtofl@sign sign `uc  1 a 1 53 ]
+[v ___awtofl@sign sign `uc  1 a 1 38 ]
 "31
-[v ___awtofl@c c `i  1 p 2 49 ]
+[v ___awtofl@c c `i  1 p 2 34 ]
 "42
 } 0
-"234 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/Main.c
+"253 D:\vlad\xc8/Main.c
 [v _tsk_display tsk_display `(v  1 e 0 0 ]
 {
-"235
+"255
+[v tsk_display@str str `[30]uc  1 a 30 0 ]
+"254
 [v tsk_display@f_prev_T f_prev_T `d  1 s 4 f_prev_T ]
-"237
+"255
+[v tsk_display@blink blink `uc  1 s 1 blink ]
+[v tsk_display@prev_cond prev_cond `uc  1 s 1 prev_cond ]
+[v tsk_display@prev_fan prev_fan `uc  1 s 1 prev_fan ]
+[v tsk_display@prev_lt_blue prev_lt_blue `uc  1 s 1 prev_lt_blue ]
+[v tsk_display@prev_lt_salon prev_lt_salon `uc  1 s 1 prev_lt_salon ]
+"258
 [v tsk_display@_prev_tick _prev_tick `i  1 s 2 prev_tick ]
+[v tsk_display@_yield_flag _yield_flag `uc  1 s 1 yield_flag ]
 [v tsk_display@_state _state `ui  1 s 2 state ]
 [v tsk_display@_interrupt_state _interrupt_state `uc  1 s 1 interrupt_state ]
-"260
+"377
 } 0
-"492 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
+"492 C:\Program Files\Microchip\xc8\v1.33\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 "1210
-[v sprintf@vd vd `ul  1 a 4 8 ]
+[v sprintf@vd vd `ul  1 a 4 14 ]
 "1238
-[v sprintf@vd_2430 vd `ul  1 a 4 12 ]
-[s S2415 . 5 `*.39Cuc 1 _cp 3 0 `ui 1 _len 2 3 ]
+[v sprintf@vd_2531 vd `ul  1 a 4 18 ]
+[s S2514 . 4 `*.39Cuc 1 _cp 2 0 `ui 1 _len 2 2 ]
 "525
-[u S2418 . 5 `ul 1 _val 4 0 `S2415 1 _str 5 0 ]
-[v sprintf@_val _val `S2418  1 a 5 22 ]
+[u S2517 . 4 `ul 1 _val 4 0 `S2514 1 _str 4 0 ]
+[v sprintf@_val _val `S2517  1 a 4 38 ]
 "516
-[v sprintf@fval fval `d  1 a 4 33 ]
-[v sprintf@integ integ `d  1 a 4 18 ]
+[v sprintf@fval fval `d  1 a 4 32 ]
+[v sprintf@integ integ `d  1 a 4 24 ]
 "504
-[v sprintf@prec prec `i  1 a 2 37 ]
+[v sprintf@prec prec `i  1 a 2 42 ]
 "501
-[v sprintf@width width `i  1 a 2 31 ]
+[v sprintf@width width `i  1 a 2 36 ]
 "508
-[v sprintf@flag flag `us  1 a 2 29 ]
+[v sprintf@flag flag `us  1 a 2 30 ]
 "516
-[v sprintf@exp exp `i  1 a 2 27 ]
+[v sprintf@exp exp `i  1 a 2 28 ]
 "494
-[v sprintf@ap ap `[1]*.39v  1 a 2 16 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 22 ]
 "499
-[v sprintf@c c `c  1 a 1 39 ]
+[v sprintf@c c `c  1 a 1 44 ]
 "492
-[v sprintf@sp sp `*.39uc  1 p 2 36 ]
-[v sprintf@f f `*.25Cuc  1 p 2 38 ]
+[v sprintf@sp sp `*.39uc  1 p 2 94 ]
+[v sprintf@f f `*.25Cuc  1 p 2 96 ]
 "1550
 } 0
 "425
@@ -1082,484 +1115,425 @@ MSG_PHASE_READY 2
 [v scale@scl scl `c  1 a 1 wreg ]
 [v scale@scl scl `c  1 a 1 wreg ]
 "428
-[v scale@scl scl `c  1 a 1 4 ]
+[v scale@scl scl `c  1 a 1 66 ]
 "441
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"11
-[v ___awmod@sign sign `uc  1 a 1 44 ]
-[v ___awmod@counter counter `uc  1 a 1 43 ]
-"8
-[v ___awmod@dividend dividend `i  1 p 2 39 ]
-[v ___awmod@divisor divisor `i  1 p 2 41 ]
-"35
-} 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"11
-[v ___awdiv@quotient quotient `i  1 a 2 51 ]
-"12
-[v ___awdiv@sign sign `uc  1 a 1 50 ]
-[v ___awdiv@counter counter `uc  1 a 1 49 ]
-"8
-[v ___awdiv@dividend dividend `i  1 p 2 45 ]
-[v ___awdiv@divisor divisor `i  1 p 2 47 ]
-"42
-} 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\isdigit.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\isdigit.c
 [v _isdigit isdigit `(b  1 e 0 0 ]
 {
 [v isdigit@c c `uc  1 a 1 wreg ]
 [v isdigit@c c `uc  1 a 1 wreg ]
 "14
-[v isdigit@c c `uc  1 a 1 41 ]
+[v isdigit@c c `uc  1 a 1 26 ]
 "15
 } 0
-"409 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
+"409 C:\Program Files\Microchip\xc8\v1.33\sources\common\doprnt.c
 [v _fround fround `(d  1 s 4 fround ]
 {
 [v fround@prec prec `uc  1 a 1 wreg ]
 [v fround@prec prec `uc  1 a 1 wreg ]
 "413
-[v fround@prec prec `uc  1 a 1 12 ]
+[v fround@prec prec `uc  1 a 1 70 ]
 "418
 } 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbmod.c
-[v ___lbmod __lbmod `(uc  1 e 1 0 ]
-{
-[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
-"6
-[v ___lbmod@rem rem `uc  1 a 1 42 ]
-"7
-[v ___lbmod@counter counter `uc  1 a 1 41 ]
-"4
-[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
-[v ___lbmod@divisor divisor `uc  1 p 1 39 ]
-"9
-[v ___lbmod@dividend dividend `uc  1 a 1 40 ]
-"18
-} 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbdiv.c
-[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
-{
-[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
-"6
-[v ___lbdiv@quotient quotient `uc  1 a 1 46 ]
-"7
-[v ___lbdiv@counter counter `uc  1 a 1 45 ]
-"4
-[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
-[v ___lbdiv@divisor divisor `uc  1 p 1 43 ]
-"9
-[v ___lbdiv@dividend dividend `uc  1 a 1 44 ]
-"26
-} 0
-"62 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\flmul.c
+"62 C:\Program Files\Microchip\xc8\v1.33\sources\common\flmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
 "65
-[v ___flmul@f3_as_product f3_as_product `ul  1 a 4 67 ]
+[v ___flmul@f3_as_product f3_as_product `ul  1 a 4 52 ]
 "64
-[v ___flmul@sign sign `uc  1 a 1 72 ]
-[v ___flmul@cntr cntr `uc  1 a 1 71 ]
-[v ___flmul@exp exp `uc  1 a 1 66 ]
+[v ___flmul@sign sign `uc  1 a 1 57 ]
+[v ___flmul@cntr cntr `uc  1 a 1 56 ]
+[v ___flmul@exp exp `uc  1 a 1 51 ]
 "62
-[v ___flmul@f1 f1 `d  1 p 4 54 ]
-[v ___flmul@f2 f2 `d  1 p 4 58 ]
+[v ___flmul@f1 f1 `d  1 p 4 39 ]
+[v ___flmul@f2 f2 `d  1 p 4 43 ]
 "220
 } 0
-"60 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftdivl.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 29 ]
+[v ___awmod@counter counter `uc  1 a 1 28 ]
+"8
+[v ___awmod@dividend dividend `i  1 p 2 24 ]
+[v ___awmod@divisor divisor `i  1 p 2 26 ]
+"35
+} 0
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 36 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 35 ]
+[v ___awdiv@counter counter `uc  1 a 1 34 ]
+"8
+[v ___awdiv@dividend dividend `i  1 p 2 30 ]
+[v ___awdiv@divisor divisor `i  1 p 2 32 ]
+"42
+} 0
+"60 C:\Program Files\Microchip\xc8\v1.33\sources\common\ftdivl.c
 [v __tdiv_to_l_ _tdiv_to_l_ `(ul  1 e 4 0 ]
 {
 "63
-[v __tdiv_to_l_@quot quot `ul  1 a 4 50 ]
+[v __tdiv_to_l_@quot quot `ul  1 a 4 35 ]
 "62
-[v __tdiv_to_l_@exp1 exp1 `uc  1 a 1 55 ]
-[v __tdiv_to_l_@cntr cntr `uc  1 a 1 54 ]
+[v __tdiv_to_l_@exp1 exp1 `uc  1 a 1 40 ]
+[v __tdiv_to_l_@cntr cntr `uc  1 a 1 39 ]
 "60
-[v __tdiv_to_l_@f1 f1 `f  1 p 4 39 ]
-[v __tdiv_to_l_@f2 f2 `f  1 p 4 43 ]
+[v __tdiv_to_l_@f1 f1 `f  1 p 4 24 ]
+[v __tdiv_to_l_@f2 f2 `f  1 p 4 28 ]
 "101
 } 0
-"60 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fldivl.c
+"60 C:\Program Files\Microchip\xc8\v1.33\sources\common\fldivl.c
 [v __div_to_l_ _div_to_l_ `(ul  1 e 4 0 ]
 {
 "63
-[v __div_to_l_@quot quot `ul  1 a 4 51 ]
+[v __div_to_l_@quot quot `ul  1 a 4 36 ]
 "62
-[v __div_to_l_@exp1 exp1 `uc  1 a 1 56 ]
-[v __div_to_l_@cntr cntr `uc  1 a 1 55 ]
+[v __div_to_l_@exp1 exp1 `uc  1 a 1 41 ]
+[v __div_to_l_@cntr cntr `uc  1 a 1 40 ]
 "60
-[v __div_to_l_@f1 f1 `d  1 p 4 39 ]
-[v __div_to_l_@f2 f2 `d  1 p 4 43 ]
+[v __div_to_l_@f1 f1 `d  1 p 4 24 ]
+[v __div_to_l_@f2 f2 `d  1 p 4 28 ]
 "101
 } 0
-"30 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lltofl.c
+"30 C:\Program Files\Microchip\xc8\v1.33\sources\common\lltofl.c
 [v ___lltofl __lltofl `(d  1 e 4 0 ]
 {
-[v ___lltofl@c c `ul  1 p 4 49 ]
+[v ___lltofl@c c `ul  1 p 4 34 ]
 "33
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\llmod.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\llmod.c
 [v ___llmod __llmod `(ul  1 e 4 0 ]
 {
 "11
-[v ___llmod@counter counter `uc  1 a 1 60 ]
+[v ___llmod@counter counter `uc  1 a 1 45 ]
 "8
-[v ___llmod@dividend dividend `ul  1 p 4 52 ]
-[v ___llmod@divisor divisor `ul  1 p 4 56 ]
+[v ___llmod@dividend dividend `ul  1 p 4 37 ]
+[v ___llmod@divisor divisor `ul  1 p 4 41 ]
 "26
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lldiv.c
+"8 C:\Program Files\Microchip\xc8\v1.33\sources\common\lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
 "11
-[v ___lldiv@quotient quotient `ul  1 a 4 47 ]
+[v ___lldiv@quotient quotient `ul  1 a 4 32 ]
 "12
-[v ___lldiv@counter counter `uc  1 a 1 51 ]
+[v ___lldiv@counter counter `uc  1 a 1 36 ]
 "8
-[v ___lldiv@dividend dividend `ul  1 p 4 39 ]
-[v ___lldiv@divisor divisor `ul  1 p 4 43 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 24 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 28 ]
 "31
 } 0
-"43 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fltol.c
+"43 C:\Program Files\Microchip\xc8\v1.33\sources\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 14 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 13 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 76 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 75 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 5 ]
+[v ___fltol@f1 f1 `d  1 p 4 67 ]
 "70
 } 0
-"20 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\flsub.c
+"20 C:\Program Files\Microchip\xc8\v1.33\sources\common\flsub.c
 [v ___flsub __flsub `(d  1 e 4 0 ]
 {
-[v ___flsub@f1 f1 `d  1 p 4 28 ]
-[v ___flsub@f2 f2 `d  1 p 4 32 ]
+[v ___flsub@f1 f1 `d  1 p 4 86 ]
+[v ___flsub@f2 f2 `d  1 p 4 90 ]
 "30
 } 0
-"88 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fladd.c
+"88 C:\Program Files\Microchip\xc8\v1.33\sources\common\fladd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "90
-[v ___fladd@exp1 exp1 `uc  1 a 1 27 ]
-[v ___fladd@exp2 exp2 `uc  1 a 1 26 ]
-[v ___fladd@sign sign `uc  1 a 1 25 ]
+[v ___fladd@exp1 exp1 `uc  1 a 1 85 ]
+[v ___fladd@exp2 exp2 `uc  1 a 1 84 ]
+[v ___fladd@sign sign `uc  1 a 1 83 ]
 "88
-[v ___fladd@f1 f1 `d  1 p 4 13 ]
-[v ___fladd@f2 f2 `d  1 p 4 17 ]
+[v ___fladd@f1 f1 `d  1 p 4 71 ]
+[v ___fladd@f2 f2 `d  1 p 4 75 ]
 "149
 } 0
-"63 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\double.c
+"63 C:\Program Files\Microchip\xc8\v1.33\sources\common\double.c
 [v ___flpack __flpack `(d  1 e 4 0 ]
 {
-[v ___flpack@arg arg `ul  1 p 4 39 ]
-[v ___flpack@exp exp `uc  1 p 1 43 ]
-[v ___flpack@sign sign `uc  1 p 1 44 ]
+[v ___flpack@arg arg `ul  1 p 4 24 ]
+[v ___flpack@exp exp `uc  1 p 1 28 ]
+[v ___flpack@sign sign `uc  1 p 1 29 ]
 "87
 } 0
-"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\flneg.c
+"15 C:\Program Files\Microchip\xc8\v1.33\sources\common\flneg.c
 [v ___flneg __flneg `(d  1 e 4 0 ]
 {
-[v ___flneg@f1 f1 `d  1 p 4 39 ]
+[v ___flneg@f1 f1 `d  1 p 4 24 ]
 "20
 } 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\flge.c
+"4 C:\Program Files\Microchip\xc8\v1.33\sources\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
 {
-[v ___flge@ff1 ff1 `d  1 p 4 39 ]
-[v ___flge@ff2 ff2 `d  1 p 4 43 ]
+[v ___flge@ff1 ff1 `d  1 p 4 24 ]
+[v ___flge@ff2 ff2 `d  1 p 4 28 ]
 "13
 } 0
-"395 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ks0108.c
-[v _ks0108Rect ks0108Rect `(v  1 e 0 0 ]
+"435 D:\vlad\xc8/Main.c
+[v _tsk_btn tsk_btn `(v  1 e 0 0 ]
 {
-[v ks0108Rect@x x `uc  1 a 1 wreg ]
-"396
-[v ks0108Rect@_y _y `uc  1 a 1 63 ]
-[v ks0108Rect@_x _x `uc  1 a 1 62 ]
-"395
-[v ks0108Rect@x x `uc  1 a 1 wreg ]
-[v ks0108Rect@y y `uc  1 p 1 53 ]
-[v ks0108Rect@dx dx `uc  1 p 1 54 ]
-[v ks0108Rect@dy dy `uc  1 p 1 55 ]
-"397
-[v ks0108Rect@x x `uc  1 a 1 61 ]
-"404
+"436
+[v tsk_btn@prev_tick prev_tick `i  1 s 2 prev_tick ]
+"442
 } 0
-"350
-[v _ks0108Line ks0108Line `(v  1 e 0 0 ]
-{
-[v ks0108Line@xn xn `uc  1 a 1 wreg ]
-"351
-[v ks0108Line@s s `uc  1 a 1 58 ]
-[v ks0108Line@dy dy `uc  1 a 1 57 ]
-[v ks0108Line@dx dx `uc  1 a 1 56 ]
-"350
-[v ks0108Line@xn xn `uc  1 a 1 wreg ]
-[v ks0108Line@yn yn `uc  1 p 1 53 ]
-[v ks0108Line@xk xk `uc  1 p 1 54 ]
-[v ks0108Line@yk yk `uc  1 p 1 55 ]
-"354
-[v ks0108Line@xn xn `uc  1 a 1 59 ]
-"392
-} 0
-"118
+"119 D:\vlad\xc8/lib/ks0108.c
 [v _ks0108Init ks0108Init `(v  1 e 0 0 ]
 {
-"156
+"158
 } 0
-"28
+"29
 [v _ks0108Fill ks0108Fill `(v  1 e 0 0 ]
 {
 [v ks0108Fill@mode mode `uc  1 a 1 wreg ]
+"30
+[v ks0108Fill@i i `uc  1 a 1 32 ]
+[v ks0108Fill@j j `uc  1 a 1 31 ]
 "29
-[v ks0108Fill@i i `uc  1 a 1 47 ]
-[v ks0108Fill@j j `uc  1 a 1 46 ]
-"28
 [v ks0108Fill@mode mode `uc  1 a 1 wreg ]
-"31
-[v ks0108Fill@mode mode `uc  1 a 1 45 ]
-"36
+"32
+[v ks0108Fill@mode mode `uc  1 a 1 30 ]
+"37
 } 0
-"41 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/delay.c
+"41 D:\vlad\xc8/lib/delay.c
 [v _DelayMs DelayMs `(v  1 e 0 0 ]
 {
 [v DelayMs@cnt cnt `uc  1 a 1 wreg ]
 "43
-[v DelayMs@i i `uc  1 a 1 40 ]
+[v DelayMs@i i `uc  1 a 1 25 ]
 "41
 [v DelayMs@cnt cnt `uc  1 a 1 wreg ]
-[v DelayMs@cnt cnt `uc  1 a 1 39 ]
+[v DelayMs@cnt cnt `uc  1 a 1 24 ]
 "51
 } 0
-"110 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/messages.c
+"110 D:\vlad\xc8/lib/messages.c
 [v _ProcessMessages ProcessMessages `(v  1 e 0 0 ]
 {
 "111
-[v ProcessMessages@i i `uc  1 a 1 39 ]
+[v ProcessMessages@i i `uc  1 a 1 24 ]
 "123
 } 0
-"407 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/ks0108.c
+"409 D:\vlad\xc8/lib/ks0108.c
 [v _LabelCreate LabelCreate `(v  1 e 0 0 ]
 {
-[s S911 . 36 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 size 1 2 `*.25Cuc 1 p_font 2 3 `[31]uc 1 str 31 5 ]
-[v LabelCreate@lb lb `*.39S911  1 p 2 6 ]
-[v LabelCreate@x x `uc  1 p 1 8 ]
-[v LabelCreate@y y `uc  1 p 1 9 ]
-[v LabelCreate@font font `*.25Cuc  1 p 2 10 ]
-[v LabelCreate@ln ln `uc  1 p 1 12 ]
-"419
+[s S967 . 36 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 size 1 2 `*.25Cuc 1 p_font 2 3 `[31]uc 1 str 31 5 ]
+[v LabelCreate@lb lb `*.39S967  1 p 2 67 ]
+[v LabelCreate@x x `uc  1 p 1 69 ]
+[v LabelCreate@y y `uc  1 p 1 70 ]
+[v LabelCreate@font font `*.25Cuc  1 p 2 71 ]
+[v LabelCreate@ln ln `uc  1 p 1 73 ]
+"421
 } 0
-"422
+"424
 [v _LabelSetTxt LabelSetTxt `(v  1 e 0 0 ]
 {
-"423
-[v LabelSetTxt@i i `uc  1 a 1 5 ]
-[v LabelSetTxt@end end `uc  1 a 1 4 ]
-[v LabelSetTxt@w w `uc  1 a 1 3 ]
-[s S911 . 36 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 size 1 2 `*.25Cuc 1 p_font 2 3 `[31]uc 1 str 31 5 ]
-"422
-[v LabelSetTxt@lb lb `*.39S911  1 p 2 74 ]
-[v LabelSetTxt@str str `*.39uc  1 p 2 76 ]
-"452
+"425
+[v LabelSetTxt@i i `uc  1 a 1 66 ]
+[v LabelSetTxt@end end `uc  1 a 1 65 ]
+[v LabelSetTxt@w w `uc  1 a 1 64 ]
+[s S967 . 36 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 size 1 2 `*.25Cuc 1 p_font 2 3 `[31]uc 1 str 31 5 ]
+"424
+[v LabelSetTxt@lb lb `*.39S967  1 p 2 59 ]
+[v LabelSetTxt@str str `*.39uc  1 p 2 61 ]
+"454
 } 0
-"282
+"284
 [v _ks0108PutChar ks0108PutChar `(uc  1 e 1 0 ]
 {
 [v ks0108PutChar@s s `uc  1 a 1 wreg ]
-"284
-[v ks0108PutChar@base base `us  1 a 2 72 ]
+"286
+[v ks0108PutChar@base base `us  1 a 2 57 ]
+"290
+[v ks0108PutChar@pChImage pChImage `*.25Cuc  1 a 2 46 ]
+"289
+[v ks0108PutChar@mask mask `uc  1 a 1 56 ]
 "288
-[v ks0108PutChar@pChImage pChImage `*.25Cuc  1 a 2 61 ]
+[v ks0108PutChar@x x `uc  1 a 1 55 ]
+[v ks0108PutChar@y y `uc  1 a 1 54 ]
+[v ks0108PutChar@chWidth chWidth `uc  1 a 1 53 ]
 "287
-[v ks0108PutChar@mask mask `uc  1 a 1 71 ]
-"286
-[v ks0108PutChar@x x `uc  1 a 1 70 ]
-[v ks0108PutChar@y y `uc  1 a 1 69 ]
-[v ks0108PutChar@chWidth chWidth `uc  1 a 1 68 ]
-"285
-[v ks0108PutChar@y_ y_ `uc  1 a 1 67 ]
-[v ks0108PutChar@x_ x_ `uc  1 a 1 66 ]
-"287
-[v ks0108PutChar@temp temp `uc  1 a 1 65 ]
-"286
-[v ks0108PutChar@yCnt yCnt `uc  1 a 1 64 ]
-[v ks0108PutChar@xCnt xCnt `uc  1 a 1 63 ]
-"287
-[v ks0108PutChar@_fontWidth _fontWidth `uc  1 a 1 60 ]
-[v ks0108PutChar@_fontHeight _fontHeight `uc  1 a 1 59 ]
-"282
+[v ks0108PutChar@y_ y_ `uc  1 a 1 52 ]
+[v ks0108PutChar@x_ x_ `uc  1 a 1 51 ]
+"289
+[v ks0108PutChar@temp temp `uc  1 a 1 50 ]
+"288
+[v ks0108PutChar@yCnt yCnt `uc  1 a 1 49 ]
+[v ks0108PutChar@xCnt xCnt `uc  1 a 1 48 ]
+"289
+[v ks0108PutChar@_fontWidth _fontWidth `uc  1 a 1 45 ]
+[v ks0108PutChar@_fontHeight _fontHeight `uc  1 a 1 44 ]
+"284
 [v ks0108PutChar@s s `uc  1 a 1 wreg ]
-[v ks0108PutChar@p_font p_font `*.25Cuc  1 p 2 53 ]
-[v ks0108PutChar@mode mode `uc  1 p 1 55 ]
-"287
-[v ks0108PutChar@s s `uc  1 a 1 58 ]
-"336
+[v ks0108PutChar@p_font p_font `*.25Cuc  1 p 2 38 ]
+[v ks0108PutChar@mode mode `uc  1 p 1 40 ]
+"288
+[v ks0108PutChar@s s `uc  1 a 1 43 ]
+"338
 } 0
-"83
+"84
 [v _ks0108SetDot ks0108SetDot `(v  1 e 0 0 ]
 {
 [v ks0108SetDot@x x `uc  1 a 1 wreg ]
+"85
+[v ks0108SetDot@data data `uc  1 a 1 37 ]
 "84
-[v ks0108SetDot@data data `uc  1 a 1 52 ]
-"83
 [v ks0108SetDot@x x `uc  1 a 1 wreg ]
-[v ks0108SetDot@y y `uc  1 p 1 48 ]
-"86
-[v ks0108SetDot@x x `uc  1 a 1 51 ]
-"97
+[v ks0108SetDot@y y `uc  1 p 1 33 ]
+"87
+[v ks0108SetDot@x x `uc  1 a 1 36 ]
+"98
 } 0
-"100
+"101
 [v _ks0108ClearDot ks0108ClearDot `(v  1 e 0 0 ]
 {
 [v ks0108ClearDot@x x `uc  1 a 1 wreg ]
+"102
+[v ks0108ClearDot@data data `uc  1 a 1 37 ]
 "101
-[v ks0108ClearDot@data data `uc  1 a 1 52 ]
-"100
 [v ks0108ClearDot@x x `uc  1 a 1 wreg ]
-[v ks0108ClearDot@y y `uc  1 p 1 48 ]
-"103
-[v ks0108ClearDot@x x `uc  1 a 1 51 ]
-"113
+[v ks0108ClearDot@y y `uc  1 p 1 33 ]
+"104
+[v ks0108ClearDot@x x `uc  1 a 1 36 ]
+"114
 } 0
-"236
+"238
 [v _ks0108WriteData ks0108WriteData `(v  1 e 0 0 ]
 {
 [v ks0108WriteData@data data `uc  1 a 1 wreg ]
 [v ks0108WriteData@data data `uc  1 a 1 wreg ]
-"238
-[v ks0108WriteData@data data `uc  1 a 1 41 ]
-"279
+"240
+[v ks0108WriteData@data data `uc  1 a 1 26 ]
+"281
 } 0
-"159
+"161
 [v _ks0108ReadData ks0108ReadData `(uc  1 e 1 0 ]
 {
 [v ks0108ReadData@incXAdd incXAdd `uc  1 a 1 wreg ]
+"163
+[v ks0108ReadData@i i `VEuc  1 a 1 32 ]
+"162
+[v ks0108ReadData@data data `uc  1 a 1 31 ]
 "161
-[v ks0108ReadData@i i `VEuc  1 a 1 47 ]
-"160
-[v ks0108ReadData@data data `uc  1 a 1 46 ]
-"159
 [v ks0108ReadData@incXAdd incXAdd `uc  1 a 1 wreg ]
-"167
-[v ks0108ReadData@incXAdd incXAdd `uc  1 a 1 45 ]
-"213
+"169
+[v ks0108ReadData@incXAdd incXAdd `uc  1 a 1 30 ]
+"215
 } 0
-"50
+"51
 [v _ks0108GotoXY ks0108GotoXY `(v  1 e 0 0 ]
 {
 [v ks0108GotoXY@x x `uc  1 a 1 wreg ]
+"52
+[v ks0108GotoXY@cmd cmd `uc  1 a 1 28 ]
+[v ks0108GotoXY@chip chip `uc  1 a 1 27 ]
 "51
-[v ks0108GotoXY@cmd cmd `uc  1 a 1 43 ]
-[v ks0108GotoXY@chip chip `uc  1 a 1 42 ]
-"50
 [v ks0108GotoXY@x x `uc  1 a 1 wreg ]
-[v ks0108GotoXY@y y `uc  1 p 1 41 ]
-[v ks0108GotoXY@x x `uc  1 a 1 44 ]
-"80
+[v ks0108GotoXY@y y `uc  1 p 1 26 ]
+[v ks0108GotoXY@x x `uc  1 a 1 29 ]
+"81
 } 0
-"216
+"218
 [v _ks0108WriteCommand ks0108WriteCommand `(v  1 e 0 0 ]
 {
 [v ks0108WriteCommand@cmd cmd `uc  1 a 1 wreg ]
 [v ks0108WriteCommand@cmd cmd `uc  1 a 1 wreg ]
-[v ks0108WriteCommand@chip chip `uc  1 p 1 39 ]
-"218
-[v ks0108WriteCommand@cmd cmd `uc  1 a 1 40 ]
-"233
+[v ks0108WriteCommand@chip chip `uc  1 p 1 24 ]
+"220
+[v ks0108WriteCommand@cmd cmd `uc  1 a 1 25 ]
+"235
 } 0
 "19
 [v _ks0108Enable ks0108Enable `(v  1 e 0 0 ]
 {
-"25
+"26
 } 0
-"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
+"15 C:\Program Files\Microchip\xc8\v1.33\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v ___wmul@product product `ui  1 a 2 43 ]
+[v ___wmul@product product `ui  1 a 2 28 ]
 "15
-[v ___wmul@multiplier multiplier `ui  1 p 2 39 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 41 ]
+[v ___wmul@multiplier multiplier `ui  1 p 2 24 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 26 ]
 "53
 } 0
-"24 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/misc.c
+"24 D:\vlad\xc8/misc.c
 [v _InitializeSystem InitializeSystem `(v  1 e 0 0 ]
 {
 "36
-[v InitializeSystem@pll_startup_counter pll_startup_counter `ui  1 a 2 55 ]
-"167
+[v InitializeSystem@pll_startup_counter pll_startup_counter `ui  1 a 2 40 ]
+"169
 } 0
-"27 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/usart.c
+"27 D:\vlad\xc8/lib/usart.c
 [v _uart16_init uart16_init `(v  1 e 0 0 ]
 {
 "47
 } 0
-"78 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchSensor.c
+"78 D:\vlad\xc8/lib/mTouchCap/mTouchSensor.c
 [v _MTouchSetSensor MTouchSetSensor `(v  1 e 0 0 ]
 {
 [v MTouchSetSensor@sensorNumber sensorNumber `uc  1 a 1 wreg ]
 [s S21 tag_SENSOR 32 `l 1 average 4 0 `l 1 oversampleFilterData 4 4 `*.39VEuc 1 trisReg 2 8 `*.39VEuc 1 latReg 2 10 `s 1 decimateFilterData 2 12 `us 1 sampleCounter 2 14 `us 1 samplesNumber 2 16 `us 1 pressThreshold 2 18 `us 1 releaseThreshold 2 20 `us 1 averageCount 2 22 `us 1 delta 2 24 `us 1 debounceCount 2 26 `uc 1 state 1 28 `uc 1 ioMask 1 29 `uc 1 channelNumber 1 30 `c 1 chargeDelay 1 31 ]
 "81
-[v MTouchSetSensor@pSensor pSensor `*.39S21  1 a 2 53 ]
+[v MTouchSetSensor@pSensor pSensor `*.39S21  1 a 2 38 ]
 "78
 [v MTouchSetSensor@sensorNumber sensorNumber `uc  1 a 1 wreg ]
-[v MTouchSetSensor@tris tris `*.39VEuc  1 p 2 39 ]
-[v MTouchSetSensor@lat lat `*.39VEuc  1 p 2 41 ]
+[v MTouchSetSensor@tris tris `*.39VEuc  1 p 2 24 ]
+[v MTouchSetSensor@lat lat `*.39VEuc  1 p 2 26 ]
 "79
-[v MTouchSetSensor@ioBitNumber ioBitNumber `uc  1 p 1 43 ]
-[v MTouchSetSensor@channelNumber channelNumber `uc  1 p 1 44 ]
-[v MTouchSetSensor@threshold threshold `s  1 p 2 45 ]
-[v MTouchSetSensor@oversampling oversampling `s  1 p 2 47 ]
-[v MTouchSetSensor@chargeDelay chargeDelay `c  1 p 1 49 ]
+[v MTouchSetSensor@ioBitNumber ioBitNumber `uc  1 p 1 28 ]
+[v MTouchSetSensor@channelNumber channelNumber `uc  1 p 1 29 ]
+[v MTouchSetSensor@threshold threshold `s  1 p 2 30 ]
+[v MTouchSetSensor@oversampling oversampling `s  1 p 2 32 ]
+[v MTouchSetSensor@chargeDelay chargeDelay `c  1 p 1 34 ]
 "83
-[v MTouchSetSensor@sensorNumber sensorNumber `uc  1 a 1 52 ]
+[v MTouchSetSensor@sensorNumber sensorNumber `uc  1 a 1 37 ]
 "122
 } 0
-"68 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchButton.c
+"68 D:\vlad\xc8/lib/mTouchCap/mTouchButton.c
 [v _MTouchSetButton MTouchSetButton `(v  1 e 0 0 ]
 {
 [v MTouchSetButton@buttonNumber buttonNumber `uc  1 a 1 wreg ]
 [s S21 tag_SENSOR 32 `l 1 average 4 0 `l 1 oversampleFilterData 4 4 `*.39VEuc 1 trisReg 2 8 `*.39VEuc 1 latReg 2 10 `s 1 decimateFilterData 2 12 `us 1 sampleCounter 2 14 `us 1 samplesNumber 2 16 `us 1 pressThreshold 2 18 `us 1 releaseThreshold 2 20 `us 1 averageCount 2 22 `us 1 delta 2 24 `us 1 debounceCount 2 26 `uc 1 state 1 28 `uc 1 ioMask 1 29 `uc 1 channelNumber 1 30 `c 1 chargeDelay 1 31 ]
 "69
 [s S180 tag_MTOUCHBUTTON 8 `uc 1 state 1 0 `uc 1 curState 1 1 `uc 1 decode 1 2 `uc 1 prevSensorState 1 3 `*.39S21 1 pSensor 2 4 `s 1 pressCounter 2 6 ]
-[v MTouchSetButton@pButton pButton `*.39S180  1 a 2 44 ]
+[v MTouchSetButton@pButton pButton `*.39S180  1 a 2 29 ]
 "68
 [v MTouchSetButton@buttonNumber buttonNumber `uc  1 a 1 wreg ]
-[v MTouchSetButton@sensorNumber sensorNumber `uc  1 p 1 39 ]
-[v MTouchSetButton@decode decode `uc  1 p 1 40 ]
+[v MTouchSetButton@sensorNumber sensorNumber `uc  1 p 1 24 ]
+[v MTouchSetButton@decode decode `uc  1 p 1 25 ]
 "71
-[v MTouchSetButton@buttonNumber buttonNumber `uc  1 a 1 43 ]
+[v MTouchSetButton@buttonNumber buttonNumber `uc  1 a 1 28 ]
 "79
 } 0
-"125 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchSensor.c
+"125 D:\vlad\xc8/lib/mTouchCap/mTouchSensor.c
 [v _MTouchInit MTouchInit `(v  1 e 0 0 ]
 {
 "133
 } 0
-"20 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/messages.c
+"20 D:\vlad\xc8/lib/messages.c
 [v _InitMessages InitMessages `(v  1 e 0 0 ]
 {
 "21
-[v InitMessages@i i `uc  1 a 1 39 ]
+[v InitMessages@i i `uc  1 a 1 24 ]
 "40
 } 0
-"89 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
+"81 D:\vlad\xc8/isr.c
 [v _LO_ISR LO_ISR `IIL(v  1 e 0 0 ]
 {
-"91
-[v LO_ISR@i i `uc  1 a 1 34 ]
-"92
-[v LO_ISR@lcData lcData `uc  1 a 1 33 ]
-[v LO_ISR@lcAdr lcAdr `uc  1 a 1 32 ]
-"199
+"83
+[v LO_ISR@i i `uc  1 a 1 22 ]
+"115
 } 0
-"97 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/usart.c
+"97 D:\vlad\xc8/lib/usart.c
 [v _timed_getc timed_getc `(uc  1 e 1 0 ]
 {
 "98
@@ -1571,109 +1545,31 @@ MSG_PHASE_READY 2
 {
 "83
 } 0
-"28 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/eeprom.c
-[v _set_ee_default set_ee_default `(v  1 e 0 0 ]
+"119
+[v _putstrc putstrc `(v  1 e 0 0 ]
 {
-"29
-[v set_ee_default@i i `ui  1 a 2 13 ]
-"30
-[v set_ee_default@c1 c1 `uc  1 a 1 12 ]
-[v set_ee_default@c c `uc  1 a 1 11 ]
-"39
+[v putstrc@s s `*.39uc  1 p 2 3 ]
+"121
 } 0
-"11
-[v _write___ee write___ee `(v  1 e 0 0 ]
-{
-[v write___ee@adr adr `ui  1 p 2 7 ]
-[v write___ee@var var `*.30uc  1 p 1 9 ]
-[v write___ee@byte byte `uc  1 p 1 10 ]
-"15
-} 0
-"49 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\plib\EEP\write_B.c
-[v _Write_b_eep Write_b_eep `(v  1 e 0 0 ]
-{
-"51
-[v Write_b_eep@GIE_BIT_VAL GIE_BIT_VAL `uc  1 a 1 6 ]
-"49
-[v Write_b_eep@badd badd `ui  1 p 2 0 ]
-[v Write_b_eep@bdat bdat `uc  1 p 1 2 ]
-"66
-} 0
-"12 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\plib\EEP\busy_eep.c
-[v _Busy_eep Busy_eep `(v  1 e 0 0 ]
-{
-"15
-} 0
-"18 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/eeprom.c
-[v _read___ee read___ee `(v  1 e 0 0 ]
-{
-[v read___ee@adr adr `ui  1 p 2 5 ]
-[v read___ee@var var `*.30uc  1 p 1 7 ]
-[v read___ee@byte byte `uc  1 p 1 8 ]
-"22
-} 0
-"35 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic18\plib\EEP\read_B.c
-[v _Read_b_eep Read_b_eep `(uc  1 e 1 0 ]
-{
-[v Read_b_eep@badd badd `ui  1 p 2 0 ]
-"45
-} 0
-"50 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/usart.c
+"50
 [v _putbyte putbyte `(v  1 e 0 0 ]
 {
 [v putbyte@byte byte `uc  1 a 1 wreg ]
 [v putbyte@byte byte `uc  1 a 1 wreg ]
-[v putbyte@byte byte `uc  1 a 1 0 ]
+"52
+[v putbyte@byte byte `uc  1 a 1 2 ]
 "59
 } 0
-"74 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/modbus_RTU.c
-[v _crc_mb_check crc_mb_check `(uc  1 e 1 0 ]
+"41 D:\vlad\xc8/lib/delay.c
+[v i1_DelayMs DelayMs `(v  1 e 0 0 ]
 {
-"76
-[v crc_mb_check@crc crc `ui  1 a 2 16 ]
-"77
-[v crc_mb_check@i i `uc  1 a 1 15 ]
-"74
-[v crc_mb_check@buffer buffer `*.39uc  1 p 2 8 ]
-[v crc_mb_check@cnt cnt `uc  1 p 1 10 ]
-"101
+[v i1DelayMs@cnt cnt `uc  1 a 1 wreg ]
+[v i1DelayMs@i DelayMs `uc  1 a 1 1 ]
+[v i1DelayMs@cnt cnt `uc  1 a 1 wreg ]
+[v i1DelayMs@cnt cnt `uc  1 a 1 0 ]
+"51
 } 0
-"58
-[v _crc_mb crc_mb `(ui  1 e 2 0 ]
-{
-"59
-[v crc_mb@CRC CRC `ui  1 a 2 15 ]
-"60
-[v crc_mb@i i `uc  1 a 1 14 ]
-"58
-[v crc_mb@buffer buffer `*.39uc  1 p 2 8 ]
-[v crc_mb@count count `uc  1 p 1 10 ]
-"69
-} 0
-"20
-[v _crc_mb_init crc_mb_init `(v  1 e 0 0 ]
-{
-[v crc_mb_init@code code `*.30ui  1 a 1 wreg ]
-[v crc_mb_init@code code `*.30ui  1 a 1 wreg ]
-[v crc_mb_init@code code `*.30ui  1 a 1 0 ]
-"22
-} 0
-"44
-[v _crc_mb_calc crc_mb_calc `(uc  1 e 1 0 ]
-{
-[v crc_mb_calc@code code `*.30ui  1 a 1 wreg ]
-"46
-[v crc_mb_calc@i i `uc  1 a 1 6 ]
-"45
-[v crc_mb_calc@flag flag `uc  1 a 1 5 ]
-"44
-[v crc_mb_calc@code code `*.30ui  1 a 1 wreg ]
-[v crc_mb_calc@next next `uc  1 p 1 0 ]
-"47
-[v crc_mb_calc@code code `*.30ui  1 a 1 7 ]
-"55
-} 0
-"43 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/messages.c
+"43 D:\vlad\xc8/lib/messages.c
 [v _SendMessage SendMessage `(v  1 e 0 0 ]
 {
 [v SendMessage@Msg Msg `uc  1 a 1 wreg ]
@@ -1681,35 +1577,27 @@ MSG_PHASE_READY 2
 [v SendMessage@Msg Msg `uc  1 a 1 0 ]
 "45
 } 0
-"142
-[v _BSemOn BSemOn `(v  1 e 0 0 ]
-{
-[v BSemOn@Sem Sem `uc  1 a 1 wreg ]
-[v BSemOn@Sem Sem `uc  1 a 1 wreg ]
-[v BSemOn@Sem Sem `uc  1 a 1 0 ]
-"144
-} 0
-"32 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/isr.c
+"32 D:\vlad\xc8/isr.c
 [v _HI_ISR HI_ISR `IIH(v  1 e 0 0 ]
 {
 "34
 [v HI_ISR@beep beep `uc  1 s 1 beep ]
 "70
 } 0
-"249 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchSensor.c
+"249 D:\vlad\xc8/lib/mTouchCap/mTouchSensor.c
 [v _MTouchAcquisition MTouchAcquisition `(v  1 e 0 0 ]
 {
 [s S21 tag_SENSOR 32 `l 1 average 4 0 `l 1 oversampleFilterData 4 4 `*.39VEuc 1 trisReg 2 8 `*.39VEuc 1 latReg 2 10 `s 1 decimateFilterData 2 12 `us 1 sampleCounter 2 14 `us 1 samplesNumber 2 16 `us 1 pressThreshold 2 18 `us 1 releaseThreshold 2 20 `us 1 averageCount 2 22 `us 1 delta 2 24 `us 1 debounceCount 2 26 `uc 1 state 1 28 `uc 1 ioMask 1 29 `uc 1 channelNumber 1 30 `c 1 chargeDelay 1 31 ]
 "255
-[v MTouchAcquisition@pCurrentSensor pCurrentSensor `*.39S21  1 a 2 30 ]
+[v MTouchAcquisition@pCurrentSensor pCurrentSensor `*.39S21  1 a 2 7 ]
 "259
-[v MTouchAcquisition@pPreviousSensor pPreviousSensor `*.39S21  1 a 2 27 ]
+[v MTouchAcquisition@pPreviousSensor pPreviousSensor `*.39S21  1 a 2 4 ]
 "256
-[v MTouchAcquisition@pLastSensor pLastSensor `*.39S21  1 a 2 25 ]
+[v MTouchAcquisition@pLastSensor pLastSensor `*.39S21  1 a 2 2 ]
 "251
-[v MTouchAcquisition@data data `s  1 a 2 23 ]
+[v MTouchAcquisition@data data `s  1 a 2 0 ]
 "252
-[v MTouchAcquisition@i i `uc  1 a 1 29 ]
+[v MTouchAcquisition@i i `uc  1 a 1 6 ]
 "254
 [v MTouchAcquisition@startSensorNumber startSensorNumber `uc  1 s 1 startSensorNumber ]
 "331
@@ -1718,44 +1606,44 @@ MSG_PHASE_READY 2
 [v _MTouchSensorDecode MTouchSensorDecode `(v  1 e 0 0 ]
 {
 "139
-[v MTouchSensorDecode@delta delta `s  1 a 2 15 ]
+[v MTouchSensorDecode@delta delta `s  1 a 2 38 ]
 [s S21 tag_SENSOR 32 `l 1 average 4 0 `l 1 oversampleFilterData 4 4 `*.39VEuc 1 trisReg 2 8 `*.39VEuc 1 latReg 2 10 `s 1 decimateFilterData 2 12 `us 1 sampleCounter 2 14 `us 1 samplesNumber 2 16 `us 1 pressThreshold 2 18 `us 1 releaseThreshold 2 20 `us 1 averageCount 2 22 `us 1 delta 2 24 `us 1 debounceCount 2 26 `uc 1 state 1 28 `uc 1 ioMask 1 29 `uc 1 channelNumber 1 30 `c 1 chargeDelay 1 31 ]
 "136
-[v MTouchSensorDecode@pSensor pSensor `*.39S21  1 p 2 9 ]
+[v MTouchSensorDecode@pSensor pSensor `*.39S21  1 p 2 32 ]
 "211
 } 0
 "214
 [v _MTouchUpdateSensorAverage MTouchUpdateSensorAverage `(v  1 e 0 0 ]
 {
 [s S21 tag_SENSOR 32 `l 1 average 4 0 `l 1 oversampleFilterData 4 4 `*.39VEuc 1 trisReg 2 8 `*.39VEuc 1 latReg 2 10 `s 1 decimateFilterData 2 12 `us 1 sampleCounter 2 14 `us 1 samplesNumber 2 16 `us 1 pressThreshold 2 18 `us 1 releaseThreshold 2 20 `us 1 averageCount 2 22 `us 1 delta 2 24 `us 1 debounceCount 2 26 `uc 1 state 1 28 `uc 1 ioMask 1 29 `uc 1 channelNumber 1 30 `c 1 chargeDelay 1 31 ]
-[v MTouchUpdateSensorAverage@pSensor pSensor `*.39S21  1 p 2 0 ]
-[v MTouchUpdateSensorAverage@rate rate `us  1 p 2 2 ]
+[v MTouchUpdateSensorAverage@pSensor pSensor `*.39S21  1 p 2 23 ]
+[v MTouchUpdateSensorAverage@rate rate `us  1 p 2 25 ]
 "246
 } 0
-"121 E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8/lib/mTouchCap/mTouchAcquistion.c
+"121 D:\vlad\xc8/lib/mTouchCap/mTouchAcquistion.c
 [v _MTouchAcquisitionCVD MTouchAcquisitionCVD `(s  1 e 2 0 ]
 {
 "126
-[v MTouchAcquisitionCVD@curTris curTris `*.39VEuc  1 a 2 17 ]
+[v MTouchAcquisitionCVD@curTris curTris `*.39VEuc  1 a 2 40 ]
 "127
-[v MTouchAcquisitionCVD@curLat curLat `*.39VEuc  1 a 2 14 ]
+[v MTouchAcquisitionCVD@curLat curLat `*.39VEuc  1 a 2 37 ]
 "124
-[v MTouchAcquisitionCVD@prevLat prevLat `*.39VEuc  1 a 2 12 ]
+[v MTouchAcquisitionCVD@prevLat prevLat `*.39VEuc  1 a 2 35 ]
 "123
-[v MTouchAcquisitionCVD@prevTris prevTris `*.39VEuc  1 a 2 8 ]
+[v MTouchAcquisitionCVD@prevTris prevTris `*.39VEuc  1 a 2 31 ]
 "131
-[v MTouchAcquisitionCVD@result result `s  1 a 2 6 ]
+[v MTouchAcquisitionCVD@result result `s  1 a 2 29 ]
 "128
-[v MTouchAcquisitionCVD@curIOMask curIOMask `uc  1 a 1 19 ]
+[v MTouchAcquisitionCVD@curIOMask curIOMask `uc  1 a 1 42 ]
 "125
-[v MTouchAcquisitionCVD@prevIOMask prevIOMask `uc  1 a 1 16 ]
+[v MTouchAcquisitionCVD@prevIOMask prevIOMask `uc  1 a 1 39 ]
 "130
-[v MTouchAcquisitionCVD@curChannelNumber curChannelNumber `uc  1 a 1 11 ]
+[v MTouchAcquisitionCVD@curChannelNumber curChannelNumber `uc  1 a 1 34 ]
 "129
-[v MTouchAcquisitionCVD@prevChannelNumber prevChannelNumber `uc  1 a 1 10 ]
+[v MTouchAcquisitionCVD@prevChannelNumber prevChannelNumber `uc  1 a 1 33 ]
 [s S21 tag_SENSOR 32 `l 1 average 4 0 `l 1 oversampleFilterData 4 4 `*.39VEuc 1 trisReg 2 8 `*.39VEuc 1 latReg 2 10 `s 1 decimateFilterData 2 12 `us 1 sampleCounter 2 14 `us 1 samplesNumber 2 16 `us 1 pressThreshold 2 18 `us 1 releaseThreshold 2 20 `us 1 averageCount 2 22 `us 1 delta 2 24 `us 1 debounceCount 2 26 `uc 1 state 1 28 `uc 1 ioMask 1 29 `uc 1 channelNumber 1 30 `c 1 chargeDelay 1 31 ]
 "121
-[v MTouchAcquisitionCVD@pCurrentSensor pCurrentSensor `*.39S21  1 p 2 0 ]
-[v MTouchAcquisitionCVD@pPreviousSensor pPreviousSensor `*.39S21  1 p 2 2 ]
+[v MTouchAcquisitionCVD@pCurrentSensor pCurrentSensor `*.39S21  1 p 2 23 ]
+[v MTouchAcquisitionCVD@pPreviousSensor pPreviousSensor `*.39S21  1 p 2 25 ]
 "217
 } 0

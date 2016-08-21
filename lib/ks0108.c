@@ -17,10 +17,11 @@ volatile WORD ram_pos;
 
 /******************************************************************************************/
 void ks0108Enable(void){
-    DelayUs(1);
+    DelayUs(5);
     LCD_ENABLE = 1;
-    DelayUs(1);
+    DelayUs(5);
     LCD_ENABLE = 0;
+    DelayUs(5);
     //DelayUs(10);
 }
 
@@ -127,9 +128,10 @@ void ks0108Init(void){
     LCD_ENABLE_TRIS = 0;
     LCD_RW_TRIS = 0;
     LCD_DI_TRIS = 0;
-
+    
+    LCD_RESET = 0;
+    DelayMs(2);    
     LCD_RESET = 1;
-
     DelayMs(1);
 
     pos.x = 0;

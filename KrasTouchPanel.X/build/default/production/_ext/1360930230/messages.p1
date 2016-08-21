@@ -1,23 +1,16 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "24 ../lib/messages.c
-[c E17 0 1 2 .. ]
-[n E17 . MSG_PHASE_NONE MSG_PHASE_PREPARE MSG_PHASE_READY  ]
+[c E10 0 1 2 .. ]
+[n E10 . MSG_PHASE_NONE MSG_PHASE_PREPARE MSG_PHASE_READY  ]
 [; ;MessagesConfig.h: 10: typedef enum {
-[; ;MessagesConfig.h: 12: MES_ADC_INIT_DONE,
-[; ;MessagesConfig.h: 13: MES_ADC_INIT,
-[; ;MessagesConfig.h: 14: MES_POINT,
-[; ;MessagesConfig.h: 15: EXP_STOP_BY_TIME,
-[; ;MessagesConfig.h: 16: EXP_STOP_BY_TEMP,
-[; ;MessagesConfig.h: 17: USB_FLASH_SEND_CMD,
-[; ;MessagesConfig.h: 18: USB_FLASH_ATTACH,
-[; ;MessagesConfig.h: 19: USB_FLASH_DEATTACH
-[; ;MessagesConfig.h: 20: } MESSAGES;
-[; ;MessagesConfig.h: 23: typedef enum {
-[; ;MessagesConfig.h: 24: SEM_IS_FLASH_COMMUNICATING,
-[; ;MessagesConfig.h: 25: SEM_RX_DONE,
-[; ;MessagesConfig.h: 26: SEM_WR_DONE,
-[; ;MessagesConfig.h: 27: SEM_WR_ERR
-[; ;MessagesConfig.h: 28: } SEM;
+[; ;MessagesConfig.h: 12: MES_RX
+[; ;MessagesConfig.h: 13: } MESSAGES;
+[; ;MessagesConfig.h: 16: typedef enum {
+[; ;MessagesConfig.h: 17: SEM_IS_FLASH_COMMUNICATING,
+[; ;MessagesConfig.h: 18: SEM_RX_DONE,
+[; ;MessagesConfig.h: 19: SEM_WR_DONE,
+[; ;MessagesConfig.h: 20: SEM_WR_ERR
+[; ;MessagesConfig.h: 21: } SEM;
 [; ;include\messages.h: 9: typedef enum {
 [; ;include\messages.h: 10: MSG_PHASE_NONE,
 [; ;include\messages.h: 11: MSG_PHASE_PREPARE,
@@ -62,7 +55,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;messages.c: 24: Messages[i] = MSG_PHASE_NONE;
 "24
-[e = *U + &U _Messages * -> _i `ux -> -> # *U &U _Messages `ui `ux -> . `E17 0 `uc ]
+[e = *U + &U _Messages * -> _i `ux -> -> # *U &U _Messages `ui `ux -> . `E10 0 `uc ]
 "28
 }
 "23
@@ -81,7 +74,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "32
 [e :U 5 ]
 [; ;messages.c: 32: BroadcastMessages[i] = MSG_PHASE_NONE;
-[e = *U + &U _BroadcastMessages * -> _i `ux -> -> # *U &U _BroadcastMessages `ui `ux -> . `E17 0 `uc ]
+[e = *U + &U _BroadcastMessages * -> _i `ux -> -> # *U &U _BroadcastMessages `ui `ux -> . `E10 0 `uc ]
 "31
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 1 `i 5  ]
@@ -117,7 +110,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;messages.c: 44: Messages[Msg] = MSG_PHASE_PREPARE;
 "44
-[e = *U + &U _Messages * -> _Msg `ux -> -> # *U &U _Messages `ui `ux -> . `E17 1 `uc ]
+[e = *U + &U _Messages * -> _Msg `ux -> -> # *U &U _Messages `ui `ux -> . `E10 1 `uc ]
 [; ;messages.c: 45: }
 "45
 [e :UE 11 ]
@@ -131,11 +124,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;messages.c: 50: if(Messages[Msg] == MSG_PHASE_READY) {
 "50
-[e $ ! == -> *U + &U _Messages * -> _Msg `ux -> -> # *U &U _Messages `ui `ux `i -> . `E17 2 `i 13  ]
+[e $ ! == -> *U + &U _Messages * -> _Msg `ux -> -> # *U &U _Messages `ui `ux `i -> . `E10 2 `i 13  ]
 {
 [; ;messages.c: 51: Messages[Msg] = MSG_PHASE_NONE;
 "51
-[e = *U + &U _Messages * -> _Msg `ux -> -> # *U &U _Messages `ui `ux -> . `E17 0 `uc ]
+[e = *U + &U _Messages * -> _Msg `ux -> -> # *U &U _Messages `ui `ux -> . `E10 0 `uc ]
 [; ;messages.c: 52: return 1;
 "52
 [e ) -> -> 1 `i `uc ]
@@ -161,7 +154,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;messages.c: 61: if(Messages[Msg] == MSG_PHASE_READY) {
 "61
-[e $ ! == -> *U + &U _Messages * -> _Msg `ux -> -> # *U &U _Messages `ui `ux `i -> . `E17 2 `i 15  ]
+[e $ ! == -> *U + &U _Messages * -> _Msg `ux -> -> # *U &U _Messages `ui `ux `i -> . `E10 2 `i 15  ]
 {
 [; ;messages.c: 62: return 1;
 "62
@@ -188,7 +181,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;messages.c: 95: BroadcastMessages[Msg] = MSG_PHASE_PREPARE;
 "95
-[e = *U + &U _BroadcastMessages * -> _Msg `ux -> -> # *U &U _BroadcastMessages `ui `ux -> . `E17 1 `uc ]
+[e = *U + &U _BroadcastMessages * -> _Msg `ux -> -> # *U &U _BroadcastMessages `ui `ux -> . `E10 1 `uc ]
 [; ;messages.c: 96: }
 "96
 [e :UE 16 ]
@@ -202,7 +195,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;messages.c: 101: if(BroadcastMessages[Msg] == MSG_PHASE_READY){
 "101
-[e $ ! == -> *U + &U _BroadcastMessages * -> _Msg `ux -> -> # *U &U _BroadcastMessages `ui `ux `i -> . `E17 2 `i 18  ]
+[e $ ! == -> *U + &U _BroadcastMessages * -> _Msg `ux -> -> # *U &U _BroadcastMessages `ui `ux `i -> . `E10 2 `i 18  ]
 {
 [; ;messages.c: 102: return 1;
 "102
@@ -239,13 +232,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;messages.c: 113: if(Messages[i] == MSG_PHASE_READY) Messages[i] = MSG_PHASE_NONE;
 "113
-[e $ ! == -> *U + &U _Messages * -> _i `ux -> -> # *U &U _Messages `ui `ux `i -> . `E17 2 `i 23  ]
-[e = *U + &U _Messages * -> _i `ux -> -> # *U &U _Messages `ui `ux -> . `E17 0 `uc ]
+[e $ ! == -> *U + &U _Messages * -> _i `ux -> -> # *U &U _Messages `ui `ux `i -> . `E10 2 `i 23  ]
+[e = *U + &U _Messages * -> _i `ux -> -> # *U &U _Messages `ui `ux -> . `E10 0 `uc ]
 [e :U 23 ]
 [; ;messages.c: 114: if(Messages[i] == MSG_PHASE_PREPARE) Messages[i] = MSG_PHASE_READY;
 "114
-[e $ ! == -> *U + &U _Messages * -> _i `ux -> -> # *U &U _Messages `ui `ux `i -> . `E17 1 `i 24  ]
-[e = *U + &U _Messages * -> _i `ux -> -> # *U &U _Messages `ui `ux -> . `E17 2 `uc ]
+[e $ ! == -> *U + &U _Messages * -> _i `ux -> -> # *U &U _Messages `ui `ux `i -> . `E10 1 `i 24  ]
+[e = *U + &U _Messages * -> _i `ux -> -> # *U &U _Messages `ui `ux -> . `E10 2 `uc ]
 [e :U 24 ]
 "115
 }
@@ -266,13 +259,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;messages.c: 119: if(BroadcastMessages[i] == MSG_PHASE_READY) BroadcastMessages[i] = MSG_PHASE_NONE;
 "119
-[e $ ! == -> *U + &U _BroadcastMessages * -> _i `ux -> -> # *U &U _BroadcastMessages `ui `ux `i -> . `E17 2 `i 28  ]
-[e = *U + &U _BroadcastMessages * -> _i `ux -> -> # *U &U _BroadcastMessages `ui `ux -> . `E17 0 `uc ]
+[e $ ! == -> *U + &U _BroadcastMessages * -> _i `ux -> -> # *U &U _BroadcastMessages `ui `ux `i -> . `E10 2 `i 28  ]
+[e = *U + &U _BroadcastMessages * -> _i `ux -> -> # *U &U _BroadcastMessages `ui `ux -> . `E10 0 `uc ]
 [e :U 28 ]
 [; ;messages.c: 120: if(BroadcastMessages[i] == MSG_PHASE_PREPARE) BroadcastMessages[i] = MSG_PHASE_READY;
 "120
-[e $ ! == -> *U + &U _BroadcastMessages * -> _i `ux -> -> # *U &U _BroadcastMessages `ui `ux `i -> . `E17 1 `i 29  ]
-[e = *U + &U _BroadcastMessages * -> _i `ux -> -> # *U &U _BroadcastMessages `ui `ux -> . `E17 2 `uc ]
+[e $ ! == -> *U + &U _BroadcastMessages * -> _i `ux -> -> # *U &U _BroadcastMessages `ui `ux `i -> . `E10 1 `i 29  ]
+[e = *U + &U _BroadcastMessages * -> _i `ux -> -> # *U &U _BroadcastMessages `ui `ux -> . `E10 2 `uc ]
 [e :U 29 ]
 "121
 }

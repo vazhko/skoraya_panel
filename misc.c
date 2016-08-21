@@ -139,9 +139,11 @@ void InitializeSystem(void) {
 
     uart16_init();
     TRISCbits.TRISC6 = 0;
-    TRISCbits.TRISC7 = 1;
+    TRISCbits.TRISC7 = 1;    
     RCIP = 0;
     RCIE = 1;
+    TX_EN = 0;
+    TX_EN_TRIS = 0;
     
     LED1_AVT_PWR_TRIS = 0;
     LED2_ROZ_TRIS = 0;

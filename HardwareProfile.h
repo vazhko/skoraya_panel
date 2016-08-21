@@ -36,6 +36,9 @@ $Id: HardwareProfile.h 202 2012-08-09 14:17:18Z Vlad $
 #define LED5_LT_SIDE_TRIS	TRISAbits.TRISA7
 
 
+#define TX_EN       LATCbits.LATC5
+#define TX_EN_TRIS  TRISCbits.TRISC5
+
 
 //  KS0108
 #define LCD_TRIS		TRISD

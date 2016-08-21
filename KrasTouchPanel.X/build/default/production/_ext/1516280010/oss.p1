@@ -1,8 +1,8 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[; ;include\stddef.h: 2: typedef int ptrdiff_t;
-[; ;include\stddef.h: 3: typedef unsigned size_t;
-[; ;include\stddef.h: 4: typedef unsigned short wchar_t;
-[; ;include\stddef.h: 13: extern int errno;
+[; ;stddef.h: 2: typedef int ptrdiff_t;
+[; ;stddef.h: 3: typedef unsigned size_t;
+[; ;stddef.h: 4: typedef unsigned short wchar_t;
+[; ;stddef.h: 13: extern int errno;
 [; ;oss.h: 107: extern volatile int _sys_tick;
 [; ;oss.h: 134: void OS_Shed(void);
 [; ;oss.h: 135: void OS_Task_Create(void (*Task)(void));
