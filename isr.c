@@ -99,7 +99,7 @@ void interrupt low_priority LO_ISR(void) {
         }
         //*/
         
-        putstrc(out_packet);
+        //putstrc(out_packet);
         SendMessage(MES_RX);
         
 

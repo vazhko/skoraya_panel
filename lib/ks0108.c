@@ -19,9 +19,9 @@ volatile WORD ram_pos;
 void ks0108Enable(void){
     DelayUs(5);
     LCD_ENABLE = 1;
-    DelayUs(5);
+    DelayUs(1);
     LCD_ENABLE = 0;
-    DelayUs(5);
+    DelayUs(1);
     //DelayUs(10);
 }
 

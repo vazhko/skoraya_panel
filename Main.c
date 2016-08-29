@@ -270,7 +270,9 @@ void tsk_display(void) {
         if (f_T_salona != 0.0) {
             //print_a_b(strt, f_T_salona, 1, 1);
             //sprintf(str, "%s%cC", strt, 0x8b);
-            sprintf(str, "T=%2.1f", f_T_salona);
+            //sprintf(str, "T=%2.1f", f_T_salona);
+            //print_a_b(strt, T1, 2, 1);    		
+    		sprintf(str, "%2.1f%cC", f_T_salona, 0x8b);
         } else {
             sprintf(str, "     ");
         }
@@ -425,8 +427,10 @@ void tsk_rx(void) {
         //TX_EN = 0;        
 
         sprintf(out_packet, ">Com@12V=%01u 220V=%01u LRi=%01u LRe=%01u LNo=%01u Led=%02u Blu=%01u Fan=%01u Con=%01u$\r",
-                stat.st_12V, stat.st_220V, stat.st_lt_back, stat.st_lt_side, stat.st_lt_noshy,
+                stat.st_12V, stat.st_220V, stat.st_lt_side, stat.st_lt_back, stat.st_lt_noshy,
                 stat.st_lt_salon, stat.st_lt_blue, stat.st_fan, stat.st_kond);
+        
+        putstrc(out_packet);
     }
 
 }
