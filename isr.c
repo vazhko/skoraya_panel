@@ -11,7 +11,7 @@ extern volatile int sys_tick;
 volatile WORD beep_timer;
 volatile BYTE beep_count;
 volatile char dummy;
-char RxTxBuff[128];
+//char RxTxBuff[128];
 volatile char RxBuff[256];
 volatile WORD j_rx = 0;
 /****************************************************************************/
@@ -20,24 +20,32 @@ BYTE recieve_from_usb(BYTE count);
 
 
 /******************************************************************************************/
+/*
 #define WR_BUF(adr, var) write_buff(adr, (char *)&var, sizeof(var))
-
 void write_buff(unsigned int adr, char *var, unsigned char byte) {
     while (byte--) {
         RxTxBuff[adr + byte] = (unsigned char) (*(((unsigned char *) var) + byte));
     }
 }
+*/
 
 /****************************************************************************/
 void interrupt high_priority HI_ISR(void) {
     static WORD w_pwm;
     static BYTE beep;
-
+    static WORD iSec;
     // 1mS
     if ((PIE1bits.TMR2IE) && (PIR1bits.TMR2IF)) {
 
         sys_tick++;
         OS_Tick();
+        // секундный тикер
+		if (++iSec > 1000){
+			iSec = 0;
+			SendMessage(MSG_SEC);
+		}
+        
+        
         MTouchAcquisition();
 
         TMR2 = 0;

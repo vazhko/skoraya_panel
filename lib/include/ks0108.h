@@ -94,7 +94,7 @@ void ks0108Line(BYTE xn, BYTE yn, BYTE xk, BYTE yk);
 void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy);
 
 void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln);
-void LabelSetTxt(Label *lb, char *str);
+void LabelSetTxt(Label *lb, char *s);
 void LabelClrTxt(Label *lb);
 
 #define USE_LCD_MEM

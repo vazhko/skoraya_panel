@@ -86,6 +86,15 @@ typedef struct {
     BYTE st_lt_blue;
     BYTE st_fan;
     BYTE st_kond;
+    
+    double U1;
+    double U2;
+    BYTE  batt_k;
+    BYTE  HV_k;
+    BYTE st_k_side;
+    BYTE st_k_back;
+    
+    BYTE st_fuse;
 }status_t;
 
 

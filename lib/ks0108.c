@@ -17,10 +17,12 @@ volatile WORD ram_pos;
 
 /******************************************************************************************/
 void ks0108Enable(void){
-    DelayUs(5);
+    DelayUs(2);
     LCD_ENABLE = 1;
     DelayUs(1);
+    //Nop();Nop();Nop();Nop();Nop();Nop();Nop();Nop();
     LCD_ENABLE = 0;
+    //Nop();Nop();Nop();Nop();Nop();Nop();Nop();Nop();
     DelayUs(1);
     //DelayUs(10);
 }
@@ -128,9 +130,9 @@ void ks0108Init(void){
     LCD_ENABLE_TRIS = 0;
     LCD_RW_TRIS = 0;
     LCD_DI_TRIS = 0;
-    
+
     LCD_RESET = 0;
-    DelayMs(2);    
+    DelayMs(2);
     LCD_RESET = 1;
     DelayMs(1);
 
@@ -407,24 +409,28 @@ void ks0108Rect(BYTE x, BYTE y, BYTE dx, BYTE dy){
 
 /******************************************************************************************/
 void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln){
-
     BYTE i;
+
     lb -> size = ln;
     lb -> p_font = font;
     lb -> x = x;
     lb -> y = y;
 
-    //for(i = 0; i < lb -> size; i ++) lb -> str[i] = ' ';
-    lb -> str[0] = 0;
+    for(i = 0; i < lb -> size; i ++) lb -> str[i] = ' ';
+
     LabelSetTxt(lb, lb -> str);
 
 }
 
 /******************************************************************************************/
+
+/*
 void LabelSetTxt(Label *lb, char *str){
     BYTE i, w, end = 0;
 
 
+    Nop();
+    Nop();
     ks0108GotoXY(lb -> x, lb -> y);
     for(i = 0; i < lb -> size; i ++){
 
@@ -435,7 +441,13 @@ void LabelSetTxt(Label *lb, char *str){
             str[i] = ' ';
         }
 
+        Nop();
+        Nop();
+
         if(lb -> str[i] != str[i]){
+
+            Nop();
+            Nop();
             // стираем предыдущий символ
             w = ks0108PutChar(lb -> str[i], lb -> p_font, 0);
             // возврящаем курсор
@@ -447,20 +459,34 @@ void LabelSetTxt(Label *lb, char *str){
             // просто перемещаем курсор
             ks0108PutChar(str[i], lb -> p_font, 2);
         }
-
     }
-
-
 }
+ */
 
-/******************************************************************************************/
-void LabelClrTxt(Label *lb){
-    BYTE i;
+void LabelSetTxt(Label *lb, char *str){
+    BYTE i, SymbWidth, temp = 0;
+
 
     ks0108GotoXY(lb -> x, lb -> y);
     for(i = 0; i < lb -> size; i ++){
-        ks0108PutChar(' ', lb -> p_font, 0);
+        SymbWidth = ks0108PutChar(lb -> str[i], lb -> p_font, 0);
+    }
+
+    ks0108GotoXY(lb -> x, lb -> y);
+    for(i = 0; i < lb -> size; i ++){
+        if(str[i] == 0) temp = 1;
+        if(temp == 0)
+
+            lb -> str[i] = str[i];
+        else
+            // стираем предыдущий символ
+            // возврящаем курсор
+            // печатаем новый
+            lb -> str[i] = ' ';
+        ks0108PutChar(lb -> str[i], lb -> p_font, 1);
+        // просто перемещаем курсор
     }
 
 }
+
 

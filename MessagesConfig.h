@@ -3,13 +3,17 @@
 #define MESS_CONFIG_H
 
 
-#define MAX_MESSAGES 10
+#define MAX_MESSAGES 6
 #define MAX_BROADCAST_MESSAGES 1
 #define  MAX_SEMAPHORES 4
 
 typedef enum {
-    //MES_NONE = 0,	
-    MES_RX   
+    //MES_ONE = 0,	
+    MES_RX,
+    MSG_SEC,
+    MSG_EXT_220,
+    MSG_INT_220
+            
 } MESSAGES;
 
 
