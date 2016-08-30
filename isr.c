@@ -16,6 +16,7 @@ volatile char RxBuff[256];
 volatile WORD j_rx = 0;
 /****************************************************************************/
 extern void Beep(BYTE);
+extern void tsk_process_btn(void);
 BYTE recieve_from_usb(BYTE count);
 
 
@@ -47,6 +48,7 @@ void interrupt high_priority HI_ISR(void) {
         
         
         MTouchAcquisition();
+        //tsk_process_btn();
 
         TMR2 = 0;
         PIR1bits.TMR2IF = 0;

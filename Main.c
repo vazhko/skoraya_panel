@@ -9,6 +9,7 @@ $Id: Main.c 201 2012-08-09 14:15:36Z Vlad $
 #include	"cour13.h"
 
 
+//#define SHOW_PACKETS  
 /***GLOBAL VAR*****************************************************************/
 
 volatile int sys_tick = 0;
@@ -74,7 +75,9 @@ BYTE g_fix_side_1 = 0;
 BYTE g_manual_lt = 0; // признак включени€ света в салоне вручную
 BYTE g_prev_ext_220 = 10;
 
-void main(void){
+BYTE g_rx = 0;
+
+void main(void) {
 
     Nop();
     InitMessages();
@@ -128,7 +131,7 @@ void main(void){
 
 
 
-    while(1){
+    while (1) {
 
 
         tsk_display();
@@ -142,19 +145,19 @@ void main(void){
         Nop();
 
 
-        if((FERR) || (OERR)){
+        if ((FERR) || (OERR)) {
             CREN = 0;
             NOP();
             CREN = 1;
         }
         TX_EN = 0;
 
-        if(SWDTEN == 0){
+        if (SWDTEN == 0) {
             //SWDTEN = 1;
         }
         ClrWdt();
 
-        if(INTCONbits.GIE == 0){
+        if (INTCONbits.GIE == 0) {
             INTCONbits.GIE = 1;
         }
 
@@ -167,110 +170,101 @@ void main(void){
 /******************************************************************************************/
 // обработка кнопок
 
-void tsk_process_btn(void){
+void tsk_process_btn(void) {
     static int prev_tick, i;
-
+    static BYTE b_long = 0;
 
     // Decode all controls.
     MTouchDecode();
 
 
     // зад свет
-    if(BTN_PRESSED(KEY_7_LT_OUT_BACK)){
+    if (BTN_PRESSED(KEY_7_LT_OUT_BACK)) {
         Beep(10);
         stat.st_lt_back ^= 1;
-        LED4_LT_BACK = stat.st_lt_back;
+        if (stat.st_lt_back == 1) g_fix_rear_1 = 1;
+        else g_fix_rear_0 = 1;
+        //LED4_LT_BACK = stat.st_lt_back;
+        SendMessage(MSG_MANUAL_BACK);
     }
 
     //Ѕок свет
-    if(BTN_PRESSED(KEY_8_LT_OUT_SIDE)){
+    if (BTN_PRESSED(KEY_8_LT_OUT_SIDE)) {
         Beep(10);
         stat.st_lt_side ^= 1;
-        LED5_LT_SIDE = stat.st_lt_side;
+        //LED5_LT_SIDE = stat.st_lt_side;
+        if (stat.st_lt_side == 1) g_fix_side_1 = 1;
+        else g_fix_side_0 = 1;
+        SendMessage(MSG_MANUAL_SIDE);
     }
 
     // 12¬
-    if(BTN_PRESSED(KEY_6_ROZ_ON)){
+    if (BTN_PRESSED(KEY_6_ROZ_ON)) {
         Beep(10);
         stat.st_12V ^= 1;
         LED2_ROZ = stat.st_12V;
     }
 
     //220¬
-    if(BTN_PRESSED(KEY_0_AVT_PWR_220)){
+    if (BTN_PRESSED(KEY_0_AVT_PWR_220)) {
         Beep(10);
         stat.st_220V ^= 1;
         LED1_AVT_PWR = stat.st_220V;
     }
 
     //  управление светом салона
-    if(BTN_PRESSED(KEY_2_LT_SALON_M)){
+    if (BTN_PRESSED(KEY_2_LT_SALON_M)) {
+
         Beep(10);
-        if(stat.st_lt_salon == 0){
+        if (stat.st_lt_salon == 0) {
             stat.st_lt_blue ^= 1;
         } else {
             stat.st_lt_salon = 0;
             stat.st_lt_blue = 0;
         }
+
     }
 
-    if(BTN_PRESSED(KEY_3_LT_SALON_P)){
-        Beep(10);
-        stat.st_lt_salon = 31;
+    if (BTN_PRESSED(KEY_3_LT_SALON_P)) {
 
-        if(stat.st_lt_salon > 0){
+        if (stat.st_lt_blue > 0) {
+            Beep(10);
             stat.st_lt_blue = 0;
+        } else if (stat.st_lt_salon == 0){
+            Beep(10);
+            stat.st_lt_salon = 31;
         }
     }
-    /*
-        // ступенчатое управление €ркостью салона
-        if (BTN_PRESSED(KEY_2_LT_SALON_MM)) {
-            if (stat.st_lt_salon > 0) {
-                Beep(10);
-                stat.st_lt_salon--;
-                stat.st_lt_blue = 0;
-            }
-        }
 
-        if (BTN_PRESSED(KEY_3_LT_SALON_PP)) {
-            if (stat.st_lt_salon < 31) {
-                Beep(10);
-                stat.st_lt_salon++;
-            }
-            if (stat.st_lt_salon > 0) {
-                stat.st_lt_blue = 0;
-            }
-        }
-     */
 
     // ноши
-    if(BTN_PRESSED(KEY_1_LT_NOSHY)){
+    if (BTN_PRESSED(KEY_1_LT_NOSHY)) {
         Beep(10);
         stat.st_lt_noshy ^= 1;
     }
 
     // кондиционер
-    if(BTN_PRESSED(KEY_9_LT_KOND_M)){
-        if(stat.st_kond > 0){
+    if (BTN_PRESSED(KEY_9_LT_KOND_M)) {
+        if (stat.st_kond > 0) {
             Beep(10);
-            stat.st_kond --;
+            stat.st_kond--;
         }
     }
 
-    if(BTN_PRESSED(KEY_10_LT_KOND_P)){
-        if(stat.st_kond < 3){
+    if (BTN_PRESSED(KEY_10_LT_KOND_P)) {
+        if (stat.st_kond < 3) {
             Beep(10);
-            stat.st_kond ++;
+            stat.st_kond++;
         }
     }
 
     // вентил€ци€
-    if(BTN_PRESSED(KEY_4_VENT_OUT)){
+    if (BTN_PRESSED(KEY_4_VENT_OUT)) {
         Beep(10);
         stat.st_fan = (stat.st_fan == 0) ? 1 : 0;
     }
 
-    if(BTN_PRESSED(KEY_5_VENT_IN)){
+    if (BTN_PRESSED(KEY_5_VENT_IN)) {
         Beep(10);
         stat.st_fan = (stat.st_fan == 0) ? 2 : 0;
     }
@@ -279,8 +273,8 @@ void tsk_process_btn(void){
 }
 
 /******************************************************************************************/
-void batt_on_off(char status){
-    if(status == 0){
+void batt_on_off(char status) {
+    if (status == 0) {
         ks0108GotoXY(44, 23);
         ks0108PutChar(32, &sw_on, 0);
         ks0108GotoXY(44, 23);
@@ -295,91 +289,29 @@ void batt_on_off(char status){
 }
 
 /******************************************************************************************/
-void tsk_display(void){
-    static double f_prev_T = - 100.0;
+void tsk_display(void) {
+    static double f_prev_T = -100.0;
     //double U1, U2;
     static double prev_u1 = 99.9, prev_u2 = 99.9;
-    static BYTE blink, prev_cond = 10, prev_fan = 10, prev_lt_blue = 0, prev_lt_salon = 0, acc_st, charge_st = 10;
+    static BYTE blink, prev_cond = 10, prev_fan = 10, fuse_prev = 10;
+    static BYTE prev_lt_blue = 0, prev_lt_salon = 0;
+    static BYTE acc_st, charge_st = 10, prev_ext_220 = 10, prev_int_220 = 10;
     char str[30], strt[6];
 
     OS_TaskInit();
 
-    if(f_prev_T != f_T_salona){
-        f_prev_T = f_T_salona;
-        if(f_T_salona != 0.0){
-            sprintf(str, "%2.1f%cC", f_T_salona, 0x8b);
-        } else {
-            sprintf(str, "     ");
-        }
-        LabelSetTxt(&lb_temp, str);
-    }
-
-    if(stat.U1 != prev_u1){
-        print_a_b(strt, stat.U1, 1, 1);
-        sprintf(str, "%sB", strt);
-        LabelSetTxt(&lb_napr1, str);
-        prev_u1 = stat.U1;
-    }
+    LED4_LT_BACK = stat.st_lt_back;
+    LED5_LT_SIDE = stat.st_lt_side;
 
 
-    if(stat.batt_k != charge_st){
-        charge_st ^= 1;
-        if(stat.batt_k == 1){
-            batt_on_off(1);
-        } else {
-            batt_on_off(0);
-        };
-    }
 
-    if(stat.U2 != prev_u2){
-        print_a_b(strt, stat.U2, 1, 1);
-        sprintf(str, "%sB", strt);
-        LabelSetTxt(&lb_napr2, str);
-        prev_u2 = stat.U2;
-    }
-
-    // кондей
-    if(stat.st_kond != prev_cond){
-        prev_cond = stat.st_kond;
-        if(stat.st_kond == 0){
-            sprintf(str, "   ");
-        } else if(stat.st_kond == 1){
-            sprintf(str, "%c  ", 0x84);
-        } else if(stat.st_kond == 2){
-            sprintf(str, "%c%c ", 0x84, 0x84);
-        } else if(stat.st_kond == 3){
-            sprintf(str, "%c%c%c", 0x84, 0x84, 0x84);
-        }
-        LabelSetTxt(&lb_cond, str);
-    }
-
-
-    // состо€ние вентил€ции
-    if(stat.st_fan != prev_fan){
-        prev_fan = stat.st_fan;
-        if(stat.st_fan == 1){
-            sprintf(str, "%c%c", 0x85, 0x86);
-            //sprintf(str, "%c", 0x85);
-        } else if(stat.st_fan == 2){
-            sprintf(str, "%c%c", 0x85, 0x87);
-            //sprintf(str, "%c", 0x85);
-        } else {
-            sprintf(str, "  ");
-            //sprintf(str, "%c", ' ', ' ');
-        }
-        Nop();
-        Nop();
-
-        LabelSetTxt(&lb_vent, str);
-    }
-
-    if((stat.st_lt_salon != prev_lt_salon) || (stat.st_lt_blue != prev_lt_blue)){
+    if ((stat.st_lt_salon != prev_lt_salon) || (stat.st_lt_blue != prev_lt_blue)) {
         prev_lt_salon = stat.st_lt_salon;
         prev_lt_blue = stat.st_lt_blue;
 
         ks0108GotoXY(100, 23);
 
-        if(stat.st_lt_blue == 1){// синий	
+        if (stat.st_lt_blue == 1) {// синий	
             // стираем норм свет
             ks0108PutChar(0x89, &font13, 0);
 
@@ -393,82 +325,203 @@ void tsk_display(void){
             ks0108PutChar(0x8c, &font13, 0);
 
             ks0108GotoXY(100, 23);
-            if(stat.st_lt_salon){
+            if (stat.st_lt_salon) {
                 ks0108PutChar(0x89, &font13, 1);
             } else {
                 ks0108PutChar(0x89, &font13, 0);
             }
-            /*
-            if(outs.bits.lt1){
-                ks0108PutChar(0x89, &font13, 1);
-            } else {
-                ks0108PutChar(0x89, &font13, 0);
-            }
-
-            if(outs.bits.lt2){
-                ks0108PutChar(0x89, &font13, 1);
-            } else {
-                ks0108PutChar(0x89, &font13, 0);
-            }
-             */
 
         }
+        //OS_Reset();
+        //return;
     }
 
 
 
+    if (stat.batt_k != charge_st) {
+        charge_st = stat.batt_k;
+        if (stat.batt_k == 1) {
+            batt_on_off(1);
+        } else {
+            batt_on_off(0);
+        };
+    }
+
+    // кондей
+    if (stat.st_kond != prev_cond) {
+        prev_cond = stat.st_kond;
+        if (stat.st_kond == 0) {
+            sprintf(str, "   ");
+        } else if (stat.st_kond == 1) {
+            sprintf(str, "%c  ", 0x84);
+        } else if (stat.st_kond == 2) {
+            sprintf(str, "%c%c ", 0x84, 0x84);
+        } else if (stat.st_kond == 3) {
+            sprintf(str, "%c%c%c", 0x84, 0x84, 0x84);
+        }
+        LabelSetTxt(&lb_cond, str);
+    }
+
+
+    // состо€ние вентил€ции
+    if (stat.st_fan != prev_fan) {
+        prev_fan = stat.st_fan;
+        if (stat.st_fan == 1) {
+            sprintf(str, "%c%c", 0x85, 0x86);
+        } else if (stat.st_fan == 2) {
+            sprintf(str, "%c%c", 0x85, 0x87);
+        } else {
+            sprintf(str, "  ");
+        }
+        Nop();
+        Nop();
+
+        LabelSetTxt(&lb_vent, str);
+    }
+
+    // пердохранитель
+    if (stat.st_fuse != fuse_prev) {
+        fuse_prev = stat.st_fuse;
+        ks0108GotoXY(43, 37);
+        if (stat.st_fuse == 1) {
+            ks0108PutChar(0x8a, &font13, 1);
+        } else {
+            ks0108PutChar(0x8a, &font13, 0);
+        }
+    }
+
+
+    // внешний 220
+    if (stat.HV_k != prev_ext_220) {
+        prev_ext_220 = stat.HV_k;
+        if (stat.HV_k == 1) {
+            sprintf(str, mess1_str);
+            LabelSetTxt(&lb_mess1, str);
+            sprintf(str, mess3_str);
+            LabelSetTxt(&lb_mess2, str);
+
+            ks0108GotoXY(115, 0);
+            ks0108PutChar(0x5e, &font23, 1);
+        } else {
+            LabelClrTxt(&lb_mess1);
+            LabelClrTxt(&lb_mess2);
+
+            ks0108GotoXY(115, 0);
+            ks0108PutChar(0x5e, &font23, 0);
+        }
+    } else if (stat.st_220V != prev_int_220) {
+        // автономный 220
+        prev_int_220 == stat.st_220V;
+        /*
+        if(stat.st_220V) {
+            sprintf(str, mess2_str);
+            LabelSetTxt(&lb_mess1, str);
+            sprintf(str, mess3_str);
+            LabelSetTxt(&lb_mess2, str);
+
+            ks0108GotoXY(115, 0);
+            ks0108PutChar(0x5e, &font23, 1);
+
+        } else {
+            LabelClrTxt(&lb_mess1);
+            LabelClrTxt(&lb_mess2);
+
+            ks0108GotoXY(115, 0);
+            ks0108PutChar(0x5e, &font23, 0);
+        }
+         */
+    }
+
     OS_TaskStart();
-
-
     // обновление показаний 500мс
     OS_Delay(500);
+    blink++;
+    
+    ks0108GotoXY(120, 58);
+    if(g_rx ){        
+        ks0108PutChar('.', &font13, 1);
+        g_rx = 0;
+    } else {
+        ks0108PutChar('.', &font13, 0);        
+    }
 
-    blink ++;
 
+    if (f_prev_T != f_T_salona) {
+        f_prev_T = f_T_salona;
+        if (f_T_salona != 0.0) {
+            sprintf(str, "%2.1f%cC", f_T_salona, 0x8b);
+        } else {
+            sprintf(str, "     ");
+        }
+        LabelSetTxt(&lb_temp, str);
+    }
+
+    if (stat.U1 != prev_u1) {
+        print_a_b(strt, stat.U1, 1, 1);
+        sprintf(str, "%sB", strt);
+        LabelSetTxt(&lb_napr1, str);
+        prev_u1 = stat.U1;
+    }
+
+    if (stat.U2 != prev_u2) {
+        print_a_b(strt, stat.U2, 1, 1);
+        sprintf(str, "%sB", strt);
+        LabelSetTxt(&lb_napr2, str);
+        prev_u2 = stat.U2;
+    }
+
+    /*
     ks0108GotoXY(65, 20);
-
-    if(stat.U2 <= 11.5){
+    if(stat.U2 <= 11.5) {
         // пикаем
         ///if((blink & 7) == 5) Beep(1);
         // мигаем при понижении напр€жени€
-        if((blink)&1){
+        if((blink)&1) {
             ks0108PutChar(32, &batt, 1);
             acc_st = 1;
         } else {
             ks0108PutChar(32, &batt, 0);
             acc_st = 0;
         }
-    } else if(acc_st != 1){
+    } else if(acc_st != 1) {
 
         ks0108PutChar(32, &batt, 1);
         acc_st = 0;
     }
-    
+     */
+
+    OS_Yield();
+    /*
+        // пердохранитель
+        ks0108GotoXY(43, 37);
+        if((stat.st_fuse) && ((blink)&1)) {
+            ks0108PutChar(0x8a, &font13, 1);
+        } else {
+            ks0108PutChar(0x8a, &font13, 0);
+        }
+     */
+
+    /*
+    sprintf(str, "L%01u B%1u",
+            stat.st_lt_salon, stat.st_lt_blue);
+    LabelSetTxt(&lb_paket_out, str);
+     */
+
+#ifdef SHOW_PACKETS
     OS_Yield();
 
-    // пердохранитель
-    ks0108GotoXY(43, 37);
-    if((stat.st_fuse) && ((blink)&1)){
-        ks0108PutChar(0x8a, &font13, 1);
-    } else {
-        ks0108PutChar(0x8a, &font13, 0);
-    }
-    
-/*    
-    OS_Yield();
-
-    sprintf(str, "%01u %01u %01u %01u %01u %02u %01u %01u %01u",
-            stat.st_12V, stat.st_220V, stat.st_lt_back, stat.st_lt_side, stat.st_lt_noshy,
+    sprintf(str, "L%1u H%1u S%1u R%1u N%1u L%2u B%1u F%1u C%1u",
+            stat.st_12V, stat.st_220V, stat.st_lt_side, stat.st_lt_back, stat.st_lt_noshy,
             stat.st_lt_salon, stat.st_lt_blue, stat.st_fan, stat.st_kond);
     LabelSetTxt(&lb_paket_out, str);
-    
+
     OS_Yield();
-    
-    sprintf(str, "%2.1f %2.1f %01u %01u %01u %02u %01u",
+
+    sprintf(str, "%2.1f %2.1f C%1u H%1u S%1u R%1u F%1u",
             stat.U1, stat.U2, stat.batt_k, stat.HV_k, stat.st_k_side,
             stat.st_k_back, stat.st_fuse);
     LabelSetTxt(&lb_paket_in, str);
-*/
+#endif
 
 
     OS_Yield();
@@ -482,7 +535,7 @@ void tsk_display(void){
 }
 
 /******************************************************************************************/
-void tsk_ds18b20(void){
+void tsk_ds18b20(void) {
     static double f_temp;
     static BYTE ow_err[1];
 
@@ -498,7 +551,7 @@ void tsk_ds18b20(void){
     Nop();
     Nop();
 
-    if((f_temp != OW_ERROR) && (f_temp != 85.0)){
+    if ((f_temp != OW_ERROR) && (f_temp != 85.0)) {
 
         TSK_DI();
         f_T_salona = f_temp;
@@ -506,8 +559,8 @@ void tsk_ds18b20(void){
 
         ow_err[0] = 0;
     } else {
-        ow_err[0] ++;
-        if(ow_err[0] > 4){
+        ow_err[0]++;
+        if (ow_err[0] > 4) {
             ow_err[0] = 0;
             TSK_DI();
             f_T_salona = 0.0;
@@ -527,11 +580,11 @@ void tsk_ds18b20(void){
 #define BACK_K 44
 
 /******************************************************************************************/
-void tsk_rx(void){
-    if(GetMessage(MES_RX)){
+void tsk_rx(void) {
+    if (GetMessage(MES_RX)) {
         Nop();
         Nop();
-
+        g_rx = 1;
 
         sprintf(out_packet, ">Com@12V=%01u 220V=%01u LRi=%01u LRe=%01u LNo=%01u Led=%02u Blu=%01u Fan=%01u Con=%01u$\r",
                 stat.st_12V, stat.st_220V, stat.st_lt_side, stat.st_lt_back, stat.st_lt_noshy,
@@ -547,32 +600,34 @@ void tsk_rx(void){
         stat.U2 = atof(str);
 
 
-        if(in_packet[BAT_CON_POS] == '1'){
+        if (in_packet[BAT_CON_POS] == '1') {
             stat.batt_k = 1;
         } else {
             stat.batt_k = 0;
         }
-        if(in_packet[HV220V] == '1'){
+        if (in_packet[HV220V] == '0') {
             stat.HV_k = 1;
         } else {
             stat.HV_k = 0;
         }
-        if(in_packet[SIDE_K] == '1'){
+        if (in_packet[SIDE_K] == '1') {
             stat.st_k_side = 1;
         } else {
             stat.st_k_side = 0;
         }
-        if(in_packet[BACK_K] == '1'){
+        if (in_packet[BACK_K] == '1') {
             stat.st_k_back = 1;
         } else {
             stat.st_k_back = 0;
         }
-        if(in_packet[FUSES_POS] == '1'){
+        if (in_packet[FUSES_POS] == '1') {
             stat.st_fuse = 1;
         } else {
             stat.st_fuse = 0;
         }
     }
+
+
 
 }
 
@@ -585,9 +640,9 @@ void tsk_rx(void){
 
 /******************************************************************************************/
 // концевики и внешний 220¬
-#define INT_WAIT_TIME 5000ul // задержка реакции концевиков
+#define INT_WAIT_TIME 2ul // задержка реакции концевиков
 
-void tsk_int(void){
+void tsk_int(void) {
     static unsigned int wait_int_rear_0 = 0;
     static unsigned int wait_int_rear_1 = 0;
     static unsigned int wait_int_side_0 = 0;
@@ -595,34 +650,11 @@ void tsk_int(void){
     static BYTE prev_int_220 = 100;
 
 
-    // внешний 220¬
-    if(g_prev_ext_220 != stat.HV_k){
-        g_prev_ext_220 = stat.HV_k;
-        // выкл внешнее
-        if(stat.HV_k == 1){
-            if((stat.st_220V == 1) || (prev_int_220 == 1)){
-                // включить внутр. если было автомат выключено при по€влении внешнего
-                stat.st_220V = 1;
-                SendMessage(MSG_INT_220);
-            }
-            SendMessage(MSG_INT_220);
-        } else {
-            if(stat.st_220V == 1){
-                //автомат выключ при по€влении внешнего, но запомнмить пред сост
-                stat.st_220V = 0;
-                prev_int_220 = 1;
-            } else {
-                prev_int_220 = 0;
-            }
-            SendMessage(MSG_EXT_220);
-        }
-    }
-
-    if(CHK_REAR_0){
+    if (CHK_REAR_0) {
         g_fix_rear_1 = 0;
 
-        if(stat.st_lt_back == 0){
-            if((g_fix_rear_0 == 0)&&(++ wait_int_rear_0 > INT_WAIT_TIME)){
+        if (stat.st_lt_back == 0) {
+            if ((g_fix_rear_0 == 0)&&(++wait_int_rear_0 > INT_WAIT_TIME)) {
                 stat.st_lt_back = 1;
                 ///lt(LT_PK); // вкл свет в салоне					
             }
@@ -632,12 +664,12 @@ void tsk_int(void){
         }
     }
 
-    if(CHK_REAR_1){
+    if (CHK_REAR_1) {
         g_fix_rear_0 = 0;
 
-        if(stat.st_lt_back == 1){
+        if (stat.st_lt_back == 1) {
 
-            if((g_fix_rear_1 == 0)&&(++ wait_int_rear_1 > INT_WAIT_TIME)){
+            if ((g_fix_rear_1 == 0)&&(++wait_int_rear_1 > INT_WAIT_TIME)) {
                 stat.st_lt_back = 0;
                 ///if((g_manual_lt == 0)) lt(LT_MK); // выкл свет в салоне
 
@@ -649,11 +681,11 @@ void tsk_int(void){
     }
 
 
-    if(CHK_SIDE_0){
+    if (CHK_SIDE_0) {
         g_fix_side_1 = 0;
 
-        if(stat.st_lt_side == 0){
-            if((g_fix_side_0 == 0)&&(++ wait_int_side_0 > INT_WAIT_TIME)){
+        if (stat.st_lt_side == 0) {
+            if ((g_fix_side_0 == 0)&&(++wait_int_side_0 > INT_WAIT_TIME)) {
                 stat.st_lt_side = 1;
                 ///lt(LT_PK); // вкл свет в салоне				
             }
@@ -663,11 +695,11 @@ void tsk_int(void){
         }
     }
 
-    if(CHK_SIDE_1){
+    if (CHK_SIDE_1) {
         g_fix_side_0 = 0;
 
-        if(stat.st_lt_side == 1){
-            if((g_fix_side_1 == 0)&&(++ wait_int_side_1 > INT_WAIT_TIME)){
+        if (stat.st_lt_side == 1) {
+            if ((g_fix_side_1 == 0)&&(++wait_int_side_1 > INT_WAIT_TIME)) {
                 stat.st_lt_side = 0;
                 ///if((g_manual_lt == 0)) lt(LT_MK); // выкл свет в салоне
             }
@@ -682,10 +714,10 @@ void tsk_int(void){
 }
 
 /******************************************************************************************/
-void tsk_btn(void){
+void tsk_btn(void) {
     static int prev_tick;
 
-    if(prev_tick == sys_tick) return;
+    if (prev_tick == sys_tick) return;
     prev_tick = sys_tick;
 
     //MTouchAcquisition();

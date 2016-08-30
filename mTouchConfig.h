@@ -156,7 +156,7 @@
   starts to repeat CONTROL_PRESS/CONTROL_RELEASE events.
   Allowable range is from 1 to 65535.
   ***************************************************************************/
-#define MCONTROL_REPEAT_INITIAL_DELAY  6400
+#define MCONTROL_REPEAT_INITIAL_DELAY  12000
 
 /****************************************************************************
   Delay between CONTROL_PRESS/CONTROL_RELEASE events for

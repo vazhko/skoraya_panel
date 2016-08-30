@@ -99,6 +99,7 @@ typedef struct {
 
 
 #define BTN_PRESSED(x) (MTouchGetButtonState(x) == CONTROL_PRESSED)
+#define BTN_RELEASED(x) (MTouchGetButtonState(x) == CONTROL_RELEASED)
 #define BTN_SET(x) (MTouchGetButtonState(x) = CONTROL_PRESSED)
 
 
