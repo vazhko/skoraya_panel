@@ -96,8 +96,8 @@ ifneq ($(INFORMATION_MESSAGE), )
 endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/KrasTouchPanel.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 	@echo "--------------------------------------"
-	@echo "User defined post-build step: [copy /Y "dist\default\production\*.hex" "..\Pult_condey.hex"]"
-	@copy /Y "dist\default\production\*.hex" "..\Pult_condey.hex"
+	@echo "User defined post-build step: [copy /Y "dist\default\production\*.hex" "..\PultSalona.hex"]"
+	@copy /Y "dist\default\production\*.hex" "..\PultSalona.hex"
 	@echo "--------------------------------------"
 
 MP_PROCESSOR_OPTION=18F46K22

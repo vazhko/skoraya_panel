@@ -33,8 +33,8 @@ $Id: Main.h 202 2012-08-09 14:17:18Z Vlad $
 
 
 /***************************************************************************/
-//#define ID "TEREX TEMPEROMETR"
-//#define VER "v.8.0"
+//#define USE_POLKI
+#define VER "v.1.0"
 
 #define RS232_ADR	0x55
 #define SOUND_ON
