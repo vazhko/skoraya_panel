@@ -122,7 +122,7 @@
   Default threshold for press event detection.
   This value is used when "threshold" is set to -1 in MTouchSetSensor(...) call.
   ***************************************************************************/
-#define MTOUCH_DEFAULT_THRESHOLD      800
+#define MTOUCH_DEFAULT_THRESHOLD      1600
 
 /****************************************************************************
   Number of acquisitions for one sample of the sensor.

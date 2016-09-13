@@ -82,7 +82,8 @@ void interrupt high_priority HI_ISR(void) {
 /****************************************************************************/
 
 //52
-const char in_packet_template[] = ">PULT@V1=00.0 V2=00.0 Con=0 220=0 LRi=0 LRe=0 Fus=0$\r";
+const char in_packet_template[] = ">PULT@V1=00.0 V2=00.0 Con=0 220=0 LRi=0 LRe=0 Fus=0 $\r";
+const char in_packet_template2[] = ">Vom@B1=1 B2=1 B3=1 B4=1$\r";
 
 extern char out_packet[];
 extern char in_packet[];
@@ -104,13 +105,47 @@ void interrupt low_priority LO_ISR(void) {
                 if ((in_packet[i] != '>')) goto error;                
             }
             if (i == 1) {
-                if ((in_packet[i] != 'P')) goto error;                
+                //if ((in_packet[i] != 'P') || (in_packet[i] != 'V')) goto error;                
             }
+            
+            if (i == 3) {
+                //if ((in_packet[i] != 'L') || (in_packet[i] != 'm')) goto error;                
+            }
+            
+            if(in_packet[i] == '$'){
+                if((in_packet[1] == 'B')){
+                     Nop();
+                     Nop();
+                     SendMessage(MES_RX);
+                }
+                 if(in_packet[1] == 'P'){
+                     Nop();
+                     Nop();
+                     SendMessage(MES_RX);
+                }               
+                
+            }
+            
+            
+            
+            /*
+            if (i == 3) {
+                if ((in_packet[i] != 'L') || (in_packet[i] != 'm')) goto error;                
+            }           
+            
+
+            if((in_packet[1] == 'V') && (in_packet[3] == 'm') && (i == 26)){
+                Nop();
+                Nop(); 
+                break;
+            }
+            */
+
         }
-        //*/
+
         
         //putstrc(out_packet);
-        SendMessage(MES_RX);
+        //SendMessage(MES_RX);
         
 
 
