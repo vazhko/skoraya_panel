@@ -39,7 +39,7 @@ void tsk_btn(void);
 void tsk_int(void);
 
 /****************************************************************************/
-EEPROM_INIT;
+//EEPROM_INIT;
 
 /****************************************************************************/
 volatile char a, b;
@@ -557,7 +557,7 @@ void tsk_rx(void) {
             }
 
             //Бок свет
-            if (in_packet[14] == '1') {
+            if (in_packet[13] == '1') {
                 Beep(10);
                 stat.st_lt_side ^= 1;
                 //LED5_LT_SIDE = stat.st_lt_side;

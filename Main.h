@@ -13,6 +13,8 @@ $Id: Main.h 202 2012-08-09 14:17:18Z Vlad $
 
 #include <xc.h>
 
+#include <string.h>
+
 #include "GenericTypeDefs.h"
 #include "mTouchConfig.h"
 #include "mTouch.h"
@@ -34,7 +36,7 @@ $Id: Main.h 202 2012-08-09 14:17:18Z Vlad $
 
 /***************************************************************************/
 //#define USE_POLKI
-#define VER "v.1.0"
+#define VER "v.1.1"
 
 #define RS232_ADR	0x55
 #define SOUND_ON
