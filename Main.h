@@ -95,7 +95,8 @@ typedef struct {
     BYTE  HV_k;
     BYTE st_k_side;
     BYTE st_k_back;
-    
+    BYTE st_k_side_prev;
+    BYTE st_k_back_prev;   
     BYTE st_fuse;
 }status_t;
 

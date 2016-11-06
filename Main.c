@@ -54,8 +54,9 @@ status_t stat;
 double f_T_salona = 20.0;
 
 char str[40];
-char out_packet[63];
-char in_packet[55];
+char out_packet[100];
+
+char in_packet_int[100];
 
 //Надписи
 Label lb_napr1; // напруга осн
@@ -118,8 +119,12 @@ void main(void) {
     ks0108GotoXY(60, 39);
     sprintf(str, "%s", mess_dod_str);
     ks0108PutString(str, gost12, 1);
+    
+    stat.st_k_back_prev = 1;
+    stat.st_k_side_prev = 1;
 
-
+    stat.st_k_back = 1;
+    stat.st_k_side = 1;  
     Nop();
     Nop();
 
@@ -153,7 +158,7 @@ void main(void) {
         TX_EN = 0;
 
         if (SWDTEN == 0) {
-            //SWDTEN = 1;
+            SWDTEN = 1;
         }
         ClrWdt();
 
@@ -211,31 +216,6 @@ void tsk_process_btn(void) {
         stat.st_220V ^= 1;
         LED1_AVT_PWR = stat.st_220V;
     }
-
-    //  управление светом салона
-    if (BTN_PRESSED(KEY_2_LT_SALON_M)) {
-
-        Beep(10);
-        if (stat.st_lt_salon == 0) {
-            stat.st_lt_blue ^= 1;
-        } else {
-            stat.st_lt_salon = 0;
-            stat.st_lt_blue = 0;
-        }
-
-    }
-
-    if (BTN_PRESSED(KEY_3_LT_SALON_P)) {
-
-        if (stat.st_lt_blue > 0) {
-            Beep(10);
-            stat.st_lt_blue = 0;
-        } else if (stat.st_lt_salon == 0) {
-            Beep(10);
-            stat.st_lt_salon = 31;
-        }
-    }
-
 
     // ноши
     if (BTN_PRESSED(KEY_1_LT_NOSHY)) {
@@ -545,9 +525,9 @@ void tsk_rx(void) {
         Nop();
         g_rx = 1;
 
-        if (in_packet[1] == 'B') {
+        if (in_packet_int[1] == 'B') {
             // зад свет
-            if (in_packet[8] == '1') {
+            if (in_packet_int[8] == '1') {
                 Beep(10);
                 stat.st_lt_back ^= 1;
                 if (stat.st_lt_back == 1) g_fix_rear_1 = 1;
@@ -557,7 +537,7 @@ void tsk_rx(void) {
             }
 
             //Бок свет
-            if (in_packet[13] == '1') {
+            if (in_packet_int[13] == '1') {
                 Beep(10);
                 stat.st_lt_side ^= 1;
                 //LED5_LT_SIDE = stat.st_lt_side;
@@ -577,33 +557,33 @@ void tsk_rx(void) {
         putstrc(out_packet);
 
         // расшифровка
-        sprintf(str, "%c%c.%c", in_packet[9], in_packet[10], in_packet[12]);
+        sprintf(str, "%c%c.%c", in_packet_int[9], in_packet_int[10], in_packet_int[12]);
         stat.U1 = atof(str);
-        sprintf(str, "%c%c.%c", in_packet[17], in_packet[18], in_packet[20]);
+        sprintf(str, "%c%c.%c", in_packet_int[17], in_packet_int[18], in_packet_int[20]);
         stat.U2 = atof(str);
 
 
-        if (in_packet[BAT_CON_POS] == '1') {
+        if (in_packet_int[BAT_CON_POS] == '1') {
             stat.batt_k = 1;
         } else {
             stat.batt_k = 0;
         }
-        if (in_packet[HV220V] == '0') {
+        if (in_packet_int[HV220V] == '0') {
             stat.HV_k = 1;
         } else {
             stat.HV_k = 0;
         }
-        if (in_packet[SIDE_K] == '1') {
+        if (in_packet_int[SIDE_K] == '1') {
             stat.st_k_side = 1;
-        } else {
+        } else if (in_packet_int[SIDE_K] == '0'){
             stat.st_k_side = 0;
         }
-        if (in_packet[BACK_K] == '1') {
+        if (in_packet_int[BACK_K] == '1') {
             stat.st_k_back = 1;
-        } else {
+        } else if (in_packet_int[BACK_K] == '0'){
             stat.st_k_back = 0;
         }
-        if (in_packet[FUSES_POS] == '1') {
+        if (in_packet_int[FUSES_POS] == '1') {
             stat.st_fuse = 1;
         } else {
             stat.st_fuse = 0;
@@ -626,71 +606,128 @@ void tsk_rx(void) {
 #define INT_WAIT_TIME 2ul // задержка реакции концевиков
 
 void tsk_int(void) {
-    static unsigned int wait_int_rear_0 = 0;
-    static unsigned int wait_int_rear_1 = 0;
-    static unsigned int wait_int_side_0 = 0;
+    static unsigned int int_rear_0 = 0;
+    static unsigned int int_rear = 0;
+    static unsigned int int_side = 0;
     static unsigned int wait_int_side_1 = 0;
     static BYTE prev_int_220 = 100;
-
-
-    if (CHK_REAR_0) {
-        g_fix_rear_1 = 0;
-
-        if (stat.st_lt_back == 0) {
-            if ((g_fix_rear_0 == 0)&&(++wait_int_rear_0 > INT_WAIT_TIME)) {
-                stat.st_lt_back = 1;
-                ///lt(LT_PK); // вкл свет в салоне					
-            }
-
+    
+    if(stat.st_k_back != stat.st_k_back_prev){
+        stat.st_k_back_prev = stat.st_k_back;
+        if(stat.st_k_back == 0){
+            stat.st_lt_salon = 1;
+            g_manual_lt = 0;
+            stat.st_lt_back = 1;
+        } else {            
+            stat.st_lt_back = 0;
+            if((stat.st_k_side == 1) && (g_manual_lt == 0))stat.st_lt_salon = 0;
+        }
+    }
+    
+    if(stat.st_k_side != stat.st_k_side_prev){
+        stat.st_k_side_prev = stat.st_k_side;
+        if(stat.st_k_side == 0){
+            stat.st_lt_salon = 1;
+            g_manual_lt = 0;
+            stat.st_lt_side = 1;
         } else {
-            wait_int_rear_0 = 0;
+            stat.st_lt_side = 0;
+            if((stat.st_k_back == 1) && (g_manual_lt == 0))stat.st_lt_salon = 0;
+        }
+    }
+    
+    //if((CHK_REAR_0 || CHK_SIDE_0) && (g_manual_lt == 0)) stat.st_lt_salon = 1;
+    //if((CHK_REAR_1 && CHK_SIDE_1) && (g_manual_lt == 0)) stat.st_lt_salon = 0;
+    
+    
+    
+        //  управление светом салона
+    if (BTN_PRESSED(KEY_2_LT_SALON_M)) {
+
+        Beep(10);
+        if (stat.st_lt_salon == 0) {
+            stat.st_lt_blue ^= 1;
+        } else {
+            stat.st_lt_salon = 0;
+            stat.st_lt_blue = 0;
         }
     }
 
-    if (CHK_REAR_1) {
-        g_fix_rear_0 = 0;
+    if (BTN_PRESSED(KEY_3_LT_SALON_P)) {
 
-        if (stat.st_lt_back == 1) {
-
-            if ((g_fix_rear_1 == 0)&&(++wait_int_rear_1 > INT_WAIT_TIME)) {
-                stat.st_lt_back = 0;
-                ///if((g_manual_lt == 0)) lt(LT_MK); // выкл свет в салоне
-
-            }
-
-        } else {
-            wait_int_rear_1 = 0;
+        if (stat.st_lt_blue > 0) {
+            Beep(10);
+            stat.st_lt_blue = 0;
+        } else if (stat.st_lt_salon == 0) {
+            Beep(10);
+            stat.st_lt_salon = 31;     
+            g_manual_lt = 1;
         }
     }
 
 
-    if (CHK_SIDE_0) {
-        g_fix_side_1 = 0;
-
-        if (stat.st_lt_side == 0) {
-            if ((g_fix_side_0 == 0)&&(++wait_int_side_0 > INT_WAIT_TIME)) {
-                stat.st_lt_side = 1;
-                ///lt(LT_PK); // вкл свет в салоне				
-            }
-
-        } else {
-            wait_int_side_0 = 0;
-        }
-    }
-
-    if (CHK_SIDE_1) {
-        g_fix_side_0 = 0;
-
-        if (stat.st_lt_side == 1) {
-            if ((g_fix_side_1 == 0)&&(++wait_int_side_1 > INT_WAIT_TIME)) {
-                stat.st_lt_side = 0;
-                ///if((g_manual_lt == 0)) lt(LT_MK); // выкл свет в салоне
-            }
-        } else {
-            wait_int_side_1 = 0;
-
-        }
-    }
+//    if (CHK_REAR_0) {
+//        g_fix_rear_1 = 0;
+//
+//        if (stat.st_lt_back == 0) {
+//            if ((g_fix_rear_0 == 0)/*&&(++wait_int_rear_0 > INT_WAIT_TIME)*/) {
+//                stat.st_lt_back = 1;
+//                ///lt(LT_PK); // вкл свет в салоне	
+//                stat.st_lt_salon = 1;
+//            }
+//
+//        } else {
+//            wait_int_rear_0 = 0;
+//        }
+//    }
+//
+//    if (CHK_REAR_1) {
+//        g_fix_rear_0 = 0;
+//
+//        if (stat.st_lt_back == 1) {
+//
+//            if ((g_fix_rear_1 == 0)/*&&(++wait_int_rear_1 > INT_WAIT_TIME))*/) {
+//                stat.st_lt_back = 0;
+//                ///if((g_manual_lt == 0)) lt(LT_MK); // выкл свет в салоне
+//                if(g_manual_lt == 0) stat.st_lt_salon = 0;
+//
+//            }
+//
+//        } else {
+//            wait_int_rear_1 = 0;
+//        }
+//    }
+//
+//
+//    if (CHK_SIDE_0) {
+//        g_fix_side_1 = 0;
+//
+//        if (stat.st_lt_side == 0) {
+//            if ((g_fix_side_0 == 0)/*&&(++wait_int_side_0 > INT_WAIT_TIME)*/) {
+//                stat.st_lt_side = 1;
+//                ///lt(LT_PK); // вкл свет в салоне	
+//                stat.st_lt_salon = 1;
+//            }
+//
+//        } else {
+//            wait_int_side_0 = 0;
+//        }
+//    }
+//
+//    if (CHK_SIDE_1) {
+//        g_fix_side_0 = 0;
+//
+//        if (stat.st_lt_side == 1) {
+//            if ((g_fix_side_1 == 0)/*&&(++wait_int_side_1 > INT_WAIT_TIME)*/) {
+//                stat.st_lt_side = 0;
+//                ///if((g_manual_lt == 0)) lt(LT_MK); // выкл свет в салоне
+//                if(g_manual_lt == 0) stat.st_lt_salon = 0;
+//            }
+//        } else {
+//            wait_int_side_1 = 0;
+//
+//        }
+//    }
 
 
 

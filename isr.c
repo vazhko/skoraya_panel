@@ -86,7 +86,8 @@ void interrupt high_priority HI_ISR(void){
 //const char in_packet_template2[] = ">Bom@B1=1 B2=1 B3=1 B4=1$\r";
 
 extern char out_packet[];
-extern char in_packet[];
+char in_packet[100];
+extern char in_packet_int[];
 
 char i = 0;
 
@@ -115,6 +116,8 @@ void interrupt low_priority LO_ISR(void){
             Nop();
             Nop();
             SendMessage(MES_RX);
+            strcpy(in_packet_int, in_packet);
+            i = 0;
         }
         
         if((strncmp(&in_packet[0], ">Bom@", 5) == 0) && (i == 24)){
@@ -122,6 +125,8 @@ void interrupt low_priority LO_ISR(void){
             Nop();
             SendMessage(MES_RX);
             in_packet[0] = '0';
+            strcpy(in_packet_int, in_packet);
+            i = 0;
         }
 /*
         if((strncmp(&in_packet[0], ">Bom@B1=1 B2=0", 14) == 0)){
@@ -139,6 +144,7 @@ void interrupt low_priority LO_ISR(void){
 */
 
         i ++;
+        if(i > 90) i = 0;
 
 
         return;
