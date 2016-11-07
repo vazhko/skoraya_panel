@@ -28,7 +28,7 @@ $Id: Main.h 202 2012-08-09 14:17:18Z Vlad $
 #include "ow.h"
 #include "time.h"
 #include "oss.h"
-#include "modbus_RTU.h"
+//#include "modbus_RTU.h"
 #include "sub18.h"
 #include "macro.h"
 #include "ks0108.h"
@@ -36,30 +36,13 @@ $Id: Main.h 202 2012-08-09 14:17:18Z Vlad $
 
 /***************************************************************************/
 //#define USE_POLKI
-#define VER "v.1.1"
+#define VER "v.1.2"
 
 #define RS232_ADR	0x55
 #define SOUND_ON
 
 
-
-
 /***************************************************************************/
-/*
-typedef enum {
-    ST_INIT = 0,
-    ST_EXPERIMENT_READY,
-    ST_EXPERIMENT_WAITING,
-    ST_EXPERIMENT_DOING,
-    ST_EXPERIMENT_DONE,
-    ST_MENU,
-    //ST_MENU_WR_FLASH,
-    ST_VIEW_RESULTS,
-    ST_VIEW_RESULTS_ASK_DEL,
-    ST_DEBUG
-        
-} LAB_STATES;
-*/
 
 typedef enum {
     KEY_0_AVT_PWR_220 = 0,    

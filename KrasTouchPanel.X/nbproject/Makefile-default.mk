@@ -79,7 +79,7 @@ FIXDEPS=fixDeps
 
 # The following macros may be used in the pre and post step lines
 Device=PIC18F46K22
-ProjectDir="C:\_teex\pult\xc8_p\skoraya_panel\KrasTouchPanel.X"
+ProjectDir="E:\_work\_actual_prj\PultKras_touch\firm\pult_salona\xc8\skoraya_panel\KrasTouchPanel.X"
 ConfName=default
 ImagePath="dist\default\${IMAGE_TYPE}\KrasTouchPanel.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}"
 ImageDir="dist\default\${IMAGE_TYPE}"

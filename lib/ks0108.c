@@ -423,59 +423,11 @@ void LabelCreate(Label *lb, BYTE x, BYTE y, const char *font, BYTE ln) {
 }
 
 /******************************************************************************************/
-
-/*
-void LabelSetTxt(Label *lb, char *str){
-    BYTE i, w, end = 0;
-
-
-    Nop();
-    Nop();
-    ks0108GotoXY(lb -> x, lb -> y);
-    for(i = 0; i < lb -> size; i ++){
-
-        if(str[i] == 0){
-            end = 1;
-        }
-        if(end == 1){
-            str[i] = ' ';
-        }
-
-        Nop();
-        Nop();
-
-        if(lb -> str[i] != str[i]){
-
-            Nop();
-            Nop();
-            // стираем предыдущий символ
-            w = ks0108PutChar(lb -> str[i], lb -> p_font, 0);
-            // возврящаем курсор
-            pos.x -= w;
-            // печатаем новый
-            lb -> str[i] = str[i];
-            ks0108PutChar(lb -> str[i], lb -> p_font, 1);
-        } else {
-            // просто перемещаем курсор
-            ks0108PutChar(str[i], lb -> p_font, 2);
-        }
-    }
-}
- */
-
 void LabelSetTxt(Label *lb, char *str) {
     BYTE i, SymbWidth, temp = 0, same_symb_count;
 
     same_symb_count = 0;
-    /*
-    for(i = 0; i < lb -> size; i++){
-        if(lb -> str[i] == str[i]){
-            same_symb_count ++;
-        } else {
-            break;
-        }
-    }
-    */
+
     
     ks0108GotoXY(lb -> x, lb -> y);
     for(i = same_symb_count; i < lb -> size; i++) {

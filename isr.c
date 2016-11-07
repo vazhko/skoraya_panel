@@ -117,6 +117,7 @@ void interrupt low_priority LO_ISR(void){
             Nop();
             SendMessage(MES_RX);
             strcpy(in_packet_int, in_packet);
+            memset(in_packet, 0, 90);
             i = 0;
         }
         
@@ -126,22 +127,9 @@ void interrupt low_priority LO_ISR(void){
             SendMessage(MES_RX);
             in_packet[0] = '0';
             strcpy(in_packet_int, in_packet);
+            memset(in_packet, 0, 90);
             i = 0;
         }
-/*
-        if((strncmp(&in_packet[0], ">Bom@B1=1 B2=0", 14) == 0)){
-            Nop();
-            Nop();
-            SendMessage(MES_RX);
-            in_packet[0] = '0';
-        }
-        if((strncmp(&in_packet[0], ">Bom@B1=0 B2=1", 14) == 0)){
-            Nop();
-            Nop();
-            SendMessage(MES_RX);
-            in_packet[0] = '0';
-        } 
-*/
 
         i ++;
         if(i > 90) i = 0;
