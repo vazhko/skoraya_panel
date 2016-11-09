@@ -82,7 +82,7 @@ void interrupt high_priority HI_ISR(void){
 /****************************************************************************/
 
 //52
-//const char in_packet_template[] = ">PULT@V1=00.0 V2=00.0 Con=0 220=0 LRi=0 LRe=0 Fus=0 $\r";
+const char in_packet_template[] = ">PULT@V1=00.0 V2=00.0 Con=0 220=0 LRi=0 LRe=0 Fus=0 $\r";
 //const char in_packet_template2[] = ">Bom@B1=1 B2=1 B3=1 B4=1$\r";
 
 extern char out_packet[];

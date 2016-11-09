@@ -64,10 +64,19 @@ Label lb_paket_out, lb_paket_in;
 
 
 BYTE g_rx = 0;
-
+//char in_packet_template2[] = ">PULT@V1=00.0 V2=00.0 Con=0 220=0 LRi=5 LRe=0 Fus=0 $\r";
+//BYTE res;
 void main(void){
-
+    //char *ptr;
+    //Nop();    
+    //ptr = strstr(in_packet_template2, "LRi=");
+    //res = atoi(ptr + 4);
+    
     Nop();
+    Nop();
+    
+    
+    
     InitMessages();
     InitializeSystem();
 
@@ -511,8 +520,10 @@ void tsk_rx(void){
                 Beep(10);
                 stat.st_lt_side ^= 1;
             }
-
+            
+            memset(in_packet_int, 0, 90);
             return;
+            
         }
 
         sprintf(out_packet, ">Com@12V=%01u 220V=%01u LRi=%01u LRe=%01u LNo=%01u Led=%02u Blu=%01u Fan=%01u Con=%01u$\r",
@@ -541,25 +552,34 @@ void tsk_rx(void){
             stat.HV_k = 0;
         }
 
-        if(in_packet_int[SIDE_K] == '1'){
-            stat.st_k_side = 1;
-            prev_side = 0;
-        } else if(in_packet_int[SIDE_K] == '0'){
-            (prev_side > 1) ? stat.st_k_side = 0 : prev_side ++;
-        }
+        //if(strstr(in_packet_int, "LRi=")){
+            if(in_packet_int[SIDE_K] == '1'){
+                //stat.st_k_side = 1;			
+                (prev_side == 0) ? prev_side = 1 : stat.st_k_side = 1;
+            } else if(in_packet_int[SIDE_K] == '0'){
+                //(prev_side > 1) ? stat.st_k_side = 0 : prev_side ++;
+                (prev_side == 1) ? prev_side = 0 : stat.st_k_side = 0;
+            }
+        //}
 
-        if(in_packet_int[BACK_K] == '1'){
-            stat.st_k_back = 1;
-            prev_back = 0;
-        } else if(in_packet_int[BACK_K] == '0'){
-            (prev_back > 1) ? stat.st_k_back = 0 : prev_back ++;
-        }
+        //if(strstr(in_packet_int, "LRe=")){
+            if(in_packet_int[BACK_K] == '1'){
+                //stat.st_k_back = 1;
+                //prev_back = 0;
+                (prev_back == 0) ? prev_back = 1 : stat.st_k_back = 1;
+            } else if(in_packet_int[BACK_K] == '0'){
+                //(prev_back > 1) ? stat.st_k_back = 0 : prev_back ++;
+                (prev_back == 1) ? prev_back = 0 : stat.st_k_back = 0;
+            }
+        //}
 
         if(in_packet_int[FUSES_POS] == '1'){
             stat.st_fuse = 1;
         } else {
             stat.st_fuse = 0;
         }
+        
+        memset(in_packet_int, 0, 90);
     }
 }
 
